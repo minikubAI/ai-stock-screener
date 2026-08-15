@@ -199,7 +199,7 @@ def generate_html(stocks: list[dict]) -> str:
 
 def main():
     base_dir = os.path.join(os.path.dirname(__file__), '..')
-    out_path = os.path.join(base_dir, 'site', 'index.html')
+    out_path = os.path.join(base_dir, 'docs', 'index.html')
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
 
     print("📄 スクリーニング結果を読み込み中...")
