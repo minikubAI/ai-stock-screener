@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI バリュー株スクリーナー</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+    body { font-family: 'Noto Sans JP', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-gray-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-5 flex items-center justify-between">
+      <div>
+        <h1 class="text-2xl font-bold text-gray-900">📈 AI バリュー株スクリーナー</h1>
+        <p class="text-sm text-gray-500 mt-0.5">EDINET × Yahoo Finance × Claude AI</p>
+      </div>
+      <div class="text-right text-sm text-gray-500">
+        <div>スクリーニング実施: <span class="font-medium text-gray-700">2026-08-15 10:48</span></div>
+        <div>ページ更新: <span class="font-medium text-gray-700">2026年08月15日 11:16</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-8">
+
+    <!-- Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+        <div class="text-3xl font-bold text-emerald-600">8</div>
+        <div class="text-sm text-gray-500 mt-1">候補銘柄数</div>
+      </div>
+      <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+        <div class="text-3xl font-bold text-sky-600">7.4×</div>
+        <div class="text-sm text-gray-500 mt-1">最低PER（1位）</div>
+      </div>
+      <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+        <div class="text-3xl font-bold text-violet-600">35.1%</div>
+        <div class="text-sm text-gray-500 mt-1">首位ROE</div>
+      </div>
+      <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+        <div class="text-3xl font-bold text-amber-600">5.3%</div>
+        <div class="text-sm text-gray-500 mt-1">最高配当利回り</div>
+      </div>
+    </div>
+
+    <!-- Criteria -->
+    <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100 mb-8">
+      <h2 class="font-bold text-gray-700 mb-3">🔍 スクリーニング条件</h2>
+      <div class="flex flex-wrap gap-2 text-sm">
+        <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full">PER 3〜15倍</span>
+        <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full">PBR ≤ 1.5倍</span>
+        <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full">ROE ≥ 8%</span>
+        <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full">配当利回り ≥ 2.5%</span>
+        <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full">自己資本比率 ≥ 40%</span>
+        <span class="bg-orange-50 text-orange-700 px-3 py-1 rounded-full">時価総額 100〜5,000億円</span>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+      <div class="px-6 py-4 border-b border-gray-100">
+        <h2 class="font-bold text-gray-900 text-lg">🏆 スクリーニング結果</h2>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-gray-50 text-gray-600 text-xs uppercase tracking-wide">
+              <th class="py-3 px-4 text-center">順位</th>
+              <th class="py-3 px-4 text-left">コード</th>
+              <th class="py-3 px-4 text-left">企業名</th>
+              <th class="py-3 px-4 text-right">株価</th>
+              <th class="py-3 px-4 text-right">PER</th>
+              <th class="py-3 px-4 text-right">PBR</th>
+              <th class="py-3 px-4 text-right">ROE</th>
+              <th class="py-3 px-4 text-right">配当</th>
+              <th class="py-3 px-4 text-right">時価総額</th>
+              <th class="py-3 px-4 text-left">スコア</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+              <td class="py-3 px-4 text-center font-bold text-lg">🥇</td>
+              <td class="py-3 px-4">
+                <span class="font-mono text-sm bg-gray-100 px-2 py-0.5 rounded">7095</span>
+              </td>
+              <td class="py-3 px-4 font-medium">株式会社Ｍａｃｂｅｅ　Ｐｌａｎｅｔ</td>
+              <td class="py-3 px-4 text-right font-mono">
+                ¥1,255
+              </td>
+              <td class="py-3 px-4 text-right">7.4×</td>
+              <td class="py-3 px-4 text-right">1.24×</td>
+              <td class="py-3 px-4 text-right">35.1%</td>
+              <td class="py-3 px-4 text-right">4.4%</td>
+              <td class="py-3 px-4 text-right">
+                ¥156億
+              </td>
+              <td class="py-3 px-4">
+        <div class="flex items-center gap-2">
+          <div class="w-20 bg-gray-200 rounded-full h-2">
+            <div class="bg-emerald-500 h-2 rounded-full" style="width:67%"></div>
+          </div>
+          <span class="font-semibold">67.6</span>
+        </div></td>
+            </tr>
+
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+              <td class="py-3 px-4 text-center font-bold text-lg">🥈</td>
+              <td class="py-3 px-4">
+                <span class="font-mono text-sm bg-gray-100 px-2 py-0.5 rounded">8935</span>
+              </td>
+              <td class="py-3 px-4 font-medium">株式会社ＦＪネクストホールディングス</td>
+              <td class="py-3 px-4 text-right font-mono">
+                ¥2,024
+              </td>
+              <td class="py-3 px-4 text-right">6.6×</td>
+              <td class="py-3 px-4 text-right">0.79×</td>
+              <td class="py-3 px-4 text-right">12.3%</td>
+              <td class="py-3 px-4 text-right">4.0%</td>
+              <td class="py-3 px-4 text-right">
+                ¥663億
+              </td>
+              <td class="py-3 px-4">
+        <div class="flex items-center gap-2">
+          <div class="w-20 bg-gray-200 rounded-full h-2">
+            <div class="bg-emerald-500 h-2 rounded-full" style="width:61%"></div>
+          </div>
+          <span class="font-semibold">61.5</span>
+        </div></td>
+            </tr>
+
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+              <td class="py-3 px-4 text-center font-bold text-lg">🥉</td>
+              <td class="py-3 px-4">
+                <span class="font-mono text-sm bg-gray-100 px-2 py-0.5 rounded">6418</span>
+              </td>
+              <td class="py-3 px-4 font-medium">日本金銭機械株式会社</td>
+              <td class="py-3 px-4 text-right font-mono">
+                ¥1,277
+              </td>
+              <td class="py-3 px-4 text-right">7.4×</td>
+              <td class="py-3 px-4 text-right">0.93×</td>
+              <td class="py-3 px-4 text-right">13.1%</td>
+              <td class="py-3 px-4 text-right">3.6%</td>
+              <td class="py-3 px-4 text-right">
+                ¥346億
+              </td>
+              <td class="py-3 px-4">
+        <div class="flex items-center gap-2">
+          <div class="w-20 bg-gray-200 rounded-full h-2">
+            <div class="bg-amber-400 h-2 rounded-full" style="width:52%"></div>
+          </div>
+          <span class="font-semibold">52.8</span>
+        </div></td>
+            </tr>
+
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+              <td class="py-3 px-4 text-center font-bold text-lg">#4</td>
+              <td class="py-3 px-4">
+                <span class="font-mono text-sm bg-gray-100 px-2 py-0.5 rounded">7050</span>
+              </td>
+              <td class="py-3 px-4 font-medium">株式会社フロンティアインターナショナル</td>
+              <td class="py-3 px-4 text-right font-mono">
+                ¥1,383
+              </td>
+              <td class="py-3 px-4 text-right">9.9×</td>
+              <td class="py-3 px-4 text-right">1.26×</td>
+              <td class="py-3 px-4 text-right">12.0%</td>
+              <td class="py-3 px-4 text-right">5.3%</td>
+              <td class="py-3 px-4 text-right">
+                ¥124億
+              </td>
+              <td class="py-3 px-4">
+        <div class="flex items-center gap-2">
+          <div class="w-20 bg-gray-200 rounded-full h-2">
+            <div class="bg-amber-400 h-2 rounded-full" style="width:45%"></div>
+          </div>
+          <span class="font-semibold">45.0</span>
+        </div></td>
+            </tr>
+
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+              <td class="py-3 px-4 text-center font-bold text-lg">#5</td>
+              <td class="py-3 px-4">
+                <span class="font-mono text-sm bg-gray-100 px-2 py-0.5 rounded">9268</span>
+              </td>
+              <td class="py-3 px-4 font-medium">株式会社オプティマスグループ</td>
+              <td class="py-3 px-4 text-right font-mono">
+                ¥416
+              </td>
+              <td class="py-3 px-4 text-right">12.8×</td>
+              <td class="py-3 px-4 text-right">0.67×</td>
+              <td class="py-3 px-4 text-right">15.3%</td>
+              <td class="py-3 px-4 text-right">4.3%</td>
+              <td class="py-3 px-4 text-right">
+                ¥285億
+              </td>
+              <td class="py-3 px-4">
+        <div class="flex items-center gap-2">
+          <div class="w-20 bg-gray-200 rounded-full h-2">
+            <div class="bg-amber-400 h-2 rounded-full" style="width:44%"></div>
+          </div>
+          <span class="font-semibold">44.8</span>
+        </div></td>
+            </tr>
+
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+              <td class="py-3 px-4 text-center font-bold text-lg">#6</td>
+              <td class="py-3 px-4">
+                <span class="font-mono text-sm bg-gray-100 px-2 py-0.5 rounded">6161</span>
+              </td>
+              <td class="py-3 px-4 font-medium">株式会社エスティック</td>
+              <td class="py-3 px-4 text-right font-mono">
+                ¥1,067
+              </td>
+              <td class="py-3 px-4 text-right">9.1×</td>
+              <td class="py-3 px-4 text-right">0.94×</td>
+              <td class="py-3 px-4 text-right">10.1%</td>
+              <td class="py-3 px-4 text-right">2.9%</td>
+              <td class="py-3 px-4 text-right">
+                ¥106億
+              </td>
+              <td class="py-3 px-4">
+        <div class="flex items-center gap-2">
+          <div class="w-20 bg-gray-200 rounded-full h-2">
+            <div class="bg-sky-400 h-2 rounded-full" style="width:37%"></div>
+          </div>
+          <span class="font-semibold">37.9</span>
+        </div></td>
+            </tr>
+
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+              <td class="py-3 px-4 text-center font-bold text-lg">#7</td>
+              <td class="py-3 px-4">
+                <span class="font-mono text-sm bg-gray-100 px-2 py-0.5 rounded">500A</span>
+              </td>
+              <td class="py-3 px-4 font-medium">株式会社ＴＯブックス</td>
+              <td class="py-3 px-4 text-right font-mono">
+                ¥3,025
+              </td>
+              <td class="py-3 px-4 text-right">8.1×</td>
+              <td class="py-3 px-4 text-right">1.42×</td>
+              <td class="py-3 px-4 text-right">18.0%</td>
+              <td class="py-3 px-4 text-right">2.5%</td>
+              <td class="py-3 px-4 text-right">
+                ¥106億
+              </td>
+              <td class="py-3 px-4">
+        <div class="flex items-center gap-2">
+          <div class="w-20 bg-gray-200 rounded-full h-2">
+            <div class="bg-sky-400 h-2 rounded-full" style="width:32%"></div>
+          </div>
+          <span class="font-semibold">32.7</span>
+        </div></td>
+            </tr>
+
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+              <td class="py-3 px-4 text-center font-bold text-lg">#8</td>
+              <td class="py-3 px-4">
+                <span class="font-mono text-sm bg-gray-100 px-2 py-0.5 rounded">1766</span>
+              </td>
+              <td class="py-3 px-4 font-medium">東建コーポレーション株式会社</td>
+              <td class="py-3 px-4 text-right font-mono">
+                ¥13,350
+              </td>
+              <td class="py-3 px-4 text-right">10.8×</td>
+              <td class="py-3 px-4 text-right">1.27×</td>
+              <td class="py-3 px-4 text-right">13.9%</td>
+              <td class="py-3 px-4 text-right">3.0%</td>
+              <td class="py-3 px-4 text-right">
+                ¥1,482億
+              </td>
+              <td class="py-3 px-4">
+        <div class="flex items-center gap-2">
+          <div class="w-20 bg-gray-200 rounded-full h-2">
+            <div class="bg-sky-400 h-2 rounded-full" style="width:26%"></div>
+          </div>
+          <span class="font-semibold">26.1</span>
+        </div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <p class="text-xs text-gray-400 mt-6 text-center">
+      本ページは情報提供を目的としており、投資勧誘を意図するものではありません。
+      投資判断はご自身の責任で行ってください。データはEDINET・Yahoo Financeより取得。
+    </p>
+
+  </main>
+</body>
+</html>

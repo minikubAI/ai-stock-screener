@@ -1,0 +1,40 @@
+# EDINET API設定
+edinet:
+  api_key: "YOUR_EDINET_API_KEY_HERE"
+  base_url: "https://api.edinet-fsa.go.jp/api/v2"
+
+# データベース
+database:
+  path: "data/stocks.db"
+
+# スクリーニング条件（カスタマイズ可能）
+screening:
+  # PER（株価収益率）: 低いほど割安
+  per_max: 15.0
+  per_min: 3.0  # 極端に低いのは異常値
+
+  # PBR（株価純資産倍率）: 1以下は割安
+  pbr_max: 1.5
+
+  # ROE（自己資本利益率）: 高いほど効率的
+  roe_min: 8.0
+
+  # 配当利回り（%）
+  dividend_yield_min: 2.5
+
+  # 営業利益成長率（%）: 前年比
+  op_growth_min: 5.0
+
+  # 自己資本比率（%）: 財務安全性
+  equity_ratio_min: 40.0
+
+  # 時価総額（億円）: 小型株に絞る（ミニ株向き）
+  market_cap_max: 5000
+  market_cap_min: 100
+
+# ミニ株設定
+trading:
+  budget_per_stock: 30000  # 1銘柄あたりの投資額（円）
+  max_positions: 20        # 最大保有銘柄数
+  stop_loss_pct: -10.0     # 損切りライン（%）
+  take_profit_pct: 20.0    # 利確ライン（%）
