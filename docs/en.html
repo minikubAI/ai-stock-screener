@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Japan's Hidden Value — AI-Powered Japanese Stock Screening for Global Investors</title>
-  <meta name="description" content="Half of Tokyo's listed companies trade below book value. Our AI screens 3,800+ Japanese stocks daily to find the ones the market is mispricing. Free daily results.">
+  <title>Start Investing in Japan from $7 — AI-Powered Japanese Stock Screening</title>
+  <meta name="description" content="Half of Tokyo's listed companies trade below book value. Our AI screens 3,800+ Japanese stocks daily. Start with just $7 through fractional shares. Free daily results.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,600;0,700;1,600&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
   <style>
@@ -13,7 +13,6 @@
     body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.9;font-size:15px}
     .wrap{max-width:720px;margin:0 auto;padding:0 20px}
     a{color:var(--accent)}a:hover{text-decoration:underline}
-
     nav{border-bottom:1px solid var(--border);padding:14px 0;position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px)}
     .nav-inner{display:flex;justify-content:space-between;align-items:center}
     .site-name{font-weight:700;font-size:14px}
@@ -21,7 +20,6 @@
     .nav-links a{color:var(--text-sub);font-size:13px;text-decoration:none}
     .nav-links a:hover{color:var(--text)}
     .lang-sw{font-size:12px;color:var(--text-light);border:1px solid var(--border);border-radius:4px;padding:3px 10px}
-
     .hero{padding:72px 0 56px}
     .hero h1{font-family:'Source Serif 4',Georgia,serif;font-size:38px;font-weight:700;line-height:1.35;letter-spacing:-0.5px;margin-bottom:24px}
     .hero h1 em{font-style:italic;color:var(--accent)}
@@ -30,26 +28,19 @@
     .h-stat{text-align:center}
     .h-stat-num{font-family:'Source Code Pro',monospace;font-size:32px;font-weight:700;color:var(--accent)}
     .h-stat-label{font-size:12px;color:var(--text-light);margin-top:2px}
-
     .divider{border:none;border-top:1px solid var(--border);margin:0}
     section{padding:48px 0}
     .sh{font-family:'Source Serif 4',Georgia,serif;font-size:24px;font-weight:700;margin-bottom:12px}
     .sl{font-size:15px;color:var(--text-sub);margin-bottom:28px}
-    .prose{color:var(--text-sub);line-height:2}
-    .prose p{margin-bottom:16px}
-    .prose strong{color:var(--text)}
-
-    .callout{background:var(--accent-light);border-left:3px solid var(--accent);padding:20px 24px;border-radius:0 8px 8px 0;margin:24px 0;font-size:15px;line-height:1.9;color:var(--text-sub)}
-    .callout strong{color:var(--text)}
-
+    .prose{color:var(--text-sub);line-height:2}.prose p{margin-bottom:16px}.prose strong{color:var(--text)}
+    .callout{background:var(--accent-light);border-left:3px solid var(--accent);padding:20px 24px;border-radius:0 8px 8px 0;margin:24px 0;font-size:15px;line-height:1.9;color:var(--text-sub)}.callout strong{color:var(--text)}
     .comparison{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
     .comp-card{background:var(--bg-sub);border-radius:8px;padding:24px;text-align:center}
-    .comp-card.highlight{background:var(--green-bg);border:1px solid rgba(26,138,92,0.2)}
+    .comp-card.hl{background:var(--green-bg);border:1px solid rgba(26,138,92,0.2)}
     .comp-label{font-size:12px;color:var(--text-light);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
     .comp-val{font-family:'Source Code Pro',monospace;font-size:28px;font-weight:700}
     .comp-val.good{color:var(--green)}
     .comp-sub{font-size:12px;color:var(--text-light);margin-top:4px}
-
     .tbl-wrap{border:1px solid var(--border);border-radius:8px;overflow-x:auto}
     table{width:100%;border-collapse:collapse;font-size:13px}
     thead{background:var(--bg-sub)}
@@ -58,366 +49,151 @@
     td{padding:10px 12px;border-top:1px solid var(--border-light)}
     td.r{text-align:right;font-family:'Source Code Pro',monospace;font-size:12px}
     tr:hover{background:var(--bg-warm)}
-    .rk{font-family:'Source Code Pro',monospace;font-weight:600}
-    .rk-1{color:var(--orange)}
+    .rk{font-family:'Source Code Pro',monospace;font-weight:600}.rk-1{color:var(--orange)}
     .score-v{color:var(--accent);font-weight:600}
     .tbl-note{font-size:12px;color:var(--text-light);margin-top:12px}
     .tbl-date{font-size:12px;color:var(--text-light);margin-bottom:12px;text-align:right}
-    td a{text-decoration:none;color:var(--text)}
-    td a:hover{color:var(--accent)}
-
+    td a{text-decoration:none;color:var(--text)}td a:hover{color:var(--accent)}
     .guide-cta{background:var(--bg-sub);border-radius:12px;padding:32px;margin:32px 0;display:flex;align-items:center;gap:24px}
     .guide-cta-text h3{font-size:17px;font-weight:600;margin-bottom:6px}
     .guide-cta-text p{font-size:14px;color:var(--text-sub);margin:0}
     .guide-btn{display:inline-block;background:var(--accent);color:#fff;font-size:14px;font-weight:600;padding:12px 24px;border-radius:6px;text-decoration:none;white-space:nowrap;flex-shrink:0}
     .guide-btn:hover{opacity:.85;text-decoration:none}
-
     .method-item{background:var(--bg-sub);border-radius:8px;padding:20px 24px;margin:12px 0;display:flex;gap:16px}
     .m-num{font-family:'Source Code Pro',monospace;font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-light);width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
     .m-content h3{font-size:15px;font-weight:600;margin-bottom:4px}
     .m-content p{font-size:13px;color:var(--text-sub);line-height:1.7;margin:0}
     .m-st{font-size:11px;font-weight:500;margin-top:6px;display:inline-block}
     .st-live{color:var(--green)}.st-dev{color:var(--orange)}.st-plan{color:var(--text-light)}
-
     .ctx-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .ctx-card{background:var(--bg-sub);border-radius:8px;padding:20px}
     .ctx-card h3{font-size:14px;font-weight:600;margin-bottom:8px}
     .ctx-card p{font-size:13px;color:var(--text-sub);line-height:1.7}
-
     .cta{text-align:center;padding:56px 0}
     .cta-inner{background:var(--bg-sub);border-radius:12px;padding:40px 32px;max-width:520px;margin:0 auto}
     .cta-inner h2{font-size:18px;margin-bottom:10px}
     .cta-inner p{font-size:14px;color:var(--text-sub);margin-bottom:20px}
-
+    .about{padding:48px 0;border-top:1px solid var(--border)}
+    .about-inner{display:flex;gap:24px;align-items:flex-start}
+    .about-avatar{width:64px;height:64px;border-radius:50%;background:var(--bg-sub);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0}
+    .about-text h3{font-size:16px;font-weight:600;margin-bottom:6px}
+    .about-text p{font-size:14px;color:var(--text-sub);line-height:1.8}
     .disclaimer{font-size:11px;color:var(--text-light);line-height:1.8;padding:24px 0;border-top:1px solid var(--border)}
     footer{padding:20px 0;text-align:center;font-size:11px;color:var(--text-light)}
     footer a{color:var(--text-light)}
-
-    @media(max-width:640px){
-      .hero h1{font-size:28px}
-      .hero-stats{flex-direction:column;gap:16px;align-items:flex-start}
-      .comparison,.ctx-grid{grid-template-columns:1fr}
-      .guide-cta{flex-direction:column;text-align:center}
-    }
+    @media(max-width:640px){.hero h1{font-size:28px}.hero-stats{flex-direction:column;gap:16px;align-items:flex-start}.comparison,.ctx-grid{grid-template-columns:1fr}.guide-cta{flex-direction:column;text-align:center}.about-inner{flex-direction:column;align-items:center;text-align:center}}
   </style>
 </head>
 <body>
-
-<nav>
-  <div class="wrap nav-inner">
-    <div class="site-name">Japan Stock Screener</div>
-    <div class="nav-links">
-      <a href="#opportunity">The Opportunity</a>
-      <a href="#results">Screening</a>
-      <a href="guide.html">How to Invest</a>
-      <a href="index.html" class="lang-sw">日本語</a>
-    </div>
+<nav><div class="wrap nav-inner">
+  <div class="site-name">Japan Stock Screener</div>
+  <div class="nav-links">
+    <a href="#opportunity">The Opportunity</a>
+    <a href="#results">Screening</a>
+    <a href="guide.html">How to Invest</a>
+    <a href="index.html" class="lang-sw">日本語</a>
   </div>
-</nav>
+</div></nav>
 
-<section class="hero">
-  <div class="wrap">
-    <h1>Half of Japan's listed companies trade below <em>the value of their own assets.</em></h1>
-    <p class="hero-lead">
-      That's not a theory — it's a fact. Nearly 1,900 companies on the Tokyo Stock Exchange 
-      are priced below their book value. Many are profitable. Many pay dividends above 4%.
-      And almost none of them are covered in English.<br><br>
-      We screen all of them. Every day. For free.
-    </p>
-    <div class="hero-stats">
-      <div class="h-stat">
-        <div class="h-stat-num">3,800+</div>
-        <div class="h-stat-label">Companies screened daily</div>
-      </div>
-      <div class="h-stat">
-        <div class="h-stat-num">~50%</div>
-        <div class="h-stat-label">Trade below book value</div>
-      </div>
-      <div class="h-stat">
-        <div class="h-stat-num">$7</div>
-        <div class="h-stat-label">Minimum to start</div>
-      </div>
-    </div>
+<section class="hero"><div class="wrap">
+  <h1>Start investing in Japan <em>from just $7.</em><br>Let AI find the opportunities.</h1>
+  <p class="hero-lead">
+    Nearly half of all companies on the Tokyo Stock Exchange trade below book value. 
+    Most are profitable. Many pay 4%+ dividends. And almost none are covered in English.
+    <br><br>
+    I screen all 3,800+ of them. Every day. The results are free.
+  </p>
+  <div class="hero-stats">
+    <div class="h-stat"><div class="h-stat-num">3,800+</div><div class="h-stat-label">Companies screened daily</div></div>
+    <div class="h-stat"><div class="h-stat-num">~50%</div><div class="h-stat-label">Trade below book value</div></div>
+    <div class="h-stat"><div class="h-stat-num">$7</div><div class="h-stat-label">Minimum to start</div></div>
   </div>
-</section>
-
+</div></section>
 <hr class="divider">
 
-<section id="opportunity">
-  <div class="wrap">
-    <h2 class="sh">The Numbers Tell the Story</h2>
-    <div class="prose">
-      <p>
-        Consider this: the average PER of the S&P 500 is around 25×. 
-        Our top-ranked Japanese stocks? <strong>Under 10×.</strong> 
-        That means you're paying less than half as much for each dollar of earnings.
-      </p>
-    </div>
-
-    <div class="comparison">
-      <div class="comp-card">
-        <div class="comp-label">S&P 500 Average</div>
-        <div class="comp-val">25× PER</div>
-        <div class="comp-sub">1.5% dividend yield</div>
-      </div>
-      <div class="comp-card highlight">
-        <div class="comp-label">Our Top Japanese Picks</div>
-        <div class="comp-val good">&lt;10× PER</div>
-        <div class="comp-sub">4%+ dividend yield</div>
-      </div>
-    </div>
-
-    <div class="prose">
-      <p>
-        This isn't because these companies are failing. Japan's corporate governance revolution 
-        is forcing companies to return cash to shareholders at record rates. 
-        Share buybacks hit ¥17 trillion in 2025. Dividends are climbing year after year.
-        <strong>The market just hasn't caught up yet</strong> — especially for smaller companies 
-        that fly under the radar of international investors.
-      </p>
-      <p>
-        Warren Buffett saw it. He put billions into Japanese trading houses. 
-        Since then, those investments have roughly doubled. But the real opportunity 
-        isn't in the large caps that Buffett bought — it's in the thousands of small 
-        and mid-cap companies that no English-language analyst covers.
-      </p>
-    </div>
-
-    <div class="callout">
-      <strong>The information gap is the edge.</strong> 
-      Most Japanese company filings exist only in Japanese. 
-      Earnings reports, management commentary, shareholder letters — all in Japanese. 
-      Our system reads them all, translates the signals into data, and surfaces 
-      the companies worth your attention.
-    </div>
-
-    <div class="guide-cta">
-      <div class="guide-cta-text">
-        <h3>Ready to start?</h3>
-        <p>Our step-by-step guide walks you through opening a brokerage account 
-           and making your first Japanese stock purchase — even with just $7.</p>
-      </div>
-      <a href="guide.html" class="guide-btn">Read the guide →</a>
-    </div>
+<section id="opportunity"><div class="wrap">
+  <h2 class="sh">The Numbers Speak for Themselves</h2>
+  <div class="comparison">
+    <div class="comp-card"><div class="comp-label">S&P 500 Average</div><div class="comp-val">25× PER</div><div class="comp-sub">~1.5% dividend yield</div></div>
+    <div class="comp-card hl"><div class="comp-label">Our Top Japanese Picks</div><div class="comp-val good">&lt;10× PER</div><div class="comp-sub">4%+ dividend yield</div></div>
   </div>
-</section>
-
+  <div class="prose">
+    <p>Japan's corporate governance revolution is real. The Tokyo Stock Exchange now requires companies below book value to publish capital improvement plans. Share buybacks hit ¥17 trillion in 2025. Dividends are climbing year after year. <strong>The market just hasn't caught up</strong> — especially for smaller companies that fly under the radar.</p>
+    <p>Warren Buffett put billions into Japanese trading houses and roughly doubled his money. But the real opportunity isn't in the large caps — it's in the thousands of small and mid-cap companies that no English-language analyst covers.</p>
+  </div>
+  <div class="callout"><strong>The information gap is the edge.</strong> Most Japanese filings exist only in Japanese. My system reads them all, translates the signals into data, and surfaces what's worth your attention.</div>
+  <div class="guide-cta"><div class="guide-cta-text"><h3>Never invested in Japan before?</h3><p>My step-by-step guide walks you through opening a brokerage account and buying your first Japanese stock — even with just $7.</p></div><a href="guide.html" class="guide-btn">Read the guide →</a></div>
+</div></section>
 <hr class="divider">
 
-<section id="results">
-  <div class="wrap">
-    <h2 class="sh">Today's Screening Results</h2>
-    <p class="sl">Companies that passed all filters, ranked by composite score. Click any company for detailed analysis.</p>
-    <div class="tbl-date" id="update-date"></div>
-
-    <div class="tbl-wrap">
-      <table>
-        <thead><tr>
-          <th>#</th><th>Code</th><th>Company</th>
-          <th class="r">PER</th><th class="r">PBR</th>
-          <th class="r">ROE</th><th class="r">Div %</th><th class="r">Score</th>
-        </tr></thead>
-        <tbody id="results-body"></tbody>
-      </table>
-    </div>
-    <p class="tbl-note">
-      Score is a weighted composite of value, profitability, safety, and growth metrics (0–100). 
-      Click a company name to see its full financial history, trend analysis, and related news.
-      This is not investment advice — see disclaimer below.
-    </p>
-  </div>
-</section>
-
+<section id="results"><div class="wrap">
+  <h2 class="sh">Today's Screening Results</h2>
+  <p class="sl">Companies that passed all filters, ranked by composite score. Click any company for full analysis.</p>
+  <div class="tbl-date" id="update-date"></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>#</th><th>Code</th><th>Company</th><th class="r">PER</th><th class="r">PBR</th><th class="r">ROE</th><th class="r">Div %</th><th class="r">Score</th></tr></thead>
+    <tbody id="results-body"></tbody>
+  </table></div>
+  <p class="tbl-note">Score is a weighted composite of value, profitability, safety, and growth (0–100). Not investment advice. Data sourced from public filings (EDINET).</p>
+</div></section>
 <hr class="divider">
 
-<section id="method">
-  <div class="wrap">
-    <h2 class="sh">How the Screening Works</h2>
-    <p class="sl">Four analysis layers, each adding depth. Every individual company page shows exactly how these layers apply to that specific stock.</p>
-
-    <div class="method-item">
-      <div class="m-num">1</div>
-      <div class="m-content">
-        <h3>Fundamental Screening</h3>
-        <p>Filters 3,800+ companies by PER, PBR, ROE, dividend yield, equity ratio, and market cap. 
-           Each company page shows where it stands on every metric, with comparison to sector averages.</p>
-        <div class="m-st st-live">● Live — applied to all company pages</div>
-      </div>
-    </div>
-    <div class="method-item">
-      <div class="m-num">2</div>
-      <div class="m-content">
-        <h3>5-Year Trend Analysis</h3>
-        <p>Revenue, operating profit, ROE, and EPS tracked over 5 years with regression analysis. 
-           Each company page includes historical charts showing whether fundamentals are improving or declining.</p>
-        <div class="m-st st-dev">◐ In development — charts visible on company pages</div>
-      </div>
-    </div>
-    <div class="method-item">
-      <div class="m-num">3</div>
-      <div class="m-content">
-        <h3>News & Sentiment Analysis</h3>
-        <p>AI reads Japanese earnings reports, disclosure filings, and news in the original language. 
-           Each company page will show recent news and the AI's sentiment assessment.</p>
-        <div class="m-st st-plan">○ Planned — news feed coming to company pages</div>
-      </div>
-    </div>
-    <div class="method-item">
-      <div class="m-num">4</div>
-      <div class="m-content">
-        <h3>Macro & Currency Context</h3>
-        <p>Nikkei 225 trend, USD/JPY rate, BOJ policy signals, VIX. 
-           Determines whether broader conditions favor buying. 
-           Currency impact analysis will appear on each company page.</p>
-        <div class="m-st st-plan">○ Planned</div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<section id="method"><div class="wrap">
+  <h2 class="sh">How the Screening Works</h2>
+  <p class="sl">Four layers of analysis, each adding depth</p>
+  <div class="method-item"><div class="m-num">1</div><div class="m-content"><h3>Fundamental Screening</h3><p>Filters 3,800+ companies by PER, PBR, ROE, dividend yield, equity ratio, and market cap. Each company page shows where it stands on every metric.</p><div class="m-st st-live">● Live</div></div></div>
+  <div class="method-item"><div class="m-num">2</div><div class="m-content"><h3>5-Year Trend Analysis</h3><p>Revenue, operating profit, ROE, and EPS tracked over 5 years with regression analysis. Company pages include historical charts.</p><div class="m-st st-dev">◐ In development</div></div></div>
+  <div class="method-item"><div class="m-num">3</div><div class="m-content"><h3>News & Sentiment Analysis</h3><p>AI reads Japanese earnings reports and news in the original language. Scores each company's outlook as positive, negative, or neutral.</p><div class="m-st st-dev">◐ In development</div></div></div>
+  <div class="method-item"><div class="m-num">4</div><div class="m-content"><h3>Macro & Currency</h3><p>Nikkei 225 trend, USD/JPY, BOJ policy, VIX. Determines whether conditions favor buying, holding, or waiting.</p><div class="m-st st-plan">○ Planned</div></div></div>
+</div></section>
 <hr class="divider">
 
-<section>
-  <div class="wrap">
-    <h2 class="sh">What You Need to Know</h2>
-    <p class="sl">Essential context for investing in Japanese equities from abroad</p>
-
-    <div class="ctx-grid">
-      <div class="ctx-card">
-        <h3>The TSE Revolution</h3>
-        <p>Tokyo Stock Exchange now requires companies below book value to publish capital improvement plans. 
-           Non-compliant companies risk delisting. Result: record buybacks and dividend hikes across the board.</p>
-      </div>
-      <div class="ctx-card">
-        <h3>The Currency Angle</h3>
-        <p>The weak yen makes Japanese stocks cheaper for dollar/euro buyers. 
-           If the yen recovers, you capture both stock gains AND currency gains — a potential double tailwind.</p>
-      </div>
-      <div class="ctx-card">
-        <h3>Start With $7</h3>
-        <p>Through international brokers, you can buy single shares of Japanese stocks 
-           (no 100-share minimum). Build a diversified portfolio of 10+ stocks with under $100.</p>
-      </div>
-      <div class="ctx-card">
-        <h3>The Small Cap Edge</h3>
-        <p>Even Japanese analysts barely cover companies under ¥50B market cap. 
-           Zero English coverage means systematic screening has maximum edge here — exactly where our system focuses.</p>
-      </div>
-    </div>
-
-    <div class="guide-cta" style="margin-top:32px">
-      <div class="guide-cta-text">
-        <h3>Complete Beginner's Guide</h3>
-        <p>Broker comparison, account setup walkthrough, first trade tutorial, 
-           tax considerations, and practical tips from experience.</p>
-      </div>
-      <a href="guide.html" class="guide-btn">Start here →</a>
-    </div>
+<section><div class="wrap">
+  <h2 class="sh">What You Need to Know</h2>
+  <div class="ctx-grid">
+    <div class="ctx-card"><h3>The TSE Revolution</h3><p>Tokyo Stock Exchange now requires sub-book-value companies to publish improvement plans. Result: record buybacks and dividend hikes.</p></div>
+    <div class="ctx-card"><h3>The Currency Angle</h3><p>Weak yen = cheaper Japanese stocks for dollar buyers. If yen recovers, you capture both stock gains AND currency gains.</p></div>
+    <div class="ctx-card"><h3>Start With $7</h3><p>Buy single shares through international brokers. Build a 10+ stock portfolio with under $100.</p></div>
+    <div class="ctx-card"><h3>Small Cap Edge</h3><p>Zero English coverage on companies under ¥50B market cap. Systematic screening has maximum edge here.</p></div>
   </div>
-</section>
-
+  <div class="guide-cta" style="margin-top:32px"><div class="guide-cta-text"><h3>Complete Beginner's Guide</h3><p>Broker comparison, account setup, first trade, tax tips — everything you need.</p></div><a href="guide.html" class="guide-btn">Start here →</a></div>
+</div></section>
 <hr class="divider">
 
-<section class="cta">
-  <div class="wrap">
-    <div class="cta-inner">
-      <h2>Weekly Deep Dives</h2>
-      <p>Detailed sector analysis, methodology breakdowns, and market commentary 
-         — written for investors who want to understand Japan, not just screen it.</p>
-      <a href="#" class="guide-btn">Subscribe (coming soon)</a>
+<section class="cta"><div class="wrap"><div class="cta-inner">
+  <h2>Weekly Deep Dives</h2>
+  <p>Sector analysis, methodology breakdowns, and market commentary for investors who want to understand Japan.</p>
+  <a href="#" class="guide-btn">Subscribe (coming soon)</a>
+</div></div></section>
+
+<div class="wrap about">
+  <div class="about-inner">
+    <div class="about-avatar">👤</div>
+    <div class="about-text">
+      <h3>About the Author</h3>
+      <p>AI engineer based in Tokyo. In my 40s, lifelong tinkerer. When I'm not building screening algorithms, you'll find me at a sauna, a campsite, or tearing apart a motorcycle engine. I started this project to answer a simple question: can systematic, emotion-free screening beat gut-feel investing? The experiment is ongoing — and everything is public.</p>
     </div>
   </div>
-</section>
-
-<div class="wrap disclaimer">
-  <strong>Disclaimer</strong> &nbsp;
-  This website publishes quantitative screening results for educational purposes only. 
-  It does not constitute investment advice or a recommendation to buy or sell securities. 
-  Past screening results do not guarantee future performance. 
-  Foreign stock investment involves currency risk and regulatory differences. 
-  Invest at your own risk. Consult a qualified advisor before making investment decisions.
 </div>
 
-<footer>
-  <div class="wrap">
-    <a href="guide.html">How to Invest</a> · <a href="index.html">日本語版</a><br><br>
-    © 2026 Japan Stock Screener
-  </div>
-</footer>
+<div class="wrap disclaimer"><strong>Disclaimer</strong> — This site publishes quantitative screening results for educational purposes only. Not investment advice. Past results don't guarantee future performance. Foreign stock investment involves currency risk. Invest at your own risk. Data sourced from public filings (EDINET) and Yahoo Finance.</div>
+<footer><div class="wrap"><a href="guide.html">How to Invest</a> · <a href="index.html">日本語版</a><br><br>© 2026 Japan Stock Screener</div></footer>
 
 <script>
 const data=[
-  {rank:1,code:"1384",name:"ホクリヨウ",per:4.7,pbr:1.04,roe:22.1,dy:6.0,score:72.2},
-  {rank:2,code:"3452",name:"ビーロット",per:6.5,pbr:1.34,roe:28.4,dy:5.3,score:56.1},
-  {rank:3,code:"3454",name:"ファーストブラザーズ",per:4.5,pbr:0.63,roe:14.1,dy:2.9,score:56.0},
-  {rank:4,code:"9286",name:"エネクス・インフラ投資法人",per:11.3,pbr:null,roe:null,dy:7.7,score:55.8},
-  {rank:5,code:"7505",name:"扶桑電通",per:7.2,pbr:1.34,roe:18.7,dy:7.7,score:54.8},
-  {rank:6,code:"9248",name:"人・夢・技術グループ",per:6.1,pbr:0.65,roe:10.4,dy:3.6,score:54.5},
-  {rank:7,code:"9731",name:"白洋舎",per:6.1,pbr:0.98,roe:22.8,dy:2.9,score:52.0},
-  {rank:8,code:"3321",name:"ミタチ産業",per:6.4,pbr:0.76,roe:11.9,dy:4.7,score:50.9},
-  {rank:9,code:"1381",name:"アクシーズ",per:6.5,pbr:0.79,roe:12.1,dy:3.6,score:49.6},
-  {rank:10,code:"3482",name:"ロードスターキャピタル",per:5.5,pbr:1.22,roe:22.2,dy:3.8,score:48.0},
-  {rank:11,code:"6915",name:"千代田インテグレ",per:8.2,pbr:0.76,roe:10.0,dy:4.6,score:46.7},
-  {rank:12,code:"8935",name:"FJネクストホールディングス",per:6.6,pbr:0.82,roe:12.3,dy:3.3,score:45.5},
-  {rank:13,code:"6505",name:"東洋電機製造",per:7.4,pbr:0.72,roe:9.7,dy:4.1,score:45.3},
-  {rank:14,code:"9628",name:"燦ホールディングス",per:6.7,pbr:0.76,roe:10.1,dy:4.0,score:44.5},
-  {rank:15,code:"5698",name:"エンビプロ・ホールディングス",per:9.1,pbr:1.17,roe:12.7,dy:3.2,score:43.5},
-  {rank:16,code:"9028",name:"ゼロ",per:8.4,pbr:1.25,roe:15.0,dy:4.0,score:43.1},
-  {rank:17,code:"2429",name:"ワールドホールディングス",per:7.5,pbr:1.0,roe:12.1,dy:5.0,score:43.0},
-  {rank:18,code:"544A",name:"GMSグループ",per:null,pbr:null,roe:null,dy:2.9,score:41.4},
-  {rank:19,code:"4725",name:"CAC Holdings",per:9.1,pbr:0.97,roe:10.4,dy:5.2,score:40.1},
-  {rank:20,code:"4465",name:"ニイタカ",per:7.3,pbr:0.85,roe:11.7,dy:3.3,score:39.8},
-  {rank:21,code:"9273",name:"コーア商事ホールディングス",per:8.8,pbr:1.06,roe:12.0,dy:4.7,score:39.0},
-  {rank:22,code:"9612",name:"ラックランド",per:6.4,pbr:1.11,roe:15.1,dy:3.1,score:38.9},
-  {rank:23,code:"8908",name:"毎日コムネット",per:8.1,pbr:1.07,roe:13.3,dy:4.3,score:38.8},
-  {rank:24,code:"8095",name:"アステナホールディングス",per:9.4,pbr:0.77,roe:8.2,dy:3.3,score:38.4},
-  {rank:25,code:"7081",name:"コーユーレンティア",per:7.7,pbr:1.1,roe:14.4,dy:2.8,score:38.4},
-  {rank:26,code:"3636",name:"三菱総合研究所",per:7.7,pbr:1.0,roe:10.7,dy:3.5,score:37.9},
-  {rank:27,code:"1379",name:"ホクト",per:8.9,pbr:0.96,roe:10.8,dy:2.8,score:37.6},
-  {rank:28,code:"6748",name:"星和電機",per:8.4,pbr:0.87,roe:13.1,dy:2.5,score:37.6},
-  {rank:29,code:"4251",name:"恵和",per:8.1,pbr:1.0,roe:9.7,dy:3.8,score:37.0},
-  {rank:30,code:"2533",name:"オエノンホールディングス",per:8.0,pbr:0.93,roe:11.7,dy:2.6,score:36.6},
-  {rank:31,code:"5184",name:"ニチリン",per:10.2,pbr:0.87,roe:8.6,dy:4.6,score:36.1},
-  {rank:32,code:"1434",name:"JESCOホールディングス",per:8.0,pbr:1.46,roe:21.7,dy:2.7,score:35.8},
-  {rank:33,code:"6835",name:"アライドテレシスホールディングス",per:8.2,pbr:1.27,roe:16.0,dy:3.9,score:35.8},
-  {rank:34,code:"4463",name:"日華化学",per:9.8,pbr:0.88,roe:8.9,dy:3.4,score:34.9},
-  {rank:35,code:"7050",name:"フロンティアインターナショナル",per:9.9,pbr:1.26,roe:12.0,dy:5.1,score:34.7},
-  {rank:36,code:"500A",name:"TOブックス",per:7.2,pbr:1.46,roe:18.0,dy:2.5,score:33.3},
-  {rank:37,code:"2498",name:"オリエンタルコンサルタンツホールディングス",per:9.0,pbr:1.3,roe:14.6,dy:3.8,score:31.0},
-  {rank:38,code:"5967",name:"TONE",per:9.7,pbr:0.83,roe:8.6,dy:2.7,score:30.7},
-  {rank:39,code:"2185",name:"シイエム・シイ",per:9.6,pbr:1.06,roe:12.1,dy:2.9,score:30.7},
-  {rank:40,code:"4633",name:"サカタインクス",per:10.8,pbr:1.07,roe:10.0,dy:3.8,score:29.1},
-  {rank:41,code:"4992",name:"北興化学工業",per:10.4,pbr:0.86,roe:8.3,dy:2.6,score:28.6},
-  {rank:42,code:"6223",name:"西部技研",per:11.5,pbr:1.17,roe:13.7,dy:3.5,score:26.8},
-  {rank:43,code:"9163",name:"ナレルグループ",per:10.7,pbr:1.38,roe:12.9,dy:4.9,score:26.2},
-  {rank:44,code:"367A",name:"プリモグローバルホールディングス",per:12.1,pbr:1.22,roe:9.4,dy:4.2,score:25.9},
-  {rank:45,code:"9621",name:"建設技術研究所",per:14.7,pbr:1.27,roe:9.6,dy:7.0,score:25.5},
-  {rank:46,code:"4072",name:"電算システムホールディングス",per:11.7,pbr:1.37,roe:12.8,dy:3.2,score:19.1},
-  {rank:47,code:"7354",name:"ダイレクトマーケティングミックス",per:12.6,pbr:1.13,roe:9.2,dy:2.6,score:18.6},
-  {rank:48,code:"6785",name:"鈴木",per:11.7,pbr:1.38,roe:11.3,dy:3.4,score:18.1},
-  {rank:49,code:"6877",name:"OBARA GROUP",per:13.5,pbr:1.12,roe:10.5,dy:2.5,score:17.0},
-  {rank:50,code:"9795",name:"ステップ",per:13.1,pbr:1.28,roe:9.9,dy:3.9,score:16.2},
-  {rank:51,code:"9765",name:"オオバ",per:14.2,pbr:1.23,roe:10.0,dy:3.8,score:14.6},
-  {rank:52,code:"9672",name:"東京都競馬",per:12.7,pbr:1.36,roe:10.8,dy:2.9,score:14.3},
-  {rank:53,code:"6592",name:"マブチモーター",per:14.2,pbr:1.27,roe:8.8,dy:3.2,score:12.5},
-  {rank:54,code:"261A",name:"日水コン",per:13.3,pbr:1.49,roe:10.9,dy:3.8,score:11.8},
-  {rank:55,code:"3148",name:"クリエイトSDホールディングス",per:12.7,pbr:1.4,roe:11.0,dy:2.8,score:11.0}
+  {rank:1,code:'7095',name:'Macbee Planet',per:7.4,pbr:1.24,roe:35.1,dy:4.4,score:67.6},
+  {rank:2,code:'8935',name:'FJ Next Holdings',per:6.6,pbr:0.79,roe:12.3,dy:4.0,score:61.5},
+  {rank:3,code:'6418',name:'Nippon Kinsen Kikai',per:7.4,pbr:0.93,roe:13.1,dy:3.6,score:52.8},
+  {rank:4,code:'7050',name:'Frontier International',per:9.9,pbr:1.26,roe:12.0,dy:5.3,score:45.0},
+  {rank:5,code:'9268',name:'Optimus Group',per:12.8,pbr:0.67,roe:15.3,dy:4.3,score:44.8},
+  {rank:6,code:'6161',name:'Estic Corporation',per:9.1,pbr:0.94,roe:10.1,dy:2.9,score:37.9},
+  {rank:7,code:'500A',name:'TO Books',per:8.1,pbr:1.42,roe:18.0,dy:2.5,score:32.7},
+  {rank:8,code:'1766',name:'Token Corporation',per:10.8,pbr:1.27,roe:13.9,dy:3.0,score:26.1},
 ];
-const tbody=document.getElementById('results-body');
-tbody.innerHTML=data.map(s=>{
+document.getElementById('results-body').innerHTML=data.map(s=>{
   const rc=s.rank<=3?`rk-${s.rank}`:'';
-  return `<tr>
-    <td><span class="rk ${rc}">${s.rank}</span></td>
-    <td style="font-family:'Source Code Pro',monospace;font-weight:500">${s.code}</td>
-    <td><a href="stocks/${s.code}.html">${s.name}</a></td>
-    <td class="r">${s.per}×</td>
-    <td class="r">${s.pbr}×</td>
-    <td class="r">${s.roe}%</td>
-    <td class="r">${s.dy}%</td>
-    <td class="r"><span class="score-v">${s.score}</span></td>
-  </tr>`;
+  return `<tr><td><span class="rk ${rc}">${s.rank}</span></td><td style="font-family:'Source Code Pro',monospace;font-weight:500">${s.code}</td><td><a href="stocks/${s.code}.html">${s.name}</a></td><td class="r">${s.per}×</td><td class="r">${s.pbr}×</td><td class="r">${s.roe}%</td><td class="r">${s.dy}%</td><td class="r"><span class="score-v">${s.score}</span></td></tr>`;
 }).join('');
 document.getElementById('update-date').textContent='Last updated: August 16, 2026';
 </script>
-</body>
-</html>
+</body></html>

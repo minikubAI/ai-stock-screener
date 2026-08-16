@@ -1,23 +1,58 @@
 [
   {
-    "ticker": "7095",
-    "name": "Ｍａｃｂｅｅ　Ｐｌａｎｅｔ",
-    "path": "stocks/7095.html"
+    "ticker": "1384",
+    "name": "ホクリヨウ",
+    "path": "stocks/1384.html"
   },
   {
-    "ticker": "7463",
-    "name": "アドヴァングループ",
-    "path": "stocks/7463.html"
+    "ticker": "3452",
+    "name": "ビーロット",
+    "path": "stocks/3452.html"
   },
   {
-    "ticker": "7463",
-    "name": "アドヴァングループ",
-    "path": "stocks/7463.html"
+    "ticker": "3454",
+    "name": "ファーストブラザーズ",
+    "path": "stocks/3454.html"
   },
   {
-    "ticker": "7463",
-    "name": "アドヴァングループ",
-    "path": "stocks/7463.html"
+    "ticker": "9286",
+    "name": "エネクス・インフラ投資法人",
+    "path": "stocks/9286.html"
+  },
+  {
+    "ticker": "7505",
+    "name": "扶桑電通",
+    "path": "stocks/7505.html"
+  },
+  {
+    "ticker": "9248",
+    "name": "人・夢・技術グループ",
+    "path": "stocks/9248.html"
+  },
+  {
+    "ticker": "9731",
+    "name": "白洋舎",
+    "path": "stocks/9731.html"
+  },
+  {
+    "ticker": "3321",
+    "name": "ミタチ産業",
+    "path": "stocks/3321.html"
+  },
+  {
+    "ticker": "1381",
+    "name": "アクシーズ",
+    "path": "stocks/1381.html"
+  },
+  {
+    "ticker": "3482",
+    "name": "ロードスターキャピタル",
+    "path": "stocks/3482.html"
+  },
+  {
+    "ticker": "6915",
+    "name": "千代田インテグレ",
+    "path": "stocks/6915.html"
   },
   {
     "ticker": "8935",
@@ -25,39 +60,114 @@
     "path": "stocks/8935.html"
   },
   {
-    "ticker": "9286",
-    "name": "エネクス・インフラ投資法人",
-    "path": "stocks/9286.html"
+    "ticker": "6505",
+    "name": "東洋電機製造",
+    "path": "stocks/6505.html"
   },
   {
-    "ticker": "9286",
-    "name": "エネクス・インフラ投資法人",
-    "path": "stocks/9286.html"
+    "ticker": "9628",
+    "name": "燦ホールディングス",
+    "path": "stocks/9628.html"
   },
   {
-    "ticker": "9286",
-    "name": "エネクス・インフラ投資法人",
-    "path": "stocks/9286.html"
+    "ticker": "5698",
+    "name": "エンビプロ・ホールディングス",
+    "path": "stocks/5698.html"
   },
   {
-    "ticker": "6418",
-    "name": "日本金銭機械",
-    "path": "stocks/6418.html"
+    "ticker": "9028",
+    "name": "ゼロ",
+    "path": "stocks/9028.html"
   },
   {
-    "ticker": "401A",
-    "name": "霞ヶ関ホテルリート投資法人",
-    "path": "stocks/401A.html"
+    "ticker": "2429",
+    "name": "ワールドホールディングス",
+    "path": "stocks/2429.html"
   },
   {
-    "ticker": "401A",
-    "name": "霞ヶ関ホテルリート投資法人",
-    "path": "stocks/401A.html"
+    "ticker": "544A",
+    "name": "ＧＭＳグループ",
+    "path": "stocks/544A.html"
   },
   {
-    "ticker": "401A",
-    "name": "霞ヶ関ホテルリート投資法人",
-    "path": "stocks/401A.html"
+    "ticker": "4725",
+    "name": "ＣＡＣ　Ｈｏｌｄｉｎｇｓ",
+    "path": "stocks/4725.html"
+  },
+  {
+    "ticker": "4465",
+    "name": "ニイタカ",
+    "path": "stocks/4465.html"
+  },
+  {
+    "ticker": "9273",
+    "name": "コーア商事ホールディングス",
+    "path": "stocks/9273.html"
+  },
+  {
+    "ticker": "9612",
+    "name": "ラックランド",
+    "path": "stocks/9612.html"
+  },
+  {
+    "ticker": "8908",
+    "name": "毎日コムネット",
+    "path": "stocks/8908.html"
+  },
+  {
+    "ticker": "8095",
+    "name": "アステナホールディングス",
+    "path": "stocks/8095.html"
+  },
+  {
+    "ticker": "7081",
+    "name": "コーユーレンティア",
+    "path": "stocks/7081.html"
+  },
+  {
+    "ticker": "3636",
+    "name": "三菱総合研究所",
+    "path": "stocks/3636.html"
+  },
+  {
+    "ticker": "1379",
+    "name": "ホクト",
+    "path": "stocks/1379.html"
+  },
+  {
+    "ticker": "6748",
+    "name": "星和電機",
+    "path": "stocks/6748.html"
+  },
+  {
+    "ticker": "4251",
+    "name": "恵和",
+    "path": "stocks/4251.html"
+  },
+  {
+    "ticker": "2533",
+    "name": "オエノンホールディングス",
+    "path": "stocks/2533.html"
+  },
+  {
+    "ticker": "5184",
+    "name": "ニチリン",
+    "path": "stocks/5184.html"
+  },
+  {
+    "ticker": "1434",
+    "name": "ＪＥＳＣＯホールディングス",
+    "path": "stocks/1434.html"
+  },
+  {
+    "ticker": "6835",
+    "name": "アライドテレシスホールディングス",
+    "path": "stocks/6835.html"
+  },
+  {
+    "ticker": "4463",
+    "name": "日華化学",
+    "path": "stocks/4463.html"
   },
   {
     "ticker": "7050",
@@ -65,38 +175,103 @@
     "path": "stocks/7050.html"
   },
   {
-    "ticker": "8928",
-    "name": "穴吹興産",
-    "path": "stocks/8928.html"
+    "ticker": "500A",
+    "name": "ＴＯブックス",
+    "path": "stocks/500A.html"
   },
   {
-    "ticker": "8928",
-    "name": "穴吹興産",
-    "path": "stocks/8928.html"
+    "ticker": "2498",
+    "name": "オリエンタルコンサルタンツホールディングス",
+    "path": "stocks/2498.html"
   },
   {
-    "ticker": "8928",
-    "name": "穴吹興産",
-    "path": "stocks/8928.html"
+    "ticker": "5967",
+    "name": "ＴＯＮＥ",
+    "path": "stocks/5967.html"
   },
   {
-    "ticker": "9268",
-    "name": "オプティマスグループ",
-    "path": "stocks/9268.html"
+    "ticker": "2185",
+    "name": "シイエム・シイ",
+    "path": "stocks/2185.html"
   },
   {
-    "ticker": "3452",
-    "name": "ビーロット",
-    "path": "stocks/3452.html"
+    "ticker": "4633",
+    "name": "サカタインクス",
+    "path": "stocks/4633.html"
   },
   {
-    "ticker": "3452",
-    "name": "ビーロット",
-    "path": "stocks/3452.html"
+    "ticker": "4992",
+    "name": "北興化学工業",
+    "path": "stocks/4992.html"
   },
   {
-    "ticker": "3452",
-    "name": "ビーロット",
-    "path": "stocks/3452.html"
+    "ticker": "6223",
+    "name": "西部技研",
+    "path": "stocks/6223.html"
+  },
+  {
+    "ticker": "9163",
+    "name": "ナレルグループ",
+    "path": "stocks/9163.html"
+  },
+  {
+    "ticker": "367A",
+    "name": "プリモグローバルホールディングス",
+    "path": "stocks/367A.html"
+  },
+  {
+    "ticker": "9621",
+    "name": "建設技術研究所",
+    "path": "stocks/9621.html"
+  },
+  {
+    "ticker": "4072",
+    "name": "電算システムホールディングス",
+    "path": "stocks/4072.html"
+  },
+  {
+    "ticker": "7354",
+    "name": "ダイレクトマーケティングミックス",
+    "path": "stocks/7354.html"
+  },
+  {
+    "ticker": "6785",
+    "name": "鈴木",
+    "path": "stocks/6785.html"
+  },
+  {
+    "ticker": "6877",
+    "name": "ＯＢＡＲＡ　ＧＲＯＵＰ",
+    "path": "stocks/6877.html"
+  },
+  {
+    "ticker": "9795",
+    "name": "ステップ",
+    "path": "stocks/9795.html"
+  },
+  {
+    "ticker": "9765",
+    "name": "オオバ",
+    "path": "stocks/9765.html"
+  },
+  {
+    "ticker": "9672",
+    "name": "東京都競馬",
+    "path": "stocks/9672.html"
+  },
+  {
+    "ticker": "6592",
+    "name": "マブチモーター",
+    "path": "stocks/6592.html"
+  },
+  {
+    "ticker": "261A",
+    "name": "日水コン",
+    "path": "stocks/261A.html"
+  },
+  {
+    "ticker": "3148",
+    "name": "クリエイトＳＤホールディングス",
+    "path": "stocks/3148.html"
   }
 ]
