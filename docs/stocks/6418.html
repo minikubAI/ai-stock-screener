@@ -123,7 +123,7 @@
     <h1 class="co-name">日本金銭機械</h1>
     <div class="co-name-en">日本金銭機械</div>
     <div class="co-meta">
-      <span class="co-meta-item">機械</span>
+      <span class="co-meta-item">3600</span>
       <span class="co-meta-item">東証</span>
       <span class="co-meta-item">時価総額 346億円</span>
     </div>
@@ -182,7 +182,7 @@
         <div class="score-bar-row"><div class="score-bar-name">割安度</div><div class="score-bar-track"><div class="score-bar-fill" style="width:76%"></div></div><div class="score-bar-val">76</div></div>
         <div class="score-bar-row"><div class="score-bar-name">収益性</div><div class="score-bar-track"><div class="score-bar-fill" style="width:65%"></div></div><div class="score-bar-val">65</div></div>
         <div class="score-bar-row"><div class="score-bar-name">安全性</div><div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div><div class="score-bar-val">50</div></div>
-        <div class="score-bar-row"><div class="score-bar-name">成長性</div><div class="score-bar-track"><div class="score-bar-fill" style="width:8%"></div></div><div class="score-bar-val">8</div></div>
+        <div class="score-bar-row"><div class="score-bar-name">成長性</div><div class="score-bar-track"><div class="score-bar-fill" style="width:32%"></div></div><div class="score-bar-val">32</div></div>
       </div>
     </div>
     <div class="insight">PER 7.37倍は市場平均を大きく下回っており、利益に対して株価が割安な水準にある。PBR 0.93倍と純資産を下回る株価で、資産面からの下値余地は限定的と見られる。ROE 13.09%と安定した資本効率を維持している。配当利回り3.6%と、安定した株主還元を行っている。直近の売上は増加傾向にあり、業績の方向性は前向き。これらの要素を総合的に評価し、現在のスコアとなっています。</div>
@@ -235,38 +235,59 @@
 
 <script>
 document.getElementById('financials-body').innerHTML = `<tr>
+                <td>2022</td>
+                <td class="r">200億</td>
+                <td class="r">6億</td>
+                <td class="r">6億</td>
+                <td class="r">20.4</td>
+                <td class="r"><span class="">-</span></td>
+            </tr><tr>
                 <td>2023</td>
                 <td class="r">253億</td>
                 <td class="r">6億</td>
                 <td class="r">31億</td>
-                <td class="r">-</td>
-                <td class="r"><span class="">-</span></td>
+                <td class="r">106.2</td>
+                <td class="r"><span class="trend-up">+26.0%</span></td>
             </tr><tr>
                 <td>2024</td>
                 <td class="r">316億</td>
                 <td class="r">28億</td>
                 <td class="r">33億</td>
-                <td class="r">-</td>
+                <td class="r">112.6</td>
                 <td class="r"><span class="trend-up">+25.1%</span></td>
             </tr><tr>
                 <td>2025</td>
                 <td class="r">378億</td>
                 <td class="r">49億</td>
                 <td class="r">38億</td>
-                <td class="r">-</td>
+                <td class="r">141.0</td>
                 <td class="r"><span class="trend-up">+19.6%</span></td>
             </tr><tr>
                 <td>2026</td>
                 <td class="r">316億</td>
                 <td class="r">25億</td>
                 <td class="r">47億</td>
+                <td class="r">173.1</td>
+                <td class="r"><span class="trend-down">-16.5%</span></td>
+            </tr><tr>
+                <td>2027</td>
                 <td class="r">-</td>
-                <td class="r"><span class="trend-down">-16.6%</span></td>
+                <td class="r">-</td>
+                <td class="r">-</td>
+                <td class="r">-</td>
+                <td class="r"><span class="">-</span></td>
             </tr>`;
 </script>
 
 <script>
 document.getElementById('revenue-chart').innerHTML = `<div class="bar-group">
+                    <div class="bar-val">200.4億</div>
+                    <div class="bar-group-inner">
+                      <div class="bar bar-rev" style="height:53%"></div>
+                      <div class="bar bar-op" style="height:3%"></div>
+                    </div>
+                    <div class="bar-label">2022</div>
+                  </div><div class="bar-group">
                     <div class="bar-val">252.6億</div>
                     <div class="bar-group-inner">
                       <div class="bar bar-rev" style="height:67%"></div>
@@ -281,7 +302,7 @@ document.getElementById('revenue-chart').innerHTML = `<div class="bar-group">
                     </div>
                     <div class="bar-label">2024</div>
                   </div><div class="bar-group">
-                    <div class="bar-val">378.2億</div>
+                    <div class="bar-val">378.1億</div>
                     <div class="bar-group-inner">
                       <div class="bar bar-rev" style="height:100%"></div>
                       <div class="bar bar-op" style="height:13%"></div>
