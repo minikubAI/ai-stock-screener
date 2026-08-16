@@ -15,9 +15,19 @@
     "path": "stocks/7463.html"
   },
   {
+    "ticker": "7463",
+    "name": "アドヴァングループ",
+    "path": "stocks/7463.html"
+  },
+  {
     "ticker": "8935",
     "name": "ＦＪネクストホールディングス",
     "path": "stocks/8935.html"
+  },
+  {
+    "ticker": "9286",
+    "name": "エネクス・インフラ投資法人",
+    "path": "stocks/9286.html"
   },
   {
     "ticker": "9286",
@@ -45,9 +55,19 @@
     "path": "stocks/401A.html"
   },
   {
+    "ticker": "401A",
+    "name": "霞ヶ関ホテルリート投資法人",
+    "path": "stocks/401A.html"
+  },
+  {
     "ticker": "7050",
     "name": "フロンティアインターナショナル",
     "path": "stocks/7050.html"
+  },
+  {
+    "ticker": "8928",
+    "name": "穴吹興産",
+    "path": "stocks/8928.html"
   },
   {
     "ticker": "8928",
@@ -75,28 +95,8 @@
     "path": "stocks/3452.html"
   },
   {
-    "ticker": "6161",
-    "name": "エスティック",
-    "path": "stocks/6161.html"
-  },
-  {
-    "ticker": "7505",
-    "name": "扶桑電通",
-    "path": "stocks/7505.html"
-  },
-  {
-    "ticker": "7505",
-    "name": "扶桑電通",
-    "path": "stocks/7505.html"
-  },
-  {
-    "ticker": "500A",
-    "name": "ＴＯブックス",
-    "path": "stocks/500A.html"
-  },
-  {
-    "ticker": "3454",
-    "name": "ファーストブラザーズ",
-    "path": "stocks/3454.html"
+    "ticker": "3452",
+    "name": "ビーロット",
+    "path": "stocks/3452.html"
   }
 ]
