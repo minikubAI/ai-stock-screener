@@ -353,25 +353,22 @@ def run(top_n=10):
     with open(template_path, 'r', encoding='utf-8') as f:
         template = f.read()
 
-    # 最新スクリーニング結果を取得
-    report_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'latest_report.json')
-    if os.path.exists(report_path):
-        with open(report_path, 'r', encoding='utf-8') as f:
-            report = json.load(f)
-        stocks = report.get('screening_results', [])
-    else:
-        c.execute('''
-            SELECT sr.ticker, c.name, c.sector, sr.per, sr.pbr, sr.roe,
-                   sr.dividend_yield, sr.equity_ratio, sr.market_cap,
-                   sr.score, sr.rank
-            FROM screening_results sr
-            JOIN companies c ON sr.ticker = c.ticker
-            ORDER BY sr.rank ASC LIMIT ?
-        ''', (top_n,))
-        rows = c.fetchall()
-        cols = ['ticker','name','sector','per','pbr','roe',
-                'div_yield','equity_ratio','market_cap','score','rank']
-        stocks = [dict(zip(cols, r)) for r in rows]
+    # 最新スクリーニング結果を取得（最新実行分のみ）
+    c.execute("SELECT MAX(screened_at) FROM screening_results")
+    latest_run = c.fetchone()[0]
+    c.execute('''
+        SELECT sr.ticker, c.name, c.sector, sr.per, sr.pbr, sr.roe,
+               sr.dividend_yield, sr.equity_ratio, sr.market_cap,
+               sr.score, sr.rank
+        FROM screening_results sr
+        JOIN companies c ON sr.ticker = c.ticker
+        WHERE sr.screened_at = ?
+        ORDER BY sr.rank ASC LIMIT ?
+    ''', (latest_run, top_n))
+    rows = c.fetchall()
+    cols = ['ticker','name','sector','per','pbr','roe',
+            'div_yield','equity_ratio','market_cap','score','rank']
+    stocks = [dict(zip(cols, r)) for r in rows]
 
     if not stocks:
         print("❌ スクリーニング結果がありません")
@@ -454,4 +451,4 @@ def run(top_n=10):
 
 
 if __name__ == '__main__':
-    run(top_n=20)
+    run(top_n=55)
