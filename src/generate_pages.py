@@ -421,23 +421,16 @@ def run(top_n=10):
         if 'total_score' not in stock:
             stock['total_score'] = stock.get('score', 0)
 
-        # 会社概要
-        c.execute('SELECT description, description_ja, employees, website, city FROM companies WHERE ticker=?', (ticker,))
-        co_row = c.fetchone()
-        if co_row and (co_row[0] or co_row[1]):
-            desc_en, desc_ja, employees, website, city = co_row
-            desc = desc_ja or desc_en or ''
-            meta_parts = []
-            if city:
-                meta_parts.append(f'📍 {city}')
-            if employees:
-                meta_parts.append(f'👥 従業員 {employees:,}人')
-            if website:
-                meta_parts.append(f'<a href="{website}" target="_blank" rel="noopener">🔗 公式サイト</a>')
-            meta_html = f'<div class="co-overview-meta">{"　".join(meta_parts)}</div>' if meta_parts else ''
-            stock['company_overview'] = f'<div class="co-overview">{desc}{meta_html}</div>'
-        else:
-            stock['company_overview'] = ''
+        # 企業情報外部リンク
+        irbank_url = f'https://irbank.net/{ticker}'
+        kabutan_url = f'https://kabutan.jp/stock/?code={ticker}'
+        stock['company_overview'] = (
+            f'<div class="co-links">'
+            f'<span class="co-links-label">企業情報の詳細：</span>'
+            f'<a href="{irbank_url}" target="_blank" rel="noopener" class="co-link-btn">📊 IR BANK</a>'
+            f'<a href="{kabutan_url}" target="_blank" rel="noopener" class="co-link-btn">📈 株探</a>'
+            f'</div>'
+        )
 
         # ニュース
         c.execute('''SELECT title, url, published_at, sentiment FROM news
