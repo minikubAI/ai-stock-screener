@@ -347,14 +347,61 @@
 
 <script>
 const data=[
-  {rank:1,code:'7095',name:'Macbee Planet',per:7.4,pbr:1.24,roe:35.1,dy:4.4,score:67.6},
-  {rank:2,code:'8935',name:'FJ Next Holdings',per:6.6,pbr:0.79,roe:12.3,dy:4.0,score:61.5},
-  {rank:3,code:'6418',name:'Nippon Kinsen Kikai',per:7.4,pbr:0.93,roe:13.1,dy:3.6,score:52.8},
-  {rank:4,code:'7050',name:'Frontier International',per:9.9,pbr:1.26,roe:12.0,dy:5.3,score:45.0},
-  {rank:5,code:'9268',name:'Optimus Group',per:12.8,pbr:0.67,roe:15.3,dy:4.3,score:44.8},
-  {rank:6,code:'6161',name:'Estic Corporation',per:9.1,pbr:0.94,roe:10.1,dy:2.9,score:37.9},
-  {rank:7,code:'500A',name:'TO Books',per:8.1,pbr:1.42,roe:18.0,dy:2.5,score:32.7},
-  {rank:8,code:'1766',name:'Token Corporation',per:10.8,pbr:1.27,roe:13.9,dy:3.0,score:26.1},
+  {rank:1,code:"1384",name:"ホクリヨウ",per:4.7,pbr:1.04,roe:22.1,dy:6.0,score:72.2},
+  {rank:2,code:"3452",name:"ビーロット",per:6.5,pbr:1.34,roe:28.4,dy:5.3,score:56.1},
+  {rank:3,code:"3454",name:"ファーストブラザーズ",per:4.5,pbr:0.63,roe:14.1,dy:2.9,score:56.0},
+  {rank:4,code:"9286",name:"エネクス・インフラ投資法人",per:11.3,pbr:null,roe:null,dy:7.7,score:55.8},
+  {rank:5,code:"7505",name:"扶桑電通",per:7.2,pbr:1.34,roe:18.7,dy:7.7,score:54.8},
+  {rank:6,code:"9248",name:"人・夢・技術グループ",per:6.1,pbr:0.65,roe:10.4,dy:3.6,score:54.5},
+  {rank:7,code:"9731",name:"白洋舎",per:6.1,pbr:0.98,roe:22.8,dy:2.9,score:52.0},
+  {rank:8,code:"3321",name:"ミタチ産業",per:6.4,pbr:0.76,roe:11.9,dy:4.7,score:50.9},
+  {rank:9,code:"1381",name:"アクシーズ",per:6.5,pbr:0.79,roe:12.1,dy:3.6,score:49.6},
+  {rank:10,code:"3482",name:"ロードスターキャピタル",per:5.5,pbr:1.22,roe:22.2,dy:3.8,score:48.0},
+  {rank:11,code:"6915",name:"千代田インテグレ",per:8.2,pbr:0.76,roe:10.0,dy:4.6,score:46.7},
+  {rank:12,code:"8935",name:"FJネクストホールディングス",per:6.6,pbr:0.82,roe:12.3,dy:3.3,score:45.5},
+  {rank:13,code:"6505",name:"東洋電機製造",per:7.4,pbr:0.72,roe:9.7,dy:4.1,score:45.3},
+  {rank:14,code:"9628",name:"燦ホールディングス",per:6.7,pbr:0.76,roe:10.1,dy:4.0,score:44.5},
+  {rank:15,code:"5698",name:"エンビプロ・ホールディングス",per:9.1,pbr:1.17,roe:12.7,dy:3.2,score:43.5},
+  {rank:16,code:"9028",name:"ゼロ",per:8.4,pbr:1.25,roe:15.0,dy:4.0,score:43.1},
+  {rank:17,code:"2429",name:"ワールドホールディングス",per:7.5,pbr:1.0,roe:12.1,dy:5.0,score:43.0},
+  {rank:18,code:"544A",name:"GMSグループ",per:null,pbr:null,roe:null,dy:2.9,score:41.4},
+  {rank:19,code:"4725",name:"CAC Holdings",per:9.1,pbr:0.97,roe:10.4,dy:5.2,score:40.1},
+  {rank:20,code:"4465",name:"ニイタカ",per:7.3,pbr:0.85,roe:11.7,dy:3.3,score:39.8},
+  {rank:21,code:"9273",name:"コーア商事ホールディングス",per:8.8,pbr:1.06,roe:12.0,dy:4.7,score:39.0},
+  {rank:22,code:"9612",name:"ラックランド",per:6.4,pbr:1.11,roe:15.1,dy:3.1,score:38.9},
+  {rank:23,code:"8908",name:"毎日コムネット",per:8.1,pbr:1.07,roe:13.3,dy:4.3,score:38.8},
+  {rank:24,code:"8095",name:"アステナホールディングス",per:9.4,pbr:0.77,roe:8.2,dy:3.3,score:38.4},
+  {rank:25,code:"7081",name:"コーユーレンティア",per:7.7,pbr:1.1,roe:14.4,dy:2.8,score:38.4},
+  {rank:26,code:"3636",name:"三菱総合研究所",per:7.7,pbr:1.0,roe:10.7,dy:3.5,score:37.9},
+  {rank:27,code:"1379",name:"ホクト",per:8.9,pbr:0.96,roe:10.8,dy:2.8,score:37.6},
+  {rank:28,code:"6748",name:"星和電機",per:8.4,pbr:0.87,roe:13.1,dy:2.5,score:37.6},
+  {rank:29,code:"4251",name:"恵和",per:8.1,pbr:1.0,roe:9.7,dy:3.8,score:37.0},
+  {rank:30,code:"2533",name:"オエノンホールディングス",per:8.0,pbr:0.93,roe:11.7,dy:2.6,score:36.6},
+  {rank:31,code:"5184",name:"ニチリン",per:10.2,pbr:0.87,roe:8.6,dy:4.6,score:36.1},
+  {rank:32,code:"1434",name:"JESCOホールディングス",per:8.0,pbr:1.46,roe:21.7,dy:2.7,score:35.8},
+  {rank:33,code:"6835",name:"アライドテレシスホールディングス",per:8.2,pbr:1.27,roe:16.0,dy:3.9,score:35.8},
+  {rank:34,code:"4463",name:"日華化学",per:9.8,pbr:0.88,roe:8.9,dy:3.4,score:34.9},
+  {rank:35,code:"7050",name:"フロンティアインターナショナル",per:9.9,pbr:1.26,roe:12.0,dy:5.1,score:34.7},
+  {rank:36,code:"500A",name:"TOブックス",per:7.2,pbr:1.46,roe:18.0,dy:2.5,score:33.3},
+  {rank:37,code:"2498",name:"オリエンタルコンサルタンツホールディングス",per:9.0,pbr:1.3,roe:14.6,dy:3.8,score:31.0},
+  {rank:38,code:"5967",name:"TONE",per:9.7,pbr:0.83,roe:8.6,dy:2.7,score:30.7},
+  {rank:39,code:"2185",name:"シイエム・シイ",per:9.6,pbr:1.06,roe:12.1,dy:2.9,score:30.7},
+  {rank:40,code:"4633",name:"サカタインクス",per:10.8,pbr:1.07,roe:10.0,dy:3.8,score:29.1},
+  {rank:41,code:"4992",name:"北興化学工業",per:10.4,pbr:0.86,roe:8.3,dy:2.6,score:28.6},
+  {rank:42,code:"6223",name:"西部技研",per:11.5,pbr:1.17,roe:13.7,dy:3.5,score:26.8},
+  {rank:43,code:"9163",name:"ナレルグループ",per:10.7,pbr:1.38,roe:12.9,dy:4.9,score:26.2},
+  {rank:44,code:"367A",name:"プリモグローバルホールディングス",per:12.1,pbr:1.22,roe:9.4,dy:4.2,score:25.9},
+  {rank:45,code:"9621",name:"建設技術研究所",per:14.7,pbr:1.27,roe:9.6,dy:7.0,score:25.5},
+  {rank:46,code:"4072",name:"電算システムホールディングス",per:11.7,pbr:1.37,roe:12.8,dy:3.2,score:19.1},
+  {rank:47,code:"7354",name:"ダイレクトマーケティングミックス",per:12.6,pbr:1.13,roe:9.2,dy:2.6,score:18.6},
+  {rank:48,code:"6785",name:"鈴木",per:11.7,pbr:1.38,roe:11.3,dy:3.4,score:18.1},
+  {rank:49,code:"6877",name:"OBARA GROUP",per:13.5,pbr:1.12,roe:10.5,dy:2.5,score:17.0},
+  {rank:50,code:"9795",name:"ステップ",per:13.1,pbr:1.28,roe:9.9,dy:3.9,score:16.2},
+  {rank:51,code:"9765",name:"オオバ",per:14.2,pbr:1.23,roe:10.0,dy:3.8,score:14.6},
+  {rank:52,code:"9672",name:"東京都競馬",per:12.7,pbr:1.36,roe:10.8,dy:2.9,score:14.3},
+  {rank:53,code:"6592",name:"マブチモーター",per:14.2,pbr:1.27,roe:8.8,dy:3.2,score:12.5},
+  {rank:54,code:"261A",name:"日水コン",per:13.3,pbr:1.49,roe:10.9,dy:3.8,score:11.8},
+  {rank:55,code:"3148",name:"クリエイトSDホールディングス",per:12.7,pbr:1.4,roe:11.0,dy:2.8,score:11.0}
 ];
 const tbody=document.getElementById('results-body');
 tbody.innerHTML=data.map(s=>{
@@ -370,7 +417,7 @@ tbody.innerHTML=data.map(s=>{
     <td class="r"><span class="score-v">${s.score}</span></td>
   </tr>`;
 }).join('');
-document.getElementById('update-date').textContent='Last updated: August 15, 2026';
+document.getElementById('update-date').textContent='Last updated: August 16, 2026';
 </script>
 </body>
 </html>
