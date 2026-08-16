@@ -235,6 +235,7 @@ def generate_company_page(template, data, financials, price_history=None):
         '{{TOTAL}}': str(data.get('total_companies', '-')),
         '{{INSIGHT_TEXT}}': generate_insight(data),
         '{{COMPANY_OVERVIEW}}': data.get('company_overview', ''),
+        '{{NEWS_HTML}}': data.get('news_html', ''),
     }
 
     # スコア内訳（簡易計算）
@@ -421,10 +422,11 @@ def run(top_n=10):
             stock['total_score'] = stock.get('score', 0)
 
         # 会社概要
-        c.execute('SELECT description, employees, website, city FROM companies WHERE ticker=?', (ticker,))
+        c.execute('SELECT description, description_ja, employees, website, city FROM companies WHERE ticker=?', (ticker,))
         co_row = c.fetchone()
-        if co_row and co_row[0]:
-            desc, employees, website, city = co_row
+        if co_row and (co_row[0] or co_row[1]):
+            desc_en, desc_ja, employees, website, city = co_row
+            desc = desc_ja or desc_en or ''
             meta_parts = []
             if city:
                 meta_parts.append(f'📍 {city}')
@@ -436,6 +438,32 @@ def run(top_n=10):
             stock['company_overview'] = f'<div class="co-overview">{desc}{meta_html}</div>'
         else:
             stock['company_overview'] = ''
+
+        # ニュース
+        c.execute('''SELECT title, url, published_at, sentiment FROM news
+                     WHERE ticker=? ORDER BY published_at DESC LIMIT 5''', (ticker,))
+        news_rows = c.fetchall()
+        if news_rows:
+            news_items = []
+            for title, url, pub_at, sentiment in news_rows:
+                date_str = pub_at[:10] if pub_at else ''
+                # sentimentに応じたバッジ
+                if sentiment and sentiment > 0.2:
+                    badge = '<span style="color:var(--green);font-size:11px">▲ポジティブ</span>'
+                elif sentiment and sentiment < -0.2:
+                    badge = '<span style="color:var(--red);font-size:11px">▼ネガティブ</span>'
+                else:
+                    badge = ''
+                escaped_title = title.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+                news_items.append(
+                    f'<div class="news-item">'
+                    f'<div class="news-date">{date_str} {badge}</div>'
+                    f'<div class="news-title"><a href="{url}" target="_blank" rel="noopener">{escaped_title}</a></div>'
+                    f'</div>'
+                )
+            stock['news_html'] = '\n'.join(news_items)
+        else:
+            stock['news_html'] = '<p style="font-size:14px;color:var(--text-light);padding:20px 0;">ニュースデータはありません。</p>'
 
         # 過去の財務データ
         financials = get_financial_history(conn, ticker)
