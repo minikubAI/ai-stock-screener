@@ -234,6 +234,7 @@ def generate_company_page(template, data, financials, price_history=None):
         '{{RANK}}': str(data.get('rank', '-')),
         '{{TOTAL}}': str(data.get('total_companies', '-')),
         '{{INSIGHT_TEXT}}': generate_insight(data),
+        '{{COMPANY_OVERVIEW}}': data.get('company_overview', ''),
     }
 
     # スコア内訳（簡易計算）
@@ -418,6 +419,23 @@ def run(top_n=10):
         # total_scoreがなければscoreを使用
         if 'total_score' not in stock:
             stock['total_score'] = stock.get('score', 0)
+
+        # 会社概要
+        c.execute('SELECT description, employees, website, city FROM companies WHERE ticker=?', (ticker,))
+        co_row = c.fetchone()
+        if co_row and co_row[0]:
+            desc, employees, website, city = co_row
+            meta_parts = []
+            if city:
+                meta_parts.append(f'📍 {city}')
+            if employees:
+                meta_parts.append(f'👥 従業員 {employees:,}人')
+            if website:
+                meta_parts.append(f'<a href="{website}" target="_blank" rel="noopener">🔗 公式サイト</a>')
+            meta_html = f'<div class="co-overview-meta">{"　".join(meta_parts)}</div>' if meta_parts else ''
+            stock['company_overview'] = f'<div class="co-overview">{desc}{meta_html}</div>'
+        else:
+            stock['company_overview'] = ''
 
         # 過去の財務データ
         financials = get_financial_history(conn, ticker)
