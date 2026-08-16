@@ -490,4 +490,4 @@ def run(top_n=10):
 
 
 if __name__ == '__main__':
-    run(top_n=55)
+    run(top_n=30)

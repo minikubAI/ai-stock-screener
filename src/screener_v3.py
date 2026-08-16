@@ -512,6 +512,30 @@ def run():
     with open(path, 'w', encoding='utf-8') as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
+    # screening_results テーブルにも書き込む
+    screened_at = datetime.now().isoformat()
+    all_ranked = [(s, i + 1) for i, s in enumerate(core_results[:20])] + \
+                 [(s, 20 + i + 1) for i, s in enumerate(sat_results[:10])]
+    total = len(all_ranked)
+    c = conn.cursor()
+    for s, rank in all_ranked:
+        c.execute('''
+            INSERT INTO screening_results
+              (ticker, screened_at, per, pbr, roe, dividend_yield, equity_ratio, market_cap, score, rank)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (
+            s['ticker'], screened_at,
+            s.get('per'), s.get('pbr'), s.get('roe'),
+            s.get('div_yield'), s.get('equity_ratio'), s.get('market_cap'),
+            s.get('total_score', 0), rank,
+        ))
+        # companies テーブルに銘柄名を確保
+        c.execute('''
+            INSERT OR IGNORE INTO companies (ticker, name) VALUES (?, ?)
+        ''', (s['ticker'], s.get('name', '')))
+    conn.commit()
+    console.print(f"  💾 screening_results に {total}銘柄を保存（screened_at: {screened_at[:16]}）")
+
     console.print(f"\n  📁 レポート出力: {path}")
     console.print(f"\n[bold green]✅ v3スクリーニング完了[/bold green]")
     console.print(f"   Core: {len(core_results)}銘柄（TOP20保存）")

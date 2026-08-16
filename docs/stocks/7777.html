@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スリー・ディー・マトリックス (7777) — 企業分析 | ミニ株で1,000円から始めるAI全自動投資</title>
+  <meta name="description" content="スリー・ディー・マトリックス(7777)の株価チャート・財務分析・業績推移。PER/PBR/ROE/配当利回りの推移とAIスクリーニング評価を公開。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@600;700&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#fff;--bg-sub:#f6f7f9;--bg-warm:#faf9f7;--border:#e4e6ea;--border-light:#eef0f3;--text:#1a1a1a;--text-sub:#555;--text-light:#888;--accent:#2563a0;--accent-light:#eaf2f8;--green:#1a8a5c;--green-bg:#edf7f1;--orange:#c97a1a;--orange-bg:#fef6ea;--red:#c0392b;--red-bg:#fdecea}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Noto Sans JP','Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:15px}
+    .wrap{max-width:720px;margin:0 auto;padding:0 20px}
+    a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+
+    nav{border-bottom:1px solid var(--border);padding:14px 0;position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px)}
+    .nav-inner{display:flex;justify-content:space-between;align-items:center}
+    .site-name{font-weight:700;font-size:14px}
+    .nav-links a{color:var(--text-sub);font-size:13px;margin-left:16px}
+    .breadcrumb{font-size:13px;color:var(--text-light);padding:16px 0}
+    .breadcrumb a{color:var(--text-light)}
+
+    .co-header{padding:24px 0 16px}
+    .co-ticker{font-family:'Source Code Pro',monospace;font-size:14px;color:var(--accent);font-weight:500;margin-bottom:4px}
+    .co-name{font-family:'Noto Serif JP',serif;font-size:28px;font-weight:700;margin-bottom:4px}
+    .co-name-en{font-size:14px;color:var(--text-light);margin-bottom:12px}
+    .co-meta{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--text-sub)}
+    .co-meta-item{background:var(--bg-sub);padding:4px 12px;border-radius:4px}
+    .co-links{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+    .co-links-label{font-size:12px;color:var(--text-light)}
+    .co-link-btn{display:inline-flex;align-items:center;gap:5px;padding:6px 14px;background:var(--bg-sub);border:1px solid var(--border);border-radius:6px;color:var(--accent);font-size:13px;font-weight:500;text-decoration:none}
+    .co-link-btn:hover{background:var(--accent-light);text-decoration:none}
+
+    /* PRICE */
+    .price-section{padding:24px 0 32px;border-bottom:1px solid var(--border)}
+    .price-row{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+    .current-price{font-family:'Source Code Pro',monospace;font-size:36px;font-weight:700}
+    .price-change{font-size:15px;font-weight:600}
+    .price-change.up{color:var(--green)}
+    .price-change.down{color:var(--red)}
+    .price-date{font-size:12px;color:var(--text-light);margin-top:4px}
+    .price-chart-area{margin-top:20px;background:var(--bg-sub);border:1px solid var(--border);border-radius:8px;padding:16px 8px 8px 8px}
+    .price-chart-label{font-size:12px;color:var(--text-light);margin-bottom:8px;padding-left:8px}
+    .price-chart-range{display:flex;gap:8px;margin-top:8px;padding-left:8px}
+    .price-chart-range span{font-size:11px;color:var(--text-light)}
+
+    /* KEY METRICS */
+    .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:24px 0}
+    .metric{text-align:center;padding:20px 12px;background:var(--bg-sub);border-radius:8px}
+    .metric-val{font-family:'Source Code Pro',monospace;font-size:22px;font-weight:600}
+    .metric-val.good{color:var(--green)}
+    .metric-val.warn{color:var(--orange)}
+    .metric-val.bad{color:var(--red)}
+    .metric-label{font-size:11px;color:var(--text-light);margin-top:4px}
+
+    .divider{border:none;border-top:1px solid var(--border);margin:0}
+    section{padding:36px 0}
+    .sec-heading{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;margin-bottom:16px}
+
+    .score-box{background:var(--accent-light);border-radius:8px;padding:24px;margin-bottom:24px}
+    .score-total{display:flex;align-items:baseline;gap:12px;margin-bottom:16px}
+    .score-num{font-family:'Source Code Pro',monospace;font-size:36px;font-weight:700;color:var(--accent)}
+    .score-label{font-size:14px;color:var(--text-sub)}
+    .score-bars{display:flex;flex-direction:column;gap:8px}
+    .score-bar-row{display:flex;align-items:center;gap:12px;font-size:13px}
+    .score-bar-name{width:80px;color:var(--text-sub);text-align:right}
+    .score-bar-track{flex:1;height:8px;background:var(--bg);border-radius:4px;overflow:hidden}
+    .score-bar-fill{height:100%;background:var(--accent);border-radius:4px}
+    .score-bar-val{width:40px;font-family:'Source Code Pro',monospace;font-size:12px;color:var(--text-light)}
+
+    .insight{background:var(--bg-warm);border-left:3px solid var(--accent);padding:16px 20px;border-radius:0 8px 8px 0;margin:20px 0;font-size:14px;color:var(--text-sub);line-height:1.9}
+
+    /* REVENUE CHART */
+    .chart-area{background:var(--bg-sub);border:1px solid var(--border);border-radius:8px;padding:20px;margin:16px 0}
+    .chart-title{font-size:13px;font-weight:600;margin-bottom:16px}
+    .bar-chart{display:flex;align-items:flex-end;gap:12px;height:160px;padding:8px 0}
+    .bar-group{display:flex;flex-direction:column;align-items:center;flex:1;gap:4px;height:100%}
+    .bar-group-inner{display:flex;gap:3px;align-items:flex-end;width:100%;flex:1}
+    .bar{width:100%;border-radius:3px 3px 0 0;min-height:4px}
+    .bar-rev{background:var(--accent)}
+    .bar-op{background:var(--green)}
+    .bar-label{font-size:11px;color:var(--text-light)}
+    .bar-val{font-size:10px;color:var(--text-sub);font-family:'Source Code Pro',monospace}
+    .chart-legend{display:flex;gap:16px;margin-top:12px;font-size:11px;color:var(--text-light)}
+    .legend-dot{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px;vertical-align:middle}
+
+    .fin-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0}
+    .fin-table th{text-align:left;padding:8px 10px;font-weight:500;font-size:12px;color:var(--text-light);border-bottom:1px solid var(--border)}
+    .fin-table th.r{text-align:right}
+    .fin-table td{padding:8px 10px;border-bottom:1px solid var(--border-light)}
+    .fin-table td.r{text-align:right;font-family:'Source Code Pro',monospace;font-size:12px}
+    .fin-table tr:hover{background:var(--bg-warm)}
+    .trend-up{color:var(--green)}.trend-down{color:var(--red)}
+
+    .news-item{padding:16px 0;border-bottom:1px solid var(--border-light)}
+    .news-item:last-child{border-bottom:none}
+    .news-date{font-size:12px;color:var(--text-light);margin-bottom:2px}
+    .news-title{font-size:14px;font-weight:500}
+    .news-source{font-size:11px;color:var(--text-light);margin-top:2px}
+
+    .disclaimer{font-size:11px;color:var(--text-light);line-height:1.8;padding:24px 0;border-top:1px solid var(--border)}
+    footer{padding:20px 0;text-align:center;font-size:11px;color:var(--text-light)}
+
+    @media(max-width:640px){.metrics{grid-template-columns:repeat(2,1fr)}.co-name{font-size:22px}.current-price{font-size:28px}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <div class="site-name">ミニ株で1,000円から始めるAI全自動投資</div>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../en.html" style="border:1px solid var(--border);border-radius:4px;padding:2px 8px;font-size:12px">EN</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">トップ</a> → <a href="../index.html#results">スクリーニング</a> → スリー・ディー・マトリックス
+  </div>
+
+  <div class="co-header">
+    <div class="co-ticker">TSE: 7777</div>
+    <h1 class="co-name">スリー・ディー・マトリックス</h1>
+    <div class="co-name-en">スリー・ディー・マトリックス</div>
+    <div class="co-meta">
+      <span class="co-meta-item">3750</span>
+      <span class="co-meta-item">東証</span>
+      <span class="co-meta-item">時価総額 -億円</span>
+    </div>
+    <div class="co-links"><span class="co-links-label">企業情報の詳細：</span><a href="https://irbank.net/7777" target="_blank" rel="noopener" class="co-link-btn">📊 IR BANK</a><a href="https://kabutan.jp/stock/?code=7777" target="_blank" rel="noopener" class="co-link-btn">📈 株探</a></div>
+  </div>
+
+  <!-- STOCK PRICE -->
+  <div class="price-section">
+    <div class="price-row">
+      <div class="current-price">¥371</div>
+      <div class="price-change up">+¥0 (+0.00%)</div>
+    </div>
+    <div class="price-date">2026-08-15 時点</div>
+    <div class="price-chart-area">
+      <div class="price-chart-label">過去1年間の株価推移</div>
+      <svg id="price-svg" width="100%" height="160" viewBox="0 0 680 160"></svg>
+      <div class="price-chart-range">
+        <span>安値 ¥210</span>
+        <span>—</span>
+        <span>高値 ¥768</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY METRICS -->
+  <div class="metrics">
+    <div class="metric">
+      <div class="metric-val ">-倍</div>
+      <div class="metric-label">PER</div>
+    </div>
+    <div class="metric">
+      <div class="metric-val ">-倍</div>
+      <div class="metric-label">PBR</div>
+    </div>
+    <div class="metric">
+      <div class="metric-val good">61.1%</div>
+      <div class="metric-label">ROE</div>
+    </div>
+    <div class="metric">
+      <div class="metric-val good">-%</div>
+      <div class="metric-label">配当利回り</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<section>
+  <div class="wrap">
+    <h2 class="sec-heading">スクリーニング評価</h2>
+    <div class="score-box">
+      <div class="score-total">
+        <div class="score-num">100</div>
+        <div class="score-label">/ 100（スクリーニング順位 1位 / 30社中）</div>
+      </div>
+      <div class="score-bars">
+        <div class="score-bar-row"><div class="score-bar-name">割安度</div><div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div><div class="score-bar-val">50</div></div>
+        <div class="score-bar-row"><div class="score-bar-name">収益性</div><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><div class="score-bar-val">100</div></div>
+        <div class="score-bar-row"><div class="score-bar-name">安全性</div><div class="score-bar-track"><div class="score-bar-fill" style="width:69%"></div></div><div class="score-bar-val">69</div></div>
+        <div class="score-bar-row"><div class="score-bar-name">成長性</div><div class="score-bar-track"><div class="score-bar-fill" style="width:85%"></div></div><div class="score-bar-val">85</div></div>
+      </div>
+    </div>
+    <div class="insight">ROE 61.1%は非常に高い資本効率を示しており、株主資本を有効に活用できている。3期連続の増収を達成しており、成長モメンタムが継続している。これらの要素を総合的に評価し、現在のスコアとなっています。</div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section>
+  <div class="wrap">
+    <h2 class="sec-heading">業績推移</h2>
+    <div class="chart-area">
+      <div class="chart-title">売上高・営業利益の推移</div>
+      <div class="bar-chart" id="revenue-chart"></div>
+      <div class="chart-legend">
+        <span><span class="legend-dot" style="background:var(--accent)"></span>売上高</span>
+        <span><span class="legend-dot" style="background:var(--green)"></span>営業利益</span>
+      </div>
+    </div>
+    <table class="fin-table">
+      <thead><tr><th>年度</th><th class="r">売上高</th><th class="r">営業利益</th><th class="r">純利益</th><th class="r">EPS</th><th class="r">前年比</th></tr></thead>
+      <tbody id="financials-body"></tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section>
+  <div class="wrap">
+    <h2 class="sec-heading">関連ニュース・適時開示</h2>
+    <div id="news-list">
+      <p style="font-size:14px;color:var(--text-light);padding:20px 0;">ニュースデータはありません。</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<div class="wrap disclaimer">
+  <strong>免責事項</strong>　
+  当ページは機械的な分析結果を公開するものであり、特定の金融商品の売買を推奨するものではありません。投資判断はすべてご自身の責任で行ってください。
+</div>
+<footer>
+  <div class="wrap">
+    <a href="../index.html">← スクリーニング結果に戻る</a><br><br>
+    © 2026 ミニ株で1,000円から始めるAI全自動投資
+  </div>
+</footer>
+
+<script>
+document.getElementById('financials-body').innerHTML = `<tr>
+                <td>2023</td>
+                <td class="r">23億</td>
+                <td class="r">-32億</td>
+                <td class="r">-24億</td>
+                <td class="r">-</td>
+                <td class="r"><span class="">-</span></td>
+            </tr><tr>
+                <td>2024</td>
+                <td class="r">46億</td>
+                <td class="r">-21億</td>
+                <td class="r">-3億</td>
+                <td class="r">-</td>
+                <td class="r"><span class="trend-up">+98.3%</span></td>
+            </tr><tr>
+                <td>2025</td>
+                <td class="r">69億</td>
+                <td class="r">-12億</td>
+                <td class="r">-25億</td>
+                <td class="r">-</td>
+                <td class="r"><span class="trend-up">+51.1%</span></td>
+            </tr><tr>
+                <td>2026</td>
+                <td class="r">109億</td>
+                <td class="r">13億</td>
+                <td class="r">42億</td>
+                <td class="r">-</td>
+                <td class="r"><span class="trend-up">+57.0%</span></td>
+            </tr>`;
+</script>
+
+<script>
+document.getElementById('revenue-chart').innerHTML = `<div class="bar-group">
+                    <div class="bar-val">23.1億</div>
+                    <div class="bar-group-inner">
+                      <div class="bar bar-rev" style="height:21%"></div>
+                      <div class="bar bar-op" style="height:3%"></div>
+                    </div>
+                    <div class="bar-label">2023</div>
+                  </div><div class="bar-group">
+                    <div class="bar-val">45.9億</div>
+                    <div class="bar-group-inner">
+                      <div class="bar bar-rev" style="height:42%"></div>
+                      <div class="bar bar-op" style="height:3%"></div>
+                    </div>
+                    <div class="bar-label">2024</div>
+                  </div><div class="bar-group">
+                    <div class="bar-val">69.3億</div>
+                    <div class="bar-group-inner">
+                      <div class="bar bar-rev" style="height:64%"></div>
+                      <div class="bar bar-op" style="height:3%"></div>
+                    </div>
+                    <div class="bar-label">2025</div>
+                  </div><div class="bar-group">
+                    <div class="bar-val">108.9億</div>
+                    <div class="bar-group-inner">
+                      <div class="bar bar-rev" style="height:100%"></div>
+                      <div class="bar bar-op" style="height:12%"></div>
+                    </div>
+                    <div class="bar-label">2026</div>
+                  </div>`;
+</script>
+
+<script>
+document.getElementById('price-svg').innerHTML = `<path d="M10.0,124.2L12.7,121.8L15.4,120.8L18.1,119.9L20.8,120.8L23.5,122.3L26.2,126.6L28.9,128.3L31.6,127.6L34.3,128.9L37.0,129.1L39.8,129.1L42.5,128.7L45.2,127.4L47.9,128.3L50.6,127.0L53.3,128.1L56.0,128.7L58.7,129.6L61.4,128.7L64.1,130.0L66.8,112.8L69.5,107.0L72.2,113.7L74.9,112.2L77.6,109.6L80.3,108.7L83.0,103.8L85.7,104.6L88.4,101.4L91.1,106.1L93.9,107.2L96.6,109.8L99.3,111.9L102.0,112.6L104.7,111.1L107.4,112.2L110.1,112.4L112.8,113.4L115.5,115.4L118.2,117.5L120.9,116.5L123.6,116.5L126.3,117.3L129.0,115.4L131.7,112.4L134.4,111.3L137.1,113.4L139.8,113.0L142.5,107.6L145.2,108.5L148.0,110.9L150.7,109.6L153.4,103.8L156.1,105.9L158.8,104.4L161.5,104.8L164.2,106.6L166.9,102.9L169.6,103.5L172.3,102.3L175.0,102.0L177.7,103.5L180.4,108.7L183.1,109.1L185.8,110.2L188.5,106.6L191.2,109.6L193.9,109.6L196.6,106.8L199.3,103.1L202.0,95.6L204.8,96.0L207.5,99.9L210.2,102.5L212.9,101.6L215.6,104.8L218.3,102.7L221.0,104.8L223.7,103.1L226.4,106.8L229.1,95.4L231.8,99.2L234.5,101.2L237.2,104.6L239.9,106.3L242.6,108.9L245.3,107.6L248.0,105.7L250.7,100.3L253.4,94.9L256.1,98.2L258.9,94.9L261.6,98.0L264.3,97.1L267.0,96.5L269.7,99.2L272.4,97.1L275.1,99.5L277.8,93.7L280.5,94.7L283.2,89.1L285.9,71.9L288.6,69.6L291.3,76.0L294.0,76.2L296.7,78.4L299.4,75.4L302.1,77.7L304.8,78.4L307.5,83.1L310.2,79.5L313.0,81.4L315.7,80.1L318.4,79.0L321.1,75.6L323.8,76.5L326.5,75.4L329.2,73.7L331.9,66.3L334.6,57.1L337.3,57.1L340.0,44.6L342.7,50.6L345.4,45.1L348.1,50.6L350.8,58.2L353.5,54.5L356.2,47.8L358.9,44.2L361.6,32.2L364.3,38.6L367.0,30.9L369.8,44.0L372.5,28.9L375.2,25.5L377.9,33.0L380.6,13.2L383.3,10.0L386.0,21.0L388.7,53.2L391.4,63.1L394.1,72.8L396.8,66.6L399.5,73.9L402.2,85.5L404.9,84.4L407.6,77.7L410.3,82.9L413.0,80.3L415.7,84.8L418.4,85.3L421.1,77.3L423.9,78.2L426.6,82.5L429.3,76.2L432.0,76.2L434.7,67.2L437.4,69.8L440.1,70.4L442.8,68.1L445.5,68.5L448.2,60.3L450.9,60.5L453.6,58.0L456.3,48.9L459.0,51.7L461.7,51.1L464.4,61.2L467.1,63.8L469.8,64.2L472.5,63.8L475.2,64.2L478.0,67.0L480.7,69.8L483.4,65.3L486.1,68.5L488.8,71.3L491.5,69.1L494.2,69.4L496.9,72.8L499.6,77.7L502.3,75.2L505.0,79.0L507.7,78.0L510.4,76.2L513.1,79.7L515.8,80.1L518.5,81.0L521.2,85.3L523.9,82.7L526.6,91.7L529.3,91.9L532.0,94.1L534.8,91.7L537.5,79.2L540.2,80.5L542.9,72.8L545.6,76.7L548.3,80.8L551.0,98.0L553.7,101.8L556.4,101.8L559.1,101.4L561.8,101.2L564.5,106.3L567.2,105.1L569.9,101.6L572.6,101.0L575.3,102.5L578.0,104.6L580.7,97.7L583.4,95.8L586.1,98.0L588.9,99.0L591.6,98.4L594.3,93.7L597.0,93.4L599.7,97.7L602.4,99.9L605.1,99.7L607.8,101.0L610.5,99.5L613.2,96.2L615.9,99.7L618.6,99.5L621.3,98.6L624.0,101.6L626.7,99.0L629.4,101.4L632.1,101.4L634.8,104.4L637.5,107.0L640.2,108.9L643.0,104.4L645.7,103.3L648.4,102.7L651.1,100.8L653.8,100.8L656.5,102.7L659.2,99.5L661.9,98.0L664.6,96.9L667.3,95.4L670.0,95.4L670.0,130.0L10.0,130.0Z" fill="#edf7f1" opacity="0.5"/>
+<path d="M10.0,124.2L12.7,121.8L15.4,120.8L18.1,119.9L20.8,120.8L23.5,122.3L26.2,126.6L28.9,128.3L31.6,127.6L34.3,128.9L37.0,129.1L39.8,129.1L42.5,128.7L45.2,127.4L47.9,128.3L50.6,127.0L53.3,128.1L56.0,128.7L58.7,129.6L61.4,128.7L64.1,130.0L66.8,112.8L69.5,107.0L72.2,113.7L74.9,112.2L77.6,109.6L80.3,108.7L83.0,103.8L85.7,104.6L88.4,101.4L91.1,106.1L93.9,107.2L96.6,109.8L99.3,111.9L102.0,112.6L104.7,111.1L107.4,112.2L110.1,112.4L112.8,113.4L115.5,115.4L118.2,117.5L120.9,116.5L123.6,116.5L126.3,117.3L129.0,115.4L131.7,112.4L134.4,111.3L137.1,113.4L139.8,113.0L142.5,107.6L145.2,108.5L148.0,110.9L150.7,109.6L153.4,103.8L156.1,105.9L158.8,104.4L161.5,104.8L164.2,106.6L166.9,102.9L169.6,103.5L172.3,102.3L175.0,102.0L177.7,103.5L180.4,108.7L183.1,109.1L185.8,110.2L188.5,106.6L191.2,109.6L193.9,109.6L196.6,106.8L199.3,103.1L202.0,95.6L204.8,96.0L207.5,99.9L210.2,102.5L212.9,101.6L215.6,104.8L218.3,102.7L221.0,104.8L223.7,103.1L226.4,106.8L229.1,95.4L231.8,99.2L234.5,101.2L237.2,104.6L239.9,106.3L242.6,108.9L245.3,107.6L248.0,105.7L250.7,100.3L253.4,94.9L256.1,98.2L258.9,94.9L261.6,98.0L264.3,97.1L267.0,96.5L269.7,99.2L272.4,97.1L275.1,99.5L277.8,93.7L280.5,94.7L283.2,89.1L285.9,71.9L288.6,69.6L291.3,76.0L294.0,76.2L296.7,78.4L299.4,75.4L302.1,77.7L304.8,78.4L307.5,83.1L310.2,79.5L313.0,81.4L315.7,80.1L318.4,79.0L321.1,75.6L323.8,76.5L326.5,75.4L329.2,73.7L331.9,66.3L334.6,57.1L337.3,57.1L340.0,44.6L342.7,50.6L345.4,45.1L348.1,50.6L350.8,58.2L353.5,54.5L356.2,47.8L358.9,44.2L361.6,32.2L364.3,38.6L367.0,30.9L369.8,44.0L372.5,28.9L375.2,25.5L377.9,33.0L380.6,13.2L383.3,10.0L386.0,21.0L388.7,53.2L391.4,63.1L394.1,72.8L396.8,66.6L399.5,73.9L402.2,85.5L404.9,84.4L407.6,77.7L410.3,82.9L413.0,80.3L415.7,84.8L418.4,85.3L421.1,77.3L423.9,78.2L426.6,82.5L429.3,76.2L432.0,76.2L434.7,67.2L437.4,69.8L440.1,70.4L442.8,68.1L445.5,68.5L448.2,60.3L450.9,60.5L453.6,58.0L456.3,48.9L459.0,51.7L461.7,51.1L464.4,61.2L467.1,63.8L469.8,64.2L472.5,63.8L475.2,64.2L478.0,67.0L480.7,69.8L483.4,65.3L486.1,68.5L488.8,71.3L491.5,69.1L494.2,69.4L496.9,72.8L499.6,77.7L502.3,75.2L505.0,79.0L507.7,78.0L510.4,76.2L513.1,79.7L515.8,80.1L518.5,81.0L521.2,85.3L523.9,82.7L526.6,91.7L529.3,91.9L532.0,94.1L534.8,91.7L537.5,79.2L540.2,80.5L542.9,72.8L545.6,76.7L548.3,80.8L551.0,98.0L553.7,101.8L556.4,101.8L559.1,101.4L561.8,101.2L564.5,106.3L567.2,105.1L569.9,101.6L572.6,101.0L575.3,102.5L578.0,104.6L580.7,97.7L583.4,95.8L586.1,98.0L588.9,99.0L591.6,98.4L594.3,93.7L597.0,93.4L599.7,97.7L602.4,99.9L605.1,99.7L607.8,101.0L610.5,99.5L613.2,96.2L615.9,99.7L618.6,99.5L621.3,98.6L624.0,101.6L626.7,99.0L629.4,101.4L632.1,101.4L634.8,104.4L637.5,107.0L640.2,108.9L643.0,104.4L645.7,103.3L648.4,102.7L651.1,100.8L653.8,100.8L656.5,102.7L659.2,99.5L661.9,98.0L664.6,96.9L667.3,95.4L670.0,95.4" fill="none" stroke="#1a8a5c" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="670.0" cy="95.4" r="4" fill="#1a8a5c"/>
+<text x="10" y="138" font-size="10" fill="#888">2025-08-14</text>
+<text x="670" y="138" font-size="10" fill="#888" text-anchor="end">2026-08-15</text>`;
+</script>
+</body>
+</html>
