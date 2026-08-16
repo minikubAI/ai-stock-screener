@@ -25,15 +25,16 @@ def get_db():
     return sqlite3.connect(db_path)
 
 
-def format_number(n, unit='百万'):
-    """数値を読みやすく整形"""
+def format_number(n, unit=''):
+    """数値を読みやすく整形（yfinanceの値は円単位）"""
     if n is None:
         return '-'
-    if abs(n) >= 1_000_000_000:
-        return f'{n/1_000_000_000:,.1f}兆'
-    elif abs(n) >= 100_000_000:
+    abs_n = abs(n)
+    if abs_n >= 1_000_000_000_000:  # 1兆以上
+        return f'{n/1_000_000_000_000:,.1f}兆'
+    elif abs_n >= 100_000_000:  # 1億以上
         return f'{n/100_000_000:,.0f}億'
-    elif abs(n) >= 10_000:
+    elif abs_n >= 10_000:  # 1万以上
         return f'{n/10_000:,.0f}万'
     else:
         return f'{n:,.0f}'
@@ -113,9 +114,100 @@ def get_financial_history(conn, ticker):
     return c.fetchall()
 
 
-def generate_company_page(template, data, financials):
+def get_price_history(conn, ticker):
+    """過去1年分の株価データを取得"""
+    c = conn.cursor()
+    c.execute('''
+        SELECT date, close FROM prices
+        WHERE ticker = ?
+        ORDER BY date ASC
+    ''', (ticker,))
+    return c.fetchall()
+
+
+def generate_price_svg(prices):
+    """株価推移のSVGラインチャートを生成"""
+    if not prices or len(prices) < 2:
+        return '', 0, 0, 0
+
+    closes = [p[1] for p in prices if p[1]]
+    dates = [p[0] for p in prices if p[1]]
+    if len(closes) < 2:
+        return '', 0, 0, 0
+
+    current = closes[-1]
+    low = min(closes)
+    high = max(closes)
+    price_range = high - low if high > low else 1
+
+    # SVGパス生成
+    w, h = 680, 140
+    pad_x, pad_y = 10, 10
+    chart_w = w - pad_x * 2
+    chart_h = h - pad_y * 2
+
+    points = []
+    for i, c in enumerate(closes):
+        x = pad_x + (i / (len(closes) - 1)) * chart_w
+        y = pad_y + (1 - (c - low) / price_range) * chart_h
+        points.append(f'{x:.1f},{y:.1f}')
+
+    path_d = 'M' + 'L'.join(points)
+
+    # グラデーション塗りつぶし用
+    fill_d = path_d + f'L{pad_x + chart_w:.1f},{pad_y + chart_h:.1f}L{pad_x:.1f},{pad_y + chart_h:.1f}Z'
+
+    # 色: 上昇=緑、下落=赤
+    color = '#1a8a5c' if closes[-1] >= closes[0] else '#c0392b'
+    fill_color = '#edf7f1' if closes[-1] >= closes[0] else '#fdecea'
+
+    # ラベル
+    first_date = dates[0] if dates else ''
+    last_date = dates[-1] if dates else ''
+
+    svg = f'''<path d="{fill_d}" fill="{fill_color}" opacity="0.5"/>
+<path d="{path_d}" fill="none" stroke="{color}" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="{points[-1].split(',')[0]}" cy="{points[-1].split(',')[1]}" r="4" fill="{color}"/>
+<text x="{pad_x}" y="{h - 2}" font-size="10" fill="#888">{first_date}</text>
+<text x="{w - pad_x}" y="{h - 2}" font-size="10" fill="#888" text-anchor="end">{last_date}</text>'''
+
+    return svg, current, low, high
+
+
+def generate_company_page(template, data, financials, price_history=None):
     """テンプレートにデータを埋め込んでHTMLを生成"""
     html = template
+
+    # 株価データ処理
+    price_svg = ''
+    current_price = data.get('price', 0)
+    price_low = 0
+    price_high = 0
+    price_change_str = ''
+    change_class = ''
+    price_date = ''
+
+    if price_history and len(price_history) >= 2:
+        svg_content, cur, low, high = generate_price_svg(price_history)
+        price_svg = svg_content
+        if cur:
+            current_price = cur
+        price_low = low
+        price_high = high
+        price_date = price_history[-1][0] if price_history else ''
+
+        # 変動率計算（直近vs前日）
+        if len(price_history) >= 2:
+            prev = price_history[-2][1]
+            if prev and prev > 0 and current_price:
+                change_pct = (current_price - prev) / prev * 100
+                change_val = current_price - prev
+                if change_pct >= 0:
+                    price_change_str = f'+¥{change_val:,.0f} (+{change_pct:.2f}%)'
+                    change_class = 'up'
+                else:
+                    price_change_str = f'¥{change_val:,.0f} ({change_pct:.2f}%)'
+                    change_class = 'down'
 
     # 基本情報
     replacements = {
@@ -125,6 +217,12 @@ def generate_company_page(template, data, financials):
         '{{SECTOR}}': data.get('sector', ''),
         '{{MARKET}}': data.get('market', '東証'),
         '{{MARKET_CAP}}': str(int(data['market_cap'])) if data.get('market_cap') else '-',
+        '{{CURRENT_PRICE}}': f'{current_price:,.0f}' if current_price else '-',
+        '{{PRICE_CHANGE}}': price_change_str or '-',
+        '{{CHANGE_CLASS}}': change_class,
+        '{{PRICE_DATE}}': price_date or '-',
+        '{{PRICE_LOW}}': f'{price_low:,.0f}' if price_low else '-',
+        '{{PRICE_HIGH}}': f'{price_high:,.0f}' if price_high else '-',
         '{{PER}}': f"{data['per']:.1f}" if data.get('per') else '-',
         '{{PBR}}': f"{data['pbr']:.2f}" if data.get('pbr') else '-',
         '{{ROE}}': f"{data['roe']:.1f}" if data.get('roe') else '-',
@@ -196,32 +294,48 @@ document.getElementById('financials-body').innerHTML = `{''.join(fin_rows)}`;
 
         if rev_values:
             max_rev = max(rev_values)
-            chart_data = []
+
+            # 適切な単位を選択
+            if max_rev >= 1_000_000_000_000:
+                divisor = 1_000_000_000_000
+                unit = '兆'
+            elif max_rev >= 100_000_000:
+                divisor = 100_000_000
+                unit = '億'
+            else:
+                divisor = 10_000
+                unit = '万'
+
+            # 静的HTMLとしてグラフを直接埋め込む（JSテンプレート不使用）
+            bars_html = []
             for i, fy in enumerate(fy_labels):
                 rv = rev_values[i] if i < len(rev_values) else 0
                 ov = op_values[i] if i < len(op_values) else 0
-                rh = (rv / max_rev * 100) if max_rev > 0 else 0
-                oh = (ov / max_rev * 100) if max_rev > 0 else 0
-                chart_data.append(
-                    f'{{"fy":"{fy}","rev":{int(rv/100000000)},"op":{int(ov/100000000)},"rh":{rh:.0f},"oh":{oh:.0f}}}'
-                )
+                rh = max((rv / max_rev * 100), 3) if max_rev > 0 else 3
+                oh = max((ov / max_rev * 100), 3) if max_rev > 0 else 3
+                rv_disp = f'{rv/divisor:,.1f}'
+                bars_html.append(f'''<div class="bar-group">
+                    <div class="bar-val">{rv_disp}{unit}</div>
+                    <div class="bar-group-inner">
+                      <div class="bar bar-rev" style="height:{rh:.0f}%"></div>
+                      <div class="bar bar-op" style="height:{oh:.0f}%"></div>
+                    </div>
+                    <div class="bar-label">{fy}</div>
+                  </div>''')
 
-            chart_script = f"""
+            chart_inject = f"""
 <script>
-const cd = [{','.join(chart_data)}];
-const ce = document.getElementById('revenue-chart');
-if(ce) ce.innerHTML = cd.map(d =>
-  `<div class="bar-group">
-    <div class="bar-val">${"${d.rev}"}億</div>
-    <div style="display:flex;gap:3px;align-items:flex-end;width:100%;height:100px">
-      <div class="bar bar-rev" style="height:${"${d.rh}"}%;flex:1"></div>
-      <div class="bar bar-op" style="height:${"${d.oh}"}%;flex:1"></div>
-    </div>
-    <div class="bar-label">${"${d.fy}"}</div>
-  </div>`
-).join('');
+document.getElementById('revenue-chart').innerHTML = `{''.join(bars_html)}`;
 </script>"""
-            html = html.replace('</body>', chart_script + '\n</body>')
+            html = html.replace('</body>', chart_inject + '\n</body>')
+
+    # 株価チャートSVGを注入
+    if price_svg:
+        svg_inject = f"""
+<script>
+document.getElementById('price-svg').innerHTML = `{price_svg}`;
+</script>"""
+        html = html.replace('</body>', svg_inject + '\n</body>')
 
     return html
 
@@ -311,8 +425,11 @@ def run(top_n=10):
         # 過去の財務データ
         financials = get_financial_history(conn, ticker)
 
+        # 株価データ
+        price_history = get_price_history(conn, ticker)
+
         # ページ生成
-        html = generate_company_page(template, stock, financials)
+        html = generate_company_page(template, stock, financials, price_history)
 
         # ファイル出力（site/ と docs/ の両方）
         for out_dir in [site_dir, docs_dir]:

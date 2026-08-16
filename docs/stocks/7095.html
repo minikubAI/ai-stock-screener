@@ -4,26 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ｍａｃｂｅｅ　Ｐｌａｎｅｔ (7095) — 企業分析 | AI全自動投資</title>
-  <meta name="description" content="Ｍａｃｂｅｅ　Ｐｌａｎｅｔ(7095)の財務分析・業績推移・トレンド評価。PER/PBR/ROE/配当利回りの推移と、AIスクリーニングでの評価を公開。">
+  <meta name="description" content="Ｍａｃｂｅｅ　Ｐｌａｎｅｔ(7095)の株価チャート・財務分析・業績推移。PER/PBR/ROE/配当利回りの推移とAIスクリーニング評価を公開。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@600;700&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg:#fff;--bg-sub:#f6f7f9;--bg-warm:#faf9f7;
-      --border:#e4e6ea;--border-light:#eef0f3;
-      --text:#1a1a1a;--text-sub:#555;--text-light:#888;
-      --accent:#2563a0;--accent-light:#eaf2f8;
-      --green:#1a8a5c;--green-bg:#edf7f1;
-      --orange:#c97a1a;--orange-bg:#fef6ea;
-      --red:#c0392b;--red-bg:#fdecea;
-    }
+    :root{--bg:#fff;--bg-sub:#f6f7f9;--bg-warm:#faf9f7;--border:#e4e6ea;--border-light:#eef0f3;--text:#1a1a1a;--text-sub:#555;--text-light:#888;--accent:#2563a0;--accent-light:#eaf2f8;--green:#1a8a5c;--green-bg:#edf7f1;--orange:#c97a1a;--orange-bg:#fef6ea;--red:#c0392b;--red-bg:#fdecea}
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:'Noto Sans JP','Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:15px}
     .wrap{max-width:720px;margin:0 auto;padding:0 20px}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
+    a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
 
-    /* NAV */
     nav{border-bottom:1px solid var(--border);padding:14px 0;position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px)}
     .nav-inner{display:flex;justify-content:space-between;align-items:center}
     .site-name{font-weight:700;font-size:14px}
@@ -31,16 +21,28 @@
     .breadcrumb{font-size:13px;color:var(--text-light);padding:16px 0}
     .breadcrumb a{color:var(--text-light)}
 
-    /* COMPANY HEADER */
-    .co-header{padding:24px 0 32px;border-bottom:1px solid var(--border)}
+    .co-header{padding:24px 0 16px}
     .co-ticker{font-family:'Source Code Pro',monospace;font-size:14px;color:var(--accent);font-weight:500;margin-bottom:4px}
-    .co-name{font-family:'Noto Serif JP',serif;font-size:28px;font-weight:700;margin-bottom:8px}
+    .co-name{font-family:'Noto Serif JP',serif;font-size:28px;font-weight:700;margin-bottom:4px}
     .co-name-en{font-size:14px;color:var(--text-light);margin-bottom:12px}
-    .co-meta{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--text-sub)}
+    .co-meta{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--text-sub)}
     .co-meta-item{background:var(--bg-sub);padding:4px 12px;border-radius:4px}
 
+    /* PRICE */
+    .price-section{padding:24px 0 32px;border-bottom:1px solid var(--border)}
+    .price-row{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+    .current-price{font-family:'Source Code Pro',monospace;font-size:36px;font-weight:700}
+    .price-change{font-size:15px;font-weight:600}
+    .price-change.up{color:var(--green)}
+    .price-change.down{color:var(--red)}
+    .price-date{font-size:12px;color:var(--text-light);margin-top:4px}
+    .price-chart-area{margin-top:20px;background:var(--bg-sub);border:1px solid var(--border);border-radius:8px;padding:16px 8px 8px 8px}
+    .price-chart-label{font-size:12px;color:var(--text-light);margin-bottom:8px;padding-left:8px}
+    .price-chart-range{display:flex;gap:8px;margin-top:8px;padding-left:8px}
+    .price-chart-range span{font-size:11px;color:var(--text-light)}
+
     /* KEY METRICS */
-    .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:32px 0}
+    .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:24px 0}
     .metric{text-align:center;padding:20px 12px;background:var(--bg-sub);border-radius:8px}
     .metric-val{font-family:'Source Code Pro',monospace;font-size:22px;font-weight:600}
     .metric-val.good{color:var(--green)}
@@ -49,11 +51,9 @@
     .metric-label{font-size:11px;color:var(--text-light);margin-top:4px}
 
     .divider{border:none;border-top:1px solid var(--border);margin:0}
-
     section{padding:36px 0}
     .sec-heading{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;margin-bottom:16px}
 
-    /* SCORE BREAKDOWN */
     .score-box{background:var(--accent-light);border-radius:8px;padding:24px;margin-bottom:24px}
     .score-total{display:flex;align-items:baseline;gap:12px;margin-bottom:16px}
     .score-num{font-family:'Source Code Pro',monospace;font-size:36px;font-weight:700;color:var(--accent)}
@@ -62,50 +62,43 @@
     .score-bar-row{display:flex;align-items:center;gap:12px;font-size:13px}
     .score-bar-name{width:80px;color:var(--text-sub);text-align:right}
     .score-bar-track{flex:1;height:8px;background:var(--bg);border-radius:4px;overflow:hidden}
-    .score-bar-fill{height:100%;background:var(--accent);border-radius:4px;transition:width 0.5s}
+    .score-bar-fill{height:100%;background:var(--accent);border-radius:4px}
     .score-bar-val{width:40px;font-family:'Source Code Pro',monospace;font-size:12px;color:var(--text-light)}
 
-    /* INSIGHT */
     .insight{background:var(--bg-warm);border-left:3px solid var(--accent);padding:16px 20px;border-radius:0 8px 8px 0;margin:20px 0;font-size:14px;color:var(--text-sub);line-height:1.9}
 
-    /* CHART PLACEHOLDER */
+    /* REVENUE CHART */
     .chart-area{background:var(--bg-sub);border:1px solid var(--border);border-radius:8px;padding:20px;margin:16px 0}
-    .chart-title{font-size:13px;font-weight:600;margin-bottom:12px}
-    .bar-chart{display:flex;align-items:flex-end;gap:8px;height:120px;padding-top:8px}
-    .bar-group{display:flex;flex-direction:column;align-items:center;flex:1;gap:4px}
-    .bar{width:100%;border-radius:3px 3px 0 0;min-height:2px;transition:height 0.3s}
+    .chart-title{font-size:13px;font-weight:600;margin-bottom:16px}
+    .bar-chart{display:flex;align-items:flex-end;gap:12px;height:160px;padding:8px 0}
+    .bar-group{display:flex;flex-direction:column;align-items:center;flex:1;gap:4px;height:100%}
+    .bar-group-inner{display:flex;gap:3px;align-items:flex-end;width:100%;flex:1}
+    .bar{width:100%;border-radius:3px 3px 0 0;min-height:4px}
     .bar-rev{background:var(--accent)}
     .bar-op{background:var(--green)}
-    .bar-label{font-size:10px;color:var(--text-light)}
+    .bar-label{font-size:11px;color:var(--text-light)}
     .bar-val{font-size:10px;color:var(--text-sub);font-family:'Source Code Pro',monospace}
     .chart-legend{display:flex;gap:16px;margin-top:12px;font-size:11px;color:var(--text-light)}
     .legend-dot{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px;vertical-align:middle}
 
-    /* FINANCIALS TABLE */
     .fin-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0}
     .fin-table th{text-align:left;padding:8px 10px;font-weight:500;font-size:12px;color:var(--text-light);border-bottom:1px solid var(--border)}
     .fin-table th.r{text-align:right}
     .fin-table td{padding:8px 10px;border-bottom:1px solid var(--border-light)}
     .fin-table td.r{text-align:right;font-family:'Source Code Pro',monospace;font-size:12px}
     .fin-table tr:hover{background:var(--bg-warm)}
-    .trend-up{color:var(--green)}
-    .trend-down{color:var(--red)}
+    .trend-up{color:var(--green)}.trend-down{color:var(--red)}
 
-    /* NEWS */
     .news-item{padding:16px 0;border-bottom:1px solid var(--border-light)}
     .news-item:last-child{border-bottom:none}
     .news-date{font-size:12px;color:var(--text-light);margin-bottom:2px}
     .news-title{font-size:14px;font-weight:500}
     .news-source{font-size:11px;color:var(--text-light);margin-top:2px}
 
-    /* DISCLAIMER */
     .disclaimer{font-size:11px;color:var(--text-light);line-height:1.8;padding:24px 0;border-top:1px solid var(--border)}
     footer{padding:20px 0;text-align:center;font-size:11px;color:var(--text-light)}
 
-    @media(max-width:640px){
-      .metrics{grid-template-columns:repeat(2,1fr)}
-      .co-name{font-size:22px}
-    }
+    @media(max-width:640px){.metrics{grid-template-columns:repeat(2,1fr)}.co-name{font-size:22px}.current-price{font-size:28px}}
   </style>
 </head>
 <body>
@@ -122,11 +115,9 @@
 
 <div class="wrap">
   <div class="breadcrumb">
-    <a href="../index.html">トップ</a> → <a href="../index.html#results">スクリーニング結果</a> → Ｍａｃｂｅｅ　Ｐｌａｎｅｔ
+    <a href="../index.html">トップ</a> → <a href="../index.html#results">スクリーニング</a> → Ｍａｃｂｅｅ　Ｐｌａｎｅｔ
   </div>
-</div>
 
-<div class="wrap">
   <div class="co-header">
     <div class="co-ticker">TSE: 7095</div>
     <h1 class="co-name">Ｍａｃｂｅｅ　Ｐｌａｎｅｔ</h1>
@@ -135,6 +126,24 @@
       <span class="co-meta-item">サービス業</span>
       <span class="co-meta-item">東証</span>
       <span class="co-meta-item">時価総額 156億円</span>
+    </div>
+  </div>
+
+  <!-- STOCK PRICE -->
+  <div class="price-section">
+    <div class="price-row">
+      <div class="current-price">¥1,255</div>
+      <div class="price-change up">+¥0 (+0.00%)</div>
+    </div>
+    <div class="price-date">2026-08-15 時点</div>
+    <div class="price-chart-area">
+      <div class="price-chart-label">過去1年間の株価推移</div>
+      <svg id="price-svg" width="100%" height="160" viewBox="0 0 680 160"></svg>
+      <div class="price-chart-range">
+        <span>安値 ¥979</span>
+        <span>—</span>
+        <span>高値 ¥2,587</span>
+      </div>
     </div>
   </div>
 
@@ -161,53 +170,30 @@
 
 <hr class="divider">
 
-<!-- SCORE & INSIGHT -->
 <section>
   <div class="wrap">
     <h2 class="sec-heading">スクリーニング評価</h2>
-
     <div class="score-box">
       <div class="score-total">
         <div class="score-num">68</div>
-        <div class="score-label">/ 100　（スクリーニング順位 1位 / 20社中）</div>
+        <div class="score-label">/ 100（スクリーニング順位 1位 / 20社中）</div>
       </div>
       <div class="score-bars">
-        <div class="score-bar-row">
-          <div class="score-bar-name">割安度</div>
-          <div class="score-bar-track"><div class="score-bar-fill" style="width:75%"></div></div>
-          <div class="score-bar-val">75</div>
-        </div>
-        <div class="score-bar-row">
-          <div class="score-bar-name">収益性</div>
-          <div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div>
-          <div class="score-bar-val">100</div>
-        </div>
-        <div class="score-bar-row">
-          <div class="score-bar-name">安全性</div>
-          <div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div>
-          <div class="score-bar-val">50</div>
-        </div>
-        <div class="score-bar-row">
-          <div class="score-bar-name">成長性</div>
-          <div class="score-bar-track"><div class="score-bar-fill" style="width:13%"></div></div>
-          <div class="score-bar-val">13</div>
-        </div>
+        <div class="score-bar-row"><div class="score-bar-name">割安度</div><div class="score-bar-track"><div class="score-bar-fill" style="width:75%"></div></div><div class="score-bar-val">75</div></div>
+        <div class="score-bar-row"><div class="score-bar-name">収益性</div><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><div class="score-bar-val">100</div></div>
+        <div class="score-bar-row"><div class="score-bar-name">安全性</div><div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div><div class="score-bar-val">50</div></div>
+        <div class="score-bar-row"><div class="score-bar-name">成長性</div><div class="score-bar-track"><div class="score-bar-fill" style="width:13%"></div></div><div class="score-bar-val">13</div></div>
       </div>
     </div>
-
-    <div class="insight">
-      PER 7.41倍は市場平均を大きく下回っており、利益に対して株価が割安な水準にある。ROE 35.09%は非常に高い資本効率を示しており、株主資本を有効に活用できている。配当利回り4.38%は高水準で、インカムゲインの観点からも注目に値する。直近の売上は増加傾向にあり、業績の方向性は前向き。これらの要素を総合的に評価し、現在のスコアとなっています。
-    </div>
+    <div class="insight">PER 7.41倍は市場平均を大きく下回っており、利益に対して株価が割安な水準にある。ROE 35.09%は非常に高い資本効率を示しており、株主資本を有効に活用できている。配当利回り4.38%は高水準で、インカムゲインの観点からも注目に値する。直近の売上は増加傾向にあり、業績の方向性は前向き。これらの要素を総合的に評価し、現在のスコアとなっています。</div>
   </div>
 </section>
 
 <hr class="divider">
 
-<!-- FINANCIAL TRENDS -->
 <section>
   <div class="wrap">
     <h2 class="sec-heading">業績推移</h2>
-
     <div class="chart-area">
       <div class="chart-title">売上高・営業利益の推移</div>
       <div class="bar-chart" id="revenue-chart"></div>
@@ -216,47 +202,20 @@
         <span><span class="legend-dot" style="background:var(--green)"></span>営業利益</span>
       </div>
     </div>
-
     <table class="fin-table">
-      <thead>
-        <tr>
-          <th>年度</th>
-          <th class="r">売上高</th>
-          <th class="r">営業利益</th>
-          <th class="r">純利益</th>
-          <th class="r">EPS</th>
-          <th class="r">前年比</th>
-        </tr>
-      </thead>
-      <tbody id="financials-body">
-      </tbody>
-    </table>
-
-    <table class="fin-table" style="margin-top:24px">
-      <thead>
-        <tr>
-          <th>年度</th>
-          <th class="r">PER</th>
-          <th class="r">PBR</th>
-          <th class="r">ROE</th>
-          <th class="r">配当利回り</th>
-          <th class="r">自己資本比率</th>
-        </tr>
-      </thead>
-      <tbody id="valuation-body">
-      </tbody>
+      <thead><tr><th>年度</th><th class="r">売上高</th><th class="r">営業利益</th><th class="r">純利益</th><th class="r">EPS</th><th class="r">前年比</th></tr></thead>
+      <tbody id="financials-body"></tbody>
     </table>
   </div>
 </section>
 
 <hr class="divider">
 
-<!-- NEWS & DISCLOSURES -->
 <section>
   <div class="wrap">
     <h2 class="sec-heading">関連ニュース・適時開示</h2>
     <div id="news-list">
-      <p style="font-size:14px;color:var(--text-light);padding:20px 0;">ニュースを取得中...</p>
+      <p style="font-size:14px;color:var(--text-light);padding:20px 0;">ニュース自動取得機能は現在開発中です。</p>
     </div>
   </div>
 </section>
@@ -265,115 +224,85 @@
 
 <div class="wrap disclaimer">
   <strong>免責事項</strong>　
-  当ページは機械的な分析結果を公開するものであり、特定の金融商品の売買を推奨するものではありません。
-  投資判断はすべてご自身の責任で行ってください。
+  当ページは機械的な分析結果を公開するものであり、特定の金融商品の売買を推奨するものではありません。投資判断はすべてご自身の責任で行ってください。
 </div>
-
 <footer>
   <div class="wrap">
-    <a href="../index.html">← スクリーニング結果に戻る</a>
-    <br><br>
+    <a href="../index.html">← スクリーニング結果に戻る</a><br><br>
     © 2026 ミニ株で1,000円から始めるAI全自動投資
   </div>
 </footer>
 
 <script>
-// このテンプレートは generate_pages.py によって
-// 各銘柄のデータで置換されて静的HTMLとして出力されます。
-// {{VARIABLE}} 形式のプレースホルダーが実データに置き換わります。
-
-// サンプルデータ（テンプレートプレビュー用）
-const sampleFinancials = [
-  {fy:'2022',rev:'12,450',op:'1,820',ni:'1,250',eps:'125.0',yoy:'+8.2%',cls:'trend-up'},
-  {fy:'2023',rev:'14,200',op:'2,150',ni:'1,480',eps:'148.0',yoy:'+13.7%',cls:'trend-up'},
-  {fy:'2024',rev:'15,800',op:'2,500',ni:'1,720',eps:'172.0',yoy:'+11.3%',cls:'trend-up'},
-  {fy:'2025',rev:'17,100',op:'2,850',ni:'1,950',eps:'195.0',yoy:'+8.2%',cls:'trend-up'},
-];
-
-const tbody = document.getElementById('financials-body');
-if(tbody && !tbody.children.length) {
-  // Real data injected
-// tbody.innerHTML = sampleFinancials.map(f =>
-    `<tr>
-      <td>${f.fy}</td>
-      <td class="r">${f.rev}</td>
-      <td class="r">${f.op}</td>
-      <td class="r">${f.ni}</td>
-      <td class="r">${f.eps}</td>
-      <td class="r"><span class="${f.cls}">${f.yoy}</span></td>
-    </tr>`
-  ).join('');
-}
-
-// 棒グラフ描画
-const chartEl = document.getElementById('revenue-chart');
-if(chartEl) {
-  const revs = [124,142,158,171];
-  const ops = [18,21,25,28];
-  const maxVal = Math.max(...revs);
-  const labels = ['2022','2023','2024','2025'];
-
-  chartEl.innerHTML = labels.map((l,i) => {
-    const revH = (revs[i]/maxVal)*100;
-    const opH = (ops[i]/maxVal)*100;
-    return `<div class="bar-group">
-      <div class="bar-val">${revs[i]}</div>
-      <div style="display:flex;gap:3px;align-items:flex-end;width:100%;height:100px">
-        <div class="bar bar-rev" style="height:${revH}%;flex:1"></div>
-        <div class="bar bar-op" style="height:${opH}%;flex:1"></div>
-      </div>
-      <div class="bar-label">${l}</div>
-    </div>`;
-  }).join('');
-}
-</script>
-
-
-<script>
 document.getElementById('financials-body').innerHTML = `<tr>
                 <td>2023</td>
-                <td class="r">19.6兆</td>
-                <td class="r">2.2兆</td>
-                <td class="r">1.6兆</td>
+                <td class="r">196億</td>
+                <td class="r">22億</td>
+                <td class="r">16億</td>
                 <td class="r">-</td>
                 <td class="r"><span class="">-</span></td>
             </tr><tr>
                 <td>2024</td>
-                <td class="r">39.4兆</td>
-                <td class="r">4.0兆</td>
-                <td class="r">2.7兆</td>
+                <td class="r">394億</td>
+                <td class="r">40億</td>
+                <td class="r">27億</td>
                 <td class="r">-</td>
                 <td class="r"><span class="trend-up">+101.2%</span></td>
             </tr><tr>
                 <td>2025</td>
-                <td class="r">51.7兆</td>
-                <td class="r">5.2兆</td>
-                <td class="r">3.4兆</td>
+                <td class="r">517億</td>
+                <td class="r">52億</td>
+                <td class="r">34億</td>
                 <td class="r">-</td>
                 <td class="r"><span class="trend-up">+31.1%</span></td>
             </tr><tr>
                 <td>2026</td>
-                <td class="r">50.6兆</td>
-                <td class="r">3.7兆</td>
-                <td class="r">2.4兆</td>
+                <td class="r">506億</td>
+                <td class="r">37億</td>
+                <td class="r">24億</td>
                 <td class="r">-</td>
                 <td class="r"><span class="trend-down">-2.1%</span></td>
             </tr>`;
 </script>
 
 <script>
-const cd = [{"fy":"2023","rev":195,"op":21,"rh":38,"oh":4},{"fy":"2024","rev":394,"op":40,"rh":76,"oh":8},{"fy":"2025","rev":516,"op":51,"rh":100,"oh":10},{"fy":"2026","rev":505,"op":36,"rh":98,"oh":7}];
-const ce = document.getElementById('revenue-chart');
-if(ce) ce.innerHTML = cd.map(d =>
-  `<div class="bar-group">
-    <div class="bar-val">$${d.rev}億</div>
-    <div style="display:flex;gap:3px;align-items:flex-end;width:100%;height:100px">
-      <div class="bar bar-rev" style="height:$${d.rh}%;flex:1"></div>
-      <div class="bar bar-op" style="height:$${d.oh}%;flex:1"></div>
-    </div>
-    <div class="bar-label">$${d.fy}</div>
-  </div>`
-).join('');
+document.getElementById('revenue-chart').innerHTML = `<div class="bar-group">
+                    <div class="bar-val">195.9億</div>
+                    <div class="bar-group-inner">
+                      <div class="bar bar-rev" style="height:38%"></div>
+                      <div class="bar bar-op" style="height:4%"></div>
+                    </div>
+                    <div class="bar-label">2023</div>
+                  </div><div class="bar-group">
+                    <div class="bar-val">394.1億</div>
+                    <div class="bar-group-inner">
+                      <div class="bar bar-rev" style="height:76%"></div>
+                      <div class="bar bar-op" style="height:8%"></div>
+                    </div>
+                    <div class="bar-label">2024</div>
+                  </div><div class="bar-group">
+                    <div class="bar-val">516.8億</div>
+                    <div class="bar-group-inner">
+                      <div class="bar bar-rev" style="height:100%"></div>
+                      <div class="bar bar-op" style="height:10%"></div>
+                    </div>
+                    <div class="bar-label">2025</div>
+                  </div><div class="bar-group">
+                    <div class="bar-val">505.8億</div>
+                    <div class="bar-group-inner">
+                      <div class="bar bar-rev" style="height:98%"></div>
+                      <div class="bar bar-op" style="height:7%"></div>
+                    </div>
+                    <div class="bar-label">2026</div>
+                  </div>`;
+</script>
+
+<script>
+document.getElementById('price-svg').innerHTML = `<path d="M10.0,15.7L12.7,17.5L15.4,10.0L18.1,10.8L20.8,14.4L23.5,16.2L26.2,14.5L28.9,12.4L31.6,13.6L34.3,19.0L37.0,22.1L39.8,17.9L42.5,20.7L45.2,24.2L47.9,27.6L50.6,27.7L53.3,26.5L56.0,24.7L58.7,22.5L61.4,22.7L64.1,23.0L66.8,58.7L69.5,58.2L72.2,55.5L74.9,47.4L77.6,47.0L80.3,44.6L83.0,44.9L85.7,43.6L88.4,39.1L91.1,38.6L93.9,36.9L96.6,45.6L99.3,50.5L102.0,50.5L104.7,48.9L107.4,49.9L110.1,49.6L112.8,51.2L115.5,50.9L118.2,56.3L120.9,51.5L123.6,52.4L126.3,57.5L129.0,55.6L131.7,54.4L134.4,53.1L137.1,54.7L139.8,57.7L142.5,57.7L145.2,61.9L148.0,70.5L150.7,68.0L153.4,66.0L156.1,66.1L158.8,71.0L161.5,73.2L164.2,72.8L166.9,71.8L169.6,70.2L172.3,67.3L175.0,70.9L177.7,73.3L180.4,73.6L183.1,76.9L185.8,76.7L188.5,77.3L191.2,74.1L193.9,78.5L196.6,77.4L199.3,77.5L202.0,78.3L204.8,78.1L207.5,79.0L210.2,81.7L212.9,76.9L215.6,77.4L218.3,76.3L221.0,76.6L223.7,74.9L226.4,74.0L229.1,96.2L231.8,95.4L234.5,97.5L237.2,95.4L239.9,92.9L242.6,92.5L245.3,97.2L248.0,97.7L250.7,97.7L253.4,94.9L256.1,91.8L258.9,93.9L261.6,95.1L264.3,95.4L267.0,92.1L269.7,91.6L272.4,90.6L275.1,88.6L277.8,91.4L280.5,91.2L283.2,88.9L285.9,89.9L288.6,88.9L291.3,90.0L294.0,91.2L296.7,92.3L299.4,91.7L302.1,94.1L304.8,94.3L307.5,98.2L310.2,98.3L313.0,97.9L315.7,97.1L318.4,97.1L321.1,98.2L323.8,96.6L326.5,98.6L329.2,97.9L331.9,94.7L334.6,98.0L337.3,100.4L340.0,99.5L342.7,97.9L345.4,98.1L348.1,98.3L350.8,98.5L353.5,101.0L356.2,100.9L358.9,98.7L361.6,98.6L364.3,100.6L367.0,104.6L369.8,107.6L372.5,104.0L375.2,101.9L377.9,104.7L380.6,101.7L383.3,99.6L386.0,103.1L388.7,106.7L391.4,107.5L394.1,107.1L396.8,107.1L399.5,110.0L402.2,113.3L404.9,110.5L407.6,111.0L410.3,114.5L413.0,112.0L415.7,114.0L418.4,113.3L421.1,111.3L423.9,111.6L426.6,111.3L429.3,109.1L432.0,108.0L434.7,104.0L437.4,105.0L440.1,106.0L442.8,106.2L445.5,106.3L448.2,104.4L450.9,103.2L453.6,101.8L456.3,102.7L459.0,102.9L461.7,104.7L464.4,107.2L467.1,105.5L469.8,107.4L472.5,108.6L475.2,107.5L478.0,108.4L480.7,110.5L483.4,108.1L486.1,108.9L488.8,112.0L491.5,111.2L494.2,113.7L496.9,112.5L499.6,113.7L502.3,111.2L505.0,114.0L507.7,113.2L510.4,113.4L513.1,114.0L515.8,115.1L518.5,115.4L521.2,115.9L523.9,117.1L526.6,116.9L529.3,115.8L532.0,117.2L534.8,117.8L537.5,113.8L540.2,117.5L542.9,116.6L545.6,116.0L548.3,116.3L551.0,130.0L553.7,128.0L556.4,125.9L559.1,122.2L561.8,122.8L564.5,122.7L567.2,123.0L569.9,125.0L572.6,124.2L575.3,124.2L578.0,124.9L580.7,124.0L583.4,123.4L586.1,121.3L588.9,120.6L591.6,120.6L594.3,119.9L597.0,121.3L599.7,121.0L602.4,120.2L605.1,117.3L607.8,117.1L610.5,116.3L613.2,116.3L615.9,117.2L618.6,116.8L621.3,116.8L624.0,115.8L626.7,116.6L629.4,117.9L632.1,112.9L634.8,113.3L637.5,110.9L640.2,111.2L643.0,113.0L645.7,111.9L648.4,111.6L651.1,112.6L653.8,111.9L656.5,111.3L659.2,111.9L661.9,110.3L664.6,111.6L667.3,109.4L670.0,109.4L670.0,130.0L10.0,130.0Z" fill="#fdecea" opacity="0.5"/>
+<path d="M10.0,15.7L12.7,17.5L15.4,10.0L18.1,10.8L20.8,14.4L23.5,16.2L26.2,14.5L28.9,12.4L31.6,13.6L34.3,19.0L37.0,22.1L39.8,17.9L42.5,20.7L45.2,24.2L47.9,27.6L50.6,27.7L53.3,26.5L56.0,24.7L58.7,22.5L61.4,22.7L64.1,23.0L66.8,58.7L69.5,58.2L72.2,55.5L74.9,47.4L77.6,47.0L80.3,44.6L83.0,44.9L85.7,43.6L88.4,39.1L91.1,38.6L93.9,36.9L96.6,45.6L99.3,50.5L102.0,50.5L104.7,48.9L107.4,49.9L110.1,49.6L112.8,51.2L115.5,50.9L118.2,56.3L120.9,51.5L123.6,52.4L126.3,57.5L129.0,55.6L131.7,54.4L134.4,53.1L137.1,54.7L139.8,57.7L142.5,57.7L145.2,61.9L148.0,70.5L150.7,68.0L153.4,66.0L156.1,66.1L158.8,71.0L161.5,73.2L164.2,72.8L166.9,71.8L169.6,70.2L172.3,67.3L175.0,70.9L177.7,73.3L180.4,73.6L183.1,76.9L185.8,76.7L188.5,77.3L191.2,74.1L193.9,78.5L196.6,77.4L199.3,77.5L202.0,78.3L204.8,78.1L207.5,79.0L210.2,81.7L212.9,76.9L215.6,77.4L218.3,76.3L221.0,76.6L223.7,74.9L226.4,74.0L229.1,96.2L231.8,95.4L234.5,97.5L237.2,95.4L239.9,92.9L242.6,92.5L245.3,97.2L248.0,97.7L250.7,97.7L253.4,94.9L256.1,91.8L258.9,93.9L261.6,95.1L264.3,95.4L267.0,92.1L269.7,91.6L272.4,90.6L275.1,88.6L277.8,91.4L280.5,91.2L283.2,88.9L285.9,89.9L288.6,88.9L291.3,90.0L294.0,91.2L296.7,92.3L299.4,91.7L302.1,94.1L304.8,94.3L307.5,98.2L310.2,98.3L313.0,97.9L315.7,97.1L318.4,97.1L321.1,98.2L323.8,96.6L326.5,98.6L329.2,97.9L331.9,94.7L334.6,98.0L337.3,100.4L340.0,99.5L342.7,97.9L345.4,98.1L348.1,98.3L350.8,98.5L353.5,101.0L356.2,100.9L358.9,98.7L361.6,98.6L364.3,100.6L367.0,104.6L369.8,107.6L372.5,104.0L375.2,101.9L377.9,104.7L380.6,101.7L383.3,99.6L386.0,103.1L388.7,106.7L391.4,107.5L394.1,107.1L396.8,107.1L399.5,110.0L402.2,113.3L404.9,110.5L407.6,111.0L410.3,114.5L413.0,112.0L415.7,114.0L418.4,113.3L421.1,111.3L423.9,111.6L426.6,111.3L429.3,109.1L432.0,108.0L434.7,104.0L437.4,105.0L440.1,106.0L442.8,106.2L445.5,106.3L448.2,104.4L450.9,103.2L453.6,101.8L456.3,102.7L459.0,102.9L461.7,104.7L464.4,107.2L467.1,105.5L469.8,107.4L472.5,108.6L475.2,107.5L478.0,108.4L480.7,110.5L483.4,108.1L486.1,108.9L488.8,112.0L491.5,111.2L494.2,113.7L496.9,112.5L499.6,113.7L502.3,111.2L505.0,114.0L507.7,113.2L510.4,113.4L513.1,114.0L515.8,115.1L518.5,115.4L521.2,115.9L523.9,117.1L526.6,116.9L529.3,115.8L532.0,117.2L534.8,117.8L537.5,113.8L540.2,117.5L542.9,116.6L545.6,116.0L548.3,116.3L551.0,130.0L553.7,128.0L556.4,125.9L559.1,122.2L561.8,122.8L564.5,122.7L567.2,123.0L569.9,125.0L572.6,124.2L575.3,124.2L578.0,124.9L580.7,124.0L583.4,123.4L586.1,121.3L588.9,120.6L591.6,120.6L594.3,119.9L597.0,121.3L599.7,121.0L602.4,120.2L605.1,117.3L607.8,117.1L610.5,116.3L613.2,116.3L615.9,117.2L618.6,116.8L621.3,116.8L624.0,115.8L626.7,116.6L629.4,117.9L632.1,112.9L634.8,113.3L637.5,110.9L640.2,111.2L643.0,113.0L645.7,111.9L648.4,111.6L651.1,112.6L653.8,111.9L656.5,111.3L659.2,111.9L661.9,110.3L664.6,111.6L667.3,109.4L670.0,109.4" fill="none" stroke="#c0392b" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="670.0" cy="109.4" r="4" fill="#c0392b"/>
+<text x="10" y="138" font-size="10" fill="#888">2025-08-14</text>
+<text x="670" y="138" font-size="10" fill="#888" text-anchor="end">2026-08-15</text>`;
 </script>
 </body>
 </html>
