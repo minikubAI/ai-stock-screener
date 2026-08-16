@@ -546,7 +546,7 @@ tbody.innerHTML = data.map(s => {
   return `<tr>
     <td><span class="rk ${rc}">${s.rank}</span></td>
     <td style="font-family:'Source Code Pro',monospace;font-weight:500">${s.ticker}</td>
-    <td>${s.name}</td>
+    <td><a href="stocks/${s.ticker}.html" style="color:var(--text);text-decoration:none">${s.name}</a></td>
     <td class="r">${s.per}</td>
     <td class="r">${s.pbr}</td>
     <td class="r">${s.roe}%</td>

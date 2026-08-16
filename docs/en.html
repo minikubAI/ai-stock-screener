@@ -3,179 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Japanese Stock Screener — AI-Powered Value Investing from ¥1,000</title>
-  <meta name="description" content="Discover undervalued Japanese stocks with AI-driven screening. Daily analysis of 3,800+ companies across the Tokyo Stock Exchange. Free screening results updated daily.">
-  <meta name="keywords" content="Japanese stocks, Japan value investing, Tokyo Stock Exchange, TSE screening, Japan small cap, kabu, mini-kabu">
-  <meta property="og:title" content="Japanese Stock Screener — AI-Powered Value Investing">
-  <meta property="og:description" content="Daily AI screening of 3,800+ Japanese stocks. Free results, open methodology.">
-  <meta property="og:type" content="website">
+  <title>Japan's Hidden Value — AI-Powered Japanese Stock Screening for Global Investors</title>
+  <meta name="description" content="Half of Tokyo's listed companies trade below book value. Our AI screens 3,800+ Japanese stocks daily to find the ones the market is mispricing. Free daily results.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,600;0,700;1,600&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #ffffff;
-      --bg-sub: #f6f7f9;
-      --bg-warm: #faf9f7;
-      --border: #e4e6ea;
-      --border-light: #eef0f3;
-      --text: #1a1a1a;
-      --text-sub: #555;
-      --text-light: #888;
-      --accent: #1a5276;
-      --accent-light: #eaf2f8;
-      --green: #1a8a5c;
-      --green-bg: #edf7f1;
-      --orange: #c97a1a;
-      --orange-bg: #fef6ea;
-      --red: #c0392b;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      background: var(--bg); color: var(--text);
-      line-height: 1.8; font-size: 15px;
-      -webkit-font-smoothing: antialiased;
-    }
-    .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    :root{--bg:#fff;--bg-sub:#f6f7f9;--bg-warm:#faf9f7;--border:#e4e6ea;--border-light:#eef0f3;--text:#1a1a1a;--text-sub:#555;--text-light:#888;--accent:#1a5276;--accent-light:#eaf2f8;--green:#1a8a5c;--green-bg:#edf7f1;--orange:#c97a1a;--orange-bg:#fef6ea;--red:#c0392b}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.9;font-size:15px}
+    .wrap{max-width:720px;margin:0 auto;padding:0 20px}
+    a{color:var(--accent)}a:hover{text-decoration:underline}
 
-    nav {
-      border-bottom: 1px solid var(--border); padding: 14px 0;
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(255,255,255,0.92); backdrop-filter: blur(8px);
-    }
-    .nav-inner { display: flex; justify-content: space-between; align-items: center; }
-    .site-name { font-weight: 700; font-size: 14px; }
-    .nav-links a {
-      color: var(--text-sub); font-size: 13px; margin-left: 20px;
-    }
-    .nav-links a:hover { color: var(--text); text-decoration: none; }
-    .lang-switch {
-      font-size: 12px; color: var(--text-light);
-      border: 1px solid var(--border); border-radius: 4px;
-      padding: 3px 10px; margin-left: 20px;
-    }
-    .lang-switch:hover { color: var(--text); border-color: var(--text-light); text-decoration: none; }
+    nav{border-bottom:1px solid var(--border);padding:14px 0;position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px)}
+    .nav-inner{display:flex;justify-content:space-between;align-items:center}
+    .site-name{font-weight:700;font-size:14px}
+    .nav-links{display:flex;align-items:center;gap:16px}
+    .nav-links a{color:var(--text-sub);font-size:13px;text-decoration:none}
+    .nav-links a:hover{color:var(--text)}
+    .lang-sw{font-size:12px;color:var(--text-light);border:1px solid var(--border);border-radius:4px;padding:3px 10px}
 
-    .hero { padding: 72px 0 56px; }
-    .hero-date { font-size: 13px; color: var(--text-light); margin-bottom: 16px; }
-    .hero h1 {
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-size: 34px; font-weight: 700; line-height: 1.4;
-      letter-spacing: -0.3px; margin-bottom: 20px;
-    }
-    .hero-intro {
-      font-size: 16px; color: var(--text-sub); line-height: 1.9; max-width: 620px;
-    }
-    .status-bar { display: flex; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
-    .status-item {
-      font-size: 13px; color: var(--text-light);
-      display: flex; align-items: center; gap: 6px;
-    }
-    .status-dot { width: 7px; height: 7px; border-radius: 50%; }
-    .dot-on { background: var(--green); }
-    .dot-wip { background: var(--orange); }
+    .hero{padding:72px 0 56px}
+    .hero h1{font-family:'Source Serif 4',Georgia,serif;font-size:38px;font-weight:700;line-height:1.35;letter-spacing:-0.5px;margin-bottom:24px}
+    .hero h1 em{font-style:italic;color:var(--accent)}
+    .hero-lead{font-size:17px;color:var(--text-sub);line-height:2;max-width:640px;margin-bottom:32px}
+    .hero-stats{display:flex;gap:32px;flex-wrap:wrap}
+    .h-stat{text-align:center}
+    .h-stat-num{font-family:'Source Code Pro',monospace;font-size:32px;font-weight:700;color:var(--accent)}
+    .h-stat-label{font-size:12px;color:var(--text-light);margin-top:2px}
 
-    .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+    .divider{border:none;border-top:1px solid var(--border);margin:0}
+    section{padding:48px 0}
+    .sh{font-family:'Source Serif 4',Georgia,serif;font-size:24px;font-weight:700;margin-bottom:12px}
+    .sl{font-size:15px;color:var(--text-sub);margin-bottom:28px}
+    .prose{color:var(--text-sub);line-height:2}
+    .prose p{margin-bottom:16px}
+    .prose strong{color:var(--text)}
 
-    section { padding: 48px 0; }
-    .sec-heading {
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-size: 22px; font-weight: 700; margin-bottom: 10px;
-    }
-    .sec-lead { font-size: 14px; color: var(--text-sub); margin-bottom: 32px; }
+    .callout{background:var(--accent-light);border-left:3px solid var(--accent);padding:20px 24px;border-radius:0 8px 8px 0;margin:24px 0;font-size:15px;line-height:1.9;color:var(--text-sub)}
+    .callout strong{color:var(--text)}
 
-    .prose { line-height: 2.0; color: var(--text-sub); }
-    .prose p { margin-bottom: 18px; }
-    .prose strong { color: var(--text); font-weight: 600; }
+    .comparison{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+    .comp-card{background:var(--bg-sub);border-radius:8px;padding:24px;text-align:center}
+    .comp-card.highlight{background:var(--green-bg);border:1px solid rgba(26,138,92,0.2)}
+    .comp-label{font-size:12px;color:var(--text-light);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+    .comp-val{font-family:'Source Code Pro',monospace;font-size:28px;font-weight:700}
+    .comp-val.good{color:var(--green)}
+    .comp-sub{font-size:12px;color:var(--text-light);margin-top:4px}
 
-    .highlight-box {
-      background: var(--accent-light); border-left: 3px solid var(--accent);
-      padding: 16px 20px; border-radius: 0 6px 6px 0;
-      margin: 24px 0; font-size: 14px; color: var(--text-sub);
-    }
+    .tbl-wrap{border:1px solid var(--border);border-radius:8px;overflow-x:auto}
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    thead{background:var(--bg-sub)}
+    th{padding:10px 12px;text-align:left;font-weight:500;font-size:11px;color:var(--text-light);letter-spacing:.3px}
+    th.r{text-align:right}
+    td{padding:10px 12px;border-top:1px solid var(--border-light)}
+    td.r{text-align:right;font-family:'Source Code Pro',monospace;font-size:12px}
+    tr:hover{background:var(--bg-warm)}
+    .rk{font-family:'Source Code Pro',monospace;font-weight:600}
+    .rk-1{color:var(--orange)}
+    .score-v{color:var(--accent);font-weight:600}
+    .tbl-note{font-size:12px;color:var(--text-light);margin-top:12px}
+    .tbl-date{font-size:12px;color:var(--text-light);margin-bottom:12px;text-align:right}
+    td a{text-decoration:none;color:var(--text)}
+    td a:hover{color:var(--accent)}
 
-    /* LOGIC */
-    .logic-list { display: flex; flex-direction: column; gap: 12px; }
-    .logic-item {
-      background: var(--bg-sub); border-radius: 8px; padding: 20px 24px;
-      display: flex; gap: 16px; align-items: flex-start;
-    }
-    .logic-num {
-      font-family: 'Source Code Pro', monospace;
-      font-size: 13px; font-weight: 500; color: var(--accent);
-      background: var(--accent-light);
-      width: 28px; height: 28px; border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; margin-top: 2px;
-    }
-    .logic-content h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
-    .logic-content p { font-size: 13px; color: var(--text-sub); line-height: 1.7; }
-    .logic-st { font-size: 11px; font-weight: 500; margin-top: 6px; display: inline-block; }
-    .st-live { color: var(--green); }
-    .st-dev { color: var(--orange); }
-    .st-plan { color: var(--text-light); }
+    .guide-cta{background:var(--bg-sub);border-radius:12px;padding:32px;margin:32px 0;display:flex;align-items:center;gap:24px}
+    .guide-cta-text h3{font-size:17px;font-weight:600;margin-bottom:6px}
+    .guide-cta-text p{font-size:14px;color:var(--text-sub);margin:0}
+    .guide-btn{display:inline-block;background:var(--accent);color:#fff;font-size:14px;font-weight:600;padding:12px 24px;border-radius:6px;text-decoration:none;white-space:nowrap;flex-shrink:0}
+    .guide-btn:hover{opacity:.85;text-decoration:none}
 
-    /* TABLE */
-    .tbl-meta {
-      display: flex; justify-content: space-between; align-items: baseline;
-      margin-bottom: 12px;
-    }
-    .tbl-date { font-size: 12px; color: var(--text-light); }
-    .tbl-wrap {
-      border: 1px solid var(--border); border-radius: 8px; overflow-x: auto;
-    }
-    table { width: 100%; border-collapse: collapse; font-size: 13px; }
-    thead { background: var(--bg-sub); }
-    th {
-      padding: 10px 12px; text-align: left; font-weight: 500;
-      font-size: 11px; color: var(--text-light); letter-spacing: 0.3px;
-    }
-    th.r { text-align: right; }
-    td { padding: 10px 12px; border-top: 1px solid var(--border-light); }
-    td.r { text-align: right; font-family: 'Source Code Pro', monospace; font-size: 12px; }
-    tr:hover { background: var(--bg-warm); }
-    .rk { font-family: 'Source Code Pro', monospace; font-size: 12px; font-weight: 600; }
-    .rk-1 { color: var(--orange); }
-    .score-val { color: var(--accent); font-weight: 600; }
-    .tbl-note { font-size: 12px; color: var(--text-light); margin-top: 12px; line-height: 1.7; }
+    .method-item{background:var(--bg-sub);border-radius:8px;padding:20px 24px;margin:12px 0;display:flex;gap:16px}
+    .m-num{font-family:'Source Code Pro',monospace;font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-light);width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .m-content h3{font-size:15px;font-weight:600;margin-bottom:4px}
+    .m-content p{font-size:13px;color:var(--text-sub);line-height:1.7;margin:0}
+    .m-st{font-size:11px;font-weight:500;margin-top:6px;display:inline-block}
+    .st-live{color:var(--green)}.st-dev{color:var(--orange)}.st-plan{color:var(--text-light)}
 
-    /* CONTEXT */
-    .context-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .context-card {
-      background: var(--bg-sub); border-radius: 8px; padding: 20px;
-    }
-    .context-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
-    .context-card p { font-size: 13px; color: var(--text-sub); line-height: 1.7; }
+    .ctx-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .ctx-card{background:var(--bg-sub);border-radius:8px;padding:20px}
+    .ctx-card h3{font-size:14px;font-weight:600;margin-bottom:8px}
+    .ctx-card p{font-size:13px;color:var(--text-sub);line-height:1.7}
 
-    /* CTA */
-    .cta { text-align: center; padding: 56px 0; }
-    .cta-inner {
-      background: var(--bg-sub); border-radius: 12px;
-      padding: 40px 32px; max-width: 520px; margin: 0 auto;
-    }
-    .cta-inner h2 { font-size: 18px; margin-bottom: 10px; }
-    .cta-inner p { font-size: 14px; color: var(--text-sub); margin-bottom: 24px; }
-    .cta-btn {
-      display: inline-block; background: var(--accent); color: #fff;
-      font-size: 14px; font-weight: 600;
-      padding: 12px 28px; border-radius: 6px; transition: opacity 0.15s;
-    }
-    .cta-btn:hover { opacity: 0.85; text-decoration: none; }
+    .cta{text-align:center;padding:56px 0}
+    .cta-inner{background:var(--bg-sub);border-radius:12px;padding:40px 32px;max-width:520px;margin:0 auto}
+    .cta-inner h2{font-size:18px;margin-bottom:10px}
+    .cta-inner p{font-size:14px;color:var(--text-sub);margin-bottom:20px}
 
-    .disclaimer {
-      font-size: 11px; color: var(--text-light); line-height: 1.8;
-      padding: 24px 0; border-top: 1px solid var(--border);
-    }
-    footer {
-      padding: 20px 0; text-align: center;
-      font-size: 11px; color: var(--text-light);
-    }
+    .disclaimer{font-size:11px;color:var(--text-light);line-height:1.8;padding:24px 0;border-top:1px solid var(--border)}
+    footer{padding:20px 0;text-align:center;font-size:11px;color:var(--text-light)}
+    footer a{color:var(--text-light)}
 
-    @media (max-width: 640px) {
-      .hero h1 { font-size: 26px; }
-      .context-grid { grid-template-columns: 1fr; }
+    @media(max-width:640px){
+      .hero h1{font-size:28px}
+      .hero-stats{flex-direction:column;gap:16px;align-items:flex-start}
+      .comparison,.ctx-grid{grid-template-columns:1fr}
+      .guide-cta{flex-direction:column;text-align:center}
     }
   </style>
 </head>
@@ -185,68 +107,97 @@
   <div class="wrap nav-inner">
     <div class="site-name">Japan Stock Screener</div>
     <div class="nav-links">
-      <a href="#why-japan">Why Japan</a>
+      <a href="#opportunity">The Opportunity</a>
       <a href="#results">Screening</a>
-      <a href="#method">Method</a>
-      <a href="index.html" class="lang-switch">日本語</a>
+      <a href="guide.html">How to Invest</a>
+      <a href="index.html" class="lang-sw">日本語</a>
     </div>
   </div>
 </nav>
 
 <section class="hero">
   <div class="wrap">
-    <p class="hero-date">Experiment started August 2026</p>
-    <h1>Finding Undervalued Japanese Stocks<br>with AI Screening</h1>
-    <p class="hero-intro">
-      Japan's stock market is undergoing its biggest transformation in decades.
-      Corporate governance reforms, record share buybacks, and a wave of 
-      undervalued small caps — yet most of this opportunity is invisible 
-      to non-Japanese-speaking investors.
-      <br><br>
-      This project screens 3,800+ companies on the Tokyo Stock Exchange daily,
-      using quantitative analysis and original AI models to surface the ones
-      worth watching. All methodology is open. All results are free.
+    <h1>Half of Japan's listed companies trade below <em>the value of their own assets.</em></h1>
+    <p class="hero-lead">
+      That's not a theory — it's a fact. Nearly 1,900 companies on the Tokyo Stock Exchange 
+      are priced below their book value. Many are profitable. Many pay dividends above 4%.
+      And almost none of them are covered in English.<br><br>
+      We screen all of them. Every day. For free.
     </p>
-    <div class="status-bar">
-      <div class="status-item"><span class="status-dot dot-on"></span>Daily screening active</div>
-      <div class="status-item"><span class="status-dot dot-wip"></span>Building trend analysis layer</div>
+    <div class="hero-stats">
+      <div class="h-stat">
+        <div class="h-stat-num">3,800+</div>
+        <div class="h-stat-label">Companies screened daily</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-stat-num">~50%</div>
+        <div class="h-stat-label">Trade below book value</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-stat-num">$7</div>
+        <div class="h-stat-label">Minimum to start</div>
+      </div>
     </div>
   </div>
 </section>
 
 <hr class="divider">
 
-<section id="why-japan">
+<section id="opportunity">
   <div class="wrap">
-    <h2 class="sec-heading">Why Japanese Stocks, Why Now</h2>
+    <h2 class="sh">The Numbers Tell the Story</h2>
     <div class="prose">
       <p>
-        <strong>Japan is the world's most overlooked developed market.</strong>
-        Nearly half of all listed companies on the Tokyo Stock Exchange trade 
-        below book value — a situation unthinkable in the U.S. or Europe. 
-        The Tokyo Stock Exchange has publicly pressured these companies to 
-        improve capital efficiency or face potential delisting, triggering 
-        a historic wave of buybacks and dividend increases.
-      </p>
-      <p>
-        Warren Buffett's well-publicized investments in Japan's trading houses 
-        were an early signal. Since then, foreign investment in Japanese equities 
-        has surged. Yet the information gap remains: most company filings are 
-        in Japanese only, and English-language coverage of small and mid-cap 
-        Japanese stocks is virtually nonexistent.
-      </p>
-      <p>
-        That gap is what this project aims to fill — using systematic screening 
-        to identify the opportunities that language barriers hide from 
-        global investors.
+        Consider this: the average PER of the S&P 500 is around 25×. 
+        Our top-ranked Japanese stocks? <strong>Under 10×.</strong> 
+        That means you're paying less than half as much for each dollar of earnings.
       </p>
     </div>
 
-    <div class="highlight-box">
-      As of 2026, approximately 50% of TSE-listed companies trade below a 
-      price-to-book ratio of 1.0 — meaning the market values them at less 
-      than their net assets. Many are profitable, cash-rich, and increasingly 
-      returning capital to shareholders.
+    <div class="comparison">
+      <div class="comp-card">
+        <div class="comp-label">S&P 500 Average</div>
+        <div class="comp-val">25× PER</div>
+        <div class="comp-sub">1.5% dividend yield</div>
+      </div>
+      <div class="comp-card highlight">
+        <div class="comp-label">Our Top Japanese Picks</div>
+        <div class="comp-val good">&lt;10× PER</div>
+        <div class="comp-sub">4%+ dividend yield</div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>
+        This isn't because these companies are failing. Japan's corporate governance revolution 
+        is forcing companies to return cash to shareholders at record rates. 
+        Share buybacks hit ¥17 trillion in 2025. Dividends are climbing year after year.
+        <strong>The market just hasn't caught up yet</strong> — especially for smaller companies 
+        that fly under the radar of international investors.
+      </p>
+      <p>
+        Warren Buffett saw it. He put billions into Japanese trading houses. 
+        Since then, those investments have roughly doubled. But the real opportunity 
+        isn't in the large caps that Buffett bought — it's in the thousands of small 
+        and mid-cap companies that no English-language analyst covers.
+      </p>
+    </div>
+
+    <div class="callout">
+      <strong>The information gap is the edge.</strong> 
+      Most Japanese company filings exist only in Japanese. 
+      Earnings reports, management commentary, shareholder letters — all in Japanese. 
+      Our system reads them all, translates the signals into data, and surfaces 
+      the companies worth your attention.
+    </div>
+
+    <div class="guide-cta">
+      <div class="guide-cta-text">
+        <h3>Ready to start?</h3>
+        <p>Our step-by-step guide walks you through opening a brokerage account 
+           and making your first Japanese stock purchase — even with just $7.</p>
+      </div>
+      <a href="guide.html" class="guide-btn">Read the guide →</a>
     </div>
   </div>
 </section>
@@ -255,32 +206,24 @@
 
 <section id="results">
   <div class="wrap">
-    <h2 class="sec-heading">Today's Screening Results</h2>
-    <p class="sec-lead">Companies that passed all quantitative filters, ranked by composite score</p>
+    <h2 class="sh">Today's Screening Results</h2>
+    <p class="sl">Companies that passed all filters, ranked by composite score. Click any company for detailed analysis.</p>
+    <div class="tbl-date" id="update-date"></div>
 
-    <div class="tbl-meta">
-      <span class="tbl-date" id="update-date"></span>
-    </div>
     <div class="tbl-wrap">
       <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Code</th>
-            <th>Company</th>
-            <th class="r">PER</th>
-            <th class="r">PBR</th>
-            <th class="r">ROE</th>
-            <th class="r">Div %</th>
-            <th class="r">Score</th>
-          </tr>
-        </thead>
+        <thead><tr>
+          <th>#</th><th>Code</th><th>Company</th>
+          <th class="r">PER</th><th class="r">PBR</th>
+          <th class="r">ROE</th><th class="r">Div %</th><th class="r">Score</th>
+        </tr></thead>
         <tbody id="results-body"></tbody>
       </table>
     </div>
     <p class="tbl-note">
-      Score is a weighted composite of normalized PER, PBR, ROE, and dividend yield (0–100).
-      This is not investment advice. See disclaimer below.
+      Score is a weighted composite of value, profitability, safety, and growth metrics (0–100). 
+      Click a company name to see its full financial history, trend analysis, and related news.
+      This is not investment advice — see disclaimer below.
     </p>
   </div>
 </section>
@@ -289,49 +232,44 @@
 
 <section id="method">
   <div class="wrap">
-    <h2 class="sec-heading">Screening Methodology</h2>
-    <p class="sec-lead">A multi-layer approach — starting with fundamentals, adding depth over time</p>
+    <h2 class="sh">How the Screening Works</h2>
+    <p class="sl">Four analysis layers, each adding depth. Every individual company page shows exactly how these layers apply to that specific stock.</p>
 
-    <div class="logic-list">
-      <div class="logic-item">
-        <div class="logic-num">1</div>
-        <div class="logic-content">
-          <h3>Fundamental Screening</h3>
-          <p>Filter by PER, PBR, ROE, dividend yield, equity ratio, and market cap. 
-             Removes overvalued, financially weak, or excessively large companies. 
-             Designed to surface small-to-mid cap value opportunities.</p>
-          <div class="logic-st st-live">Live</div>
-        </div>
+    <div class="method-item">
+      <div class="m-num">1</div>
+      <div class="m-content">
+        <h3>Fundamental Screening</h3>
+        <p>Filters 3,800+ companies by PER, PBR, ROE, dividend yield, equity ratio, and market cap. 
+           Each company page shows where it stands on every metric, with comparison to sector averages.</p>
+        <div class="m-st st-live">● Live — applied to all company pages</div>
       </div>
-      <div class="logic-item">
-        <div class="logic-num">2</div>
-        <div class="logic-content">
-          <h3>Trend Analysis</h3>
-          <p>5-year financial trend regression on revenue, operating income, ROE, and EPS. 
-             Distinguishes companies with improving fundamentals from those in decline.
-             Rewards consecutive years of revenue and profit growth.</p>
-          <div class="logic-st st-dev">In development</div>
-        </div>
+    </div>
+    <div class="method-item">
+      <div class="m-num">2</div>
+      <div class="m-content">
+        <h3>5-Year Trend Analysis</h3>
+        <p>Revenue, operating profit, ROE, and EPS tracked over 5 years with regression analysis. 
+           Each company page includes historical charts showing whether fundamentals are improving or declining.</p>
+        <div class="m-st st-dev">◐ In development — charts visible on company pages</div>
       </div>
-      <div class="logic-item">
-        <div class="logic-num">3</div>
-        <div class="logic-content">
-          <h3>Sentiment Analysis</h3>
-          <p>AI-powered analysis of earnings reports, disclosure filings, and news articles.
-             Scores each company's outlook as positive, negative, or neutral 
-             based on the actual text of Japanese-language filings.</p>
-          <div class="logic-st st-plan">Planned</div>
-        </div>
+    </div>
+    <div class="method-item">
+      <div class="m-num">3</div>
+      <div class="m-content">
+        <h3>News & Sentiment Analysis</h3>
+        <p>AI reads Japanese earnings reports, disclosure filings, and news in the original language. 
+           Each company page will show recent news and the AI's sentiment assessment.</p>
+        <div class="m-st st-plan">○ Planned — news feed coming to company pages</div>
       </div>
-      <div class="logic-item">
-        <div class="logic-num">4</div>
-        <div class="logic-content">
-          <h3>Macro Environment</h3>
-          <p>Assesses broader market conditions — Nikkei 225 trend, USD/JPY, 
-             BOJ policy signals, VIX — to determine whether the overall 
-             environment favors buying, holding, or waiting.</p>
-          <div class="logic-st st-plan">Planned</div>
-        </div>
+    </div>
+    <div class="method-item">
+      <div class="m-num">4</div>
+      <div class="m-content">
+        <h3>Macro & Currency Context</h3>
+        <p>Nikkei 225 trend, USD/JPY rate, BOJ policy signals, VIX. 
+           Determines whether broader conditions favor buying. 
+           Currency impact analysis will appear on each company page.</p>
+        <div class="m-st st-plan">○ Planned</div>
       </div>
     </div>
   </div>
@@ -341,31 +279,39 @@
 
 <section>
   <div class="wrap">
-    <h2 class="sec-heading">Key Context for Foreign Investors</h2>
-    <p class="sec-lead">Things you should know about investing in Japanese equities</p>
+    <h2 class="sh">What You Need to Know</h2>
+    <p class="sl">Essential context for investing in Japanese equities from abroad</p>
 
-    <div class="context-grid">
-      <div class="context-card">
-        <h3>TSE Reforms</h3>
-        <p>Since 2023, the Tokyo Stock Exchange has required companies trading below book 
-           value to publish improvement plans. This is driving unprecedented shareholder returns.</p>
+    <div class="ctx-grid">
+      <div class="ctx-card">
+        <h3>The TSE Revolution</h3>
+        <p>Tokyo Stock Exchange now requires companies below book value to publish capital improvement plans. 
+           Non-compliant companies risk delisting. Result: record buybacks and dividend hikes across the board.</p>
       </div>
-      <div class="context-card">
-        <h3>Currency Factor</h3>
-        <p>A weaker yen makes Japanese stocks cheaper for foreign buyers in USD/EUR terms. 
-           Returns should be evaluated in both JPY and your home currency.</p>
+      <div class="ctx-card">
+        <h3>The Currency Angle</h3>
+        <p>The weak yen makes Japanese stocks cheaper for dollar/euro buyers. 
+           If the yen recovers, you capture both stock gains AND currency gains — a potential double tailwind.</p>
       </div>
-      <div class="context-card">
-        <h3>How to Buy</h3>
-        <p>Foreign investors can access Japanese stocks through Interactive Brokers, 
-           Saxo Bank, or other international brokers offering TSE access.</p>
+      <div class="ctx-card">
+        <h3>Start With $7</h3>
+        <p>Through international brokers, you can buy single shares of Japanese stocks 
+           (no 100-share minimum). Build a diversified portfolio of 10+ stocks with under $100.</p>
       </div>
-      <div class="context-card">
-        <h3>Small Cap Edge</h3>
-        <p>Analyst coverage of Japanese small caps is minimal even domestically. 
-           Companies under ¥50B market cap are frequently mispriced — this is where 
-           systematic screening has the biggest advantage.</p>
+      <div class="ctx-card">
+        <h3>The Small Cap Edge</h3>
+        <p>Even Japanese analysts barely cover companies under ¥50B market cap. 
+           Zero English coverage means systematic screening has maximum edge here — exactly where our system focuses.</p>
       </div>
+    </div>
+
+    <div class="guide-cta" style="margin-top:32px">
+      <div class="guide-cta-text">
+        <h3>Complete Beginner's Guide</h3>
+        <p>Broker comparison, account setup walkthrough, first trade tutorial, 
+           tax considerations, and practical tips from experience.</p>
+      </div>
+      <a href="guide.html" class="guide-btn">Start here →</a>
     </div>
   </div>
 </section>
@@ -376,30 +322,31 @@
   <div class="wrap">
     <div class="cta-inner">
       <h2>Weekly Deep Dives</h2>
-      <p>Detailed analysis of screening methodology, market commentary, 
-         and specific sector breakdowns — delivered weekly.</p>
-      <a href="#" class="cta-btn">Subscribe (coming soon)</a>
+      <p>Detailed sector analysis, methodology breakdowns, and market commentary 
+         — written for investors who want to understand Japan, not just screen it.</p>
+      <a href="#" class="guide-btn">Subscribe (coming soon)</a>
     </div>
   </div>
 </section>
 
 <div class="wrap disclaimer">
   <strong>Disclaimer</strong> &nbsp;
-  This website publishes the results of a quantitative screening experiment and 
-  does not constitute investment advice, a recommendation, or a solicitation to 
-  buy or sell any security. All information is provided for educational and 
-  informational purposes only. Past screening results do not guarantee future 
-  performance. Invest at your own risk.
+  This website publishes quantitative screening results for educational purposes only. 
+  It does not constitute investment advice or a recommendation to buy or sell securities. 
+  Past screening results do not guarantee future performance. 
+  Foreign stock investment involves currency risk and regulatory differences. 
+  Invest at your own risk. Consult a qualified advisor before making investment decisions.
 </div>
 
 <footer>
   <div class="wrap">
-    © 2026 Japan Stock Screener &nbsp;|&nbsp; Data: FSA EDINET, Yahoo Finance
+    <a href="guide.html">How to Invest</a> · <a href="index.html">日本語版</a><br><br>
+    © 2026 Japan Stock Screener
   </div>
 </footer>
 
 <script>
-const data = [
+const data=[
   {rank:1,code:'7095',name:'Macbee Planet',per:7.4,pbr:1.24,roe:35.1,dy:4.4,score:67.6},
   {rank:2,code:'8935',name:'FJ Next Holdings',per:6.6,pbr:0.79,roe:12.3,dy:4.0,score:61.5},
   {rank:3,code:'6418',name:'Nippon Kinsen Kikai',per:7.4,pbr:0.93,roe:13.1,dy:3.6,score:52.8},
@@ -409,23 +356,21 @@ const data = [
   {rank:7,code:'500A',name:'TO Books',per:8.1,pbr:1.42,roe:18.0,dy:2.5,score:32.7},
   {rank:8,code:'1766',name:'Token Corporation',per:10.8,pbr:1.27,roe:13.9,dy:3.0,score:26.1},
 ];
-
-const tbody = document.getElementById('results-body');
-tbody.innerHTML = data.map(s => {
-  const rc = s.rank <= 3 ? `rk-${s.rank}` : '';
+const tbody=document.getElementById('results-body');
+tbody.innerHTML=data.map(s=>{
+  const rc=s.rank<=3?`rk-${s.rank}`:'';
   return `<tr>
     <td><span class="rk ${rc}">${s.rank}</span></td>
     <td style="font-family:'Source Code Pro',monospace;font-weight:500">${s.code}</td>
-    <td>${s.name}</td>
+    <td><a href="stocks/${s.code}.html">${s.name}</a></td>
     <td class="r">${s.per}×</td>
     <td class="r">${s.pbr}×</td>
     <td class="r">${s.roe}%</td>
     <td class="r">${s.dy}%</td>
-    <td class="r"><span class="score-val">${s.score}</span></td>
+    <td class="r"><span class="score-v">${s.score}</span></td>
   </tr>`;
 }).join('');
-document.getElementById('update-date').textContent = 'Last updated: August 15, 2026';
+document.getElementById('update-date').textContent='Last updated: August 15, 2026';
 </script>
-
 </body>
 </html>

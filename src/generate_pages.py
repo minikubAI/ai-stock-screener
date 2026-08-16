@@ -246,7 +246,6 @@ def run(top_n=10):
             report = json.load(f)
         stocks = report.get('screening_results', [])
     else:
-        # レポートがない場合はDBから直接取得
         c.execute('''
             SELECT sr.ticker, c.name, c.sector, sr.per, sr.pbr, sr.roe,
                    sr.dividend_yield, sr.equity_ratio, sr.market_cap,
@@ -265,8 +264,13 @@ def run(top_n=10):
         return
 
     total_companies = len(stocks)
-    output_dir = os.path.join(os.path.dirname(__file__), '..', 'site', 'stocks')
-    os.makedirs(output_dir, exist_ok=True)
+
+    # 出力先: site/stocks/ と docs/stocks/ の両方に出力
+    site_dir = os.path.join(os.path.dirname(__file__), '..', 'site', 'stocks')
+    docs_dir = os.path.join(os.path.dirname(__file__), '..', 'docs', 'stocks')
+    os.makedirs(site_dir, exist_ok=True)
+    os.makedirs(docs_dir, exist_ok=True)
+    output_dir = site_dir  # 一次出力先
 
     generated = []
 
@@ -310,15 +314,16 @@ def run(top_n=10):
         # ページ生成
         html = generate_company_page(template, stock, financials)
 
-        # ファイル出力
-        page_path = os.path.join(output_dir, f'{ticker}.html')
-        with open(page_path, 'w', encoding='utf-8') as f:
-            f.write(html)
+        # ファイル出力（site/ と docs/ の両方）
+        for out_dir in [site_dir, docs_dir]:
+            page_path = os.path.join(out_dir, f'{ticker}.html')
+            with open(page_path, 'w', encoding='utf-8') as f:
+                f.write(html)
 
         generated.append({'ticker': ticker, 'name': name, 'path': f'stocks/{ticker}.html'})
-        print(f"    ✅ {page_path}")
+        print(f"    ✅ {ticker}.html (site/ & docs/)")
 
-    # インデックスのスクリーニング結果テーブルにリンクを追加するためのJSON
+    # リンク情報をJSONで出力
     links_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'stock_pages.json')
     with open(links_path, 'w', encoding='utf-8') as f:
         json.dump(generated, f, ensure_ascii=False, indent=2)
@@ -327,8 +332,9 @@ def run(top_n=10):
 
     print(f"\n{'=' * 50}")
     print(f"✅ {len(generated)}ページ生成完了")
-    print(f"   出力先: {output_dir}/")
+    print(f"   出力先: site/stocks/ & docs/stocks/")
+    print(f"   GitHub Pagesに反映するには git add, commit, push してください")
 
 
 if __name__ == '__main__':
-    run(top_n=10)
+    run(top_n=20)
