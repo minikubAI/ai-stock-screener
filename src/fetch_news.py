@@ -18,7 +18,7 @@ import json
 import re
 from datetime import datetime, timedelta
 from typing import Optional
-import yfinance as yf
+import xml.etree.ElementTree as ET
 
 def get_config():
     config_path = os.path.join(os.path.dirname(__file__), '..', 'config', 'settings.yaml')
@@ -77,24 +77,32 @@ def ensure_news_table(conn):
     conn.commit()
 
 
-def fetch_news_for_ticker(ticker: str) -> list[dict]:
-    """yfinance でニュースを取得"""
+def fetch_news_for_ticker(ticker: str, company_name: str = '') -> list[dict]:
+    """Google News RSS でニュースを取得"""
     try:
-        yf_ticker = f"{ticker}.T"
-        stock = yf.Ticker(yf_ticker)
-        news = stock.news or []
+        query = f"{company_name or ticker} {ticker} 株"
+        url = f"https://news.google.com/rss/search?q={requests.utils.quote(query)}&hl=ja&gl=JP&ceid=JP:ja"
+        resp = requests.get(url, timeout=15, headers={'User-Agent': 'Mozilla/5.0'})
+        if resp.status_code != 200:
+            return []
+        root = ET.fromstring(resp.content)
         results = []
-        for item in news[:5]:  # 最新5件
-            title = item.get('title', '')
-            url = item.get('link', '') or item.get('url', '')
-            pub = item.get('providerPublishTime')
-            pub_str = datetime.fromtimestamp(pub).isoformat() if pub else None
-            score = sentiment_score(title)
+        for item in root.findall('.//item')[:5]:
+            title = item.findtext('title', '').strip()
+            link  = item.findtext('link', '').strip()
+            pub   = item.findtext('pubDate', '')
+            try:
+                from email.utils import parsedate_to_datetime
+                pub_str = parsedate_to_datetime(pub).isoformat() if pub else None
+            except Exception:
+                pub_str = None
+            if not title:
+                continue
             results.append({
                 'title': title,
-                'url': url,
+                'url': link,
                 'published_at': pub_str,
-                'sentiment': score,
+                'sentiment': sentiment_score(title),
             })
         return results
     except Exception:
@@ -127,7 +135,7 @@ def run():
 
     total_news = 0
     for ticker, name in targets:
-        articles = fetch_news_for_ticker(ticker)
+        articles = fetch_news_for_ticker(ticker, name)
         if not articles:
             continue
 
