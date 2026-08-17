@@ -101,6 +101,69 @@ def generate_insight(data):
     return '。'.join(parts) + '。これらの要素を総合的に評価し、現在のスコアとなっています。'
 
 
+def compute_per_pbr(conn, ticker, current_price):
+    """
+    最新株価と最新財務データからPER/PBRを動的に計算する。
+    - net_income/shares が異常（PER<1）なら operating_income にフォールバック
+    - shares_outstanding は J-Quants or yfinance 補完値を使用
+    """
+    if not current_price or current_price <= 0:
+        return None, None
+    c = conn.cursor()
+    c.execute('''SELECT net_income, operating_income, total_equity, shares_outstanding, eps, bps
+                 FROM financials WHERE ticker=? ORDER BY fiscal_year DESC LIMIT 1''', (ticker,))
+    row = c.fetchone()
+    if not row:
+        return None, None
+    net_income, op_income, equity, shares, eps_stored, bps_stored = row
+
+    per, pbr = None, None
+
+    # EPS計算（格納値 or net_income/shares）
+    eps = eps_stored
+    if not eps and net_income and shares and shares > 0:
+        eps = net_income / shares
+
+    if eps and eps > 0:
+        per_candidate = current_price / eps
+        # PER < 1 は特別利益等の可能性 → 営業利益ベースにフォールバック
+        if per_candidate < 1 and op_income and shares and shares > 0:
+            op_eps = op_income / shares
+            if op_eps > 0:
+                per = round(current_price / op_eps, 1)
+        else:
+            per = round(per_candidate, 1)
+
+    # BPS/PBR計算
+    bps = bps_stored
+    if not bps and equity and shares and shares > 0:
+        bps = equity / shares
+    if bps and bps > 0:
+        pbr = round(current_price / bps, 2)
+
+    return per, pbr
+
+
+def _fmt_per(data, conn, current_price):
+    ticker = data.get('ticker', '')
+    if conn and ticker and current_price:
+        per, _ = compute_per_pbr(conn, ticker, current_price)
+        if per and 0 < per < 500:
+            return f"{per:.1f}"
+    stored = data.get('per')
+    return f"{stored:.1f}" if stored else '-'
+
+
+def _fmt_pbr(data, conn, current_price):
+    ticker = data.get('ticker', '')
+    if conn and ticker and current_price:
+        _, pbr = compute_per_pbr(conn, ticker, current_price)
+        if pbr and 0 < pbr < 100:
+            return f"{pbr:.2f}"
+    stored = data.get('pbr')
+    return f"{stored:.2f}" if stored else '-'
+
+
 def get_financial_history(conn, ticker):
     """過去の財務データを取得"""
     c = conn.cursor()
@@ -174,7 +237,7 @@ def generate_price_svg(prices):
     return svg, current, low, high
 
 
-def generate_company_page(template, data, financials, price_history=None):
+def generate_company_page(template, data, financials, price_history=None, conn=None):
     """テンプレートにデータを埋め込んでHTMLを生成"""
     html = template
 
@@ -223,8 +286,8 @@ def generate_company_page(template, data, financials, price_history=None):
         '{{PRICE_DATE}}': price_date or '-',
         '{{PRICE_LOW}}': f'{price_low:,.0f}' if price_low else '-',
         '{{PRICE_HIGH}}': f'{price_high:,.0f}' if price_high else '-',
-        '{{PER}}': f"{data['per']:.1f}" if data.get('per') else '-',
-        '{{PBR}}': f"{data['pbr']:.2f}" if data.get('pbr') else '-',
+        '{{PER}}': _fmt_per(data, conn, current_price),
+        '{{PBR}}': _fmt_pbr(data, conn, current_price),
         '{{ROE}}': f"{data['roe']:.1f}" if data.get('roe') else '-',
         '{{DIV_YIELD}}': f"{data['div_yield']:.1f}" if data.get('div_yield') else '-',
         '{{PER_CLASS}}': classify_metric('per', data.get('per')),
@@ -501,7 +564,7 @@ def run(top_n=10):
         price_history = get_price_history(conn, ticker)
 
         # ページ生成
-        html = generate_company_page(template, stock, financials, price_history)
+        html = generate_company_page(template, stock, financials, price_history, conn=conn)
 
         # ファイル出力（site/ と docs/ の両方）
         for out_dir in [site_dir, docs_dir]:
