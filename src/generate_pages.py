@@ -104,8 +104,8 @@ def generate_insight(data):
 def compute_per_pbr(conn, ticker, current_price):
     """
     最新株価と最新財務データからPER/PBRを動的に計算する。
-    - net_income/shares が異常（PER<1）なら operating_income にフォールバック
-    - shares_outstanding は J-Quants or yfinance 補完値を使用
+    特別利益等で純利益が営業利益の1.5倍超の場合は営業利益ベースにフォールバック
+    （株探・IRBANKの表示に近い実態ベースのPERを算出）
     """
     if not current_price or current_price <= 0:
         return None, None
@@ -119,20 +119,31 @@ def compute_per_pbr(conn, ticker, current_price):
 
     per, pbr = None, None
 
-    # EPS計算（格納値 or net_income/shares）
-    eps = eps_stored
-    if not eps and net_income and shares and shares > 0:
-        eps = net_income / shares
+    if shares and shares > 0:
+        # 特別利益検出: 純利益が営業利益の1.5倍超 → 本業実力を反映しない
+        use_op = (
+            op_income and op_income > 0
+            and net_income and net_income > 0
+            and net_income > op_income * 1.5
+        )
 
-    if eps and eps > 0:
-        per_candidate = current_price / eps
-        # PER < 1 は特別利益等の可能性 → 営業利益ベースにフォールバック
-        if per_candidate < 1 and op_income and shares and shares > 0:
+        if use_op:
             op_eps = op_income / shares
             if op_eps > 0:
                 per = round(current_price / op_eps, 1)
         else:
-            per = round(per_candidate, 1)
+            eps = eps_stored
+            if not eps and net_income and net_income > 0:
+                eps = net_income / shares
+            if eps and eps > 0:
+                per_candidate = current_price / eps
+                # PER < 1 も異常値（特別利益の別パターン）→ 営業利益で再試行
+                if per_candidate < 1 and op_income and op_income > 0:
+                    op_eps = op_income / shares
+                    if op_eps > 0:
+                        per = round(current_price / op_eps, 1)
+                else:
+                    per = round(per_candidate, 1)
 
     # BPS/PBR計算
     bps = bps_stored
