@@ -49,7 +49,7 @@ def get_financial_data(conn) -> list[dict]:
     c = conn.cursor()
     c.execute('''
         SELECT
-            c.ticker, c.name, c.sector,
+            c.ticker, c.name, c.sector, c.market,
             f.revenue, f.operating_income, f.net_income,
             f.total_assets, f.total_equity,
             f.shares_outstanding, f.eps, f.bps, f.dividends_per_share,
@@ -95,6 +95,7 @@ def calculate_financial_score(stock: dict) -> dict | None:
         'ticker': stock['ticker'],
         'name': stock['name'],
         'sector': stock['sector'] or '',
+        'market': stock.get('market') or '',
         'price': price,
         'per': round(per, 1) if per else None,
         'pbr': round(pbr, 2) if pbr else None,
@@ -106,11 +107,21 @@ def calculate_financial_score(stock: dict) -> dict | None:
     }
 
 
+TPM_KEYWORDS = ('プロ', 'TPM', 'PRO', 'TOKYO PRO')
+
+
+def is_tpm(stock: dict) -> bool:
+    market = (stock.get('market') or '').upper()
+    return any(kw.upper() in market for kw in TPM_KEYWORDS)
+
+
 def filter_core(stocks: list[dict], config: dict) -> list[dict]:
     """Core枠フィルター（バリュー基準）"""
     sc = config['screening']
     passed = []
     for s in stocks:
+        if is_tpm(s):
+            continue
         if s['per'] is not None and not (sc['per_min'] <= s['per'] <= sc['per_max']):
             continue
         if s['pbr'] is not None and s['pbr'] > sc['pbr_max']:
@@ -129,6 +140,8 @@ def filter_satellite(stocks: list[dict]) -> list[dict]:
     """Satellite枠フィルター（成長基準）"""
     passed = []
     for s in stocks:
+        if is_tpm(s):
+            continue
         # PER上限40倍（成長株は高PER許容）
         if s['per'] is not None and (s['per'] <= 0 or s['per'] > 40):
             continue

@@ -56,7 +56,10 @@ def fetch_jpx_listed_companies() -> list[dict]:
         # pandasでExcelとして読み込み
         df = pd.read_excel(io.BytesIO(resp.content))
 
+        TPM_KEYWORDS = ('プロ', 'TPM', 'PRO', 'TOKYO PRO')
+
         companies = []
+        skipped_tpm = 0
         for _, row in df.iterrows():
             code = str(row.get('コード', '')).strip()
             if not code or len(code) < 4:
@@ -65,15 +68,22 @@ def fetch_jpx_listed_companies() -> list[dict]:
             # 4桁に正規化
             code = code[:4]
 
+            market = str(row.get('市場・商品区分', '')).strip()
+
+            # 東京プロマーケット除外（大文字小文字を問わず）
+            if any(kw.upper() in market.upper() for kw in TPM_KEYWORDS):
+                skipped_tpm += 1
+                continue
+
             companies.append({
                 'ticker': code,
                 'name': str(row.get('銘柄名', '')).strip(),
-                'market': str(row.get('市場・商品区分', '')).strip(),
+                'market': market,
                 'sector': str(row.get('33業種区分', '')).strip(),
                 'industry': str(row.get('17業種区分', '')).strip(),
             })
 
-        print(f"  → {len(companies)}銘柄を取得")
+        print(f"  → {len(companies)}銘柄を取得（TPM除外: {skipped_tpm}銘柄）")
         return companies
 
     except Exception as e:
