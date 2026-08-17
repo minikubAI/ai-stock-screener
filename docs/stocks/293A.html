@@ -275,35 +275,7 @@ document.getElementById('financials-body').innerHTML = `<tr>
 </script>
 
 <script>
-document.getElementById('revenue-chart').innerHTML = `<div class="bar-group">
-                    <div class="bar-val">8.8億</div>
-                    <div class="bar-group-inner">
-                      <div class="bar bar-rev" style="height:21%"></div>
-                      <div class="bar" style="height:2%;background:var(--red);opacity:0.5" title="営業損失"></div>
-                    </div>
-                    <div class="bar-label">2023</div>
-                  </div><div class="bar-group">
-                    <div class="bar-val">16.5億</div>
-                    <div class="bar-group-inner">
-                      <div class="bar bar-rev" style="height:40%"></div>
-                      <div class="bar" style="height:2%;background:var(--red);opacity:0.5" title="営業損失"></div>
-                    </div>
-                    <div class="bar-label">2024</div>
-                  </div><div class="bar-group">
-                    <div class="bar-val">28.3億</div>
-                    <div class="bar-group-inner">
-                      <div class="bar bar-rev" style="height:69%"></div>
-                      <div class="bar bar-op" style="height:3%"></div>
-                    </div>
-                    <div class="bar-label">2025</div>
-                  </div><div class="bar-group">
-                    <div class="bar-val">41.0億</div>
-                    <div class="bar-group-inner">
-                      <div class="bar bar-rev" style="height:100%"></div>
-                      <div class="bar bar-op" style="height:8%"></div>
-                    </div>
-                    <div class="bar-label">2026</div>
-                  </div>`;
+document.getElementById('revenue-chart').innerHTML = `<div class="bar-group"><div class="bar-val">8.8億</div><div class="bar-group-inner" style="position:relative;overflow:visible;"><div style="position:absolute;bottom:4.5%;left:5%;width:42%;height:20.4%;background:var(--accent);border-radius:3px 3px 0 0;"></div><div style="position:absolute;top:95.5%;right:5%;width:42%;height:4.5%;background:var(--red);border-radius:0 0 3px 3px;opacity:0.8;"></div><div style="position:absolute;bottom:4.5%;left:0;right:0;height:1px;background:var(--border);z-index:1;"></div></div><div class="bar-label">2023</div></div><div class="bar-group"><div class="bar-val">16.5億</div><div class="bar-group-inner" style="position:relative;overflow:visible;"><div style="position:absolute;bottom:4.5%;left:5%;width:42%;height:38.4%;background:var(--accent);border-radius:3px 3px 0 0;"></div><div style="position:absolute;top:95.5%;right:5%;width:42%;height:2.6%;background:var(--red);border-radius:0 0 3px 3px;opacity:0.8;"></div><div style="position:absolute;bottom:4.5%;left:0;right:0;height:1px;background:var(--border);z-index:1;"></div></div><div class="bar-label">2024</div></div><div class="bar-group"><div class="bar-val">28.3億</div><div class="bar-group-inner" style="position:relative;overflow:visible;"><div style="position:absolute;bottom:4.5%;left:5%;width:42%;height:65.9%;background:var(--accent);border-radius:3px 3px 0 0;"></div><div style="position:absolute;bottom:4.5%;right:5%;width:42%;height:3.0%;background:var(--green);border-radius:3px 3px 0 0;"></div><div style="position:absolute;bottom:4.5%;left:0;right:0;height:1px;background:var(--border);z-index:1;"></div></div><div class="bar-label">2025</div></div><div class="bar-group"><div class="bar-val">41.0億</div><div class="bar-group-inner" style="position:relative;overflow:visible;"><div style="position:absolute;bottom:4.5%;left:5%;width:42%;height:95.5%;background:var(--accent);border-radius:3px 3px 0 0;"></div><div style="position:absolute;bottom:4.5%;right:5%;width:42%;height:7.3%;background:var(--green);border-radius:3px 3px 0 0;"></div><div style="position:absolute;bottom:4.5%;left:0;right:0;height:1px;background:var(--border);z-index:1;"></div></div><div class="bar-label">2026</div></div>`;
 </script>
 
 <script>

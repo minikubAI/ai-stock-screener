@@ -291,45 +291,75 @@ document.getElementById('financials-body').innerHTML = `{''.join(fin_rows)}`;
 
         # 棒グラフ用データ
         rev_values = [f[1] for f in financials if f[1]]
-        op_values = [f[2] for f in financials if f[2]]
-        fy_labels = [f[0] for f in financials if f[1]]
+        op_values  = [f[2] if f[2] is not None else 0 for f in financials if f[1]]
+        fy_labels  = [f[0] for f in financials if f[1]]
 
         if rev_values:
             max_rev = max(rev_values)
 
             # 適切な単位を選択
             if max_rev >= 1_000_000_000_000:
-                divisor = 1_000_000_000_000
-                unit = '兆'
+                divisor, unit = 1_000_000_000_000, '兆'
             elif max_rev >= 100_000_000:
-                divisor = 100_000_000
-                unit = '億'
+                divisor, unit = 100_000_000, '億'
             else:
-                divisor = 10_000
-                unit = '万'
+                divisor, unit = 10_000, '万'
 
-            # 静的HTMLとしてグラフを直接埋め込む（JSテンプレート不使用）
+            # ゼロライン位置を計算（負の営業利益がある場合はチャート中間にゼロ線）
+            min_op = min(op_values) if op_values else 0
+            min_val = min(0, min_op)           # ゼロ以下の最小値
+            total_range = max_rev - min_val    # チャート全体の値幅
+            if total_range <= 0:
+                total_range = max_rev or 1
+            # ゼロ線はチャート下端から何%の位置か
+            zero_pct = (-min_val / total_range * 100) if min_val < 0 else 0
+
             bars_html = []
             for i, fy in enumerate(fy_labels):
                 rv = rev_values[i] if i < len(rev_values) else 0
-                ov = op_values[i] if i < len(op_values) else 0
-                rh = max((rv / max_rev * 100), 2) if max_rev > 0 else 2
-                # 営業利益が負の場合は赤バッジ表示、正の場合のみ棒グラフ
-                if ov >= 0:
-                    oh = max((ov / max_rev * 100), 2) if max_rev > 0 else 2
-                    op_bar = f'<div class="bar bar-op" style="height:{oh:.0f}%"></div>'
-                else:
-                    oh = 0
-                    op_bar = '<div class="bar" style="height:2%;background:var(--red);opacity:0.5" title="営業損失"></div>'
+                ov = op_values[i]  if i < len(op_values)  else 0
                 rv_disp = f'{rv/divisor:,.1f}'
-                bars_html.append(f'''<div class="bar-group">
-                    <div class="bar-val">{rv_disp}{unit}</div>
-                    <div class="bar-group-inner">
-                      <div class="bar bar-rev" style="height:{rh:.0f}%"></div>
-                      {op_bar}
-                    </div>
-                    <div class="bar-label">{fy}</div>
-                  </div>''')
+
+                # 売上高バー（常に正、ゼロ線から上へ）
+                rh = max(rv / total_range * 100, 2)
+                rev_bar = (
+                    f'<div style="position:absolute;bottom:{zero_pct:.1f}%;'
+                    f'left:5%;width:42%;height:{rh:.1f}%;'
+                    f'background:var(--accent);border-radius:3px 3px 0 0;"></div>'
+                )
+
+                # 営業利益バー（正→上向き、負→下向き赤）
+                if ov >= 0:
+                    oh = max(ov / total_range * 100, 2) if ov > 0 else 0
+                    op_bar = (
+                        f'<div style="position:absolute;bottom:{zero_pct:.1f}%;'
+                        f'right:5%;width:42%;height:{oh:.1f}%;'
+                        f'background:var(--green);border-radius:3px 3px 0 0;"></div>'
+                    )
+                else:
+                    oh_neg = max(abs(ov) / total_range * 100, 2)
+                    top_pct = 100 - zero_pct
+                    op_bar = (
+                        f'<div style="position:absolute;top:{top_pct:.1f}%;'
+                        f'right:5%;width:42%;height:{oh_neg:.1f}%;'
+                        f'background:var(--red);border-radius:0 0 3px 3px;opacity:0.8;"></div>'
+                    )
+
+                # ゼロ線（負の値がある場合のみ描画）
+                zero_line = (
+                    f'<div style="position:absolute;bottom:{zero_pct:.1f}%;'
+                    f'left:0;right:0;height:1px;background:var(--border);z-index:1;"></div>'
+                ) if min_val < 0 else ''
+
+                bars_html.append(
+                    f'<div class="bar-group">'
+                    f'<div class="bar-val">{rv_disp}{unit}</div>'
+                    f'<div class="bar-group-inner" style="position:relative;overflow:visible;">'
+                    f'{rev_bar}{op_bar}{zero_line}'
+                    f'</div>'
+                    f'<div class="bar-label">{fy}</div>'
+                    f'</div>'
+                )
 
             chart_inject = f"""
 <script>
