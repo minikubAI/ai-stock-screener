@@ -313,14 +313,20 @@ document.getElementById('financials-body').innerHTML = `{''.join(fin_rows)}`;
             for i, fy in enumerate(fy_labels):
                 rv = rev_values[i] if i < len(rev_values) else 0
                 ov = op_values[i] if i < len(op_values) else 0
-                rh = max((rv / max_rev * 100), 3) if max_rev > 0 else 3
-                oh = max((ov / max_rev * 100), 3) if max_rev > 0 else 3
+                rh = max((rv / max_rev * 100), 2) if max_rev > 0 else 2
+                # 営業利益が負の場合は赤バッジ表示、正の場合のみ棒グラフ
+                if ov >= 0:
+                    oh = max((ov / max_rev * 100), 2) if max_rev > 0 else 2
+                    op_bar = f'<div class="bar bar-op" style="height:{oh:.0f}%"></div>'
+                else:
+                    oh = 0
+                    op_bar = '<div class="bar" style="height:2%;background:var(--red);opacity:0.5" title="営業損失"></div>'
                 rv_disp = f'{rv/divisor:,.1f}'
                 bars_html.append(f'''<div class="bar-group">
                     <div class="bar-val">{rv_disp}{unit}</div>
                     <div class="bar-group-inner">
                       <div class="bar bar-rev" style="height:{rh:.0f}%"></div>
-                      <div class="bar bar-op" style="height:{oh:.0f}%"></div>
+                      {op_bar}
                     </div>
                     <div class="bar-label">{fy}</div>
                   </div>''')

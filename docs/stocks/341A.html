@@ -155,11 +155,11 @@
   <!-- KEY METRICS -->
   <div class="metrics">
     <div class="metric">
-      <div class="metric-val ">-倍</div>
+      <div class="metric-val warn">53.0倍</div>
       <div class="metric-label">PER</div>
     </div>
     <div class="metric">
-      <div class="metric-val ">-倍</div>
+      <div class="metric-val warn">8.96倍</div>
       <div class="metric-label">PBR</div>
     </div>
     <div class="metric">
@@ -184,7 +184,7 @@
         <div class="score-label">/ 100（スクリーニング順位 11位 / 30社中）</div>
       </div>
       <div class="score-bars">
-        <div class="score-bar-row"><div class="score-bar-name">割安度</div><div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div><div class="score-bar-val">50</div></div>
+        <div class="score-bar-row"><div class="score-bar-name">割安度</div><div class="score-bar-track"><div class="score-bar-fill" style="width:0%"></div></div><div class="score-bar-val">0</div></div>
         <div class="score-bar-row"><div class="score-bar-name">収益性</div><div class="score-bar-track"><div class="score-bar-fill" style="width:92%"></div></div><div class="score-bar-val">92</div></div>
         <div class="score-bar-row"><div class="score-bar-name">安全性</div><div class="score-bar-track"><div class="score-bar-fill" style="width:55%"></div></div><div class="score-bar-val">55</div></div>
         <div class="score-bar-row"><div class="score-bar-name">成長性</div><div class="score-bar-track"><div class="score-bar-fill" style="width:73%"></div></div><div class="score-bar-val">73</div></div>
@@ -220,7 +220,11 @@
   <div class="wrap">
     <h2 class="sec-heading">関連ニュース・適時開示</h2>
     <div id="news-list">
-      <p style="font-size:14px;color:var(--text-light);padding:20px 0;">ニュースデータはありません。</p>
+      <div class="news-item"><div class="news-date">2026-08-05 </div><div class="news-title"><a href="https://news.google.com/rss/articles/CBMiYEFVX3lxTE1YcFg2NE45LVhERWRHZFBBaDdrSFJfcXBXblUtZTNkNDBkSXAzRlJYR1hJN3ZiLVRyb2tsMmgtbHhhWkE2WDRsVmoxQ1MxcEg4cWVNdGMzakxZZ0NDaTRLLQ?oc=5" target="_blank" rel="noopener">(株)トヨコー【341A】：決算情報 - Yahoo!ファイナンス</a></div></div>
+<div class="news-item"><div class="news-date">2026-08-05 <span style="color:var(--red);font-size:11px">▼ネガティブ</span></div><div class="news-title"><a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxQOTUyRjdRejUyZXhUSUNZRTdveGlua1VLd1RsS3B6UnVvQXRUd0pzaEVtU1RYaFdBNDZLNDVkOW8zRloxeGpsUmFTNVpKSjBpVkJvdXFib211Z3htdnFxV3had3d5T3BrVEVkWTZreDktZDdGTmxzaTdXUnhRckhVbFR2MWpCaW8?oc=5" target="_blank" rel="noopener">【決算速報】トヨコー---27年3月期1Qは減益、経常利益は7.3％減(フィスコ) - Yahoo!ファイナンス</a></div></div>
+<div class="news-item"><div class="news-date">2025-11-14 <span style="color:var(--green);font-size:11px">▲ポジティブ</span></div><div class="news-title"><a href="https://news.google.com/rss/articles/CBMiV0FVX3lxTE5CODAxT2pqYkF4aWx1cnJUempYV2NHVDk2YjE3V012MkhqVXN5Q2h3QS1HTWNlQ25NbHJZYU5kQzJzNGl6SVBlaElqaWhRb25Da2hqTi1Ncw?oc=5" target="_blank" rel="noopener">トヨコーが5日続伸､上期大幅増益を材料視 - 四季報オンライン</a></div></div>
+<div class="news-item"><div class="news-date">2025-10-07 </div><div class="news-title"><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE5kRlQ2V2RzUS1CaE55c1FUX1B0cl9YVkVnbFVqalpZRXFpZUZBRFNmdmhmeHZhU0J5SFA3SjRPN0JRYkNjMGtaQWg5ekNVcTNNUmpnS1J3emZSQQ?oc=5" target="_blank" rel="noopener">(株)トヨコー【341A】：掲示板 - Yahoo!ファイナンス</a></div></div>
+<div class="news-item"><div class="news-date">2025-02-26 </div><div class="news-title"><a href="https://news.google.com/rss/articles/CBMiVEFVX3lxTE91TXJtMDRGSTZ1VWZOa1RVM2o1a0hWZjZHVFN3cDdab21OeFVDWFhQTGFsLUltSW5mNWVSZG41NWxfd2ZQT3FvTHNnZDV0emU0VnNXWQ?oc=5" target="_blank" rel="noopener">トヨコー（341A）の株価・業績・比較銘柄 - 四季報オンライン</a></div></div>
     </div>
   </div>
 </section>
@@ -275,14 +279,14 @@ document.getElementById('revenue-chart').innerHTML = `<div class="bar-group">
                     <div class="bar-val">11.2億</div>
                     <div class="bar-group-inner">
                       <div class="bar bar-rev" style="height:36%"></div>
-                      <div class="bar bar-op" style="height:3%"></div>
+                      <div class="bar" style="height:2%;background:var(--red);opacity:0.5" title="営業損失"></div>
                     </div>
                     <div class="bar-label">2023</div>
                   </div><div class="bar-group">
                     <div class="bar-val">11.0億</div>
                     <div class="bar-group-inner">
                       <div class="bar bar-rev" style="height:35%"></div>
-                      <div class="bar bar-op" style="height:3%"></div>
+                      <div class="bar" style="height:2%;background:var(--red);opacity:0.5" title="営業損失"></div>
                     </div>
                     <div class="bar-label">2024</div>
                   </div><div class="bar-group">
