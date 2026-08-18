@@ -11,6 +11,7 @@
 import sqlite3
 import os
 import json
+import re
 import yaml
 from datetime import datetime
 
@@ -452,6 +453,37 @@ document.getElementById('price-svg').innerHTML = `{price_svg}`;
     return html
 
 
+def update_index_pages(conn, stocks, base_dir):
+    """index.html と en.html のデータ配列をスクリーニング結果で更新"""
+    ja_items = []
+    en_items = []
+    for s in stocks:
+        per  = round(s['per'],  1) if s.get('per')  else None
+        pbr  = round(s['pbr'],  2) if s.get('pbr')  else None
+        roe  = round(s['roe'],  1) if s.get('roe')  else None
+        dy   = round(s['div_yield'], 2) if s.get('div_yield') else None
+        score = round(s.get('score', 0), 2)
+        ja_items.append({'rank': s['rank'], 'ticker': s['ticker'], 'name': s['name'],
+                         'per': per, 'pbr': pbr, 'roe': roe, 'dy': dy, 'score': score})
+        en_items.append({'rank': s['rank'], 'code': s['ticker'], 'name': s['name'],
+                         'per': per, 'pbr': pbr, 'roe': roe, 'dy': dy, 'score': score})
+
+    targets = [
+        (os.path.join(base_dir, 'docs', 'index.html'), ja_items),
+        (os.path.join(base_dir, 'docs', 'en.html'),    en_items),
+    ]
+    for path, items in targets:
+        if not os.path.exists(path):
+            continue
+        js = 'const data=' + json.dumps(items, ensure_ascii=False, separators=(',', ':')) + ';'
+        with open(path, 'r', encoding='utf-8') as f:
+            html = f.read()
+        updated = re.sub(r'const data=\[.*?\];', js, html, flags=re.DOTALL)
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write(updated)
+        print(f"  📝 {os.path.basename(path)} のデータ配列を更新")
+
+
 def run(top_n=10):
     """メイン実行"""
     print(f"📄 銘柄詳細ページ生成（TOP {top_n}）")
@@ -460,8 +492,10 @@ def run(top_n=10):
     conn = get_db()
     c = conn.cursor()
 
+    base_dir = os.path.join(os.path.dirname(__file__), '..')
+
     # テンプレート読み込み
-    template_path = os.path.join(os.path.dirname(__file__), '..', 'site', 'stocks', 'template.html')
+    template_path = os.path.join(base_dir, 'site', 'stocks', 'template.html')
     with open(template_path, 'r', encoding='utf-8') as f:
         template = f.read()
 
@@ -590,6 +624,9 @@ def run(top_n=10):
     links_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'stock_pages.json')
     with open(links_path, 'w', encoding='utf-8') as f:
         json.dump(generated, f, ensure_ascii=False, indent=2)
+
+    # index.html / en.html のデータ配列を更新
+    update_index_pages(conn, stocks, base_dir)
 
     conn.close()
 
