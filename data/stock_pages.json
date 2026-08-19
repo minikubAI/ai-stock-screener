@@ -15,14 +15,19 @@
     "path": "stocks/2220.html"
   },
   {
+    "ticker": "3640",
+    "name": "電算",
+    "path": "stocks/3640.html"
+  },
+  {
     "ticker": "7836",
     "name": "アビックス",
     "path": "stocks/7836.html"
   },
   {
-    "ticker": "3640",
-    "name": "電算",
-    "path": "stocks/3640.html"
+    "ticker": "3010",
+    "name": "ポラリス・ホールディングス",
+    "path": "stocks/3010.html"
   },
   {
     "ticker": "1764",
@@ -35,24 +40,14 @@
     "path": "stocks/7505.html"
   },
   {
-    "ticker": "3010",
-    "name": "ポラリス・ホールディングス",
-    "path": "stocks/3010.html"
-  },
-  {
-    "ticker": "3625",
-    "name": "テックファームホールディングス",
-    "path": "stocks/3625.html"
-  },
-  {
-    "ticker": "2112",
-    "name": "塩水港精糖",
-    "path": "stocks/2112.html"
-  },
-  {
     "ticker": "8057",
     "name": "内田洋行",
     "path": "stocks/8057.html"
+  },
+  {
+    "ticker": "1814",
+    "name": "大末建設",
+    "path": "stocks/1814.html"
   },
   {
     "ticker": "7722",
@@ -65,26 +60,6 @@
     "path": "stocks/6357.html"
   },
   {
-    "ticker": "2288",
-    "name": "丸大食品",
-    "path": "stocks/2288.html"
-  },
-  {
-    "ticker": "463A",
-    "name": "インテリックスホールディングス",
-    "path": "stocks/463A.html"
-  },
-  {
-    "ticker": "5110",
-    "name": "住友ゴム工業",
-    "path": "stocks/5110.html"
-  },
-  {
-    "ticker": "1814",
-    "name": "大末建設",
-    "path": "stocks/1814.html"
-  },
-  {
     "ticker": "6927",
     "name": "ヘリオス　テクノ　ホールディング",
     "path": "stocks/6927.html"
@@ -95,9 +70,34 @@
     "path": "stocks/7325.html"
   },
   {
+    "ticker": "463A",
+    "name": "インテリックスホールディングス",
+    "path": "stocks/463A.html"
+  },
+  {
+    "ticker": "2288",
+    "name": "丸大食品",
+    "path": "stocks/2288.html"
+  },
+  {
+    "ticker": "5110",
+    "name": "住友ゴム工業",
+    "path": "stocks/5110.html"
+  },
+  {
+    "ticker": "2112",
+    "name": "塩水港精糖",
+    "path": "stocks/2112.html"
+  },
+  {
     "ticker": "9704",
     "name": "アゴーラ　ホスピタリティー　グループ",
     "path": "stocks/9704.html"
+  },
+  {
+    "ticker": "1768",
+    "name": "ソネック",
+    "path": "stocks/1768.html"
   },
   {
     "ticker": "2323",

@@ -137,17 +137,18 @@
   <!-- STOCK PRICE -->
   <div class="price-section">
     <div class="price-row">
-      <div class="current-price">¥-</div>
-      <div class="price-change ">-</div>
+      <div class="current-price">¥30</div>
+      <div class="price-change up">+¥0 (+0.00%)</div>
     </div>
-    <div class="price-date">- 時点</div>
+    <div class="price-date">Ticker
+    時点</div>
     <div class="price-chart-area">
       <div class="price-chart-label">過去1年間の株価推移</div>
       <svg id="price-svg" width="100%" height="160" viewBox="0 0 680 160"></svg>
       <div class="price-chart-range">
-        <span>安値 ¥-</span>
+        <span>安値 ¥30</span>
         <span>—</span>
-        <span>高値 ¥-</span>
+        <span>高値 ¥30</span>
       </div>
     </div>
   </div>
@@ -181,7 +182,7 @@
     <div class="score-box">
       <div class="score-total">
         <div class="score-num">91</div>
-        <div class="score-label">/ 100（スクリーニング順位 20位 / 30社中）</div>
+        <div class="score-label">/ 100（スクリーニング順位 19位 / 30社中）</div>
       </div>
       <div class="score-bars">
         <div class="score-bar-row"><div class="score-bar-name">割安度</div><div class="score-bar-track"><div class="score-bar-fill" style="width:65%"></div></div><div class="score-bar-val">65</div></div>
@@ -220,7 +221,11 @@
   <div class="wrap">
     <h2 class="sec-heading">関連ニュース・適時開示</h2>
     <div id="news-list">
-      <p style="font-size:14px;color:var(--text-light);padding:20px 0;">ニュースデータはありません。</p>
+      <div class="news-item"><div class="news-date">2026-08-13 </div><div class="news-title"><a href="https://news.google.com/rss/articles/CBMiYEFVX3lxTFBsZlE0ZDBaZ3ZoVVF4Wm81Q28yRHh6XzVnSElieFduYjhSMnFzUkN3MnFUVW1rdmd4MzJBZ21mRWd4STVKeGNXdzBzOHRMa1FQQi1UV1pXb2xybmdydWpTcw?oc=5" target="_blank" rel="noopener">(株)アゴーラホスピタリティーグループ【9704】：決算情報 - Yahoo!ファイナンス</a></div></div>
+<div class="news-item"><div class="news-date">2026-06-08 </div><div class="news-title"><a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE1INVEweVpzYlJ5ZU1IU0JHQmdGT3FNU0lWSHY5dkM1bDh6bGVuVmpONnhUbmRTS25Gai1QcHhReW1hT2w1WUV1V3BRRm1tOEhpeHlHWmhCNU02czdBYWY4?oc=5" target="_blank" rel="noopener">(株)アゴーラホスピタリティーグループ【9704】：現物信用売買内訳時系列 - Yahoo!ファイナンス</a></div></div>
+<div class="news-item"><div class="news-date">2026-02-21 </div><div class="news-title"><a href="https://news.google.com/rss/articles/CBMi6wFBVV95cUxPdkxGVzAyME9nV2tlTWdBVGh5MGpRNkdCMXh5SDMyTlMxOUd2LVdwX3BPMVRaNkl6S0stNE5WdVRBMVg4SldsMzNTczQ0ZktxYmdtOHE5YlVFQVA4Z2lEYVZHdXdwUk9UUV9jSHZqR1ZvZGNQQk5mQkhIX3Nfa3JJTVljMzU4Um1ZZ0piRlN4emUtN2ZmMkx5bGItRzJKOVdOeEpuOUdhUmpYUXNERG05eWFlbTJfWmM5d2xLQVVMX21PTENJcFRGQS1MR2EtU0JUWmY2aXlVQ2lzdUhtRjdYOUp5RU02T2d5UzJV?oc=5" target="_blank" rel="noopener">アゴーラ ホスピタリティー グループ（9704）の株主優待｜国内株式 - SBI証券</a></div></div>
+<div class="news-item"><div class="news-date">2025-10-07 </div><div class="news-title"><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE1ITEFNOERpR29kMWE2TXVMMWR4YmJfTGpacjVySDhsYzhpU3BOYkFodU0tdlpTZE5PS01FYm9raFZNZzhFd0FiQlV2TlJ2SlRabzRQRnJEelRFQQ?oc=5" target="_blank" rel="noopener">(株)アゴーラホスピタリティーグループ【9704】：掲示板 - Yahoo!ファイナンス</a></div></div>
+<div class="news-item"><div class="news-date">2025-05-04 </div><div class="news-title"><a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTE1ReEVYX0d0SVJoTEVYZHRCa3l4VWpfVW9yR3UzWnVLNW1pZWRubUJmT2xtbGVBaGNRVWRwWXNDcmZLRVliOGtSU1EwN3ZGcFRPWm5MT1lkZHRPNzQ?oc=5" target="_blank" rel="noopener">アゴーラホスピタリティーグループ（9704）企業分析レポート｜日本個別株デューデリジェンスセンター - note</a></div></div>
     </div>
   </div>
 </section>
@@ -279,6 +284,15 @@ document.getElementById('financials-body').innerHTML = `<tr>
 
 <script>
 document.getElementById('revenue-chart').innerHTML = `<div class="bar-group"><div class="bar-val">49.5億</div><div class="bar-group-inner" style="position:relative;overflow:visible;"><div style="position:absolute;bottom:12.4%;left:5%;width:42%;height:43.8%;background:var(--accent);border-radius:3px 3px 0 0;"></div><div style="position:absolute;top:87.6%;right:5%;width:42%;height:12.4%;background:var(--red);border-radius:0 0 3px 3px;opacity:0.8;"></div><div style="position:absolute;bottom:12.4%;left:0;right:0;height:1px;background:var(--border);z-index:1;"></div></div><div class="bar-label">2022</div></div><div class="bar-group"><div class="bar-val">73.1億</div><div class="bar-group-inner" style="position:relative;overflow:visible;"><div style="position:absolute;bottom:12.4%;left:5%;width:42%;height:64.6%;background:var(--accent);border-radius:3px 3px 0 0;"></div><div style="position:absolute;top:87.6%;right:5%;width:42%;height:2.0%;background:var(--red);border-radius:0 0 3px 3px;opacity:0.8;"></div><div style="position:absolute;bottom:12.4%;left:0;right:0;height:1px;background:var(--border);z-index:1;"></div></div><div class="bar-label">2023</div></div><div class="bar-group"><div class="bar-val">83.8億</div><div class="bar-group-inner" style="position:relative;overflow:visible;"><div style="position:absolute;bottom:12.4%;left:5%;width:42%;height:74.1%;background:var(--accent);border-radius:3px 3px 0 0;"></div><div style="position:absolute;bottom:12.4%;right:5%;width:42%;height:4.4%;background:var(--green);border-radius:3px 3px 0 0;"></div><div style="position:absolute;bottom:12.4%;left:0;right:0;height:1px;background:var(--border);z-index:1;"></div></div><div class="bar-label">2024</div></div><div class="bar-group"><div class="bar-val">99.1億</div><div class="bar-group-inner" style="position:relative;overflow:visible;"><div style="position:absolute;bottom:12.4%;left:5%;width:42%;height:87.6%;background:var(--accent);border-radius:3px 3px 0 0;"></div><div style="position:absolute;bottom:12.4%;right:5%;width:42%;height:9.3%;background:var(--green);border-radius:3px 3px 0 0;"></div><div style="position:absolute;bottom:12.4%;left:0;right:0;height:1px;background:var(--border);z-index:1;"></div></div><div class="bar-label">2025</div></div><div class="bar-group"><div class="bar-val">97.5億</div><div class="bar-group-inner" style="position:relative;overflow:visible;"><div style="position:absolute;bottom:12.4%;left:5%;width:42%;height:86.2%;background:var(--accent);border-radius:3px 3px 0 0;"></div><div style="position:absolute;bottom:12.4%;right:5%;width:42%;height:13.3%;background:var(--green);border-radius:3px 3px 0 0;"></div><div style="position:absolute;bottom:12.4%;left:0;right:0;height:1px;background:var(--border);z-index:1;"></div></div><div class="bar-label">2026</div></div>`;
+</script>
+
+<script>
+document.getElementById('price-svg').innerHTML = `<path d="M10.0,130.0L670.0,130.0L670.0,130.0L10.0,130.0Z" fill="#edf7f1" opacity="0.5"/>
+<path d="M10.0,130.0L670.0,130.0" fill="none" stroke="#1a8a5c" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="670.0" cy="130.0" r="4" fill="#1a8a5c"/>
+<text x="10" y="138" font-size="10" fill="#888">2026-08-18</text>
+<text x="670" y="138" font-size="10" fill="#888" text-anchor="end">Ticker
+   </text>`;
 </script>
 </body>
 </html>

@@ -137,17 +137,18 @@
   <!-- STOCK PRICE -->
   <div class="price-section">
     <div class="price-row">
-      <div class="current-price">¥-</div>
-      <div class="price-change ">-</div>
+      <div class="current-price">¥190</div>
+      <div class="price-change up">+¥0 (+0.00%)</div>
     </div>
-    <div class="price-date">- 時点</div>
+    <div class="price-date">Ticker
+    時点</div>
     <div class="price-chart-area">
       <div class="price-chart-label">過去1年間の株価推移</div>
       <svg id="price-svg" width="100%" height="160" viewBox="0 0 680 160"></svg>
       <div class="price-chart-range">
-        <span>安値 ¥-</span>
+        <span>安値 ¥190</span>
         <span>—</span>
-        <span>高値 ¥-</span>
+        <span>高値 ¥190</span>
       </div>
     </div>
   </div>
@@ -180,8 +181,8 @@
     <h2 class="sec-heading">スクリーニング評価</h2>
     <div class="score-box">
       <div class="score-total">
-        <div class="score-num">98</div>
-        <div class="score-label">/ 100（スクリーニング順位 8位 / 30社中）</div>
+        <div class="score-num">100</div>
+        <div class="score-label">/ 100（スクリーニング順位 6位 / 30社中）</div>
       </div>
       <div class="score-bars">
         <div class="score-bar-row"><div class="score-bar-name">割安度</div><div class="score-bar-track"><div class="score-bar-fill" style="width:53%"></div></div><div class="score-bar-val">53</div></div>
@@ -220,7 +221,11 @@
   <div class="wrap">
     <h2 class="sec-heading">関連ニュース・適時開示</h2>
     <div id="news-list">
-      <p style="font-size:14px;color:var(--text-light);padding:20px 0;">ニュースデータはありません。</p>
+      <div class="news-item"><div class="news-date">2026-08-13 </div><div class="news-title"><a href="https://news.google.com/rss/articles/CBMiYEFVX3lxTE5UWEhwNmV4UUUyZmR1YWlrODRfRFR6Vlo4N1RmSkNmQ2RqOWdkTzVXR2Roc3hVYWRVeGlqMDNpVDdzYmxOMmtENkR4bVBYV0t2UFNwM09Obk1DMFJVck9NUw?oc=5" target="_blank" rel="noopener">ポラリス・ホールディングス(株)【3010】：決算情報 - Yahoo!ファイナンス</a></div></div>
+<div class="news-item"><div class="news-date">2026-06-24 <span style="color:var(--green);font-size:11px">▲ポジティブ</span></div><div class="news-title"><a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE42Tm9TNnFRNjlMMkNWQmFkMWdqRHpWb1ExamE5YmpydVFxUEpmc2h6ZlFrc1dodW1SZ3RwdmVoSm9xWTZCQzcwSEZuSGVFaEpWQzhV?oc=5" target="_blank" rel="noopener">ポラリスHD(3010)、3期連続の「増配」を発表し、配当利回り5.9％に！ 年間配当は2年で3.3倍に急増、2027年3月期は前期比5円増の｢1株あたり10円｣に！ - ダイヤモンド・オンライン</a></div></div>
+<div class="news-item"><div class="news-date">2026-06-24 </div><div class="news-title"><a href="https://news.google.com/rss/articles/CBMiUkFVX3lxTFBDN0k5dlNkYnByVTVtNVFjODZjMjRJSkhZazhzYi0xNGVZcWplUEZGTlA2YkZWblEybmxyQVpLck5UVFhPODBRRXNhNUYtQjJKVWc?oc=5" target="_blank" rel="noopener">ポラリスＨＤ、今期配当を5円増額修正 - 株探</a></div></div>
+<div class="news-item"><div class="news-date">2026-05-13 </div><div class="news-title"><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE93ZldZQmRBNEFQdnFuZTdzQWotWmQwUGR2NktMOWpRc2ZyZXdFTnJQTjRiN0pKek41SzRmOEp1SlVTUVBqWVp2UjlyRkx5bExISWpDdzBZdlAtSjJVNTlPdFVxT01NeWNsS0E?oc=5" target="_blank" rel="noopener">ポラリス・ホールディングス[3010]：完全子会社（株式会社ミナシア）の吸収合併（略式合併）に関するお知らせ 2026年5月13日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞</a></div></div>
+<div class="news-item"><div class="news-date">2025-10-07 </div><div class="news-title"><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE9HTkM3UWJWT2JIM2Z0X0g3UU1GU1ZuTFFUM0tIblpid0pzMVRUdlc0SHh5bnBiUUE0WlVaeFZXMnprTTlkeVBUTGVTMTRfYmRFZEU4d19EenAwdw?oc=5" target="_blank" rel="noopener">ポラリス・ホールディングス(株)【3010】：掲示板 - Yahoo!ファイナンス</a></div></div>
     </div>
   </div>
 </section>
@@ -272,6 +277,15 @@ document.getElementById('financials-body').innerHTML = `<tr>
 
 <script>
 document.getElementById('revenue-chart').innerHTML = `<div class="bar-group"><div class="bar-val">70.2億</div><div class="bar-group-inner" style="position:relative;overflow:visible;"><div style="position:absolute;bottom:0.0%;left:5%;width:42%;height:14.5%;background:var(--accent);border-radius:3px 3px 0 0;"></div><div style="position:absolute;bottom:0.0%;right:5%;width:42%;height:2.0%;background:var(--green);border-radius:3px 3px 0 0;"></div></div><div class="bar-label">2023</div></div><div class="bar-group"><div class="bar-val">225.5億</div><div class="bar-group-inner" style="position:relative;overflow:visible;"><div style="position:absolute;bottom:0.0%;left:5%;width:42%;height:46.5%;background:var(--accent);border-radius:3px 3px 0 0;"></div><div style="position:absolute;bottom:0.0%;right:5%;width:42%;height:7.0%;background:var(--green);border-radius:3px 3px 0 0;"></div></div><div class="bar-label">2024</div></div><div class="bar-group"><div class="bar-val">278.8億</div><div class="bar-group-inner" style="position:relative;overflow:visible;"><div style="position:absolute;bottom:0.0%;left:5%;width:42%;height:57.5%;background:var(--accent);border-radius:3px 3px 0 0;"></div><div style="position:absolute;bottom:0.0%;right:5%;width:42%;height:5.8%;background:var(--green);border-radius:3px 3px 0 0;"></div></div><div class="bar-label">2025</div></div><div class="bar-group"><div class="bar-val">484.7億</div><div class="bar-group-inner" style="position:relative;overflow:visible;"><div style="position:absolute;bottom:0.0%;left:5%;width:42%;height:100.0%;background:var(--accent);border-radius:3px 3px 0 0;"></div><div style="position:absolute;bottom:0.0%;right:5%;width:42%;height:8.3%;background:var(--green);border-radius:3px 3px 0 0;"></div></div><div class="bar-label">2026</div></div>`;
+</script>
+
+<script>
+document.getElementById('price-svg').innerHTML = `<path d="M10.0,130.0L670.0,130.0L670.0,130.0L10.0,130.0Z" fill="#edf7f1" opacity="0.5"/>
+<path d="M10.0,130.0L670.0,130.0" fill="none" stroke="#1a8a5c" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="670.0" cy="130.0" r="4" fill="#1a8a5c"/>
+<text x="10" y="138" font-size="10" fill="#888">2026-08-18</text>
+<text x="670" y="138" font-size="10" fill="#888" text-anchor="end">Ticker
+   </text>`;
 </script>
 </body>
 </html>
