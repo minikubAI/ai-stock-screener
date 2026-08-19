@@ -1,0 +1,95 @@
+name: AI Stock Screener
+
+on:
+  schedule:
+    # 朝8:00 JST = 23:00 UTC（前日）月〜金
+    - cron: '0 23 * * 0-4'
+    # 夕15:30 JST = 06:30 UTC 月〜金
+    - cron: '30 6 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Run mode'
+        required: true
+        default: 'both'
+        type: choice
+        options:
+          - morning
+          - evening
+          - both
+
+env:
+  LINE_CHANNEL_TOKEN: ${{ secrets.LINE_CHANNEL_TOKEN }}
+  JQUANTS_API_KEY: ${{ secrets.JQUANTS_API_KEY }}
+  TZ: Asia/Tokyo
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install anthropic 2>/dev/null || true
+
+      - name: Initialize DB (if needed)
+        run: |
+          if [ ! -f data/stocks.db ]; then
+            cp config/settings.example.yaml config/settings.yaml
+            python src/init_db.py
+          fi
+
+      - name: Determine run mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "mode=${{ inputs.mode }}" >> $GITHUB_OUTPUT
+          else
+            HOUR=$(TZ=Asia/Tokyo date +%H)
+            if [ "$HOUR" -lt 12 ]; then
+              echo "mode=morning" >> $GITHUB_OUTPUT
+            else
+              echo "mode=evening" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+      - name: Run morning
+        if: steps.mode.outputs.mode == 'morning' || steps.mode.outputs.mode == 'both'
+        run: python src/run_all.py morning
+        continue-on-error: true
+
+      - name: Run evening
+        if: steps.mode.outputs.mode == 'evening' || steps.mode.outputs.mode == 'both'
+        run: python src/run_all.py evening
+        continue-on-error: true
+
+      - name: Generate pages
+        if: steps.mode.outputs.mode == 'morning' || steps.mode.outputs.mode == 'both'
+        run: |
+          python src/generate_pages.py 2>/dev/null || true
+
+      - name: Copy site to docs
+        run: |
+          cp -r site/* docs/ 2>/dev/null || true
+          cp data/latest_report.json docs/data/ 2>/dev/null || true
+          cp data/portfolio.json docs/data/ 2>/dev/null || true
+
+      - name: Commit and push
+        run: |
+          git config user.name "AI Stock Screener Bot"
+          git config user.email "bot@minikubai.github.io"
+          git add -A
+          git diff --staged --quiet || git commit -m "Auto update: $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M') JST"
+          git push
