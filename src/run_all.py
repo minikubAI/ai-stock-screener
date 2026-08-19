@@ -61,6 +61,14 @@ def main():
         print(f"✅ 全レイヤー実行完了！")
     print(f"{'=' * 60}")
 
+    # LINE通知
+    print(f"\n📱 LINE通知送信中...")
+    notify_script = os.path.join(project_dir, 'src', 'notify_line.py')
+    try:
+        subprocess.run([sys.executable, notify_script], cwd=project_dir, timeout=30)
+    except Exception as e:
+        print(f"  ⚠️ LINE通知失敗: {e}")
+
     # ページ再生成を提案
     print(f"\n💡 スクリーニング結果をサイトに反映するには:")
     print(f"   python src/generate_pages.py")
