@@ -12,7 +12,8 @@ import sys
 import os
 from datetime import datetime
 
-SCRIPTS = [
+# morning: 全レイヤー実行（朝の完全スキャン）
+MORNING_SCRIPTS = [
     ("📰 ニュース取得 & センチメント分析", "src/fetch_news.py"),
     ("📈 トレンド分析（第2層）", "src/trend_analysis.py"),
     ("🌍 マクロ環境スコア（第4層）", "src/macro_score.py"),
@@ -21,16 +22,31 @@ SCRIPTS = [
     ("🏆 統合スクリーニング v3", "src/screener_v3.py"),
 ]
 
+# evening: ニュース・マクロ・スクリーニングのみ（軽量更新）
+EVENING_SCRIPTS = [
+    ("📰 ニュース取得 & センチメント分析", "src/fetch_news.py"),
+    ("🌍 マクロ環境スコア（第4層）", "src/macro_score.py"),
+    ("🏆 統合スクリーニング v3", "src/screener_v3.py"),
+]
+
 def main():
+    mode = sys.argv[1] if len(sys.argv) > 1 else 'morning'
+    if mode == 'evening':
+        scripts = EVENING_SCRIPTS
+        label_mode = '夕方（軽量更新）'
+    else:
+        scripts = MORNING_SCRIPTS
+        label_mode = '朝（フルスキャン）'
+
     print("=" * 60)
-    print("🚀 全レイヤー一括実行")
+    print(f"🚀 全レイヤー一括実行 [{label_mode}]")
     print(f"   {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print("=" * 60)
 
     project_dir = os.path.join(os.path.dirname(__file__), '..')
     failed = []
 
-    for i, (label, script) in enumerate(SCRIPTS, 1):
+    for i, (label, script) in enumerate(scripts, 1):
         print(f"\n{'─' * 60}")
         print(f"[{i}/{len(SCRIPTS)}] {label}")
         print(f"{'─' * 60}")
@@ -40,7 +56,7 @@ def main():
             result = subprocess.run(
                 [sys.executable, script_path],
                 cwd=project_dir,
-                timeout=300,  # 5分タイムアウト
+                timeout=600,  # 10分タイムアウト
             )
             if result.returncode != 0:
                 print(f"  ⚠️ 終了コード: {result.returncode}")

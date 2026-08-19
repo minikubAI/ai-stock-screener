@@ -44,12 +44,29 @@ jobs:
           pip install -r requirements.txt
           pip install anthropic 2>/dev/null || true
 
-      - name: Initialize DB (if needed)
+      - name: Create settings.yaml
         run: |
-          if [ ! -f data/stocks.db ]; then
-            cp config/settings.example.yaml config/settings.yaml
-            python src/init_db.py
-          fi
+          cp config/settings.example.yaml config/settings.yaml
+          sed -i "s|channel_token:.*|channel_token: \"$LINE_CHANNEL_TOKEN\"|" config/settings.yaml || true
+
+      - name: Get week number for cache key
+        id: date
+        run: echo "week=$(date +%Y-W%V)" >> $GITHUB_OUTPUT
+
+      - name: Restore DB cache
+        uses: actions/cache@v4
+        id: db-cache
+        with:
+          path: data/stocks.db
+          key: stocks-db-${{ steps.date.outputs.week }}
+          restore-keys: stocks-db-
+
+      - name: Initialize and populate DB (if no cache)
+        if: steps.db-cache.outputs.cache-hit != 'true'
+        run: |
+          python src/init_db.py
+          pip install xlrd -q
+          python src/fetch_all_stocks.py
 
       - name: Determine run mode
         id: mode
