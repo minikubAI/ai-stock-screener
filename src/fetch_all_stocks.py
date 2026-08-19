@@ -280,25 +280,34 @@ def fetch_historical_financials(conn, tickers: list[str]):
                                 equity_val = float(val)
                                 break
 
-                # DBに保存
+                # DBに保存（shares_outstanding/eps/bps/dps は上書きしない）
                 if any([revenue, op_income, net_income]):
                     c.execute('''
                         INSERT OR REPLACE INTO financials
                         (ticker, fiscal_year, revenue, operating_income,
-                         net_income, total_assets, total_equity)
+                         net_income, total_assets, total_equity,
+                         shares_outstanding, eps, bps, dividends_per_share)
                         VALUES (?, ?,
                                 COALESCE(?, (SELECT revenue FROM financials WHERE ticker=? AND fiscal_year=?)),
                                 COALESCE(?, (SELECT operating_income FROM financials WHERE ticker=? AND fiscal_year=?)),
                                 COALESCE(?, (SELECT net_income FROM financials WHERE ticker=? AND fiscal_year=?)),
                                 COALESCE(?, (SELECT total_assets FROM financials WHERE ticker=? AND fiscal_year=?)),
-                                COALESCE(?, (SELECT total_equity FROM financials WHERE ticker=? AND fiscal_year=?)))
+                                COALESCE(?, (SELECT total_equity FROM financials WHERE ticker=? AND fiscal_year=?)),
+                                (SELECT shares_outstanding FROM financials WHERE ticker=? AND fiscal_year=?),
+                                (SELECT eps FROM financials WHERE ticker=? AND fiscal_year=?),
+                                (SELECT bps FROM financials WHERE ticker=? AND fiscal_year=?),
+                                (SELECT dividends_per_share FROM financials WHERE ticker=? AND fiscal_year=?))
                     ''', (
                         ticker, fy,
                         revenue, ticker, fy,
                         op_income, ticker, fy,
                         net_income, ticker, fy,
                         total_assets_val, ticker, fy,
-                        equity_val, ticker, fy
+                        equity_val, ticker, fy,
+                        ticker, fy,
+                        ticker, fy,
+                        ticker, fy,
+                        ticker, fy,
                     ))
 
             success += 1

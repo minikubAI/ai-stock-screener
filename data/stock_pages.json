@@ -1,53 +1,8 @@
 [
   {
-    "ticker": "7777",
-    "name": "スリー・ディー・マトリックス",
-    "path": "stocks/7777.html"
-  },
-  {
-    "ticker": "2323",
-    "name": "ｆｏｎｆｕｎ",
-    "path": "stocks/2323.html"
-  },
-  {
-    "ticker": "4419",
-    "name": "Ｆｉｎａｔｅｘｔホールディングス",
-    "path": "stocks/4419.html"
-  },
-  {
-    "ticker": "135A",
-    "name": "ＶＲＡＩＮ　Ｓｏｌｕｔｉｏｎ",
-    "path": "stocks/135A.html"
-  },
-  {
     "ticker": "5729",
     "name": "日本精鉱",
     "path": "stocks/5729.html"
-  },
-  {
-    "ticker": "4222",
-    "name": "児玉化学工業",
-    "path": "stocks/4222.html"
-  },
-  {
-    "ticker": "8136",
-    "name": "サンリオ",
-    "path": "stocks/8136.html"
-  },
-  {
-    "ticker": "3692",
-    "name": "ＦＦＲＩセキュリティ",
-    "path": "stocks/3692.html"
-  },
-  {
-    "ticker": "341A",
-    "name": "トヨコー",
-    "path": "stocks/341A.html"
-  },
-  {
-    "ticker": "556A",
-    "name": "犬猫生活",
-    "path": "stocks/556A.html"
   },
   {
     "ticker": "1491",
@@ -55,29 +10,29 @@
     "path": "stocks/1491.html"
   },
   {
+    "ticker": "2220",
+    "name": "亀田製菓",
+    "path": "stocks/2220.html"
+  },
+  {
     "ticker": "7836",
     "name": "アビックス",
     "path": "stocks/7836.html"
   },
   {
-    "ticker": "438A",
-    "name": "インフキュリオン",
-    "path": "stocks/438A.html"
+    "ticker": "3640",
+    "name": "電算",
+    "path": "stocks/3640.html"
   },
   {
-    "ticker": "4413",
-    "name": "ボードルア",
-    "path": "stocks/4413.html"
+    "ticker": "1764",
+    "name": "工藤建設",
+    "path": "stocks/1764.html"
   },
   {
-    "ticker": "3923",
-    "name": "ラクス",
-    "path": "stocks/3923.html"
-  },
-  {
-    "ticker": "6834",
-    "name": "精工技研",
-    "path": "stocks/6834.html"
+    "ticker": "7505",
+    "name": "扶桑電通",
+    "path": "stocks/7505.html"
   },
   {
     "ticker": "3010",
@@ -85,19 +40,69 @@
     "path": "stocks/3010.html"
   },
   {
-    "ticker": "7554",
-    "name": "幸楽苑",
-    "path": "stocks/7554.html"
+    "ticker": "3625",
+    "name": "テックファームホールディングス",
+    "path": "stocks/3625.html"
   },
   {
-    "ticker": "4765",
-    "name": "ＳＢＩグローバルアセットマネジメント",
-    "path": "stocks/4765.html"
+    "ticker": "2112",
+    "name": "塩水港精糖",
+    "path": "stocks/2112.html"
   },
   {
-    "ticker": "3936",
-    "name": "グローバルウェイ",
-    "path": "stocks/3936.html"
+    "ticker": "8057",
+    "name": "内田洋行",
+    "path": "stocks/8057.html"
+  },
+  {
+    "ticker": "7722",
+    "name": "国際計測器",
+    "path": "stocks/7722.html"
+  },
+  {
+    "ticker": "6357",
+    "name": "三精テクノロジーズ",
+    "path": "stocks/6357.html"
+  },
+  {
+    "ticker": "2288",
+    "name": "丸大食品",
+    "path": "stocks/2288.html"
+  },
+  {
+    "ticker": "463A",
+    "name": "インテリックスホールディングス",
+    "path": "stocks/463A.html"
+  },
+  {
+    "ticker": "5110",
+    "name": "住友ゴム工業",
+    "path": "stocks/5110.html"
+  },
+  {
+    "ticker": "1814",
+    "name": "大末建設",
+    "path": "stocks/1814.html"
+  },
+  {
+    "ticker": "6927",
+    "name": "ヘリオス　テクノ　ホールディング",
+    "path": "stocks/6927.html"
+  },
+  {
+    "ticker": "7325",
+    "name": "アイリックコーポレーション",
+    "path": "stocks/7325.html"
+  },
+  {
+    "ticker": "9704",
+    "name": "アゴーラ　ホスピタリティー　グループ",
+    "path": "stocks/9704.html"
+  },
+  {
+    "ticker": "2323",
+    "name": "ｆｏｎｆｕｎ",
+    "path": "stocks/2323.html"
   },
   {
     "ticker": "247A",
@@ -115,14 +120,14 @@
     "path": "stocks/277A.html"
   },
   {
-    "ticker": "285A",
-    "name": "キオクシアホールディングス",
-    "path": "stocks/285A.html"
-  },
-  {
     "ticker": "325A",
     "name": "ＴＥＮＴＩＡＬ",
     "path": "stocks/325A.html"
+  },
+  {
+    "ticker": "330A",
+    "name": "ＴａｌｅｎｔＸ",
+    "path": "stocks/330A.html"
   },
   {
     "ticker": "3463",
@@ -130,23 +135,18 @@
     "path": "stocks/3463.html"
   },
   {
+    "ticker": "3479",
+    "name": "ＴＫＰ",
+    "path": "stocks/3479.html"
+  },
+  {
+    "ticker": "3612",
+    "name": "ワールド",
+    "path": "stocks/3612.html"
+  },
+  {
     "ticker": "3927",
     "name": "フーバーブレイン",
     "path": "stocks/3927.html"
-  },
-  {
-    "ticker": "4574",
-    "name": "大幸薬品",
-    "path": "stocks/4574.html"
-  },
-  {
-    "ticker": "5254",
-    "name": "Ａｒｅｎｔ",
-    "path": "stocks/5254.html"
-  },
-  {
-    "ticker": "549A",
-    "name": "ヒトトヒトホールディングス",
-    "path": "stocks/549A.html"
   }
 ]
