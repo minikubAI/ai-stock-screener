@@ -104,6 +104,37 @@ def init_db():
         )
     ''')
 
+    # 売買記録
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS trades (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            ticker TEXT NOT NULL,
+            trade_date DATE NOT NULL,
+            trade_type TEXT NOT NULL,
+            price REAL NOT NULL,
+            shares INTEGER NOT NULL,
+            amount REAL NOT NULL,
+            reason TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (ticker) REFERENCES companies(ticker)
+        )
+    ''')
+
+    # ポートフォリオ日次スナップショット
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS portfolio_snapshots (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            snapshot_date DATE NOT NULL,
+            cost_basis REAL NOT NULL DEFAULT 0,
+            market_value REAL NOT NULL DEFAULT 0,
+            unrealized_pnl REAL NOT NULL DEFAULT 0,
+            unrealized_pnl_pct REAL NOT NULL DEFAULT 0,
+            total_dividends REAL DEFAULT 0,
+            holdings_count INTEGER NOT NULL DEFAULT 0,
+            UNIQUE(snapshot_date)
+        )
+    ''')
+
     conn.commit()
     conn.close()
     print("✅ データベースを初期化しました")

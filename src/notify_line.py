@@ -3,6 +3,8 @@ LINE Notify スクリーニング結果通知
 
 使い方:
   python src/notify_line.py           # 朝の注文指示を送信
+  python src/notify_line.py morning   # 朝の注文指示を送信
+  python src/notify_line.py evening   # 夕方の運用サマリーを送信
   python src/notify_line.py test      # テストメッセージを送信
 
 環境変数:
@@ -25,8 +27,10 @@ CORE_BUDGET     = int(WEEKLY_BUDGET * 0.50)  # 3,750
 SAT_A_BUDGET    = int(WEEKLY_BUDGET * 0.33)  # 2,475 → 2,500 rounded
 SAT_B_BUDGET    = WEEKLY_BUDGET - CORE_BUDGET - int(WEEKLY_BUDGET * 0.33)  # 残り
 
-SATB_POOL_PATH  = os.path.join(BASE_DIR, 'data', 'satb_pool.json')
-REPORT_PATH     = os.path.join(BASE_DIR, 'data', 'latest_report.json')
+SATB_POOL_PATH    = os.path.join(BASE_DIR, 'data', 'satb_pool.json')
+REPORT_PATH       = os.path.join(BASE_DIR, 'data', 'latest_report.json')
+ORDERS_PATH       = os.path.join(BASE_DIR, 'data', 'morning_orders.json')
+PORTFOLIO_PATH    = os.path.join(BASE_DIR, 'docs', 'data', 'portfolio.json')
 
 
 def get_config():
@@ -84,6 +88,20 @@ def save_satb_pool(pool):
         json.dump(pool, f, ensure_ascii=False, indent=2)
 
 
+def save_morning_orders(orders):
+    os.makedirs(os.path.dirname(ORDERS_PATH), exist_ok=True)
+    with open(ORDERS_PATH, 'w', encoding='utf-8') as f:
+        json.dump(orders, f, ensure_ascii=False, indent=2)
+
+
+def load_portfolio():
+    try:
+        with open(PORTFOLIO_PATH, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        return None
+
+
 def generate_morning_message():
     report   = load_report()
     core_raw = report.get('core_results', [])[:8]
@@ -116,10 +134,13 @@ def generate_morning_message():
     lines.append(f'週予算: ¥{weekly:,}（月¥{MONTHLY_BUDGET:,}）')
     lines.append('')
 
+    orders = {'date': today, 'signal': signal, 'budget_ratio': budget_ratio, 'orders': []}
+
     if budget_ratio == 0.0:
         lines.append('🚫 本日は新規購入停止（PAUSEシグナル）')
         lines.append('━━━━━━━━━━━━━━')
         lines.append('📱 証券アプリで上記を確認してください')
+        save_morning_orders(orders)
         return '\n'.join(lines)
 
     core_budget  = int(CORE_BUDGET  * budget_ratio)
@@ -145,6 +166,11 @@ def generate_morning_message():
             name = s.get('name', s.get('ticker', ''))[:10]
             lines.append(f'  {s["ticker"]} {name} × {shares}株'
                          f' @ ¥{int(price):,} = ¥{cost:,}')
+            orders['orders'].append({
+                'ticker': s['ticker'], 'name': name,
+                'shares': shares, 'price': int(price),
+                'cost': cost, 'category': 'core',
+            })
     else:
         lines.append('  （データなし）')
     lines.append('')
@@ -165,6 +191,11 @@ def generate_morning_message():
             name = s.get('name', s.get('ticker', ''))[:10]
             lines.append(f'  {s["ticker"]} {name} × {shares}株'
                          f' @ ¥{int(price):,} = ¥{cost:,}')
+            orders['orders'].append({
+                'ticker': s['ticker'], 'name': name,
+                'shares': shares, 'price': int(price),
+                'cost': cost, 'category': 'satellite_a',
+            })
     else:
         lines.append('  （対象銘柄なし：株価¥10,000超）')
     lines.append('')
@@ -191,6 +222,11 @@ def generate_morning_message():
             total_spent += cost
             lines.append(f'  ✅ {target_ticker} {target_name} × {shares}株'
                          f' @ ¥{target_price:,} = ¥{cost:,}（積立達成）')
+            orders['orders'].append({
+                'ticker': target_ticker, 'name': target_name,
+                'shares': int(shares), 'price': int(target_price),
+                'cost': int(cost), 'category': 'satellite_b',
+            })
         else:
             lines.append(f'  {target_ticker} {target_name}:'
                          f' +¥{sat_b_budget:,}'
@@ -199,12 +235,64 @@ def generate_morning_message():
         lines.append(f'  積立中: +¥{sat_b_budget:,}（累計¥{pool["accumulated"]:,}）')
 
     save_satb_pool(pool)
+    save_morning_orders(orders)
     lines.append('')
 
     lines.append('━━━━━━━━━━━━━━')
     lines.append(f'💰 本日合計: ¥{total_spent:,}')
     lines.append('📱 証券アプリで上記を発注してください')
 
+    return '\n'.join(lines)
+
+
+def generate_evening_message():
+    portfolio = load_portfolio()
+    today = datetime.now().strftime('%Y-%m-%d')
+
+    if not portfolio:
+        return (
+            f'📊 本日の運用サマリー ({today})\n'
+            '━━━━━━━━━━━━━━\n'
+            'まだ投資を開始していません'
+        )
+
+    cost    = portfolio.get('cost_basis', 0)
+    value   = portfolio.get('market_value', 0)
+    upnl    = portfolio.get('unrealized_pnl', 0)
+    upnl_p  = portfolio.get('unrealized_pnl_pct', 0)
+    divs    = portfolio.get('total_dividends', 0)
+    tret    = portfolio.get('total_return', 0)
+    tret_p  = portfolio.get('total_return_pct', 0)
+    count   = portfolio.get('holdings_count', 0)
+
+    pnl_icon = '📈' if upnl >= 0 else '📉'
+
+    lines = [
+        f'📊 本日の運用サマリー ({today})',
+        '━━━━━━━━━━━━━━',
+        f'投資元本: ¥{cost:,.0f}',
+        f'評価額:   ¥{value:,.0f}',
+        f'含み損益: {pnl_icon} ¥{upnl:+,.0f}（{upnl_p:+.1f}%）',
+        f'累計配当: ¥{divs:,.0f}',
+        f'トータルリターン: ¥{tret:+,.0f}（{tret_p:+.1f}%）',
+        f'保有銘柄: {count}銘柄',
+    ]
+
+    # 本日の取引（morning_orders.json から）
+    try:
+        with open(ORDERS_PATH, 'r', encoding='utf-8') as f:
+            orders_data = json.load(f)
+        today_orders = orders_data.get('orders', [])
+        if orders_data.get('date') == today and today_orders:
+            lines.append('━━━━━━━━━━━━━━')
+            lines.append('本日の取引（予定）:')
+            for o in today_orders:
+                lines.append(f'  🟢 {o["ticker"]} {o["name"]} × {o["shares"]}株 @ ¥{o["price"]:,}')
+    except Exception:
+        pass
+
+    lines.append('━━━━━━━━━━━━━━')
+    lines.append('📱 証券アプリで確認してください')
     return '\n'.join(lines)
 
 
@@ -235,8 +323,8 @@ def main():
         message = (f'✅ LINE通知テスト成功\n'
                    f'{datetime.now().strftime("%Y-%m-%d %H:%M")}\n'
                    f'AI株スクリーナーからの通知です。')
-    elif arg == 'morning':
-        message = generate_morning_message()
+    elif arg == 'evening':
+        message = generate_evening_message()
     else:
         message = generate_morning_message()
 

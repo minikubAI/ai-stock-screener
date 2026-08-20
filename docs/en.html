@@ -78,10 +78,15 @@
     .about-avatar{width:64px;height:64px;border-radius:50%;background:var(--bg-sub);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0}
     .about-text h3{font-size:16px;font-weight:600;margin-bottom:6px}
     .about-text p{font-size:14px;color:var(--text-sub);line-height:1.8}
+    .perf-row{display:flex;gap:12px;flex-wrap:wrap}
+    .perf-box{flex:1;min-width:140px;background:var(--bg-sub);border-radius:8px;padding:20px;text-align:center}
+    .perf-num{font-family:'Source Code Pro',monospace;font-size:24px;font-weight:600}
+    .perf-lbl{font-size:12px;color:var(--text-light);margin-top:4px}
+    .perf-note{text-align:center;font-size:13px;color:var(--text-light);margin-top:16px}
     .disclaimer{font-size:11px;color:var(--text-light);line-height:1.8;padding:24px 0;border-top:1px solid var(--border)}
     footer{padding:20px 0;text-align:center;font-size:11px;color:var(--text-light)}
     footer a{color:var(--text-light)}
-    @media(max-width:640px){.hero h1{font-size:28px}.hero-stats{flex-direction:column;gap:16px;align-items:flex-start}.comparison,.ctx-grid{grid-template-columns:1fr}.guide-cta{flex-direction:column;text-align:center}.about-inner{flex-direction:column;align-items:center;text-align:center}}
+    @media(max-width:640px){.hero h1{font-size:28px}.hero-stats{flex-direction:column;gap:16px;align-items:flex-start}.comparison,.ctx-grid{grid-template-columns:1fr}.guide-cta{flex-direction:column;text-align:center}.about-inner{flex-direction:column;align-items:center;text-align:center}.perf-row{flex-direction:column;gap:16px}}
   </style>
 </head>
 <body>
@@ -168,6 +173,19 @@
 </div></section>
 <hr class="divider">
 
+<section id="performance"><div class="wrap">
+  <h2 class="sh">Live Portfolio</h2>
+  <p class="sl" id="perf-subtitle">Loading...</p>
+  <div class="perf-row">
+    <div class="perf-box"><div class="perf-num" id="perf-cost">¥0</div><div class="perf-lbl">Cost Basis</div></div>
+    <div class="perf-box"><div class="perf-num" id="perf-value">—</div><div class="perf-lbl">Market Value</div></div>
+    <div class="perf-box"><div class="perf-num" id="perf-return">—</div><div class="perf-lbl">Total Return</div></div>
+    <div class="perf-box"><div class="perf-num" id="perf-count">0</div><div class="perf-lbl">Holdings</div></div>
+  </div>
+  <p class="perf-note" id="perf-note"></p>
+</div></section>
+<hr class="divider">
+
 <section class="cta"><div class="wrap"><div class="cta-inner">
   <h2>Weekly Deep Dives</h2>
   <p>Sector analysis, methodology breakdowns, and market commentary for investors who want to understand Japan.</p>
@@ -203,5 +221,36 @@ document.getElementById('results-body').innerHTML=data.map(s=>{
   return `<tr><td><span class="rk ${rc}">${s.rank}</span></td><td style="font-family:'Source Code Pro',monospace;font-weight:500">${s.code}</td><td><a href="stocks/${s.code}.html">${s.name}</a></td><td class="r">${s.per}×</td><td class="r">${s.pbr}×</td><td class="r">${s.roe}%</td><td class="r">${s.dy}%</td><td class="r"><span class="score-v">${s.score}</span></td></tr>`;
 }).join('');
 document.getElementById('update-date').textContent='Last updated: August 16, 2026';
+
+// Live portfolio data
+(function(){
+  function fmt(n){return '¥'+Math.round(n).toLocaleString('ja-JP');}
+  function fmtPct(n){return (n>=0?'+':'')+n.toFixed(1)+'%';}
+  fetch('data/portfolio.json?_='+Date.now())
+    .then(r=>r.ok?r.json():null)
+    .catch(()=>null)
+    .then(p=>{
+      if(!p||p.holdings_count===0){
+        document.getElementById('perf-subtitle').textContent='Live results once real-money investing begins';
+        document.getElementById('perf-cost').textContent='¥0';
+        document.getElementById('perf-value').textContent='—';
+        document.getElementById('perf-return').textContent='—';
+        document.getElementById('perf-count').textContent='0';
+        document.getElementById('perf-note').textContent='Currently in the algorithm-building phase — no live positions yet.';
+        return;
+      }
+      var ret=p.total_return_pct||0;
+      var retEl=document.getElementById('perf-return');
+      retEl.textContent=fmtPct(ret);
+      retEl.style.color=ret>=0?'var(--green)':'var(--orange)';
+      document.getElementById('perf-subtitle').textContent='Last updated: '+p.updated_at;
+      document.getElementById('perf-cost').textContent=fmt(p.cost_basis);
+      document.getElementById('perf-value').textContent=fmt(p.market_value);
+      document.getElementById('perf-count').textContent=p.holdings_count+' stocks';
+      document.getElementById('perf-note').textContent=
+        'Unrealized P/L '+(p.unrealized_pnl>=0?'+':'')+fmt(p.unrealized_pnl)+
+        ' ('+fmtPct(p.unrealized_pnl_pct)+')  ·  Dividends received '+fmt(p.total_dividends);
+    });
+})();
 </script>
 </body></html>

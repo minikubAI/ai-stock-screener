@@ -61,10 +61,12 @@ jobs:
           key: stocks-db-${{ steps.date.outputs.week }}
           restore-keys: stocks-db-
 
-      - name: Initialize and populate DB (if no cache)
+      - name: Migrate DB schema (always runs)
+        run: python src/init_db.py
+
+      - name: Populate DB (if no cache)
         if: steps.db-cache.outputs.cache-hit != 'true'
         run: |
-          python src/init_db.py
           pip install xlrd -q
           python src/fetch_all_stocks.py
 

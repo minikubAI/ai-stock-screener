@@ -152,14 +152,14 @@
 
 <section id="performance"><div class="wrap">
   <h2 class="sh">運用実績</h2>
-  <p class="sl">実弾投資を開始したらリアルタイムで反映</p>
+  <p class="sl" id="perf-subtitle">読み込み中...</p>
   <div class="perf-row">
-    <div class="perf-box"><div class="perf-num">¥0</div><div class="perf-lbl">投資元本</div></div>
-    <div class="perf-box"><div class="perf-num">—</div><div class="perf-lbl">評価額</div></div>
-    <div class="perf-box"><div class="perf-num">—</div><div class="perf-lbl">損益率</div></div>
-    <div class="perf-box"><div class="perf-num">0</div><div class="perf-lbl">保有銘柄</div></div>
+    <div class="perf-box"><div class="perf-num" id="perf-cost">¥0</div><div class="perf-lbl">投資元本</div></div>
+    <div class="perf-box"><div class="perf-num" id="perf-value">—</div><div class="perf-lbl">評価額</div></div>
+    <div class="perf-box"><div class="perf-num" id="perf-return">—</div><div class="perf-lbl">トータルリターン</div></div>
+    <div class="perf-box"><div class="perf-num" id="perf-count">0</div><div class="perf-lbl">保有銘柄</div></div>
   </div>
-  <p class="perf-note">現在はロジック構築フェーズのため、まだ投資は開始していません。</p>
+  <p class="perf-note" id="perf-note"></p>
 </div></section>
 <hr class="divider">
 
@@ -198,5 +198,36 @@ document.getElementById('results-body').innerHTML=data.map(s=>{
   return `<tr><td><span class="rk ${rc}">${s.rank}</span></td><td style="font-family:'Source Code Pro',monospace;font-weight:500">${s.ticker}</td><td><a href="stocks/${s.ticker}.html" style="color:var(--text);text-decoration:none">${s.name}</a></td><td class="r">${s.per}倍</td><td class="r">${s.pbr}倍</td><td class="r">${s.roe}%</td><td class="r">${s.dy}%</td><td class="r"><span class="score-v">${s.score}</span></td></tr>`;
 }).join('');
 document.getElementById('update-date').textContent='最終更新: 2026年8月16日';
+
+// ポートフォリオ実績をロード
+(function(){
+  function fmt(n){return '¥'+Math.round(n).toLocaleString('ja-JP');}
+  function fmtPct(n){return (n>=0?'+':'')+n.toFixed(1)+'%';}
+  fetch('data/portfolio.json?_='+Date.now())
+    .then(r=>r.ok?r.json():null)
+    .catch(()=>null)
+    .then(p=>{
+      if(!p||p.holdings_count===0){
+        document.getElementById('perf-subtitle').textContent='実弾投資を開始したらリアルタイムで反映';
+        document.getElementById('perf-cost').textContent='¥0';
+        document.getElementById('perf-value').textContent='—';
+        document.getElementById('perf-return').textContent='—';
+        document.getElementById('perf-count').textContent='0';
+        document.getElementById('perf-note').textContent='現在はロジック構築フェーズのため、まだ投資は開始していません。';
+        return;
+      }
+      var ret=p.total_return_pct||0;
+      var retEl=document.getElementById('perf-return');
+      retEl.textContent=fmtPct(ret);
+      retEl.style.color=ret>=0?'var(--green)':'var(--orange)';
+      document.getElementById('perf-subtitle').textContent='最終更新: '+p.updated_at;
+      document.getElementById('perf-cost').textContent=fmt(p.cost_basis);
+      document.getElementById('perf-value').textContent=fmt(p.market_value);
+      document.getElementById('perf-count').textContent=p.holdings_count+'銘柄';
+      document.getElementById('perf-note').textContent=
+        '含み損益 '+(p.unrealized_pnl>=0?'+':'')+fmt(p.unrealized_pnl)+
+        '（'+fmtPct(p.unrealized_pnl_pct)+'）　累計配当 '+fmt(p.total_dividends);
+    });
+})();
 </script>
 </body></html>
