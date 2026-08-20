@@ -2,7 +2,7 @@
 LINE Notify スクリーニング結果通知
 
 使い方:
-  python src/notify_line.py           # スクリーニング結果を送信
+  python src/notify_line.py           # 朝の注文指示を送信
   python src/notify_line.py test      # テストメッセージを送信
 
 環境変数:
@@ -11,69 +11,47 @@ LINE Notify スクリーニング結果通知
 
 import os
 import sys
-import sqlite3
+import json
 import yaml
 import requests
 from datetime import datetime
 
+BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
+
+# 予算設定
+MONTHLY_BUDGET  = 30_000
+WEEKLY_BUDGET   = MONTHLY_BUDGET // 4        # 7,500
+CORE_BUDGET     = int(WEEKLY_BUDGET * 0.50)  # 3,750
+SAT_A_BUDGET    = int(WEEKLY_BUDGET * 0.33)  # 2,475 → 2,500 rounded
+SAT_B_BUDGET    = WEEKLY_BUDGET - CORE_BUDGET - int(WEEKLY_BUDGET * 0.33)  # 残り
+
+SATB_POOL_PATH  = os.path.join(BASE_DIR, 'data', 'satb_pool.json')
+REPORT_PATH     = os.path.join(BASE_DIR, 'data', 'latest_report.json')
+
 
 def get_config():
-    config_path = os.path.join(os.path.dirname(__file__), '..', 'config', 'settings.yaml')
+    config_path = os.path.join(BASE_DIR, 'config', 'settings.yaml')
     with open(config_path, 'r') as f:
         return yaml.safe_load(f)
 
 
-def get_db():
-    config = get_config()
-    db_path = os.path.join(os.path.dirname(__file__), '..', config['database']['path'])
-    return sqlite3.connect(db_path)
-
-
-def send_line_message(token: str, message: str) -> bool:
+def send_line_message(token, message):
     url = 'https://api.line.me/v2/bot/message/broadcast'
     headers = {
         'Content-Type': 'application/json',
         'Authorization': f'Bearer {token}',
     }
-    payload = {
-        'messages': [{'type': 'text', 'text': message}]
-    }
-    resp = requests.post(url, headers=headers, json=payload, timeout=10)
+    resp = requests.post(url, headers=headers,
+                         json={'messages': [{'type': 'text', 'text': message}]},
+                         timeout=10)
     if resp.status_code == 200:
-        print(f'✅ LINE送信成功')
+        print('✅ LINE送信成功')
         return True
-    else:
-        print(f'❌ LINE送信失敗: {resp.status_code} {resp.text}')
-        return False
-
-
-def build_screening_message() -> str:
-    conn = get_db()
-    c = conn.cursor()
-    c.execute('''
-        SELECT sr.ticker, co.name, sr.rank, sr.per, sr.pbr, sr.roe, sr.score
-        FROM screening_results sr
-        JOIN companies co ON sr.ticker = co.ticker
-        WHERE sr.screened_at = (SELECT MAX(screened_at) FROM screening_results)
-        ORDER BY sr.rank LIMIT 10
-    ''')
-    rows = c.fetchall()
-    conn.close()
-
-    now = datetime.now().strftime('%Y-%m-%d %H:%M')
-    lines = [f'📊 AI株スクリーニング結果 ({now})', '']
-    for ticker, name, rank, per, pbr, roe, score in rows:
-        per_s = f'PER{per:.1f}' if per else ''
-        roe_s = f'ROE{roe:.1f}%' if roe else ''
-        lines.append(f'#{rank} {ticker} {name}')
-        lines.append(f'   {per_s}  {roe_s}  Score:{score:.0f}')
-    lines.append('')
-    lines.append('https://minikubai.github.io/ai-stock-screener/')
-    return '\n'.join(lines)
+    print(f'❌ LINE送信失敗: {resp.status_code} {resp.text}')
+    return False
 
 
 def get_token():
-    # 環境変数優先、なければ settings.yaml から取得
     token = os.environ.get('LINE_CHANNEL_TOKEN')
     if token:
         return token
@@ -84,16 +62,183 @@ def get_token():
         return None
 
 
+def load_report():
+    try:
+        with open(REPORT_PATH, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+def load_satb_pool():
+    try:
+        with open(SATB_POOL_PATH, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        return {'accumulated': 0, 'target_ticker': '', 'target_price': 0}
+
+
+def save_satb_pool(pool):
+    os.makedirs(os.path.dirname(SATB_POOL_PATH), exist_ok=True)
+    with open(SATB_POOL_PATH, 'w', encoding='utf-8') as f:
+        json.dump(pool, f, ensure_ascii=False, indent=2)
+
+
+def generate_morning_message():
+    report   = load_report()
+    core_raw = report.get('core_results', [])[:8]
+    sat_raw  = report.get('satellite_results', [])[:5]
+    macro    = report.get('macro', {})
+    signal   = macro.get('signal', 'NORMAL').upper()
+
+    today = datetime.now().strftime('%Y-%m-%d')
+    lines = [
+        f'📊 本日の注文指示 ({today})',
+        '━━━━━━━━━━━━━━',
+    ]
+
+    # マクロシグナル表示
+    if signal == 'BUY':
+        signal_icon = '🟢 BUY'
+        budget_ratio = 1.0
+    elif signal == 'CAUTION':
+        signal_icon = '🟡 CAUTION'
+        budget_ratio = 0.5
+    elif signal == 'PAUSE':
+        signal_icon = '🔴 PAUSE'
+        budget_ratio = 0.0
+    else:
+        signal_icon = '🔵 NORMAL'
+        budget_ratio = 1.0
+
+    weekly = int(WEEKLY_BUDGET * budget_ratio)
+    lines.append(f'マクロ環境: {signal_icon}')
+    lines.append(f'週予算: ¥{weekly:,}（月¥{MONTHLY_BUDGET:,}）')
+    lines.append('')
+
+    if budget_ratio == 0.0:
+        lines.append('🚫 本日は新規購入停止（PAUSEシグナル）')
+        lines.append('━━━━━━━━━━━━━━')
+        lines.append('📱 証券アプリで上記を確認してください')
+        return '\n'.join(lines)
+
+    core_budget  = int(CORE_BUDGET  * budget_ratio)
+    sat_a_budget = int(SAT_A_BUDGET * budget_ratio)
+    sat_b_budget = int(SAT_B_BUDGET * budget_ratio)
+
+    total_spent = 0
+
+    # ── Core ──────────────────────────
+    lines.append('【Core — バリュー＋配当】')
+    core_valid = [s for s in core_raw if s.get('price', 0) > 0]
+    if core_valid:
+        budget_each = core_budget // len(core_valid)
+        for s in core_valid:
+            price = s.get('price', 0)
+            if price <= 0:
+                continue
+            shares = int(budget_each // price)
+            if shares < 1:
+                continue
+            cost = shares * int(price)
+            total_spent += cost
+            name = s.get('name', s.get('ticker', ''))[:10]
+            lines.append(f'  {s["ticker"]} {name} × {shares}株'
+                         f' @ ¥{int(price):,} = ¥{cost:,}')
+    else:
+        lines.append('  （データなし）')
+    lines.append('')
+
+    # ── Satellite A ───────────────────
+    lines.append('【Satellite A — 成長株】')
+    sat_a_valid = [s for s in sat_raw
+                   if 0 < s.get('price', 0) <= 10_000]
+    if sat_a_valid:
+        budget_each = sat_a_budget // len(sat_a_valid)
+        for s in sat_a_valid:
+            price = s.get('price', 0)
+            shares = int(budget_each // price)
+            if shares < 1:
+                continue
+            cost = shares * int(price)
+            total_spent += cost
+            name = s.get('name', s.get('ticker', ''))[:10]
+            lines.append(f'  {s["ticker"]} {name} × {shares}株'
+                         f' @ ¥{int(price):,} = ¥{cost:,}')
+    else:
+        lines.append('  （対象銘柄なし：株価¥10,000超）')
+    lines.append('')
+
+    # ── Satellite B（積立プール）──────
+    lines.append('【Satellite B — 積立】')
+    pool = load_satb_pool()
+    pool['accumulated'] = pool.get('accumulated', 0) + sat_b_budget
+
+    # 最も株価が高いsatellite銘柄をターゲットに
+    sat_by_price = sorted(sat_raw, key=lambda s: s.get('price', 0), reverse=True)
+    if sat_by_price:
+        target = sat_by_price[0]
+        target_price = target.get('price', 0)
+        target_name  = target.get('name', target.get('ticker', ''))[:10]
+        target_ticker = target.get('ticker', '')
+        pool['target_ticker'] = target_ticker
+        pool['target_price']  = target_price
+
+        if pool['accumulated'] >= target_price > 0:
+            shares = pool['accumulated'] // target_price
+            cost   = shares * target_price
+            pool['accumulated'] -= cost
+            total_spent += cost
+            lines.append(f'  ✅ {target_ticker} {target_name} × {shares}株'
+                         f' @ ¥{target_price:,} = ¥{cost:,}（積立達成）')
+        else:
+            lines.append(f'  {target_ticker} {target_name}:'
+                         f' +¥{sat_b_budget:,}'
+                         f'（累計¥{pool["accumulated"]:,}／¥{int(target_price):,}）')
+    else:
+        lines.append(f'  積立中: +¥{sat_b_budget:,}（累計¥{pool["accumulated"]:,}）')
+
+    save_satb_pool(pool)
+    lines.append('')
+
+    lines.append('━━━━━━━━━━━━━━')
+    lines.append(f'💰 本日合計: ¥{total_spent:,}')
+    lines.append('📱 証券アプリで上記を発注してください')
+
+    return '\n'.join(lines)
+
+
+def build_screening_message():
+    report = load_report()
+    core   = report.get('core_results', [])[:10]
+    now    = datetime.now().strftime('%Y-%m-%d %H:%M')
+    lines  = [f'📊 AI株スクリーニング結果 ({now})', '']
+    for s in core:
+        per_s = f'PER{s["per"]:.1f}' if s.get('per') else ''
+        roe_s = f'ROE{s["roe"]:.1f}%' if s.get('roe') else ''
+        lines.append(f'#{s.get("rank","?")} {s.get("ticker","")} {s.get("name","")}')
+        lines.append(f'   {per_s}  {roe_s}  Score:{s.get("total_score",0):.0f}')
+    lines.append('')
+    lines.append('https://minikubai.github.io/ai-stock-screener/')
+    return '\n'.join(lines)
+
+
 def main():
     token = get_token()
     if not token:
         print('❌ LINE_CHANNEL_TOKEN が設定されていません')
         sys.exit(1)
 
-    if len(sys.argv) > 1 and sys.argv[1] == 'test':
-        message = f'✅ LINE通知テスト成功\n{datetime.now().strftime("%Y-%m-%d %H:%M")}\nAI株スクリーナーからの通知です。'
+    arg = sys.argv[1] if len(sys.argv) > 1 else ''
+
+    if arg == 'test':
+        message = (f'✅ LINE通知テスト成功\n'
+                   f'{datetime.now().strftime("%Y-%m-%d %H:%M")}\n'
+                   f'AI株スクリーナーからの通知です。')
+    elif arg == 'morning':
+        message = generate_morning_message()
     else:
-        message = build_screening_message()
+        message = generate_morning_message()
 
     print(f'送信内容:\n{message}\n')
     send_line_message(token, message)
