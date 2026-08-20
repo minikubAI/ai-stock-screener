@@ -1,10 +1,11 @@
 """
 全レイヤー一括実行スクリプト
 
-5つの分析レイヤー + 統合スクリーニングを順番に実行。
-
 使い方:
-  python src/run_all.py
+  python src/run_all.py morning   # 朝：フルスキャン
+  python src/run_all.py evening   # 夕：軽量更新
+  python src/run_all.py both      # 両方
+  python src/run_all.py           # デフォルト: both
 """
 
 import subprocess
@@ -12,7 +13,7 @@ import sys
 import os
 from datetime import datetime
 
-# morning: 全レイヤー実行（朝の完全スキャン）
+# 朝：全レイヤー実行
 MORNING_SCRIPTS = [
     ("📰 ニュース取得 & センチメント分析", "src/fetch_news.py"),
     ("📈 トレンド分析（第2層）", "src/trend_analysis.py"),
@@ -22,33 +23,26 @@ MORNING_SCRIPTS = [
     ("🏆 統合スクリーニング v3", "src/screener_v3.py"),
 ]
 
-# evening: ニュース・マクロ・スクリーニングのみ（軽量更新）
+# 夕：ニュース・マクロ・スクリーニングのみ（軽量更新）
 EVENING_SCRIPTS = [
     ("📰 ニュース取得 & センチメント分析", "src/fetch_news.py"),
     ("🌍 マクロ環境スコア（第4層）", "src/macro_score.py"),
     ("🏆 統合スクリーニング v3", "src/screener_v3.py"),
 ]
 
-def main():
-    mode = sys.argv[1] if len(sys.argv) > 1 else 'morning'
-    if mode == 'evening':
-        scripts = EVENING_SCRIPTS
-        label_mode = '夕方（軽量更新）'
-    else:
-        scripts = MORNING_SCRIPTS
-        label_mode = '朝（フルスキャン）'
+project_dir = os.path.join(os.path.dirname(__file__), '..')
 
+
+def run_scripts(scripts, label_mode):
     print("=" * 60)
     print(f"🚀 全レイヤー一括実行 [{label_mode}]")
     print(f"   {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print("=" * 60)
 
-    project_dir = os.path.join(os.path.dirname(__file__), '..')
     failed = []
-
     for i, (label, script) in enumerate(scripts, 1):
         print(f"\n{'─' * 60}")
-        print(f"[{i}/{len(SCRIPTS)}] {label}")
+        print(f"[{i}/{len(scripts)}] {label}")
         print(f"{'─' * 60}")
 
         script_path = os.path.join(project_dir, script)
@@ -56,13 +50,13 @@ def main():
             result = subprocess.run(
                 [sys.executable, script_path],
                 cwd=project_dir,
-                timeout=600,  # 10分タイムアウト
+                timeout=600,
             )
             if result.returncode != 0:
                 print(f"  ⚠️ 終了コード: {result.returncode}")
                 failed.append(label)
         except subprocess.TimeoutExpired:
-            print(f"  ⚠️ タイムアウト（5分）")
+            print(f"  ⚠️ タイムアウト（10分）")
             failed.append(label)
         except Exception as e:
             print(f"  ❌ エラー: {e}")
@@ -74,7 +68,7 @@ def main():
         for f in failed:
             print(f"   - {f}")
     else:
-        print(f"✅ 全レイヤー実行完了！")
+        print(f"✅ {label_mode}実行完了！")
     print(f"{'=' * 60}")
 
     # LINE通知
@@ -85,10 +79,26 @@ def main():
     except Exception as e:
         print(f"  ⚠️ LINE通知失敗: {e}")
 
-    # ページ再生成を提案
-    print(f"\n💡 スクリーニング結果をサイトに反映するには:")
-    print(f"   python src/generate_pages.py")
-    print(f"   git add -A && git commit -m 'v3 screening update' && git push")
+
+def run_morning():
+    run_scripts(MORNING_SCRIPTS, '朝（フルスキャン）')
+
+
+def run_evening():
+    run_scripts(EVENING_SCRIPTS, '夕方（軽量更新）')
+
+
+def main():
+    mode = sys.argv[1].lower() if len(sys.argv) > 1 else 'both'
+    if mode == 'morning':
+        run_morning()
+    elif mode == 'evening':
+        run_evening()
+    elif mode in ('both', 'all'):
+        run_morning()
+        run_evening()
+    else:
+        print("使い方: python src/run_all.py morning|evening|both")
 
 
 if __name__ == '__main__':
