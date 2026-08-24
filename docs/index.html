@@ -203,20 +203,18 @@ async function loadPortfolio() {
     const resp = await fetch('./data/portfolio.json');
     if (!resp.ok) return;
     const pf = await resp.json();
-    const s = pf.summary;
-    if (!s) return;
+    if (!pf.cost_basis && pf.holdings_count === 0) return;
 
-    document.getElementById('pf-invested').textContent = '¥' + Math.round(s.total_invested).toLocaleString();
-    document.getElementById('pf-value').textContent = '¥' + Math.round(s.total_value).toLocaleString();
+    document.getElementById('pf-invested').textContent = '¥' + Math.round(pf.cost_basis).toLocaleString();
+    document.getElementById('pf-value').textContent = '¥' + Math.round(pf.market_value).toLocaleString();
 
-    const pnlPct = s.total_pnl_pct;
+    const pnlPct = pf.unrealized_pnl_pct;
     const pnlEl = document.getElementById('pf-pnl');
     pnlEl.textContent = (pnlPct >= 0 ? '+' : '') + pnlPct.toFixed(1) + '%';
     pnlEl.style.color = pnlPct >= 0 ? 'var(--green)' : 'var(--red)';
 
-    document.getElementById('pf-positions').textContent = s.positions;
+    document.getElementById('pf-positions').textContent = pf.holdings_count;
 
-    // ロジック構築フェーズのメッセージを非表示
     const note = document.getElementById('pf-note');
     if (note) note.style.display = 'none';
   } catch(e) {}
