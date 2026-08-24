@@ -168,6 +168,18 @@
 </div></section>
 <hr class="divider">
 
+<section id="performance"><div class="wrap">
+  <h2 class="sh">Live Portfolio</h2>
+  <div class="perf-row">
+    <div class="perf-box"><div class="perf-num" id="pf-invested">¥0</div><div class="perf-lbl">Invested</div></div>
+    <div class="perf-box"><div class="perf-num" id="pf-value">—</div><div class="perf-lbl">Portfolio Value</div></div>
+    <div class="perf-box"><div class="perf-num" id="pf-pnl">—</div><div class="perf-lbl">Return</div></div>
+    <div class="perf-box"><div class="perf-num" id="pf-positions">0</div><div class="perf-lbl">Positions</div></div>
+  </div>
+  <p class="perf-note" id="pf-note">Currently in the algorithm-building phase — no live positions yet.</p>
+</div></section>
+<hr class="divider">
+
 <section class="cta"><div class="wrap"><div class="cta-inner">
   <h2>Weekly Deep Dives</h2>
   <p>Sector analysis, methodology breakdowns, and market commentary for investors who want to understand Japan.</p>
@@ -203,5 +215,30 @@ document.getElementById('results-body').innerHTML=data.map(s=>{
   return `<tr><td><span class="rk ${rc}">${s.rank}</span></td><td style="font-family:'Source Code Pro',monospace;font-weight:500">${s.code}</td><td><a href="stocks/${s.code}.html">${s.name}</a></td><td class="r">${s.per}×</td><td class="r">${s.pbr}×</td><td class="r">${s.roe}%</td><td class="r">${s.dy}%</td><td class="r"><span class="score-v">${s.score}</span></td></tr>`;
 }).join('');
 document.getElementById('update-date').textContent='Last updated: August 16, 2026';
+
+async function loadPortfolio() {
+  try {
+    const resp = await fetch('./data/portfolio.json');
+    if (!resp.ok) return;
+    const pf = await resp.json();
+    const s = pf.summary;
+    if (!s) return;
+
+    document.getElementById('pf-invested').textContent = '¥' + Math.round(s.total_invested).toLocaleString();
+    document.getElementById('pf-value').textContent = '¥' + Math.round(s.total_value).toLocaleString();
+
+    const pnlPct = s.total_pnl_pct;
+    const pnlEl = document.getElementById('pf-pnl');
+    pnlEl.textContent = (pnlPct >= 0 ? '+' : '') + pnlPct.toFixed(1) + '%';
+    pnlEl.style.color = pnlPct >= 0 ? 'var(--green)' : 'var(--red)';
+
+    document.getElementById('pf-positions').textContent = s.positions;
+
+    // Hide placeholder note once data is loaded
+    const note = document.getElementById('pf-note');
+    if (note) note.style.display = 'none';
+  } catch(e) {}
+}
+loadPortfolio();
 </script>
 </body></html>

@@ -152,14 +152,13 @@
 
 <section id="performance"><div class="wrap">
   <h2 class="sh">運用実績</h2>
-  <p class="sl">実弾投資を開始したらリアルタイムで反映</p>
   <div class="perf-row">
-    <div class="perf-box"><div class="perf-num">¥0</div><div class="perf-lbl">投資元本</div></div>
-    <div class="perf-box"><div class="perf-num">—</div><div class="perf-lbl">評価額</div></div>
-    <div class="perf-box"><div class="perf-num">—</div><div class="perf-lbl">損益率</div></div>
-    <div class="perf-box"><div class="perf-num">0</div><div class="perf-lbl">保有銘柄</div></div>
+    <div class="perf-box"><div class="perf-num" id="pf-invested">¥0</div><div class="perf-lbl">投資元本</div></div>
+    <div class="perf-box"><div class="perf-num" id="pf-value">—</div><div class="perf-lbl">評価額</div></div>
+    <div class="perf-box"><div class="perf-num" id="pf-pnl">—</div><div class="perf-lbl">損益率</div></div>
+    <div class="perf-box"><div class="perf-num" id="pf-positions">0</div><div class="perf-lbl">保有銘柄</div></div>
   </div>
-  <p class="perf-note">現在はロジック構築フェーズのため、まだ投資は開始していません。</p>
+  <p class="perf-note" id="pf-note">現在はロジック構築フェーズのため、まだ投資は開始していません。</p>
 </div></section>
 <hr class="divider">
 
@@ -198,5 +197,30 @@ document.getElementById('results-body').innerHTML=data.map(s=>{
   return `<tr><td><span class="rk ${rc}">${s.rank}</span></td><td style="font-family:'Source Code Pro',monospace;font-weight:500">${s.ticker}</td><td><a href="stocks/${s.ticker}.html" style="color:var(--text);text-decoration:none">${s.name}</a></td><td class="r">${s.per}倍</td><td class="r">${s.pbr}倍</td><td class="r">${s.roe}%</td><td class="r">${s.dy}%</td><td class="r"><span class="score-v">${s.score}</span></td></tr>`;
 }).join('');
 document.getElementById('update-date').textContent='最終更新: 2026年8月16日';
+
+async function loadPortfolio() {
+  try {
+    const resp = await fetch('./data/portfolio.json');
+    if (!resp.ok) return;
+    const pf = await resp.json();
+    const s = pf.summary;
+    if (!s) return;
+
+    document.getElementById('pf-invested').textContent = '¥' + Math.round(s.total_invested).toLocaleString();
+    document.getElementById('pf-value').textContent = '¥' + Math.round(s.total_value).toLocaleString();
+
+    const pnlPct = s.total_pnl_pct;
+    const pnlEl = document.getElementById('pf-pnl');
+    pnlEl.textContent = (pnlPct >= 0 ? '+' : '') + pnlPct.toFixed(1) + '%';
+    pnlEl.style.color = pnlPct >= 0 ? 'var(--green)' : 'var(--red)';
+
+    document.getElementById('pf-positions').textContent = s.positions;
+
+    // ロジック構築フェーズのメッセージを非表示
+    const note = document.getElementById('pf-note');
+    if (note) note.style.display = 'none';
+  } catch(e) {}
+}
+loadPortfolio();
 </script>
 </body></html>
