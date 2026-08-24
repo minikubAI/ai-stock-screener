@@ -1,5 +1,5 @@
 {
-  "date": "2026-08-24",
+  "date": "2026-08-25",
   "signal": "BUY",
   "budget_ratio": 1.0,
   "orders": [
@@ -18,6 +18,14 @@
       "price": 323,
       "cost": 323,
       "category": "satellite_a"
+    },
+    {
+      "ticker": "269A",
+      "name": "Ｓａｐｅｅｔ",
+      "shares": 1,
+      "price": 2685,
+      "cost": 2685,
+      "category": "satellite_b"
     }
   ]
 }
