@@ -1,16 +1,8 @@
 {
-  "date": "2026-08-21",
+  "date": "2026-08-24",
   "signal": "BUY",
   "budget_ratio": 1.0,
   "orders": [
-    {
-      "ticker": "7836",
-      "name": "アビックス",
-      "shares": 6,
-      "price": 77,
-      "cost": 462,
-      "category": "core"
-    },
     {
       "ticker": "3010",
       "name": "ポラリス・ホールディ",

@@ -137,17 +137,17 @@
   <!-- STOCK PRICE -->
   <div class="price-section">
     <div class="price-row">
-      <div class="current-price">¥-</div>
-      <div class="price-change ">-</div>
+      <div class="current-price">¥1,020</div>
+      <div class="price-change up">+¥4 (+0.39%)</div>
     </div>
-    <div class="price-date">- 時点</div>
+    <div class="price-date">2026-08-24 時点</div>
     <div class="price-chart-area">
       <div class="price-chart-label">過去1年間の株価推移</div>
       <svg id="price-svg" width="100%" height="160" viewBox="0 0 680 160"></svg>
       <div class="price-chart-range">
-        <span>安値 ¥-</span>
+        <span>安値 ¥1,016</span>
         <span>—</span>
-        <span>高値 ¥-</span>
+        <span>高値 ¥1,020</span>
       </div>
     </div>
   </div>
@@ -155,7 +155,7 @@
   <!-- KEY METRICS -->
   <div class="metrics">
     <div class="metric">
-      <div class="metric-val good">5.5倍</div>
+      <div class="metric-val good">5.4倍</div>
       <div class="metric-label">PER</div>
     </div>
     <div class="metric">
@@ -180,17 +180,17 @@
     <h2 class="sec-heading">スクリーニング評価</h2>
     <div class="score-box">
       <div class="score-total">
-        <div class="score-num">78</div>
-        <div class="score-label">/ 100（スクリーニング順位 20位 / 30社中）</div>
+        <div class="score-num">79</div>
+        <div class="score-label">/ 100（スクリーニング順位 9位 / 30社中）</div>
       </div>
       <div class="score-bars">
-        <div class="score-bar-row"><div class="score-bar-name">割安度</div><div class="score-bar-track"><div class="score-bar-fill" style="width:95%"></div></div><div class="score-bar-val">95</div></div>
+        <div class="score-bar-row"><div class="score-bar-name">割安度</div><div class="score-bar-track"><div class="score-bar-fill" style="width:96%"></div></div><div class="score-bar-val">96</div></div>
         <div class="score-bar-row"><div class="score-bar-name">収益性</div><div class="score-bar-track"><div class="score-bar-fill" style="width:65%"></div></div><div class="score-bar-val">65</div></div>
         <div class="score-bar-row"><div class="score-bar-name">安全性</div><div class="score-bar-track"><div class="score-bar-fill" style="width:66%"></div></div><div class="score-bar-val">66</div></div>
         <div class="score-bar-row"><div class="score-bar-name">成長性</div><div class="score-bar-track"><div class="score-bar-fill" style="width:17%"></div></div><div class="score-bar-val">17</div></div>
       </div>
     </div>
-    <div class="insight">PER 5.5倍は市場平均を大きく下回っており、利益に対して株価が割安な水準にある。PBR 0.73倍と純資産を下回る株価で、資産面からの下値余地は限定的と見られる。ROE 13.1%と安定した資本効率を維持している。配当利回り4.9%は高水準で、インカムゲインの観点からも注目に値する。直近の売上は増加傾向にあり、業績の方向性は前向き。これらの要素を総合的に評価し、現在のスコアとなっています。</div>
+    <div class="insight">PER 5.4倍は市場平均を大きく下回っており、利益に対して株価が割安な水準にある。PBR 0.73倍と純資産を下回る株価で、資産面からの下値余地は限定的と見られる。ROE 13.1%と安定した資本効率を維持している。配当利回り4.9%は高水準で、インカムゲインの観点からも注目に値する。直近の売上は増加傾向にあり、業績の方向性は前向き。これらの要素を総合的に評価し、現在のスコアとなっています。</div>
   </div>
 </section>
 
@@ -244,34 +244,42 @@ document.getElementById('financials-body').innerHTML = `<tr>
                 <td class="r">180億</td>
                 <td class="r">9億</td>
                 <td class="r">7億</td>
-                <td class="r">186.6</td>
+                <td class="r">-</td>
                 <td class="r"><span class="">-</span></td>
             </tr><tr>
                 <td>2024</td>
                 <td class="r">162億</td>
                 <td class="r">2億</td>
                 <td class="r">1億</td>
-                <td class="r">186.6</td>
+                <td class="r">-</td>
                 <td class="r"><span class="trend-down">-10.3%</span></td>
             </tr><tr>
                 <td>2025</td>
                 <td class="r">152億</td>
                 <td class="r">7億</td>
                 <td class="r">5億</td>
-                <td class="r">186.6</td>
+                <td class="r">-</td>
                 <td class="r"><span class="trend-down">-6.1%</span></td>
             </tr><tr>
                 <td>2026</td>
                 <td class="r">228億</td>
                 <td class="r">19億</td>
                 <td class="r">14億</td>
-                <td class="r">186.6</td>
+                <td class="r">187.2</td>
                 <td class="r"><span class="trend-up">+49.7%</span></td>
             </tr>`;
 </script>
 
 <script>
 document.getElementById('revenue-chart').innerHTML = `<div class="bar-group"><div class="bar-val">180.4億</div><div class="bar-group-inner" style="position:relative;overflow:visible;"><div style="position:absolute;bottom:0.0%;left:5%;width:42%;height:79.3%;background:var(--accent);border-radius:3px 3px 0 0;"></div><div style="position:absolute;bottom:0.0%;right:5%;width:42%;height:4.1%;background:var(--green);border-radius:3px 3px 0 0;"></div></div><div class="bar-label">2023</div></div><div class="bar-group"><div class="bar-val">161.8億</div><div class="bar-group-inner" style="position:relative;overflow:visible;"><div style="position:absolute;bottom:0.0%;left:5%;width:42%;height:71.1%;background:var(--accent);border-radius:3px 3px 0 0;"></div><div style="position:absolute;bottom:0.0%;right:5%;width:42%;height:2.0%;background:var(--green);border-radius:3px 3px 0 0;"></div></div><div class="bar-label">2024</div></div><div class="bar-group"><div class="bar-val">152.0億</div><div class="bar-group-inner" style="position:relative;overflow:visible;"><div style="position:absolute;bottom:0.0%;left:5%;width:42%;height:66.8%;background:var(--accent);border-radius:3px 3px 0 0;"></div><div style="position:absolute;bottom:0.0%;right:5%;width:42%;height:2.9%;background:var(--green);border-radius:3px 3px 0 0;"></div></div><div class="bar-label">2025</div></div><div class="bar-group"><div class="bar-val">227.5億</div><div class="bar-group-inner" style="position:relative;overflow:visible;"><div style="position:absolute;bottom:0.0%;left:5%;width:42%;height:100.0%;background:var(--accent);border-radius:3px 3px 0 0;"></div><div style="position:absolute;bottom:0.0%;right:5%;width:42%;height:8.2%;background:var(--green);border-radius:3px 3px 0 0;"></div></div><div class="bar-label">2026</div></div>`;
+</script>
+
+<script>
+document.getElementById('price-svg').innerHTML = `<path d="M10.0,130.0L670.0,10.0L670.0,130.0L10.0,130.0Z" fill="#edf7f1" opacity="0.5"/>
+<path d="M10.0,130.0L670.0,10.0" fill="none" stroke="#1a8a5c" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="670.0" cy="10.0" r="4" fill="#1a8a5c"/>
+<text x="10" y="138" font-size="10" fill="#888">2026-08-20</text>
+<text x="670" y="138" font-size="10" fill="#888" text-anchor="end">2026-08-24</text>`;
 </script>
 </body>
 </html>

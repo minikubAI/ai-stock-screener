@@ -1,28 +1,8 @@
 [
   {
-    "ticker": "5729",
-    "name": "日本精鉱",
-    "path": "stocks/5729.html"
-  },
-  {
     "ticker": "1491",
     "name": "中外鉱業",
     "path": "stocks/1491.html"
-  },
-  {
-    "ticker": "2220",
-    "name": "亀田製菓",
-    "path": "stocks/2220.html"
-  },
-  {
-    "ticker": "3640",
-    "name": "電算",
-    "path": "stocks/3640.html"
-  },
-  {
-    "ticker": "7836",
-    "name": "アビックス",
-    "path": "stocks/7836.html"
   },
   {
     "ticker": "3010",
@@ -30,59 +10,14 @@
     "path": "stocks/3010.html"
   },
   {
+    "ticker": "3640",
+    "name": "電算",
+    "path": "stocks/3640.html"
+  },
+  {
     "ticker": "1764",
     "name": "工藤建設",
     "path": "stocks/1764.html"
-  },
-  {
-    "ticker": "7505",
-    "name": "扶桑電通",
-    "path": "stocks/7505.html"
-  },
-  {
-    "ticker": "8057",
-    "name": "内田洋行",
-    "path": "stocks/8057.html"
-  },
-  {
-    "ticker": "1814",
-    "name": "大末建設",
-    "path": "stocks/1814.html"
-  },
-  {
-    "ticker": "7722",
-    "name": "国際計測器",
-    "path": "stocks/7722.html"
-  },
-  {
-    "ticker": "6357",
-    "name": "三精テクノロジーズ",
-    "path": "stocks/6357.html"
-  },
-  {
-    "ticker": "6927",
-    "name": "ヘリオス　テクノ　ホールディング",
-    "path": "stocks/6927.html"
-  },
-  {
-    "ticker": "7325",
-    "name": "アイリックコーポレーション",
-    "path": "stocks/7325.html"
-  },
-  {
-    "ticker": "463A",
-    "name": "インテリックスホールディングス",
-    "path": "stocks/463A.html"
-  },
-  {
-    "ticker": "2288",
-    "name": "丸大食品",
-    "path": "stocks/2288.html"
-  },
-  {
-    "ticker": "5110",
-    "name": "住友ゴム工業",
-    "path": "stocks/5110.html"
   },
   {
     "ticker": "2112",
@@ -90,14 +25,79 @@
     "path": "stocks/2112.html"
   },
   {
-    "ticker": "9704",
-    "name": "アゴーラ　ホスピタリティー　グループ",
-    "path": "stocks/9704.html"
+    "ticker": "2288",
+    "name": "丸大食品",
+    "path": "stocks/2288.html"
+  },
+  {
+    "ticker": "1814",
+    "name": "大末建設",
+    "path": "stocks/1814.html"
+  },
+  {
+    "ticker": "5110",
+    "name": "住友ゴム工業",
+    "path": "stocks/5110.html"
   },
   {
     "ticker": "1768",
     "name": "ソネック",
     "path": "stocks/1768.html"
+  },
+  {
+    "ticker": "1798",
+    "name": "守谷商会",
+    "path": "stocks/1798.html"
+  },
+  {
+    "ticker": "211A",
+    "name": "カドス・コーポレーション",
+    "path": "stocks/211A.html"
+  },
+  {
+    "ticker": "2924",
+    "name": "イフジ産業",
+    "path": "stocks/2924.html"
+  },
+  {
+    "ticker": "2304",
+    "name": "ＣＳＳホールディングス",
+    "path": "stocks/2304.html"
+  },
+  {
+    "ticker": "6505",
+    "name": "東洋電機製造",
+    "path": "stocks/6505.html"
+  },
+  {
+    "ticker": "2982",
+    "name": "ＡＤワークスグループ",
+    "path": "stocks/2982.html"
+  },
+  {
+    "ticker": "1847",
+    "name": "イチケン",
+    "path": "stocks/1847.html"
+  },
+  {
+    "ticker": "1964",
+    "name": "中外炉工業",
+    "path": "stocks/1964.html"
+  },
+  {
+    "ticker": "505A",
+    "name": "ギークリー",
+    "path": "stocks/505A.html"
+  },
+  {
+    "ticker": "1379",
+    "name": "ホクト",
+    "path": "stocks/1379.html"
+  },
+  {
+    "ticker": "2117",
+    "name": "ウェルネオシュガー",
+    "path": "stocks/2117.html"
   },
   {
     "ticker": "2323",
@@ -120,33 +120,33 @@
     "path": "stocks/277A.html"
   },
   {
-    "ticker": "325A",
-    "name": "ＴＥＮＴＩＡＬ",
-    "path": "stocks/325A.html"
+    "ticker": "8136",
+    "name": "サンリオ",
+    "path": "stocks/8136.html"
   },
   {
-    "ticker": "330A",
-    "name": "ＴａｌｅｎｔＸ",
-    "path": "stocks/330A.html"
+    "ticker": "2926",
+    "name": "篠崎屋",
+    "path": "stocks/2926.html"
   },
   {
-    "ticker": "3463",
-    "name": "いちごホテルリート投資法人",
-    "path": "stocks/3463.html"
+    "ticker": "3913",
+    "name": "ＧｒｅｅｎＢｅｅ",
+    "path": "stocks/3913.html"
   },
   {
-    "ticker": "3479",
-    "name": "ＴＫＰ",
-    "path": "stocks/3479.html"
+    "ticker": "166A",
+    "name": "タスキホールディングス",
+    "path": "stocks/166A.html"
   },
   {
-    "ticker": "3612",
-    "name": "ワールド",
-    "path": "stocks/3612.html"
+    "ticker": "2989",
+    "name": "東海道リート投資法人",
+    "path": "stocks/2989.html"
   },
   {
-    "ticker": "3927",
-    "name": "フーバーブレイン",
-    "path": "stocks/3927.html"
+    "ticker": "3625",
+    "name": "テックファームホールディングス",
+    "path": "stocks/3625.html"
   }
 ]
