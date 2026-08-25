@@ -105,6 +105,9 @@ jobs:
           cp data/latest_report.json docs/data/ 2>/dev/null || true
           cp data/portfolio.json docs/data/ 2>/dev/null || true
 
+      - name: Update sitemap
+        run: python src/generate_sitemap.py
+
       - name: Commit and push
         run: |
           git config user.name "AI Stock Screener Bot"

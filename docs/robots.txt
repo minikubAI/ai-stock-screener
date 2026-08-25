@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://minikubai.github.io/ai-stock-screener/sitemap.xml
