@@ -30,6 +30,11 @@
     "path": "stocks/2304.html"
   },
   {
+    "ticker": "1768",
+    "name": "ソネック",
+    "path": "stocks/1768.html"
+  },
+  {
     "ticker": "2288",
     "name": "丸大食品",
     "path": "stocks/2288.html"
@@ -58,11 +63,6 @@
     "ticker": "2112",
     "name": "塩水港精糖",
     "path": "stocks/2112.html"
-  },
-  {
-    "ticker": "1768",
-    "name": "ソネック",
-    "path": "stocks/1768.html"
   },
   {
     "ticker": "1798",

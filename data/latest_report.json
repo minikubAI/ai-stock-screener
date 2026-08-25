@@ -1,5 +1,5 @@
 {
-  "date": "2026-08-25",
+  "date": "2026-08-26",
   "version": "v3",
   "macro": {
     "macro_score": 75.2,
@@ -51,7 +51,7 @@
       "market_cap": 444.0,
       "financial_score": 65.0,
       "trend_score": 59.0,
-      "sentiment_score": 60.0,
+      "sentiment_score": 50.0,
       "industry_bonus": 63.6,
       "total_score": 100,
       "rev_trend": "up",
@@ -154,6 +154,29 @@
     {
       "rank": 7,
       "tier": "core",
+      "ticker": "1768",
+      "name": "ソネック",
+      "sector": "建設業",
+      "price": 1020.0,
+      "per": 5.4,
+      "pbr": 0.73,
+      "roe": 13.1,
+      "div_yield": 4.9,
+      "equity_ratio": 66.2,
+      "market_cap": 75.0,
+      "financial_score": 60.8,
+      "trend_score": 17.2,
+      "sentiment_score": 60.0,
+      "industry_bonus": 44.0,
+      "total_score": 80.94,
+      "rev_trend": "up",
+      "op_trend": "up",
+      "vgap_score": 88.8,
+      "gap_type": "HIDDEN_GEM"
+    },
+    {
+      "rank": 8,
+      "tier": "core",
       "ticker": "2288",
       "name": "丸大食品",
       "sector": "食料品",
@@ -175,7 +198,7 @@
       "gap_type": "HIDDEN_GEM"
     },
     {
-      "rank": 8,
+      "rank": 9,
       "tier": "core",
       "ticker": "211A",
       "name": "カドス・コーポレーション",
@@ -198,7 +221,7 @@
       "gap_type": "HIDDEN_GEM"
     },
     {
-      "rank": 9,
+      "rank": 10,
       "tier": "core",
       "ticker": "5110",
       "name": "住友ゴム工業",
@@ -221,7 +244,7 @@
       "gap_type": "HIDDEN_GEM"
     },
     {
-      "rank": 10,
+      "rank": 11,
       "tier": "core",
       "ticker": "6505",
       "name": "東洋電機製造",
@@ -244,7 +267,7 @@
       "gap_type": "HIDDEN_GEM"
     },
     {
-      "rank": 11,
+      "rank": 12,
       "tier": "core",
       "ticker": "1847",
       "name": "イチケン",
@@ -267,7 +290,7 @@
       "gap_type": "HIDDEN_GEM"
     },
     {
-      "rank": 12,
+      "rank": 13,
       "tier": "core",
       "ticker": "2112",
       "name": "塩水港精糖",
@@ -287,29 +310,6 @@
       "rev_trend": "up",
       "op_trend": "up",
       "vgap_score": 100.0,
-      "gap_type": "HIDDEN_GEM"
-    },
-    {
-      "rank": 13,
-      "tier": "core",
-      "ticker": "1768",
-      "name": "ソネック",
-      "sector": "建設業",
-      "price": 1020.0,
-      "per": 5.4,
-      "pbr": 0.73,
-      "roe": 13.1,
-      "div_yield": 4.9,
-      "equity_ratio": 66.2,
-      "market_cap": 75.0,
-      "financial_score": 60.8,
-      "trend_score": 17.2,
-      "sentiment_score": 50.0,
-      "industry_bonus": 44.0,
-      "total_score": 79.44,
-      "rev_trend": "up",
-      "op_trend": "up",
-      "vgap_score": 88.8,
       "gap_type": "HIDDEN_GEM"
     },
     {
@@ -582,7 +582,7 @@
       "market_cap": 525.0,
       "financial_score": 53.7,
       "trend_score": 80.4,
-      "sentiment_score": 70.0,
+      "sentiment_score": 60.0,
       "industry_bonus": 29.2,
       "total_score": 100,
       "rev_trend": "up",
@@ -592,29 +592,6 @@
     },
     {
       "rank": 6,
-      "tier": "satellite",
-      "ticker": "2989",
-      "name": "東海道リート投資法人",
-      "sector": "-",
-      "price": 97900.0,
-      "per": 14.6,
-      "pbr": 0.93,
-      "roe": 5.3,
-      "div_yield": 6.7,
-      "equity_ratio": null,
-      "market_cap": 378.0,
-      "financial_score": 53.6,
-      "trend_score": 59.8,
-      "sentiment_score": 60.0,
-      "industry_bonus": 22.4,
-      "total_score": 100,
-      "rev_trend": "up",
-      "op_trend": "up",
-      "vgap_score": 100.0,
-      "gap_type": "HIDDEN_GEM"
-    },
-    {
-      "rank": 7,
       "tier": "satellite",
       "ticker": "8136",
       "name": "サンリオ",
@@ -628,7 +605,7 @@
       "market_cap": 14258.0,
       "financial_score": 45.8,
       "trend_score": 70.0,
-      "sentiment_score": 70.0,
+      "sentiment_score": 80.0,
       "industry_bonus": 24.4,
       "total_score": 100,
       "rev_trend": "up",
@@ -637,7 +614,7 @@
       "gap_type": "HIDDEN_GEM"
     },
     {
-      "rank": 8,
+      "rank": 7,
       "tier": "satellite",
       "ticker": "2926",
       "name": "篠崎屋",
@@ -660,7 +637,7 @@
       "gap_type": "HIDDEN_GEM"
     },
     {
-      "rank": 9,
+      "rank": 8,
       "tier": "satellite",
       "ticker": "3913",
       "name": "ＧｒｅｅｎＢｅｅ",
@@ -677,6 +654,29 @@
       "sentiment_score": 50.0,
       "industry_bonus": 13.8,
       "total_score": 99.56,
+      "rev_trend": "up",
+      "op_trend": "up",
+      "vgap_score": 100.0,
+      "gap_type": "HIDDEN_GEM"
+    },
+    {
+      "rank": 9,
+      "tier": "satellite",
+      "ticker": "2989",
+      "name": "東海道リート投資法人",
+      "sector": "-",
+      "price": 97900.0,
+      "per": 14.6,
+      "pbr": 0.93,
+      "roe": 5.3,
+      "div_yield": 6.7,
+      "equity_ratio": null,
+      "market_cap": 378.0,
+      "financial_score": 53.6,
+      "trend_score": 59.8,
+      "sentiment_score": 50.0,
+      "industry_bonus": 22.4,
+      "total_score": 99.06,
       "rev_trend": "up",
       "op_trend": "up",
       "vgap_score": 100.0,
