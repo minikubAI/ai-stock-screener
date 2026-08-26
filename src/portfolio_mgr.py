@@ -27,10 +27,20 @@ def get_db():
     return conn
 
 
+def _load_existing_portfolio():
+    """docs/data/portfolio.json から既存のholdings一覧を返す（ticker -> item のdict）"""
+    try:
+        with open(PORTFOLIO_PATH, 'r', encoding='utf-8') as f:
+            pf = json.load(f)
+        return {h['ticker']: h for h in pf.get('holdings', [])}
+    except Exception:
+        return {}
+
+
 def export_portfolio():
     conn = get_db()
 
-    holdings = conn.execute(
+    db_rows = conn.execute(
         '''SELECT p.ticker, c.name, p.buy_date, p.buy_price, p.shares,
                   pr.close as current_price
            FROM portfolio p
@@ -41,27 +51,48 @@ def export_portfolio():
            ORDER BY p.buy_date'''
     ).fetchall()
 
-    items = []
-    cost_basis = 0.0
-    market_value = 0.0
-
-    for h in holdings:
+    # DBの結果をtickerキーのdictに変換
+    db_items = {}
+    for h in db_rows:
         cp   = h['current_price'] or h['buy_price']
         cost = h['buy_price'] * h['shares']
         mval = cp * h['shares']
+        upnl_pct = (cp - h['buy_price']) / h['buy_price'] * 100 if h['buy_price'] else 0
+        db_items[h['ticker']] = {
+            'ticker':             h['ticker'],
+            'name':               h['name'] or h['ticker'],
+            'buy_date':           h['buy_date'],
+            'buy_price':          h['buy_price'],
+            'shares':             h['shares'],
+            'current_price':      cp,
+            'unrealized_pnl':     round(mval - cost, 0),
+            'unrealized_pnl_pct': round(upnl_pct, 2),
+        }
+
+    # 既存のportfolio.jsonと統合（DBキャッシュリセット時にも履歴を保持）
+    existing = _load_existing_portfolio()
+    merged = {}
+    for ticker, item in existing.items():
+        # DBに同銘柄があれば株価を最新化、なければ既存データをそのまま残す
+        if ticker in db_items:
+            merged[ticker] = db_items[ticker]
+        else:
+            merged[ticker] = item
+    # DBにある新規銘柄を追加
+    for ticker, item in db_items.items():
+        if ticker not in merged:
+            merged[ticker] = item
+
+    items = sorted(merged.values(), key=lambda x: x['buy_date'])
+
+    cost_basis = 0.0
+    market_value = 0.0
+    for item in items:
+        cp   = item['current_price']
+        cost = item['buy_price'] * item['shares']
+        mval = cp * item['shares']
         cost_basis   += cost
         market_value += mval
-        upnl_pct = (cp - h['buy_price']) / h['buy_price'] * 100 if h['buy_price'] else 0
-        items.append({
-            'ticker':           h['ticker'],
-            'name':             h['name'] or h['ticker'],
-            'buy_date':         h['buy_date'],
-            'buy_price':        h['buy_price'],
-            'shares':           h['shares'],
-            'current_price':    cp,
-            'unrealized_pnl':   round(mval - cost, 0),
-            'unrealized_pnl_pct': round(upnl_pct, 2),
-        })
 
     # 累計配当
     div_row = conn.execute(

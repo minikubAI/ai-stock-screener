@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-08-26",
-  "cost_basis": 703.0,
-  "market_value": 703.0,
+  "updated_at": "2026-08-27",
+  "cost_basis": 3388.0,
+  "market_value": 3388.0,
   "unrealized_pnl": 0.0,
   "unrealized_pnl_pct": 0.0,
   "total_dividends": 0,
   "total_return": 0.0,
   "total_return_pct": 0.0,
-  "holdings_count": 2,
+  "holdings_count": 3,
   "holdings": [
     {
       "ticker": "3010",
       "name": "ポラリス・ホールディングス",
-      "buy_date": "2026-08-26",
+      "buy_date": "2026-08-21",
       "buy_price": 190.0,
       "shares": 2,
       "current_price": 190.0,
@@ -22,10 +22,20 @@
     {
       "ticker": "2323",
       "name": "ｆｏｎｆｕｎ",
-      "buy_date": "2026-08-26",
+      "buy_date": "2026-08-21",
       "buy_price": 323.0,
       "shares": 1,
       "current_price": 323.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "269A",
+      "name": "Ｓａｐｅｅｔ",
+      "buy_date": "2026-08-25",
+      "buy_price": 2685.0,
+      "shares": 1,
+      "current_price": 2685.0,
       "unrealized_pnl": 0.0,
       "unrealized_pnl_pct": 0.0
     }
