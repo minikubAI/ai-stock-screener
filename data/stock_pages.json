@@ -30,11 +30,6 @@
     "path": "stocks/2304.html"
   },
   {
-    "ticker": "1768",
-    "name": "ソネック",
-    "path": "stocks/1768.html"
-  },
-  {
     "ticker": "2288",
     "name": "丸大食品",
     "path": "stocks/2288.html"
@@ -60,14 +55,19 @@
     "path": "stocks/1847.html"
   },
   {
-    "ticker": "2112",
-    "name": "塩水港精糖",
-    "path": "stocks/2112.html"
+    "ticker": "1768",
+    "name": "ソネック",
+    "path": "stocks/1768.html"
   },
   {
     "ticker": "1798",
     "name": "守谷商会",
     "path": "stocks/1798.html"
+  },
+  {
+    "ticker": "2112",
+    "name": "塩水港精糖",
+    "path": "stocks/2112.html"
   },
   {
     "ticker": "1964",
@@ -78,11 +78,6 @@
     "ticker": "2982",
     "name": "ＡＤワークスグループ",
     "path": "stocks/2982.html"
-  },
-  {
-    "ticker": "505A",
-    "name": "ギークリー",
-    "path": "stocks/505A.html"
   },
   {
     "ticker": "2117",
@@ -98,6 +93,11 @@
     "ticker": "1379",
     "name": "ホクト",
     "path": "stocks/1379.html"
+  },
+  {
+    "ticker": "7235",
+    "name": "東京ラヂエーター製造",
+    "path": "stocks/7235.html"
   },
   {
     "ticker": "166A",
@@ -125,11 +125,6 @@
     "path": "stocks/277A.html"
   },
   {
-    "ticker": "8136",
-    "name": "サンリオ",
-    "path": "stocks/8136.html"
-  },
-  {
     "ticker": "2926",
     "name": "篠崎屋",
     "path": "stocks/2926.html"
@@ -140,13 +135,18 @@
     "path": "stocks/3913.html"
   },
   {
+    "ticker": "8136",
+    "name": "サンリオ",
+    "path": "stocks/8136.html"
+  },
+  {
     "ticker": "2989",
     "name": "東海道リート投資法人",
     "path": "stocks/2989.html"
   },
   {
-    "ticker": "3625",
-    "name": "テックファームホールディングス",
-    "path": "stocks/3625.html"
+    "ticker": "160A",
+    "name": "アズパートナーズ",
+    "path": "stocks/160A.html"
   }
 ]
