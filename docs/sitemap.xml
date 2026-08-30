@@ -61,6 +61,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://minikubai.github.io/ai-stock-screener/stocks/168A.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://minikubai.github.io/ai-stock-screener/stocks/1764.html</loc>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -146,6 +151,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://minikubai.github.io/ai-stock-screener/stocks/2435.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://minikubai.github.io/ai-stock-screener/stocks/247A.html</loc>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -192,6 +202,11 @@
   </url>
   <url>
     <loc>https://minikubai.github.io/ai-stock-screener/stocks/2982.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://minikubai.github.io/ai-stock-screener/stocks/2983.html</loc>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
@@ -267,6 +282,11 @@
   </url>
   <url>
     <loc>https://minikubai.github.io/ai-stock-screener/stocks/3482.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://minikubai.github.io/ai-stock-screener/stocks/3494.html</loc>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>

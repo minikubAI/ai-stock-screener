@@ -1,8 +1,13 @@
 [
   {
-    "ticker": "1491",
-    "name": "中外鉱業",
-    "path": "stocks/1491.html"
+    "ticker": "160A",
+    "name": "アズパートナーズ",
+    "path": "stocks/160A.html"
+  },
+  {
+    "ticker": "1814",
+    "name": "大末建設",
+    "path": "stocks/1814.html"
   },
   {
     "ticker": "3010",
@@ -20,14 +25,14 @@
     "path": "stocks/1764.html"
   },
   {
-    "ticker": "1814",
-    "name": "大末建設",
-    "path": "stocks/1814.html"
+    "ticker": "1491",
+    "name": "中外鉱業",
+    "path": "stocks/1491.html"
   },
   {
-    "ticker": "2304",
-    "name": "ＣＳＳホールディングス",
-    "path": "stocks/2304.html"
+    "ticker": "2435",
+    "name": "シダー",
+    "path": "stocks/2435.html"
   },
   {
     "ticker": "2288",
@@ -35,19 +40,9 @@
     "path": "stocks/2288.html"
   },
   {
-    "ticker": "211A",
-    "name": "カドス・コーポレーション",
-    "path": "stocks/211A.html"
-  },
-  {
-    "ticker": "5110",
-    "name": "住友ゴム工業",
-    "path": "stocks/5110.html"
-  },
-  {
-    "ticker": "6505",
-    "name": "東洋電機製造",
-    "path": "stocks/6505.html"
+    "ticker": "2304",
+    "name": "ＣＳＳホールディングス",
+    "path": "stocks/2304.html"
   },
   {
     "ticker": "1847",
@@ -60,14 +55,9 @@
     "path": "stocks/1768.html"
   },
   {
-    "ticker": "1798",
-    "name": "守谷商会",
-    "path": "stocks/1798.html"
-  },
-  {
-    "ticker": "2112",
-    "name": "塩水港精糖",
-    "path": "stocks/2112.html"
+    "ticker": "211A",
+    "name": "カドス・コーポレーション",
+    "path": "stocks/211A.html"
   },
   {
     "ticker": "1964",
@@ -75,9 +65,19 @@
     "path": "stocks/1964.html"
   },
   {
-    "ticker": "2982",
-    "name": "ＡＤワークスグループ",
-    "path": "stocks/2982.html"
+    "ticker": "5110",
+    "name": "住友ゴム工業",
+    "path": "stocks/5110.html"
+  },
+  {
+    "ticker": "2112",
+    "name": "塩水港精糖",
+    "path": "stocks/2112.html"
+  },
+  {
+    "ticker": "6505",
+    "name": "東洋電機製造",
+    "path": "stocks/6505.html"
   },
   {
     "ticker": "2117",
@@ -85,9 +85,9 @@
     "path": "stocks/2117.html"
   },
   {
-    "ticker": "2924",
-    "name": "イフジ産業",
-    "path": "stocks/2924.html"
+    "ticker": "2982",
+    "name": "ＡＤワークスグループ",
+    "path": "stocks/2982.html"
   },
   {
     "ticker": "1379",
@@ -95,14 +95,19 @@
     "path": "stocks/1379.html"
   },
   {
-    "ticker": "7235",
-    "name": "東京ラヂエーター製造",
-    "path": "stocks/7235.html"
+    "ticker": "2924",
+    "name": "イフジ産業",
+    "path": "stocks/2924.html"
   },
   {
     "ticker": "166A",
     "name": "タスキホールディングス",
     "path": "stocks/166A.html"
+  },
+  {
+    "ticker": "168A",
+    "name": "イタミアート",
+    "path": "stocks/168A.html"
   },
   {
     "ticker": "2323",
@@ -130,23 +135,18 @@
     "path": "stocks/2926.html"
   },
   {
+    "ticker": "2983",
+    "name": "アールプランナー",
+    "path": "stocks/2983.html"
+  },
+  {
+    "ticker": "3494",
+    "name": "マリオン",
+    "path": "stocks/3494.html"
+  },
+  {
     "ticker": "3913",
     "name": "ＧｒｅｅｎＢｅｅ",
     "path": "stocks/3913.html"
-  },
-  {
-    "ticker": "8136",
-    "name": "サンリオ",
-    "path": "stocks/8136.html"
-  },
-  {
-    "ticker": "2989",
-    "name": "東海道リート投資法人",
-    "path": "stocks/2989.html"
-  },
-  {
-    "ticker": "160A",
-    "name": "アズパートナーズ",
-    "path": "stocks/160A.html"
   }
 ]
