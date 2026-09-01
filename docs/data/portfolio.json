@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-31",
+  "updated_at": "2026-09-01",
   "cost_basis": 3806.0,
   "market_value": 3806.0,
   "unrealized_pnl": 0.0,
@@ -12,7 +12,7 @@
     {
       "ticker": "269A",
       "name": "Ｓａｐｅｅｔ",
-      "buy_date": "2026-08-25",
+      "buy_date": "2026-09-01",
       "buy_price": 2685.0,
       "shares": 1,
       "current_price": 2685.0,
@@ -22,7 +22,7 @@
     {
       "ticker": "3010",
       "name": "ポラリス・ホールディングス",
-      "buy_date": "2026-08-31",
+      "buy_date": "2026-09-01",
       "buy_price": 190.0,
       "shares": 2,
       "current_price": 190.0,
@@ -32,7 +32,7 @@
     {
       "ticker": "2323",
       "name": "ｆｏｎｆｕｎ",
-      "buy_date": "2026-08-31",
+      "buy_date": "2026-09-01",
       "buy_price": 319.0,
       "shares": 1,
       "current_price": 319.0,
@@ -42,7 +42,7 @@
     {
       "ticker": "2435",
       "name": "シダー",
-      "buy_date": "2026-08-31",
+      "buy_date": "2026-09-01",
       "buy_price": 211.0,
       "shares": 2,
       "current_price": 211.0,
