@@ -5,14 +5,14 @@
     "path": "stocks/160A.html"
   },
   {
-    "ticker": "3010",
-    "name": "ポラリス・ホールディングス",
-    "path": "stocks/3010.html"
-  },
-  {
     "ticker": "1814",
     "name": "大末建設",
     "path": "stocks/1814.html"
+  },
+  {
+    "ticker": "3010",
+    "name": "ポラリス・ホールディングス",
+    "path": "stocks/3010.html"
   },
   {
     "ticker": "3640",
@@ -30,14 +30,19 @@
     "path": "stocks/1491.html"
   },
   {
-    "ticker": "2435",
-    "name": "シダー",
-    "path": "stocks/2435.html"
-  },
-  {
     "ticker": "1847",
     "name": "イチケン",
     "path": "stocks/1847.html"
+  },
+  {
+    "ticker": "2112",
+    "name": "塩水港精糖",
+    "path": "stocks/2112.html"
+  },
+  {
+    "ticker": "2435",
+    "name": "シダー",
+    "path": "stocks/2435.html"
   },
   {
     "ticker": "2304",
@@ -55,24 +60,9 @@
     "path": "stocks/211A.html"
   },
   {
-    "ticker": "1964",
-    "name": "中外炉工業",
-    "path": "stocks/1964.html"
-  },
-  {
     "ticker": "5110",
     "name": "住友ゴム工業",
     "path": "stocks/5110.html"
-  },
-  {
-    "ticker": "1768",
-    "name": "ソネック",
-    "path": "stocks/1768.html"
-  },
-  {
-    "ticker": "2112",
-    "name": "塩水港精糖",
-    "path": "stocks/2112.html"
   },
   {
     "ticker": "6505",
@@ -80,9 +70,19 @@
     "path": "stocks/6505.html"
   },
   {
-    "ticker": "2982",
-    "name": "ＡＤワークスグループ",
-    "path": "stocks/2982.html"
+    "ticker": "1768",
+    "name": "ソネック",
+    "path": "stocks/1768.html"
+  },
+  {
+    "ticker": "1964",
+    "name": "中外炉工業",
+    "path": "stocks/1964.html"
+  },
+  {
+    "ticker": "1379",
+    "name": "ホクト",
+    "path": "stocks/1379.html"
   },
   {
     "ticker": "2117",
@@ -90,9 +90,9 @@
     "path": "stocks/2117.html"
   },
   {
-    "ticker": "1379",
-    "name": "ホクト",
-    "path": "stocks/1379.html"
+    "ticker": "2982",
+    "name": "ＡＤワークスグループ",
+    "path": "stocks/2982.html"
   },
   {
     "ticker": "2924",
@@ -130,11 +130,6 @@
     "path": "stocks/277A.html"
   },
   {
-    "ticker": "2926",
-    "name": "篠崎屋",
-    "path": "stocks/2926.html"
-  },
-  {
     "ticker": "2983",
     "name": "アールプランナー",
     "path": "stocks/2983.html"
@@ -145,8 +140,13 @@
     "path": "stocks/3494.html"
   },
   {
-    "ticker": "3913",
-    "name": "ＧｒｅｅｎＢｅｅ",
-    "path": "stocks/3913.html"
+    "ticker": "7162",
+    "name": "アストマックス",
+    "path": "stocks/7162.html"
+  },
+  {
+    "ticker": "8136",
+    "name": "サンリオ",
+    "path": "stocks/8136.html"
   }
 ]

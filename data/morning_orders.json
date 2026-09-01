@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-01",
+  "date": "2026-09-02",
   "signal": "BUY",
   "budget_ratio": 1.0,
   "orders": [
@@ -12,28 +12,12 @@
       "category": "core"
     },
     {
-      "ticker": "2435",
-      "name": "シダー",
-      "shares": 2,
-      "price": 211,
-      "cost": 422,
-      "category": "core"
-    },
-    {
       "ticker": "2323",
       "name": "ｆｏｎｆｕｎ",
       "shares": 1,
       "price": 319,
       "cost": 319,
       "category": "satellite_a"
-    },
-    {
-      "ticker": "269A",
-      "name": "Ｓａｐｅｅｔ",
-      "shares": 1,
-      "price": 2685,
-      "cost": 2685,
-      "category": "satellite_b"
     }
   ]
 }

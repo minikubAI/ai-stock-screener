@@ -566,6 +566,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://minikubai.github.io/ai-stock-screener/stocks/7162.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://minikubai.github.io/ai-stock-screener/stocks/7176.html</loc>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
