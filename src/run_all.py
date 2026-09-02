@@ -96,19 +96,25 @@ def run_evening():
     print(f"{'─' * 60}")
     _run('src/portfolio_mgr.py', 'record_buys', timeout=30)
 
-    # 4. portfolio.json エクスポート
+    # 4. 保有銘柄の現在株価を更新
+    print(f"\n{'─' * 60}")
+    print("💹 保有銘柄の株価更新")
+    print(f"{'─' * 60}")
+    _run('src/portfolio_mgr.py', 'update_prices', timeout=60)
+
+    # 5. portfolio.json エクスポート
     print(f"\n{'─' * 60}")
     print("📊 portfolio.json エクスポート")
     print(f"{'─' * 60}")
     _run('src/portfolio_mgr.py', 'export', timeout=30)
 
-    # 5. 日次スナップショット記録
+    # 6. 日次スナップショット記録
     print(f"\n{'─' * 60}")
     print("📸 ポートフォリオスナップショット")
     print(f"{'─' * 60}")
     _run('src/portfolio_mgr.py', 'snapshot', timeout=30)
 
-    # 6. 夕方の運用サマリーをLINEへ
+    # 7. 夕方の運用サマリーをLINEへ
     print(f"\n{'─' * 60}")
     print("📱 LINE 運用サマリー送信")
     print(f"{'─' * 60}")

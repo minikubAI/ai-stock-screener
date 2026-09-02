@@ -2,9 +2,10 @@
 ポートフォリオ管理ユーティリティ
 
 使い方:
-  python src/portfolio_mgr.py export        # docs/data/portfolio.json を生成
-  python src/portfolio_mgr.py snapshot      # 日次スナップショットを記録
-  python src/portfolio_mgr.py record_buys   # 当日の morning_orders.json を DB に記録
+  python src/portfolio_mgr.py export           # docs/data/portfolio.json を生成
+  python src/portfolio_mgr.py snapshot         # 日次スナップショットを記録
+  python src/portfolio_mgr.py record_buys      # 当日の morning_orders.json を DB に記録
+  python src/portfolio_mgr.py update_prices    # 保有銘柄の株価をYahoo Financeから更新
   python src/portfolio_mgr.py buy TICKER PRICE SHARES  # 個別買い記録
 """
 
@@ -234,6 +235,57 @@ def record_buy(ticker, price, shares):
     print(f'✅ 買い記録: {ticker} × {shares}株 @ ¥{price:,}')
 
 
+def update_portfolio_prices():
+    """保有銘柄の現在株価をYahoo Financeから取得してDBのpricesテーブルを更新"""
+    try:
+        import yfinance as yf
+    except ImportError:
+        print('⚠️ yfinance がインストールされていません。スキップします。')
+        return
+
+    conn = get_db()
+    today = date.today().isoformat()
+
+    holdings = conn.execute(
+        "SELECT DISTINCT ticker FROM portfolio WHERE status='HOLD'"
+    ).fetchall()
+
+    if not holdings:
+        print('保有銘柄なし。スキップします。')
+        conn.close()
+        return
+
+    tickers = [row['ticker'] for row in holdings]
+    print(f'📊 {len(tickers)}銘柄の株価を更新中...')
+
+    for ticker in tickers:
+        yf_ticker = f"{ticker}.T"
+        try:
+            stock = yf.Ticker(yf_ticker)
+            info = stock.info
+            price = info.get('currentPrice') or info.get('regularMarketPrice')
+            if not price:
+                hist = stock.history(period='2d')
+                if not hist.empty:
+                    price = float(hist['Close'].iloc[-1])
+
+            if price:
+                conn.execute(
+                    '''INSERT OR REPLACE INTO prices (ticker, date, close)
+                       VALUES (?, ?, ?)''',
+                    (ticker, today, round(price, 1))
+                )
+                print(f'  ✅ {ticker}: ¥{price:,.0f}')
+            else:
+                print(f'  ⚠️ {ticker}: 株価取得失敗')
+        except Exception as e:
+            print(f'  ❌ {ticker}: {e}')
+
+    conn.commit()
+    conn.close()
+    print(f'株価更新完了: {len(tickers)}銘柄')
+
+
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'export'
     if cmd == 'export':
@@ -242,10 +294,12 @@ def main():
         record_snapshot()
     elif cmd == 'record_buys':
         record_morning_buys()
+    elif cmd == 'update_prices':
+        update_portfolio_prices()
     elif cmd == 'buy' and len(sys.argv) == 5:
         record_buy(sys.argv[2], float(sys.argv[3]), int(sys.argv[4]))
     else:
-        print('使い方: python src/portfolio_mgr.py export|snapshot|record_buys|buy TICKER PRICE SHARES')
+        print('使い方: python src/portfolio_mgr.py export|snapshot|record_buys|update_prices|buy TICKER PRICE SHARES')
 
 
 if __name__ == '__main__':
