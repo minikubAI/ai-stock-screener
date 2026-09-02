@@ -11,7 +11,7 @@
 import subprocess
 import sys
 import os
-from datetime import datetime
+import datetime
 
 # 朝：全レイヤー実行
 MORNING_SCRIPTS = [
@@ -51,7 +51,7 @@ def _run(script_path, *args, timeout=600):
 def run_scripts(scripts, label_mode, send_notify=True):
     print("=" * 60)
     print(f"🚀 全レイヤー一括実行 [{label_mode}]")
-    print(f"   {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+    print(f"   {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print("=" * 60)
 
     failed = []
@@ -76,11 +76,23 @@ def run_scripts(scripts, label_mode, send_notify=True):
         _run('src/notify_line.py', 'morning', timeout=30)
 
 
+def _is_weekday_jst():
+    today = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9)))
+    return today.weekday() < 5  # 0=月 〜 4=金
+
+
 def run_morning():
+    if not _is_weekday_jst():
+        print("土日のため実行スキップ")
+        return
     run_scripts(MORNING_SCRIPTS, '朝（フルスキャン）')
 
 
 def run_evening():
+    if not _is_weekday_jst():
+        print("土日のため実行スキップ")
+        return
+
     # 1. スクリーニング更新（LINE通知はあとで）
     run_scripts(EVENING_SCRIPTS, '夕方（軽量更新）', send_notify=False)
 
