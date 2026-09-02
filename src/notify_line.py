@@ -27,6 +27,8 @@ CORE_BUDGET     = int(WEEKLY_BUDGET * 0.50)  # 3,750
 SAT_A_BUDGET    = int(WEEKLY_BUDGET * 0.33)  # 2,475 → 2,500 rounded
 SAT_B_BUDGET    = WEEKLY_BUDGET - CORE_BUDGET - int(WEEKLY_BUDGET * 0.33)  # 残り
 
+WEEKLY_SKIP_THRESHOLD = WEEKLY_BUDGET // 2  # 1銘柄の株価がこれを超えたらスキップ（¥3,750）
+
 SATB_POOL_PATH    = os.path.join(BASE_DIR, 'data', 'satb_pool.json')
 REPORT_PATH       = os.path.join(BASE_DIR, 'data', 'latest_report.json')
 ORDERS_PATH       = os.path.join(BASE_DIR, 'data', 'morning_orders.json')
@@ -104,8 +106,8 @@ def load_portfolio():
 
 def generate_morning_message():
     report   = load_report()
-    core_raw = report.get('core_results', [])[:8]
-    sat_raw  = report.get('satellite_results', [])[:5]
+    core_raw = report.get('core_results', [])[:4]
+    sat_raw  = report.get('satellite_results', [])[:3]
     macro    = report.get('macro', {})
     signal   = macro.get('signal', 'NORMAL').upper()
 
@@ -151,16 +153,13 @@ def generate_morning_message():
 
     # ── Core ──────────────────────────
     lines.append('【Core — バリュー＋配当】')
-    core_valid = [s for s in core_raw if s.get('price', 0) > 0]
+    core_valid = [s for s in core_raw
+                  if 0 < s.get('price', 0) <= WEEKLY_SKIP_THRESHOLD]
     if core_valid:
         budget_each = core_budget // len(core_valid)
         for s in core_valid:
             price = s.get('price', 0)
-            if price <= 0:
-                continue
-            shares = int(budget_each // price)
-            if shares < 1:
-                continue
+            shares = max(1, int(budget_each // price))
             cost = shares * int(price)
             total_spent += cost
             name = s.get('name', s.get('ticker', ''))[:10]
@@ -178,14 +177,12 @@ def generate_morning_message():
     # ── Satellite A ───────────────────
     lines.append('【Satellite A — 成長株】')
     sat_a_valid = [s for s in sat_raw
-                   if 0 < s.get('price', 0) <= 10_000]
+                   if 0 < s.get('price', 0) <= WEEKLY_SKIP_THRESHOLD]
     if sat_a_valid:
         budget_each = sat_a_budget // len(sat_a_valid)
         for s in sat_a_valid:
             price = s.get('price', 0)
-            shares = int(budget_each // price)
-            if shares < 1:
-                continue
+            shares = max(1, int(budget_each // price))
             cost = shares * int(price)
             total_spent += cost
             name = s.get('name', s.get('ticker', ''))[:10]
@@ -197,7 +194,7 @@ def generate_morning_message():
                 'cost': cost, 'category': 'satellite_a',
             })
     else:
-        lines.append('  （対象銘柄なし：株価¥10,000超）')
+        lines.append('  （対象銘柄なし：株価¥3,750超）')
     lines.append('')
 
     # ── Satellite B（積立プール）──────
