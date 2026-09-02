@@ -1,10 +1,5 @@
 [
   {
-    "ticker": "160A",
-    "name": "アズパートナーズ",
-    "path": "stocks/160A.html"
-  },
-  {
     "ticker": "1814",
     "name": "大末建設",
     "path": "stocks/1814.html"
@@ -13,6 +8,11 @@
     "ticker": "3010",
     "name": "ポラリス・ホールディングス",
     "path": "stocks/3010.html"
+  },
+  {
+    "ticker": "160A",
+    "name": "アズパートナーズ",
+    "path": "stocks/160A.html"
   },
   {
     "ticker": "3640",
@@ -30,14 +30,9 @@
     "path": "stocks/1491.html"
   },
   {
-    "ticker": "1847",
-    "name": "イチケン",
-    "path": "stocks/1847.html"
-  },
-  {
-    "ticker": "2112",
-    "name": "塩水港精糖",
-    "path": "stocks/2112.html"
+    "ticker": "2288",
+    "name": "丸大食品",
+    "path": "stocks/2288.html"
   },
   {
     "ticker": "2435",
@@ -50,9 +45,14 @@
     "path": "stocks/2304.html"
   },
   {
-    "ticker": "2288",
-    "name": "丸大食品",
-    "path": "stocks/2288.html"
+    "ticker": "1847",
+    "name": "イチケン",
+    "path": "stocks/1847.html"
+  },
+  {
+    "ticker": "2112",
+    "name": "塩水港精糖",
+    "path": "stocks/2112.html"
   },
   {
     "ticker": "211A",
@@ -65,14 +65,14 @@
     "path": "stocks/5110.html"
   },
   {
-    "ticker": "6505",
-    "name": "東洋電機製造",
-    "path": "stocks/6505.html"
-  },
-  {
     "ticker": "1768",
     "name": "ソネック",
     "path": "stocks/1768.html"
+  },
+  {
+    "ticker": "6505",
+    "name": "東洋電機製造",
+    "path": "stocks/6505.html"
   },
   {
     "ticker": "1964",
@@ -80,9 +80,9 @@
     "path": "stocks/1964.html"
   },
   {
-    "ticker": "1379",
-    "name": "ホクト",
-    "path": "stocks/1379.html"
+    "ticker": "2982",
+    "name": "ＡＤワークスグループ",
+    "path": "stocks/2982.html"
   },
   {
     "ticker": "2117",
@@ -90,9 +90,9 @@
     "path": "stocks/2117.html"
   },
   {
-    "ticker": "2982",
-    "name": "ＡＤワークスグループ",
-    "path": "stocks/2982.html"
+    "ticker": "1379",
+    "name": "ホクト",
+    "path": "stocks/1379.html"
   },
   {
     "ticker": "2924",
