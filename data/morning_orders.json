@@ -1,38 +1,70 @@
 {
-  "date": "2026-09-03",
+  "date": "2026-09-04",
   "signal": "BUY",
   "budget_ratio": 1.0,
   "orders": [
     {
-      "ticker": "3010",
-      "name": "ポラリス・ホールディ",
-      "shares": 2,
-      "price": 190,
-      "cost": 380,
+      "ticker": "160A",
+      "name": "アズパートナーズ",
+      "shares": 1,
+      "price": 1991,
+      "cost": 1991,
       "category": "core"
     },
     {
-      "ticker": "2435",
-      "name": "シダー",
-      "shares": 2,
-      "price": 211,
-      "cost": 422,
+      "ticker": "1814",
+      "name": "大末建設",
+      "shares": 1,
+      "price": 3710,
+      "cost": 3710,
       "category": "core"
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
+      "shares": 4,
+      "price": 190,
+      "cost": 760,
+      "category": "core"
+    },
+    {
+      "ticker": "3640",
+      "name": "電算",
+      "shares": 1,
+      "price": 2778,
+      "cost": 2778,
+      "category": "core"
+    },
+    {
+      "ticker": "166A",
+      "name": "タスキホールディング",
+      "shares": 1,
+      "price": 1210,
+      "cost": 1210,
+      "category": "satellite_a"
+    },
+    {
+      "ticker": "168A",
+      "name": "イタミアート",
+      "shares": 1,
+      "price": 1078,
+      "cost": 1078,
+      "category": "satellite_a"
     },
     {
       "ticker": "2323",
       "name": "ｆｏｎｆｕｎ",
-      "shares": 1,
+      "shares": 2,
       "price": 319,
-      "cost": 319,
+      "cost": 638,
       "category": "satellite_a"
     },
     {
-      "ticker": "269A",
-      "name": "Ｓａｐｅｅｔ",
+      "ticker": "166A",
+      "name": "タスキホールディング",
       "shares": 1,
-      "price": 2685,
-      "cost": 2685,
+      "price": 1210,
+      "cost": 1210,
       "category": "satellite_b"
     }
   ]
