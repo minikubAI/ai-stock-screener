@@ -35,14 +35,19 @@
     "path": "stocks/2435.html"
   },
   {
+    "ticker": "2112",
+    "name": "塩水港精糖",
+    "path": "stocks/2112.html"
+  },
+  {
     "ticker": "2288",
     "name": "丸大食品",
     "path": "stocks/2288.html"
   },
   {
-    "ticker": "2304",
-    "name": "ＣＳＳホールディングス",
-    "path": "stocks/2304.html"
+    "ticker": "5110",
+    "name": "住友ゴム工業",
+    "path": "stocks/5110.html"
   },
   {
     "ticker": "1847",
@@ -50,9 +55,9 @@
     "path": "stocks/1847.html"
   },
   {
-    "ticker": "2112",
-    "name": "塩水港精糖",
-    "path": "stocks/2112.html"
+    "ticker": "2304",
+    "name": "ＣＳＳホールディングス",
+    "path": "stocks/2304.html"
   },
   {
     "ticker": "6505",
@@ -63,11 +68,6 @@
     "ticker": "211A",
     "name": "カドス・コーポレーション",
     "path": "stocks/211A.html"
-  },
-  {
-    "ticker": "5110",
-    "name": "住友ゴム工業",
-    "path": "stocks/5110.html"
   },
   {
     "ticker": "1768",
@@ -85,24 +85,19 @@
     "path": "stocks/2982.html"
   },
   {
-    "ticker": "2117",
-    "name": "ウェルネオシュガー",
-    "path": "stocks/2117.html"
-  },
-  {
     "ticker": "1379",
     "name": "ホクト",
     "path": "stocks/1379.html"
   },
   {
+    "ticker": "2117",
+    "name": "ウェルネオシュガー",
+    "path": "stocks/2117.html"
+  },
+  {
     "ticker": "2924",
     "name": "イフジ産業",
     "path": "stocks/2924.html"
-  },
-  {
-    "ticker": "166A",
-    "name": "タスキホールディングス",
-    "path": "stocks/166A.html"
   },
   {
     "ticker": "168A",
@@ -130,11 +125,6 @@
     "path": "stocks/277A.html"
   },
   {
-    "ticker": "2926",
-    "name": "篠崎屋",
-    "path": "stocks/2926.html"
-  },
-  {
     "ticker": "2983",
     "name": "アールプランナー",
     "path": "stocks/2983.html"
@@ -145,8 +135,18 @@
     "path": "stocks/3494.html"
   },
   {
-    "ticker": "3913",
-    "name": "ＧｒｅｅｎＢｅｅ",
-    "path": "stocks/3913.html"
+    "ticker": "7162",
+    "name": "アストマックス",
+    "path": "stocks/7162.html"
+  },
+  {
+    "ticker": "8136",
+    "name": "サンリオ",
+    "path": "stocks/8136.html"
+  },
+  {
+    "ticker": "166A",
+    "name": "タスキホールディングス",
+    "path": "stocks/166A.html"
   }
 ]

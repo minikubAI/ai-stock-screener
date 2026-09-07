@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-07",
+  "date": "2026-09-08",
   "signal": "BUY",
   "budget_ratio": 1.0,
   "orders": [
@@ -36,14 +36,6 @@
       "category": "core"
     },
     {
-      "ticker": "166A",
-      "name": "タスキホールディング",
-      "shares": 1,
-      "price": 1210,
-      "cost": 1210,
-      "category": "satellite_a"
-    },
-    {
       "ticker": "168A",
       "name": "イタミアート",
       "shares": 1,
@@ -60,11 +52,19 @@
       "category": "satellite_a"
     },
     {
-      "ticker": "166A",
-      "name": "タスキホールディング",
+      "ticker": "247A",
+      "name": "Ａｉロボティクス",
       "shares": 1,
-      "price": 1210,
-      "cost": 1210,
+      "price": 1080,
+      "cost": 1080,
+      "category": "satellite_a"
+    },
+    {
+      "ticker": "247A",
+      "name": "Ａｉロボティクス",
+      "shares": 2,
+      "price": 1080,
+      "cost": 2160,
       "category": "satellite_b"
     }
   ]
