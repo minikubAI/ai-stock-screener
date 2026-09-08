@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-09-07",
-  "cost_basis": 15272.0,
-  "market_value": 15129.0,
-  "unrealized_pnl": -143.0,
-  "unrealized_pnl_pct": -0.94,
+  "updated_at": "2026-09-08",
+  "cost_basis": 16352.0,
+  "market_value": 16078.0,
+  "unrealized_pnl": -274.0,
+  "unrealized_pnl_pct": -1.68,
   "total_dividends": 0,
-  "total_return": -143.0,
-  "total_return_pct": -0.94,
-  "holdings_count": 9,
+  "total_return": -274.0,
+  "total_return_pct": -1.68,
+  "holdings_count": 10,
   "holdings": [
     {
       "ticker": "269A",
@@ -30,56 +30,6 @@
       "unrealized_pnl_pct": -0.47
     },
     {
-      "ticker": "3010",
-      "name": "ポラリス・ホールディングス",
-      "buy_date": "2026-09-07",
-      "buy_price": 190.0,
-      "shares": 4,
-      "current_price": 190.0,
-      "unrealized_pnl": 0.0,
-      "unrealized_pnl_pct": 0.0
-    },
-    {
-      "ticker": "2323",
-      "name": "ｆｏｎｆｕｎ",
-      "buy_date": "2026-09-07",
-      "buy_price": 319.0,
-      "shares": 2,
-      "current_price": 328.0,
-      "unrealized_pnl": 18.0,
-      "unrealized_pnl_pct": 2.82
-    },
-    {
-      "ticker": "160A",
-      "name": "アズパートナーズ",
-      "buy_date": "2026-09-07",
-      "buy_price": 1991.0,
-      "shares": 1,
-      "current_price": 1976.0,
-      "unrealized_pnl": -15.0,
-      "unrealized_pnl_pct": -0.75
-    },
-    {
-      "ticker": "1814",
-      "name": "大末建設",
-      "buy_date": "2026-09-07",
-      "buy_price": 3710.0,
-      "shares": 1,
-      "current_price": 3635.0,
-      "unrealized_pnl": -75.0,
-      "unrealized_pnl_pct": -2.02
-    },
-    {
-      "ticker": "3640",
-      "name": "電算",
-      "buy_date": "2026-09-07",
-      "buy_price": 2778.0,
-      "shares": 1,
-      "current_price": 2772.0,
-      "unrealized_pnl": -6.0,
-      "unrealized_pnl_pct": -0.22
-    },
-    {
       "ticker": "166A",
       "name": "タスキホールディングス",
       "buy_date": "2026-09-07",
@@ -90,14 +40,74 @@
       "unrealized_pnl_pct": -7.19
     },
     {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディングス",
+      "buy_date": "2026-09-08",
+      "buy_price": 190.0,
+      "shares": 4,
+      "current_price": 188.0,
+      "unrealized_pnl": -8.0,
+      "unrealized_pnl_pct": -1.05
+    },
+    {
+      "ticker": "2323",
+      "name": "ｆｏｎｆｕｎ",
+      "buy_date": "2026-09-08",
+      "buy_price": 319.0,
+      "shares": 2,
+      "current_price": 331.0,
+      "unrealized_pnl": 24.0,
+      "unrealized_pnl_pct": 3.76
+    },
+    {
+      "ticker": "160A",
+      "name": "アズパートナーズ",
+      "buy_date": "2026-09-08",
+      "buy_price": 1991.0,
+      "shares": 1,
+      "current_price": 1961.0,
+      "unrealized_pnl": -30.0,
+      "unrealized_pnl_pct": -1.51
+    },
+    {
+      "ticker": "1814",
+      "name": "大末建設",
+      "buy_date": "2026-09-08",
+      "buy_price": 3710.0,
+      "shares": 1,
+      "current_price": 3580.0,
+      "unrealized_pnl": -130.0,
+      "unrealized_pnl_pct": -3.5
+    },
+    {
+      "ticker": "3640",
+      "name": "電算",
+      "buy_date": "2026-09-08",
+      "buy_price": 2778.0,
+      "shares": 1,
+      "current_price": 2756.0,
+      "unrealized_pnl": -22.0,
+      "unrealized_pnl_pct": -0.79
+    },
+    {
       "ticker": "168A",
       "name": "イタミアート",
-      "buy_date": "2026-09-07",
+      "buy_date": "2026-09-08",
       "buy_price": 1078.0,
       "shares": 1,
-      "current_price": 1088.0,
-      "unrealized_pnl": 10.0,
-      "unrealized_pnl_pct": 0.93
+      "current_price": 1081.0,
+      "unrealized_pnl": 3.0,
+      "unrealized_pnl_pct": 0.28
+    },
+    {
+      "ticker": "247A",
+      "name": "Ａｉロボティクス",
+      "buy_date": "2026-09-08",
+      "buy_price": 1080.0,
+      "shares": 1,
+      "current_price": 1044.0,
+      "unrealized_pnl": -36.0,
+      "unrealized_pnl_pct": -3.33
     }
   ]
 }
