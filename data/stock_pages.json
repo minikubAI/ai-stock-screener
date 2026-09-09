@@ -40,11 +40,6 @@
     "path": "stocks/2112.html"
   },
   {
-    "ticker": "2288",
-    "name": "丸大食品",
-    "path": "stocks/2288.html"
-  },
-  {
     "ticker": "2304",
     "name": "ＣＳＳホールディングス",
     "path": "stocks/2304.html"
@@ -53,6 +48,11 @@
     "ticker": "5110",
     "name": "住友ゴム工業",
     "path": "stocks/5110.html"
+  },
+  {
+    "ticker": "2288",
+    "name": "丸大食品",
+    "path": "stocks/2288.html"
   },
   {
     "ticker": "1847",
@@ -85,14 +85,14 @@
     "path": "stocks/2982.html"
   },
   {
-    "ticker": "2117",
-    "name": "ウェルネオシュガー",
-    "path": "stocks/2117.html"
-  },
-  {
     "ticker": "1379",
     "name": "ホクト",
     "path": "stocks/1379.html"
+  },
+  {
+    "ticker": "2117",
+    "name": "ウェルネオシュガー",
+    "path": "stocks/2117.html"
   },
   {
     "ticker": "2924",
