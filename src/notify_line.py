@@ -106,8 +106,8 @@ def load_portfolio():
 
 def generate_morning_message():
     report   = load_report()
-    core_raw = report.get('core_results', [])[:4]
-    sat_raw  = report.get('satellite_results', [])[:3]
+    core_raw = report.get('core_results', [])[:2]
+    sat_raw  = report.get('satellite_results', [])[:2]
     macro    = report.get('macro', {})
     signal   = macro.get('signal', 'NORMAL').upper()
 
@@ -159,7 +159,9 @@ def generate_morning_message():
         budget_each = core_budget // len(core_valid)
         for s in core_valid:
             price = s.get('price', 0)
-            shares = max(1, int(budget_each // price))
+            shares = int(budget_each // price)
+            if shares < 1:
+                continue
             cost = shares * int(price)
             total_spent += cost
             name = s.get('name', s.get('ticker', ''))[:10]
@@ -182,7 +184,9 @@ def generate_morning_message():
         budget_each = sat_a_budget // len(sat_a_valid)
         for s in sat_a_valid:
             price = s.get('price', 0)
-            shares = max(1, int(budget_each // price))
+            shares = int(budget_each // price)
+            if shares < 1:
+                continue
             cost = shares * int(price)
             total_spent += cost
             name = s.get('name', s.get('ticker', ''))[:10]
