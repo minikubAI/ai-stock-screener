@@ -1,40 +1,8 @@
 {
-  "date": "2026-09-11",
-  "signal": "BUY",
+  "date": "2026-09-14",
+  "signal": "NORMAL",
   "budget_ratio": 1.0,
   "orders": [
-    {
-      "ticker": "160A",
-      "name": "アズパートナーズ",
-      "shares": 1,
-      "price": 1991,
-      "cost": 1991,
-      "category": "core"
-    },
-    {
-      "ticker": "3010",
-      "name": "ポラリス・ホールディ",
-      "shares": 4,
-      "price": 190,
-      "cost": 760,
-      "category": "core"
-    },
-    {
-      "ticker": "1814",
-      "name": "大末建設",
-      "shares": 1,
-      "price": 3710,
-      "cost": 3710,
-      "category": "core"
-    },
-    {
-      "ticker": "3640",
-      "name": "電算",
-      "shares": 1,
-      "price": 2778,
-      "cost": 2778,
-      "category": "core"
-    },
     {
       "ticker": "168A",
       "name": "イタミアート",
@@ -46,25 +14,17 @@
     {
       "ticker": "2323",
       "name": "ｆｏｎｆｕｎ",
-      "shares": 2,
+      "shares": 3,
       "price": 319,
-      "cost": 638,
+      "cost": 957,
       "category": "satellite_a"
     },
     {
-      "ticker": "247A",
-      "name": "Ａｉロボティクス",
+      "ticker": "168A",
+      "name": "イタミアート",
       "shares": 1,
-      "price": 1080,
-      "cost": 1080,
-      "category": "satellite_a"
-    },
-    {
-      "ticker": "247A",
-      "name": "Ａｉロボティクス",
-      "shares": 1,
-      "price": 1080,
-      "cost": 1080,
+      "price": 1078,
+      "cost": 1078,
       "category": "satellite_b"
     }
   ]

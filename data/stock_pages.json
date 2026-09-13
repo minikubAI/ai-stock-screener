@@ -5,14 +5,14 @@
     "path": "stocks/160A.html"
   },
   {
-    "ticker": "3010",
-    "name": "ポラリス・ホールディングス",
-    "path": "stocks/3010.html"
-  },
-  {
     "ticker": "1814",
     "name": "大末建設",
     "path": "stocks/1814.html"
+  },
+  {
+    "ticker": "3010",
+    "name": "ポラリス・ホールディングス",
+    "path": "stocks/3010.html"
   },
   {
     "ticker": "3640",
