@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-09-11",
-  "cost_basis": 16352.0,
-  "market_value": 15902.0,
-  "unrealized_pnl": -450.0,
-  "unrealized_pnl_pct": -2.75,
+  "updated_at": "2026-09-14",
+  "cost_basis": 16671.0,
+  "market_value": 16236.0,
+  "unrealized_pnl": -435.0,
+  "unrealized_pnl_pct": -2.61,
   "total_dividends": 0,
-  "total_return": -450.0,
-  "total_return_pct": -2.75,
+  "total_return": -435.0,
+  "total_return_pct": -2.61,
   "holdings_count": 10,
   "holdings": [
     {
@@ -50,16 +50,6 @@
       "unrealized_pnl_pct": -1.05
     },
     {
-      "ticker": "2323",
-      "name": "ｆｏｎｆｕｎ",
-      "buy_date": "2026-09-11",
-      "buy_price": 319.0,
-      "shares": 2,
-      "current_price": 332.0,
-      "unrealized_pnl": 26.0,
-      "unrealized_pnl_pct": 4.08
-    },
-    {
       "ticker": "160A",
       "name": "アズパートナーズ",
       "buy_date": "2026-09-11",
@@ -90,16 +80,6 @@
       "unrealized_pnl_pct": -1.55
     },
     {
-      "ticker": "168A",
-      "name": "イタミアート",
-      "buy_date": "2026-09-11",
-      "buy_price": 1078.0,
-      "shares": 1,
-      "current_price": 1088.0,
-      "unrealized_pnl": 10.0,
-      "unrealized_pnl_pct": 0.93
-    },
-    {
       "ticker": "247A",
       "name": "Ａｉロボティクス",
       "buy_date": "2026-09-11",
@@ -108,6 +88,26 @@
       "current_price": 1015.0,
       "unrealized_pnl": -65.0,
       "unrealized_pnl_pct": -6.02
+    },
+    {
+      "ticker": "2323",
+      "name": "ｆｏｎｆｕｎ",
+      "buy_date": "2026-09-14",
+      "buy_price": 319.0,
+      "shares": 3,
+      "current_price": 334.0,
+      "unrealized_pnl": 45.0,
+      "unrealized_pnl_pct": 4.7
+    },
+    {
+      "ticker": "168A",
+      "name": "イタミアート",
+      "buy_date": "2026-09-14",
+      "buy_price": 1078.0,
+      "shares": 1,
+      "current_price": 1084.0,
+      "unrealized_pnl": 6.0,
+      "unrealized_pnl_pct": 0.56
     }
   ]
 }
