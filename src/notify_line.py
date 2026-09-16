@@ -28,11 +28,34 @@ SAT_A_BUDGET    = int(WEEKLY_BUDGET * 0.33)  # 2,475 → 2,500 rounded
 SAT_B_BUDGET    = WEEKLY_BUDGET - CORE_BUDGET - int(WEEKLY_BUDGET * 0.33)  # 残り
 
 WEEKLY_SKIP_THRESHOLD = WEEKLY_BUDGET // 2  # 1銘柄の株価がこれを超えたらスキップ（¥3,750）
+MIN_ORDER_BUDGET      = 500               # 週残り予算がこれ未満なら本日停止
 
-SATB_POOL_PATH    = os.path.join(BASE_DIR, 'data', 'satb_pool.json')
-REPORT_PATH       = os.path.join(BASE_DIR, 'data', 'latest_report.json')
-ORDERS_PATH       = os.path.join(BASE_DIR, 'data', 'morning_orders.json')
-PORTFOLIO_PATH    = os.path.join(BASE_DIR, 'docs', 'data', 'portfolio.json')
+SATB_POOL_PATH        = os.path.join(BASE_DIR, 'data', 'satb_pool.json')
+REPORT_PATH           = os.path.join(BASE_DIR, 'data', 'latest_report.json')
+ORDERS_PATH           = os.path.join(BASE_DIR, 'data', 'morning_orders.json')
+PORTFOLIO_PATH        = os.path.join(BASE_DIR, 'docs', 'data', 'portfolio.json')
+WEEKLY_BUDGET_PATH    = os.path.join(BASE_DIR, 'data', 'weekly_budget.json')
+
+
+def get_iso_week():
+    return datetime.now().strftime('%Y-W%V')
+
+
+def load_weekly_budget():
+    try:
+        with open(WEEKLY_BUDGET_PATH, encoding='utf-8') as f:
+            data = json.load(f)
+        if data.get('week') != get_iso_week():
+            return {'week': get_iso_week(), 'spent': 0}
+        return data
+    except Exception:
+        return {'week': get_iso_week(), 'spent': 0}
+
+
+def save_weekly_budget(data):
+    os.makedirs(os.path.dirname(WEEKLY_BUDGET_PATH), exist_ok=True)
+    with open(WEEKLY_BUDGET_PATH, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
 
 
 def get_config():
@@ -131,23 +154,41 @@ def generate_morning_message():
         signal_icon = '🔵 NORMAL'
         budget_ratio = 1.0
 
-    weekly = int(WEEKLY_BUDGET * budget_ratio)
     lines.append(f'マクロ環境: {signal_icon}')
-    lines.append(f'週予算: ¥{weekly:,}（月¥{MONTHLY_BUDGET:,}）')
-    lines.append('')
 
     orders = {'date': today, 'signal': signal, 'budget_ratio': budget_ratio, 'orders': []}
 
     if budget_ratio == 0.0:
+        lines.append('週予算: 停止中（PAUSEシグナル）')
+        lines.append('')
         lines.append('🚫 本日は新規購入停止（PAUSEシグナル）')
         lines.append('━━━━━━━━━━━━━━')
         lines.append('📱 証券アプリで上記を確認してください')
         save_morning_orders(orders)
         return '\n'.join(lines)
 
-    core_budget  = int(CORE_BUDGET  * budget_ratio)
-    sat_a_budget = int(SAT_A_BUDGET * budget_ratio)
-    sat_b_budget = int(SAT_B_BUDGET * budget_ratio)
+    # 週次予算チェック
+    wb = load_weekly_budget()
+    remaining = WEEKLY_BUDGET - wb.get('spent', 0)
+    if remaining < MIN_ORDER_BUDGET:
+        lines.append(f'週予算: 使用済 ¥{wb.get("spent", 0):,} / ¥{WEEKLY_BUDGET:,}（残 ¥{max(remaining, 0):,}）')
+        lines.append('')
+        lines.append('🚫 本日は新規購入停止（週予算を使い切りました）')
+        lines.append('━━━━━━━━━━━━━━')
+        lines.append('📱 証券アプリで上記を確認してください')
+        save_morning_orders(orders)
+        return '\n'.join(lines)
+
+    # 今日の実効予算 = 残り予算 × マクロ係数
+    today_budget = int(remaining * budget_ratio)
+    scale = today_budget / WEEKLY_BUDGET
+    lines.append(f'週予算: 残 ¥{remaining:,}（使用済 ¥{wb.get("spent", 0):,} / 週¥{WEEKLY_BUDGET:,}）')
+    lines.append(f'本日上限: ¥{today_budget:,}')
+    lines.append('')
+
+    core_budget  = int(CORE_BUDGET  * scale)
+    sat_a_budget = int(SAT_A_BUDGET * scale)
+    sat_b_budget = int(SAT_B_BUDGET * scale)
 
     total_spent = 0
 
@@ -236,11 +277,14 @@ def generate_morning_message():
         lines.append(f'  積立中: +¥{sat_b_budget:,}（累計¥{pool["accumulated"]:,}）')
 
     save_satb_pool(pool)
+    wb['spent'] = wb.get('spent', 0) + total_spent
+    save_weekly_budget(wb)
     save_morning_orders(orders)
     lines.append('')
 
     lines.append('━━━━━━━━━━━━━━')
     lines.append(f'💰 本日合計: ¥{total_spent:,}')
+    lines.append(f'週累計: ¥{wb["spent"]:,} / ¥{WEEKLY_BUDGET:,}（残 ¥{WEEKLY_BUDGET - wb["spent"]:,}）')
     lines.append('📱 証券アプリで上記を発注してください')
 
     return '\n'.join(lines)
