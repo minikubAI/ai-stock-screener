@@ -40,14 +40,19 @@
     "path": "stocks/2112.html"
   },
   {
+    "ticker": "1847",
+    "name": "イチケン",
+    "path": "stocks/1847.html"
+  },
+  {
     "ticker": "2288",
     "name": "丸大食品",
     "path": "stocks/2288.html"
   },
   {
-    "ticker": "1847",
-    "name": "イチケン",
-    "path": "stocks/1847.html"
+    "ticker": "6505",
+    "name": "東洋電機製造",
+    "path": "stocks/6505.html"
   },
   {
     "ticker": "5110",
@@ -58,11 +63,6 @@
     "ticker": "2304",
     "name": "ＣＳＳホールディングス",
     "path": "stocks/2304.html"
-  },
-  {
-    "ticker": "6505",
-    "name": "東洋電機製造",
-    "path": "stocks/6505.html"
   },
   {
     "ticker": "211A",
@@ -98,6 +98,11 @@
     "ticker": "2117",
     "name": "ウェルネオシュガー",
     "path": "stocks/2117.html"
+  },
+  {
+    "ticker": "166A",
+    "name": "タスキホールディングス",
+    "path": "stocks/166A.html"
   },
   {
     "ticker": "168A",
@@ -143,10 +148,5 @@
     "ticker": "8136",
     "name": "サンリオ",
     "path": "stocks/8136.html"
-  },
-  {
-    "ticker": "166A",
-    "name": "タスキホールディングス",
-    "path": "stocks/166A.html"
   }
 ]

@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-15",
-  "signal": "NORMAL",
+  "date": "2026-09-16",
+  "signal": "BUY",
   "budget_ratio": 1.0,
   "orders": [
     {
@@ -12,19 +12,11 @@
       "category": "core"
     },
     {
-      "ticker": "168A",
-      "name": "イタミアート",
+      "ticker": "166A",
+      "name": "タスキホールディング",
       "shares": 1,
-      "price": 1078,
-      "cost": 1078,
-      "category": "satellite_a"
-    },
-    {
-      "ticker": "2323",
-      "name": "ｆｏｎｆｕｎ",
-      "shares": 3,
-      "price": 319,
-      "cost": 957,
+      "price": 1210,
+      "cost": 1210,
       "category": "satellite_a"
     },
     {
@@ -33,6 +25,14 @@
       "shares": 1,
       "price": 1078,
       "cost": 1078,
+      "category": "satellite_a"
+    },
+    {
+      "ticker": "166A",
+      "name": "タスキホールディング",
+      "shares": 1,
+      "price": 1210,
+      "cost": 1210,
       "category": "satellite_b"
     }
   ]
