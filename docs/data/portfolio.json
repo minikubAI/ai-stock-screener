@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-09-15",
+  "updated_at": "2026-09-16",
   "cost_basis": 17621.0,
-  "market_value": 17187.0,
-  "unrealized_pnl": -434.0,
-  "unrealized_pnl_pct": -2.46,
+  "market_value": 17106.0,
+  "unrealized_pnl": -515.0,
+  "unrealized_pnl_pct": -2.92,
   "total_dividends": 0,
-  "total_return": -434.0,
-  "total_return_pct": -2.46,
+  "total_return": -515.0,
+  "total_return_pct": -2.92,
   "holdings_count": 10,
   "holdings": [
     {
@@ -28,16 +28,6 @@
       "current_price": 210.0,
       "unrealized_pnl": -2.0,
       "unrealized_pnl_pct": -0.47
-    },
-    {
-      "ticker": "166A",
-      "name": "タスキホールディングス",
-      "buy_date": "2026-09-07",
-      "buy_price": 1210.0,
-      "shares": 1,
-      "current_price": 1123.0,
-      "unrealized_pnl": -87.0,
-      "unrealized_pnl_pct": -7.19
     },
     {
       "ticker": "160A",
@@ -80,16 +70,6 @@
       "unrealized_pnl_pct": -6.02
     },
     {
-      "ticker": "3010",
-      "name": "ポラリス・ホールディングス",
-      "buy_date": "2026-09-15",
-      "buy_price": 190.0,
-      "shares": 9,
-      "current_price": 190.0,
-      "unrealized_pnl": 0.0,
-      "unrealized_pnl_pct": 0.0
-    },
-    {
       "ticker": "2323",
       "name": "ｆｏｎｆｕｎ",
       "buy_date": "2026-09-15",
@@ -100,14 +80,34 @@
       "unrealized_pnl_pct": 7.52
     },
     {
+      "ticker": "166A",
+      "name": "タスキホールディングス",
+      "buy_date": "2026-09-16",
+      "buy_price": 1210.0,
+      "shares": 1,
+      "current_price": 1065.0,
+      "unrealized_pnl": -145.0,
+      "unrealized_pnl_pct": -11.98
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディングス",
+      "buy_date": "2026-09-16",
+      "buy_price": 190.0,
+      "shares": 9,
+      "current_price": 188.0,
+      "unrealized_pnl": -18.0,
+      "unrealized_pnl_pct": -1.05
+    },
+    {
       "ticker": "168A",
       "name": "イタミアート",
-      "buy_date": "2026-09-15",
+      "buy_date": "2026-09-16",
       "buy_price": 1078.0,
       "shares": 1,
-      "current_price": 1050.0,
-      "unrealized_pnl": -28.0,
-      "unrealized_pnl_pct": -2.6
+      "current_price": 1045.0,
+      "unrealized_pnl": -33.0,
+      "unrealized_pnl_pct": -3.06
     }
   ]
 }
