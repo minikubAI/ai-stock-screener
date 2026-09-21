@@ -1,15 +1,39 @@
 {
-  "date": "2026-09-18",
+  "date": "2026-09-21",
   "signal": "BUY",
   "budget_ratio": 1.0,
   "orders": [
     {
       "ticker": "3010",
       "name": "ポラリス・ホールディ",
-      "shares": 2,
+      "shares": 9,
       "price": 190,
-      "cost": 380,
+      "cost": 1710,
       "category": "core"
+    },
+    {
+      "ticker": "166A",
+      "name": "タスキホールディング",
+      "shares": 1,
+      "price": 1210,
+      "cost": 1210,
+      "category": "satellite_a"
+    },
+    {
+      "ticker": "168A",
+      "name": "イタミアート",
+      "shares": 1,
+      "price": 1078,
+      "cost": 1078,
+      "category": "satellite_a"
+    },
+    {
+      "ticker": "166A",
+      "name": "タスキホールディング",
+      "shares": 1,
+      "price": 1210,
+      "cost": 1210,
+      "category": "satellite_b"
     }
   ]
 }
