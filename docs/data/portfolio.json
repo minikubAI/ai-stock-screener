@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-09-18",
-  "cost_basis": 16291.0,
-  "market_value": 15874.0,
-  "unrealized_pnl": -417.0,
-  "unrealized_pnl_pct": -2.56,
+  "updated_at": "2026-09-21",
+  "cost_basis": 17621.0,
+  "market_value": 17210.0,
+  "unrealized_pnl": -411.0,
+  "unrealized_pnl_pct": -2.33,
   "total_dividends": 0,
-  "total_return": -417.0,
-  "total_return_pct": -2.56,
+  "total_return": -411.0,
+  "total_return_pct": -2.33,
   "holdings_count": 10,
   "holdings": [
     {
@@ -70,16 +70,6 @@
       "unrealized_pnl_pct": -6.02
     },
     {
-      "ticker": "166A",
-      "name": "タスキホールディングス",
-      "buy_date": "2026-09-16",
-      "buy_price": 1210.0,
-      "shares": 1,
-      "current_price": 1065.0,
-      "unrealized_pnl": -145.0,
-      "unrealized_pnl_pct": -11.98
-    },
-    {
       "ticker": "2323",
       "name": "ｆｏｎｆｕｎ",
       "buy_date": "2026-09-17",
@@ -90,23 +80,33 @@
       "unrealized_pnl_pct": 14.73
     },
     {
+      "ticker": "166A",
+      "name": "タスキホールディングス",
+      "buy_date": "2026-09-21",
+      "buy_price": 1210.0,
+      "shares": 1,
+      "current_price": 1087.0,
+      "unrealized_pnl": -123.0,
+      "unrealized_pnl_pct": -10.17
+    },
+    {
       "ticker": "168A",
       "name": "イタミアート",
-      "buy_date": "2026-09-17",
+      "buy_date": "2026-09-21",
       "buy_price": 1078.0,
       "shares": 1,
-      "current_price": 1058.0,
-      "unrealized_pnl": -20.0,
-      "unrealized_pnl_pct": -1.86
+      "current_price": 1049.0,
+      "unrealized_pnl": -29.0,
+      "unrealized_pnl_pct": -2.69
     },
     {
       "ticker": "3010",
       "name": "ポラリス・ホールディングス",
-      "buy_date": "2026-09-18",
+      "buy_date": "2026-09-21",
       "buy_price": 190.0,
-      "shares": 2,
+      "shares": 9,
       "current_price": 189.0,
-      "unrealized_pnl": -2.0,
+      "unrealized_pnl": -9.0,
       "unrealized_pnl_pct": -0.53
     }
   ]
