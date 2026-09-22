@@ -50,9 +50,9 @@
     "path": "stocks/5110.html"
   },
   {
-    "ticker": "211A",
-    "name": "カドス・コーポレーション",
-    "path": "stocks/211A.html"
+    "ticker": "6505",
+    "name": "東洋電機製造",
+    "path": "stocks/6505.html"
   },
   {
     "ticker": "1847",
@@ -65,14 +65,14 @@
     "path": "stocks/2304.html"
   },
   {
-    "ticker": "6505",
-    "name": "東洋電機製造",
-    "path": "stocks/6505.html"
-  },
-  {
     "ticker": "1768",
     "name": "ソネック",
     "path": "stocks/1768.html"
+  },
+  {
+    "ticker": "211A",
+    "name": "カドス・コーポレーション",
+    "path": "stocks/211A.html"
   },
   {
     "ticker": "1964",
