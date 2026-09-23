@@ -45,6 +45,11 @@
     "path": "stocks/2288.html"
   },
   {
+    "ticker": "1847",
+    "name": "イチケン",
+    "path": "stocks/1847.html"
+  },
+  {
     "ticker": "5110",
     "name": "住友ゴム工業",
     "path": "stocks/5110.html"
@@ -53,11 +58,6 @@
     "ticker": "6505",
     "name": "東洋電機製造",
     "path": "stocks/6505.html"
-  },
-  {
-    "ticker": "1847",
-    "name": "イチケン",
-    "path": "stocks/1847.html"
   },
   {
     "ticker": "2304",
