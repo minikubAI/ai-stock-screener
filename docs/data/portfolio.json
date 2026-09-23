@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-09-22",
-  "cost_basis": 16481.0,
-  "market_value": 16076.0,
-  "unrealized_pnl": -405.0,
-  "unrealized_pnl_pct": -2.46,
+  "updated_at": "2026-09-23",
+  "cost_basis": 16291.0,
+  "market_value": 15887.0,
+  "unrealized_pnl": -404.0,
+  "unrealized_pnl_pct": -2.48,
   "total_dividends": 0,
-  "total_return": -405.0,
-  "total_return_pct": -2.46,
+  "total_return": -404.0,
+  "total_return_pct": -2.48,
   "holdings_count": 10,
   "holdings": [
     {
@@ -80,16 +80,6 @@
       "unrealized_pnl_pct": 14.73
     },
     {
-      "ticker": "166A",
-      "name": "タスキホールディングス",
-      "buy_date": "2026-09-21",
-      "buy_price": 1210.0,
-      "shares": 1,
-      "current_price": 1087.0,
-      "unrealized_pnl": -123.0,
-      "unrealized_pnl_pct": -10.17
-    },
-    {
       "ticker": "168A",
       "name": "イタミアート",
       "buy_date": "2026-09-21",
@@ -100,13 +90,23 @@
       "unrealized_pnl_pct": -2.69
     },
     {
+      "ticker": "166A",
+      "name": "タスキホールディングス",
+      "buy_date": "2026-09-23",
+      "buy_price": 1210.0,
+      "shares": 1,
+      "current_price": 1087.0,
+      "unrealized_pnl": -123.0,
+      "unrealized_pnl_pct": -10.17
+    },
+    {
       "ticker": "3010",
       "name": "ポラリス・ホールディングス",
-      "buy_date": "2026-09-22",
+      "buy_date": "2026-09-23",
       "buy_price": 190.0,
-      "shares": 3,
+      "shares": 2,
       "current_price": 189.0,
-      "unrealized_pnl": -3.0,
+      "unrealized_pnl": -2.0,
       "unrealized_pnl_pct": -0.53
     }
   ]
