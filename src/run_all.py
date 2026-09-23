@@ -76,21 +76,27 @@ def run_scripts(scripts, label_mode, send_notify=True):
         _run('src/notify_line.py', 'morning', timeout=30)
 
 
-def _is_weekday_jst():
-    today = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9)))
-    return today.weekday() < 5  # 0=月 〜 4=金
+def _is_trading_day_jst():
+    import jpholiday
+    now = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9)))
+    today = now.date()
+    if now.weekday() >= 5:
+        return False
+    if jpholiday.is_holiday(today):
+        return False
+    return True
 
 
 def run_morning():
-    if not _is_weekday_jst():
-        print("土日のため実行スキップ")
+    if not _is_trading_day_jst():
+        print("土日・祝日のため実行スキップ")
         return
     run_scripts(MORNING_SCRIPTS, '朝（フルスキャン）')
 
 
 def run_evening():
-    if not _is_weekday_jst():
-        print("土日のため実行スキップ")
+    if not _is_trading_day_jst():
+        print("土日・祝日のため実行スキップ")
         return
 
     # 1. スクリーニング更新（LINE通知はあとで）
