@@ -1,113 +1,873 @@
 {
-  "updated_at": "2026-09-23",
-  "cost_basis": 16291.0,
-  "market_value": 15887.0,
-  "unrealized_pnl": -404.0,
-  "unrealized_pnl_pct": -2.48,
+  "updated_at": "2026-09-24",
+  "cost_basis": 111310,
+  "market_value": 111310,
+  "unrealized_pnl": 0,
+  "unrealized_pnl_pct": 0.0,
   "total_dividends": 0,
-  "total_return": -404.0,
-  "total_return_pct": -2.48,
-  "holdings_count": 10,
+  "total_return": 0,
+  "total_return_pct": 0.0,
+  "holdings_count": 86,
   "holdings": [
+    {
+      "ticker": "7836",
+      "name": "アビックス",
+      "buy_date": "2026-08-21",
+      "buy_price": 77,
+      "shares": 6,
+      "current_price": 77,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
+      "buy_date": "2026-08-21",
+      "buy_price": 190,
+      "shares": 2,
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "2323",
+      "name": "ｆｏｎｆｕｎ",
+      "buy_date": "2026-08-21",
+      "buy_price": 323,
+      "shares": 1,
+      "current_price": 323,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
+      "buy_date": "2026-08-24",
+      "buy_price": 190,
+      "shares": 2,
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "2323",
+      "name": "ｆｏｎｆｕｎ",
+      "buy_date": "2026-08-24",
+      "buy_price": 323,
+      "shares": 1,
+      "current_price": 323,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
+      "buy_date": "2026-08-25",
+      "buy_price": 190,
+      "shares": 2,
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "2323",
+      "name": "ｆｏｎｆｕｎ",
+      "buy_date": "2026-08-25",
+      "buy_price": 323,
+      "shares": 1,
+      "current_price": 323,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
     {
       "ticker": "269A",
       "name": "Ｓａｐｅｅｔ",
-      "buy_date": "2026-09-03",
-      "buy_price": 2685.0,
+      "buy_date": "2026-08-25",
+      "buy_price": 2685,
       "shares": 1,
-      "current_price": 2699.0,
-      "unrealized_pnl": 14.0,
-      "unrealized_pnl_pct": 0.52
+      "current_price": 2685,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
+      "buy_date": "2026-08-26",
+      "buy_price": 190,
+      "shares": 2,
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "2323",
+      "name": "ｆｏｎｆｕｎ",
+      "buy_date": "2026-08-26",
+      "buy_price": 323,
+      "shares": 1,
+      "current_price": 323,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
+      "buy_date": "2026-08-29",
+      "buy_price": 190,
+      "shares": 2,
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "2323",
+      "name": "ｆｏｎｆｕｎ",
+      "buy_date": "2026-08-29",
+      "buy_price": 323,
+      "shares": 1,
+      "current_price": 323,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "269A",
+      "name": "Ｓａｐｅｅｔ",
+      "buy_date": "2026-08-29",
+      "buy_price": 2685,
+      "shares": 1,
+      "current_price": 2685,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
+      "buy_date": "2026-08-31",
+      "buy_price": 190,
+      "shares": 2,
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "2435",
+      "name": "シダー",
+      "buy_date": "2026-08-31",
+      "buy_price": 211,
+      "shares": 2,
+      "current_price": 211,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "2323",
+      "name": "ｆｏｎｆｕｎ",
+      "buy_date": "2026-08-31",
+      "buy_price": 319,
+      "shares": 1,
+      "current_price": 319,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
+      "buy_date": "2026-09-01",
+      "buy_price": 190,
+      "shares": 2,
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "2435",
+      "name": "シダー",
+      "buy_date": "2026-09-01",
+      "buy_price": 211,
+      "shares": 2,
+      "current_price": 211,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "2323",
+      "name": "ｆｏｎｆｕｎ",
+      "buy_date": "2026-09-01",
+      "buy_price": 319,
+      "shares": 1,
+      "current_price": 319,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "269A",
+      "name": "Ｓａｐｅｅｔ",
+      "buy_date": "2026-09-01",
+      "buy_price": 2685,
+      "shares": 1,
+      "current_price": 2685,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
+      "buy_date": "2026-09-02",
+      "buy_price": 190,
+      "shares": 2,
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "2323",
+      "name": "ｆｏｎｆｕｎ",
+      "buy_date": "2026-09-02",
+      "buy_price": 319,
+      "shares": 1,
+      "current_price": 319,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
+      "buy_date": "2026-09-03",
+      "buy_price": 190,
+      "shares": 2,
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
     },
     {
       "ticker": "2435",
       "name": "シダー",
       "buy_date": "2026-09-03",
-      "buy_price": 211.0,
+      "buy_price": 211,
       "shares": 2,
-      "current_price": 210.0,
-      "unrealized_pnl": -2.0,
-      "unrealized_pnl_pct": -0.47
+      "current_price": 211,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "2323",
+      "name": "ｆｏｎｆｕｎ",
+      "buy_date": "2026-09-03",
+      "buy_price": 319,
+      "shares": 1,
+      "current_price": 319,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "269A",
+      "name": "Ｓａｐｅｅｔ",
+      "buy_date": "2026-09-03",
+      "buy_price": 2685,
+      "shares": 1,
+      "current_price": 2685,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "160A",
+      "name": "アズパートナーズ",
+      "buy_date": "2026-09-04",
+      "buy_price": 1991,
+      "shares": 1,
+      "current_price": 1991,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "1814",
+      "name": "大末建設",
+      "buy_date": "2026-09-04",
+      "buy_price": 3710,
+      "shares": 1,
+      "current_price": 3710,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
+      "buy_date": "2026-09-04",
+      "buy_price": 190,
+      "shares": 4,
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3640",
+      "name": "電算",
+      "buy_date": "2026-09-04",
+      "buy_price": 2778,
+      "shares": 1,
+      "current_price": 2778,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "166A",
+      "name": "タスキホールディング",
+      "buy_date": "2026-09-04",
+      "buy_price": 1210,
+      "shares": 1,
+      "current_price": 1210,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "168A",
+      "name": "イタミアート",
+      "buy_date": "2026-09-04",
+      "buy_price": 1078,
+      "shares": 1,
+      "current_price": 1078,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "2323",
+      "name": "ｆｏｎｆｕｎ",
+      "buy_date": "2026-09-04",
+      "buy_price": 319,
+      "shares": 2,
+      "current_price": 319,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "160A",
+      "name": "アズパートナーズ",
+      "buy_date": "2026-09-07",
+      "buy_price": 1991,
+      "shares": 1,
+      "current_price": 1991,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "1814",
+      "name": "大末建設",
+      "buy_date": "2026-09-07",
+      "buy_price": 3710,
+      "shares": 1,
+      "current_price": 3710,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
+      "buy_date": "2026-09-07",
+      "buy_price": 190,
+      "shares": 4,
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3640",
+      "name": "電算",
+      "buy_date": "2026-09-07",
+      "buy_price": 2778,
+      "shares": 1,
+      "current_price": 2778,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "166A",
+      "name": "タスキホールディング",
+      "buy_date": "2026-09-07",
+      "buy_price": 1210,
+      "shares": 1,
+      "current_price": 1210,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "168A",
+      "name": "イタミアート",
+      "buy_date": "2026-09-07",
+      "buy_price": 1078,
+      "shares": 1,
+      "current_price": 1078,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "2323",
+      "name": "ｆｏｎｆｕｎ",
+      "buy_date": "2026-09-07",
+      "buy_price": 319,
+      "shares": 2,
+      "current_price": 319,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "160A",
+      "name": "アズパートナーズ",
+      "buy_date": "2026-09-08",
+      "buy_price": 1991,
+      "shares": 1,
+      "current_price": 1991,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "1814",
+      "name": "大末建設",
+      "buy_date": "2026-09-08",
+      "buy_price": 3710,
+      "shares": 1,
+      "current_price": 3710,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
+      "buy_date": "2026-09-08",
+      "buy_price": 190,
+      "shares": 4,
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3640",
+      "name": "電算",
+      "buy_date": "2026-09-08",
+      "buy_price": 2778,
+      "shares": 1,
+      "current_price": 2778,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "168A",
+      "name": "イタミアート",
+      "buy_date": "2026-09-08",
+      "buy_price": 1078,
+      "shares": 1,
+      "current_price": 1078,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "2323",
+      "name": "ｆｏｎｆｕｎ",
+      "buy_date": "2026-09-08",
+      "buy_price": 319,
+      "shares": 2,
+      "current_price": 319,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "247A",
+      "name": "Ａｉロボティクス",
+      "buy_date": "2026-09-08",
+      "buy_price": 1080,
+      "shares": 1,
+      "current_price": 1080,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "160A",
+      "name": "アズパートナーズ",
+      "buy_date": "2026-09-09",
+      "buy_price": 1991,
+      "shares": 1,
+      "current_price": 1991,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
+      "buy_date": "2026-09-09",
+      "buy_price": 190,
+      "shares": 4,
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "1814",
+      "name": "大末建設",
+      "buy_date": "2026-09-09",
+      "buy_price": 3710,
+      "shares": 1,
+      "current_price": 3710,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3640",
+      "name": "電算",
+      "buy_date": "2026-09-09",
+      "buy_price": 2778,
+      "shares": 1,
+      "current_price": 2778,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "168A",
+      "name": "イタミアート",
+      "buy_date": "2026-09-09",
+      "buy_price": 1078,
+      "shares": 1,
+      "current_price": 1078,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "2323",
+      "name": "ｆｏｎｆｕｎ",
+      "buy_date": "2026-09-09",
+      "buy_price": 319,
+      "shares": 2,
+      "current_price": 319,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "247A",
+      "name": "Ａｉロボティクス",
+      "buy_date": "2026-09-09",
+      "buy_price": 1080,
+      "shares": 1,
+      "current_price": 1080,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "160A",
+      "name": "アズパートナーズ",
+      "buy_date": "2026-09-10",
+      "buy_price": 1991,
+      "shares": 1,
+      "current_price": 1991,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
+      "buy_date": "2026-09-10",
+      "buy_price": 190,
+      "shares": 4,
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "1814",
+      "name": "大末建設",
+      "buy_date": "2026-09-10",
+      "buy_price": 3710,
+      "shares": 1,
+      "current_price": 3710,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3640",
+      "name": "電算",
+      "buy_date": "2026-09-10",
+      "buy_price": 2778,
+      "shares": 1,
+      "current_price": 2778,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "168A",
+      "name": "イタミアート",
+      "buy_date": "2026-09-10",
+      "buy_price": 1078,
+      "shares": 1,
+      "current_price": 1078,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "2323",
+      "name": "ｆｏｎｆｕｎ",
+      "buy_date": "2026-09-10",
+      "buy_price": 319,
+      "shares": 2,
+      "current_price": 319,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "247A",
+      "name": "Ａｉロボティクス",
+      "buy_date": "2026-09-10",
+      "buy_price": 1080,
+      "shares": 1,
+      "current_price": 1080,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
     },
     {
       "ticker": "160A",
       "name": "アズパートナーズ",
       "buy_date": "2026-09-11",
-      "buy_price": 1991.0,
+      "buy_price": 1991,
       "shares": 1,
-      "current_price": 1921.0,
-      "unrealized_pnl": -70.0,
-      "unrealized_pnl_pct": -3.52
+      "current_price": 1991,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
+      "buy_date": "2026-09-11",
+      "buy_price": 190,
+      "shares": 4,
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
     },
     {
       "ticker": "1814",
       "name": "大末建設",
       "buy_date": "2026-09-11",
-      "buy_price": 3710.0,
+      "buy_price": 3710,
       "shares": 1,
-      "current_price": 3485.0,
-      "unrealized_pnl": -225.0,
-      "unrealized_pnl_pct": -6.06
+      "current_price": 3710,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
     },
     {
       "ticker": "3640",
       "name": "電算",
       "buy_date": "2026-09-11",
-      "buy_price": 2778.0,
+      "buy_price": 2778,
       "shares": 1,
-      "current_price": 2735.0,
-      "unrealized_pnl": -43.0,
-      "unrealized_pnl_pct": -1.55
+      "current_price": 2778,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "168A",
+      "name": "イタミアート",
+      "buy_date": "2026-09-11",
+      "buy_price": 1078,
+      "shares": 1,
+      "current_price": 1078,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "2323",
+      "name": "ｆｏｎｆｕｎ",
+      "buy_date": "2026-09-11",
+      "buy_price": 319,
+      "shares": 2,
+      "current_price": 319,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
     },
     {
       "ticker": "247A",
       "name": "Ａｉロボティクス",
       "buy_date": "2026-09-11",
-      "buy_price": 1080.0,
+      "buy_price": 1080,
       "shares": 1,
-      "current_price": 1015.0,
-      "unrealized_pnl": -65.0,
-      "unrealized_pnl_pct": -6.02
+      "current_price": 1080,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "168A",
+      "name": "イタミアート",
+      "buy_date": "2026-09-14",
+      "buy_price": 1078,
+      "shares": 1,
+      "current_price": 1078,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "2323",
+      "name": "ｆｏｎｆｕｎ",
+      "buy_date": "2026-09-14",
+      "buy_price": 319,
+      "shares": 3,
+      "current_price": 319,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
+      "buy_date": "2026-09-15",
+      "buy_price": 190,
+      "shares": 9,
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "168A",
+      "name": "イタミアート",
+      "buy_date": "2026-09-15",
+      "buy_price": 1078,
+      "shares": 1,
+      "current_price": 1078,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "2323",
+      "name": "ｆｏｎｆｕｎ",
+      "buy_date": "2026-09-15",
+      "buy_price": 319,
+      "shares": 3,
+      "current_price": 319,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
+      "buy_date": "2026-09-16",
+      "buy_price": 190,
+      "shares": 9,
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "166A",
+      "name": "タスキホールディング",
+      "buy_date": "2026-09-16",
+      "buy_price": 1210,
+      "shares": 1,
+      "current_price": 1210,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "168A",
+      "name": "イタミアート",
+      "buy_date": "2026-09-16",
+      "buy_price": 1078,
+      "shares": 1,
+      "current_price": 1078,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
+      "buy_date": "2026-09-17",
+      "buy_price": 190,
+      "shares": 9,
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "168A",
+      "name": "イタミアート",
+      "buy_date": "2026-09-17",
+      "buy_price": 1078,
+      "shares": 1,
+      "current_price": 1078,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
     },
     {
       "ticker": "2323",
       "name": "ｆｏｎｆｕｎ",
       "buy_date": "2026-09-17",
-      "buy_price": 319.0,
+      "buy_price": 319,
       "shares": 3,
-      "current_price": 366.0,
-      "unrealized_pnl": 141.0,
-      "unrealized_pnl_pct": 14.73
+      "current_price": 319,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
+      "buy_date": "2026-09-18",
+      "buy_price": 190,
+      "shares": 2,
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
+      "buy_date": "2026-09-21",
+      "buy_price": 190,
+      "shares": 9,
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "166A",
+      "name": "タスキホールディング",
+      "buy_date": "2026-09-21",
+      "buy_price": 1210,
+      "shares": 1,
+      "current_price": 1210,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
     },
     {
       "ticker": "168A",
       "name": "イタミアート",
       "buy_date": "2026-09-21",
-      "buy_price": 1078.0,
+      "buy_price": 1078,
       "shares": 1,
-      "current_price": 1049.0,
-      "unrealized_pnl": -29.0,
-      "unrealized_pnl_pct": -2.69
-    },
-    {
-      "ticker": "166A",
-      "name": "タスキホールディングス",
-      "buy_date": "2026-09-23",
-      "buy_price": 1210.0,
-      "shares": 1,
-      "current_price": 1087.0,
-      "unrealized_pnl": -123.0,
-      "unrealized_pnl_pct": -10.17
+      "current_price": 1078,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
     },
     {
       "ticker": "3010",
-      "name": "ポラリス・ホールディングス",
+      "name": "ポラリス・ホールディ",
+      "buy_date": "2026-09-22",
+      "buy_price": 190,
+      "shares": 3,
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディ",
       "buy_date": "2026-09-23",
-      "buy_price": 190.0,
+      "buy_price": 190,
       "shares": 2,
-      "current_price": 189.0,
-      "unrealized_pnl": -2.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 190,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
+    },
+    {
+      "ticker": "166A",
+      "name": "タスキホールディング",
+      "buy_date": "2026-09-23",
+      "buy_price": 1210,
+      "shares": 1,
+      "current_price": 1210,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
     }
   ]
 }
