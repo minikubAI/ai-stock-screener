@@ -1,11 +1,11 @@
 {
   "updated_at": "2026-09-24",
-  "cost_basis": 111310,
-  "market_value": 111310,
-  "unrealized_pnl": 0,
+  "cost_basis": 111310.0,
+  "market_value": 111310.0,
+  "unrealized_pnl": 0.0,
   "unrealized_pnl_pct": 0.0,
   "total_dividends": 0,
-  "total_return": 0,
+  "total_return": 0.0,
   "total_return_pct": 0.0,
   "holdings_count": 86,
   "holdings": [
