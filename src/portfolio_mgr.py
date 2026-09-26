@@ -19,6 +19,7 @@ BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
 
 ORDERS_PATH    = os.path.join(BASE_DIR, 'data', 'morning_orders.json')
 PORTFOLIO_PATH = os.path.join(BASE_DIR, 'docs', 'data', 'portfolio.json')
+DIVIDENDS_PATH = os.path.join(BASE_DIR, 'data', 'dividends.json')
 
 
 def get_db():
@@ -92,11 +93,13 @@ def export_portfolio():
         cost_basis   += cost
         market_value += mval
 
-    # 累計配当
-    div_row = conn.execute(
-        "SELECT COALESCE(SUM(amount),0) as total FROM trades WHERE trade_type='DIVIDEND'"
-    ).fetchone()
-    total_dividends = div_row['total'] if div_row else 0.0
+    # 累計配当（dividends.json が正：DB はキャッシュ消失で消えるため）
+    try:
+        with open(DIVIDENDS_PATH, encoding='utf-8') as f:
+            div_records = json.load(f)
+        total_dividends = sum(r.get('amount', 0) for r in div_records)
+    except Exception:
+        total_dividends = 0.0
 
     unrealized_pnl     = market_value - cost_basis
     unrealized_pnl_pct = (unrealized_pnl / cost_basis * 100) if cost_basis > 0 else 0.0

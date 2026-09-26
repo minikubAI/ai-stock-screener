@@ -120,6 +120,12 @@ def run_evening():
     print(f"{'─' * 60}")
     _run('src/portfolio_mgr.py', 'update_prices', timeout=60)
 
+    # 4b. 配当金を自動取得
+    print(f"\n{'─' * 60}")
+    print("💴 配当金自動取得")
+    print(f"{'─' * 60}")
+    _run('src/fetch_dividends.py', timeout=120)
+
     # 5. portfolio.json エクスポート
     print(f"\n{'─' * 60}")
     print("📊 portfolio.json エクスポート")
