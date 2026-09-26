@@ -468,7 +468,10 @@ def update_index_pages(conn, stocks, base_dir):
         en_items.append({'rank': s['rank'], 'code': s['ticker'], 'name': s['name'],
                          'per': per, 'pbr': pbr, 'roe': roe, 'dy': dy, 'score': score})
 
+    # site/ を正とし、docs/ は workflow の cp で上書きされるため両方更新する
     targets = [
+        (os.path.join(base_dir, 'site', 'index.html'), ja_items),
+        (os.path.join(base_dir, 'site', 'en.html'),    en_items),
         (os.path.join(base_dir, 'docs', 'index.html'), ja_items),
         (os.path.join(base_dir, 'docs', 'en.html'),    en_items),
     ]

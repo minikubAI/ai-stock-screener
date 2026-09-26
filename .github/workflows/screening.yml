@@ -97,7 +97,7 @@ jobs:
       - name: Generate pages
         if: steps.mode.outputs.mode == 'morning' || steps.mode.outputs.mode == 'both'
         run: |
-          python src/generate_pages.py 2>/dev/null || true
+          python src/generate_pages.py || true
 
       - name: Copy site to docs
         run: |
