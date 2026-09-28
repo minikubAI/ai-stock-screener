@@ -82,6 +82,19 @@ def export_portfolio():
     for key, item in db_items.items():
         merged[key] = item  # DBの最新株価で上書き
 
+    # DBにある銘柄の最新株価を、portfolio.json上の同銘柄全エントリに適用する
+    # （DBキャッシュには当週分しかないため、過去分も同じ現在株価で損益を計算）
+    ticker_current_price = {item['ticker']: item['current_price'] for item in db_items.values()}
+    for key, item in merged.items():
+        ticker = item['ticker']
+        if ticker in ticker_current_price:
+            cp = ticker_current_price[ticker]
+            cost = item['buy_price'] * item['shares']
+            mval = cp * item['shares']
+            item['current_price'] = cp
+            item['unrealized_pnl'] = round(mval - cost, 0)
+            item['unrealized_pnl_pct'] = round((cp - item['buy_price']) / item['buy_price'] * 100, 2)
+
     items = sorted(merged.values(), key=lambda x: x['buy_date'])
 
     cost_basis = 0.0

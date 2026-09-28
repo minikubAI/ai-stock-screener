@@ -475,6 +475,10 @@ def update_index_pages(conn, stocks, base_dir):
         (os.path.join(base_dir, 'docs', 'index.html'), ja_items),
         (os.path.join(base_dir, 'docs', 'en.html'),    en_items),
     ]
+    now = datetime.now()
+    date_str = f"{now.year}年{now.month}月{now.day}日"
+    date_js = f"document.getElementById('update-date').textContent='最終更新: {date_str}';"
+
     for path, items in targets:
         if not os.path.exists(path):
             continue
@@ -482,9 +486,13 @@ def update_index_pages(conn, stocks, base_dir):
         with open(path, 'r', encoding='utf-8') as f:
             html = f.read()
         updated = re.sub(r'const data=\[.*?\];', js, html, flags=re.DOTALL)
+        updated = re.sub(
+            r"document\.getElementById\('update-date'\)\.textContent='最終更新: .*?';",
+            date_js, updated
+        )
         with open(path, 'w', encoding='utf-8') as f:
             f.write(updated)
-        print(f"  📝 {os.path.basename(path)} のデータ配列を更新")
+        print(f"  📝 {os.path.basename(path)} のデータ配列・日付を更新（{date_str}）")
 
 
 def run(top_n=10):

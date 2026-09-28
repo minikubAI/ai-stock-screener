@@ -193,7 +193,7 @@ document.getElementById('results-body').innerHTML=data.map(s=>{
   const rc=s.rank<=3?`rk-${s.rank}`:'';
   return `<tr><td><span class="rk ${rc}">${s.rank}</span></td><td style="font-family:'Source Code Pro',monospace;font-weight:500">${s.ticker}</td><td><a href="stocks/${s.ticker}.html" style="color:var(--text);text-decoration:none">${s.name}</a></td><td class="r">${s.per}倍</td><td class="r">${s.pbr}倍</td><td class="r">${s.roe}%</td><td class="r">${s.dy}%</td><td class="r"><span class="score-v">${s.score}</span></td></tr>`;
 }).join('');
-document.getElementById('update-date').textContent='最終更新: 2026年8月16日';
+document.getElementById('update-date').textContent='最終更新: 2026年9月28日';
 
 async function loadPortfolio() {
   try {
