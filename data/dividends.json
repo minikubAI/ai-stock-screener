@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "ticker": "166A",
+    "ex_date": "2026-09-29",
+    "per_share": 34.0,
+    "shares": 6,
+    "amount": 204.0
+  },
+  {
+    "ticker": "1814",
+    "ex_date": "2026-09-29",
+    "per_share": 93.0,
+    "shares": 6,
+    "amount": 558.0
+  },
+  {
+    "ticker": "3640",
+    "ex_date": "2026-09-29",
+    "per_share": 30.0,
+    "shares": 6,
+    "amount": 180.0
+  }
+]

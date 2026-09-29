@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-09-28",
-  "cost_basis": 115308.0,
-  "market_value": 114336.0,
+  "updated_at": "2026-09-29",
+  "cost_basis": 115878.0,
+  "market_value": 114906.0,
   "unrealized_pnl": -972.0,
   "unrealized_pnl_pct": -0.84,
-  "total_dividends": 0,
-  "total_return": -972.0,
-  "total_return_pct": -0.84,
-  "holdings_count": 89,
+  "total_dividends": 942.0,
+  "total_return": -30.0,
+  "total_return_pct": -0.03,
+  "holdings_count": 90,
   "holdings": [
     {
       "ticker": "7836",
@@ -898,6 +898,16 @@
       "current_price": 1059.0,
       "unrealized_pnl": -19.0,
       "unrealized_pnl_pct": -1.76
+    },
+    {
+      "ticker": "3010",
+      "name": "ポラリス・ホールディングス",
+      "buy_date": "2026-09-29",
+      "buy_price": 190.0,
+      "shares": 3,
+      "current_price": 190.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0
     }
   ]
 }
