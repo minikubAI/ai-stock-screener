@@ -161,7 +161,9 @@
   <div class="perf-row">
     <div class="perf-box"><div class="perf-num" id="pf-invested">¥0</div><div class="perf-lbl">投資元本</div></div>
     <div class="perf-box"><div class="perf-num" id="pf-value">—</div><div class="perf-lbl">評価額</div></div>
-    <div class="perf-box"><div class="perf-num" id="pf-pnl">—</div><div class="perf-lbl">損益率</div></div>
+    <div class="perf-box"><div class="perf-num" id="pf-pnl">—</div><div class="perf-lbl">含み損益率</div></div>
+    <div class="perf-box"><div class="perf-num" id="pf-div">¥0</div><div class="perf-lbl">累計配当</div></div>
+    <div class="perf-box"><div class="perf-num" id="pf-tret">—</div><div class="perf-lbl">トータルリターン</div></div>
     <div class="perf-box"><div class="perf-num" id="pf-positions">0</div><div class="perf-lbl">保有銘柄</div></div>
   </div>
   <p class="perf-note" id="pf-note">現在はロジック構築フェーズのため、まだ投資は開始していません。</p>
@@ -209,6 +211,13 @@ async function loadPortfolio() {
     const pnlEl = document.getElementById('pf-pnl');
     pnlEl.textContent = (pnlPct >= 0 ? '+' : '') + pnlPct.toFixed(1) + '%';
     pnlEl.style.color = pnlPct >= 0 ? 'var(--green)' : 'var(--red)';
+
+    document.getElementById('pf-div').textContent = '¥' + Math.round(pf.total_dividends || 0).toLocaleString();
+
+    const tretPct = pf.total_return_pct || 0;
+    const tretEl = document.getElementById('pf-tret');
+    tretEl.textContent = (tretPct >= 0 ? '+' : '') + tretPct.toFixed(1) + '%';
+    tretEl.style.color = tretPct >= 0 ? 'var(--green)' : 'var(--red)';
 
     document.getElementById('pf-positions').textContent = pf.holdings_count;
 
