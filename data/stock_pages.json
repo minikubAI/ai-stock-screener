@@ -1,13 +1,13 @@
 [
   {
-    "ticker": "160A",
-    "name": "アズパートナーズ",
-    "path": "stocks/160A.html"
-  },
-  {
     "ticker": "3010",
     "name": "ポラリス・ホールディングス",
     "path": "stocks/3010.html"
+  },
+  {
+    "ticker": "160A",
+    "name": "アズパートナーズ",
+    "path": "stocks/160A.html"
   },
   {
     "ticker": "1814",
@@ -45,11 +45,6 @@
     "path": "stocks/2288.html"
   },
   {
-    "ticker": "1847",
-    "name": "イチケン",
-    "path": "stocks/1847.html"
-  },
-  {
     "ticker": "5110",
     "name": "住友ゴム工業",
     "path": "stocks/5110.html"
@@ -58,6 +53,11 @@
     "ticker": "2304",
     "name": "ＣＳＳホールディングス",
     "path": "stocks/2304.html"
+  },
+  {
+    "ticker": "1847",
+    "name": "イチケン",
+    "path": "stocks/1847.html"
   },
   {
     "ticker": "6505",
@@ -95,9 +95,9 @@
     "path": "stocks/1379.html"
   },
   {
-    "ticker": "1434",
-    "name": "ＪＥＳＣＯホールディングス",
-    "path": "stocks/1434.html"
+    "ticker": "2117",
+    "name": "ウェルネオシュガー",
+    "path": "stocks/2117.html"
   },
   {
     "ticker": "166A",

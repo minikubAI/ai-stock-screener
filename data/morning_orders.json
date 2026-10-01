@@ -1,14 +1,14 @@
 {
-  "date": "2026-09-30",
+  "date": "2026-10-01",
   "signal": "BUY",
   "budget_ratio": 1.0,
   "orders": [
     {
       "ticker": "3010",
       "name": "ポラリス・ホールディ",
-      "shares": 2,
+      "shares": 1,
       "price": 190,
-      "cost": 380,
+      "cost": 190,
       "category": "core"
     }
   ]
