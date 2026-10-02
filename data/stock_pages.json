@@ -75,14 +75,14 @@
     "path": "stocks/1768.html"
   },
   {
-    "ticker": "1964",
-    "name": "中外炉工業",
-    "path": "stocks/1964.html"
-  },
-  {
     "ticker": "2982",
     "name": "ＡＤワークスグループ",
     "path": "stocks/2982.html"
+  },
+  {
+    "ticker": "1964",
+    "name": "中外炉工業",
+    "path": "stocks/1964.html"
   },
   {
     "ticker": "2924",
@@ -95,9 +95,9 @@
     "path": "stocks/1379.html"
   },
   {
-    "ticker": "2117",
-    "name": "ウェルネオシュガー",
-    "path": "stocks/2117.html"
+    "ticker": "1434",
+    "name": "ＪＥＳＣＯホールディングス",
+    "path": "stocks/1434.html"
   },
   {
     "ticker": "166A",
