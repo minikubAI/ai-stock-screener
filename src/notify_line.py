@@ -247,8 +247,12 @@ def generate_morning_message():
     pool = load_satb_pool()
     pool['accumulated'] = pool.get('accumulated', 0) + sat_b_budget
 
-    # 最も株価が高いsatellite銘柄をターゲットに
-    sat_by_price = sorted(sat_raw, key=lambda s: s.get('price', 0), reverse=True)
+    # 最も株価が高いsatellite銘柄をターゲットに（当日すでに発注済みの銘柄は除外）
+    already_ordered = {o['ticker'] for o in orders['orders']}
+    sat_by_price = sorted(
+        [s for s in sat_raw if s.get('ticker') not in already_ordered],
+        key=lambda s: s.get('price', 0), reverse=True
+    )
     if sat_by_price:
         target = sat_by_price[0]
         target_price = target.get('price', 0)
