@@ -82,9 +82,18 @@ def export_portfolio():
     for key, item in db_items.items():
         merged[key] = item  # DBの最新株価で上書き
 
-    # DBにある銘柄の最新株価を、portfolio.json上の同銘柄全エントリに適用する
-    # （DBキャッシュには当週分しかないため、過去分も同じ現在株価で損益を計算）
+    # 全保有銘柄の最新株価をpricesテーブルから直接取得
+    # (db_itemsは当週分のみのため、pricesテーブルを直接参照して全銘柄をカバーする)
     ticker_current_price = {item['ticker']: item['current_price'] for item in db_items.values()}
+    for ticker in {item['ticker'] for item in merged.values()}:
+        if ticker not in ticker_current_price:
+            row = conn.execute(
+                "SELECT close FROM prices WHERE ticker=? ORDER BY date DESC LIMIT 1",
+                (ticker,)
+            ).fetchone()
+            if row and row[0]:
+                ticker_current_price[ticker] = row[0]
+
     for key, item in merged.items():
         ticker = item['ticker']
         if ticker in ticker_current_price:
@@ -249,7 +258,11 @@ def record_buy(ticker, price, shares):
 
 
 def update_portfolio_prices():
-    """保有銘柄の現在株価をYahoo Financeから取得してDBのpricesテーブルを更新"""
+    """保有銘柄の現在株価をYahoo Financeから取得してDBのpricesテーブルを更新
+
+    DBキャッシュは当週分のみのため、portfolio.jsonの全銘柄を対象にする。
+    DBにない過去購入分も含めて全銘柄の現在株価を取得する。
+    """
     try:
         import yfinance as yf
     except ImportError:
@@ -259,16 +272,27 @@ def update_portfolio_prices():
     conn = get_db()
     today = date.today().isoformat()
 
-    holdings = conn.execute(
+    # portfolio.json から全保有銘柄を取得（DBキャッシュに依存しない）
+    tickers_from_json = []
+    try:
+        with open(PORTFOLIO_PATH, encoding='utf-8') as f:
+            pf = json.load(f)
+        tickers_from_json = list({h['ticker'] for h in pf.get('holdings', [])})
+    except Exception:
+        pass
+
+    # DBの保有銘柄も追加（念のため）
+    db_holdings = conn.execute(
         "SELECT DISTINCT ticker FROM portfolio WHERE status='HOLD'"
     ).fetchall()
+    tickers_from_db = [row['ticker'] for row in db_holdings]
 
-    if not holdings:
+    tickers = list(set(tickers_from_json + tickers_from_db))
+
+    if not tickers:
         print('保有銘柄なし。スキップします。')
         conn.close()
         return
-
-    tickers = [row['ticker'] for row in holdings]
     print(f'📊 {len(tickers)}銘柄の株価を更新中...')
 
     for ticker in tickers:
