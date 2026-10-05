@@ -45,11 +45,6 @@
     "path": "stocks/2288.html"
   },
   {
-    "ticker": "5110",
-    "name": "住友ゴム工業",
-    "path": "stocks/5110.html"
-  },
-  {
     "ticker": "2304",
     "name": "ＣＳＳホールディングス",
     "path": "stocks/2304.html"
@@ -58,6 +53,11 @@
     "ticker": "1847",
     "name": "イチケン",
     "path": "stocks/1847.html"
+  },
+  {
+    "ticker": "5110",
+    "name": "住友ゴム工業",
+    "path": "stocks/5110.html"
   },
   {
     "ticker": "6505",
@@ -90,14 +90,14 @@
     "path": "stocks/2924.html"
   },
   {
-    "ticker": "1379",
-    "name": "ホクト",
-    "path": "stocks/1379.html"
-  },
-  {
     "ticker": "1434",
     "name": "ＪＥＳＣＯホールディングス",
     "path": "stocks/1434.html"
+  },
+  {
+    "ticker": "1379",
+    "name": "ホクト",
+    "path": "stocks/1379.html"
   },
   {
     "ticker": "166A",
