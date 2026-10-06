@@ -2,22 +2,5 @@
   "date": "2026-10-06",
   "signal": "BUY",
   "budget_ratio": 1.0,
-  "orders": [
-    {
-      "ticker": "3010",
-      "name": "ポラリス・ホールディ",
-      "shares": 4,
-      "price": 190,
-      "cost": 760,
-      "category": "core"
-    },
-    {
-      "ticker": "166A",
-      "name": "タスキホールディング",
-      "shares": 2,
-      "price": 1210,
-      "cost": 2420,
-      "category": "satellite_b"
-    }
-  ]
+  "orders": []
 }
