@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-06",
+  "date": "2026-10-07",
   "version": "v3",
   "macro": {
     "macro_score": 77.2,
@@ -28,7 +28,7 @@
       "market_cap": 444.0,
       "financial_score": 62.0,
       "trend_score": 59.0,
-      "sentiment_score": 59.4,
+      "sentiment_score": 58.8,
       "industry_bonus": 63.2,
       "total_score": 100,
       "rev_trend": "up",
@@ -559,7 +559,7 @@
       "market_cap": 701.0,
       "financial_score": 54.3,
       "trend_score": 76.4,
-      "sentiment_score": 53.1,
+      "sentiment_score": 52.8,
       "industry_bonus": 148.0,
       "total_score": 100,
       "rev_trend": "up",
