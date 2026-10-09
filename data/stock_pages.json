@@ -70,14 +70,14 @@
     "path": "stocks/211A.html"
   },
   {
-    "ticker": "2982",
-    "name": "ＡＤワークスグループ",
-    "path": "stocks/2982.html"
-  },
-  {
     "ticker": "1768",
     "name": "ソネック",
     "path": "stocks/1768.html"
+  },
+  {
+    "ticker": "2982",
+    "name": "ＡＤワークスグループ",
+    "path": "stocks/2982.html"
   },
   {
     "ticker": "1964",
