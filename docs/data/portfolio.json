@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-10-08",
+  "updated_at": "2026-10-09",
   "cost_basis": 116638.0,
-  "market_value": 113027.0,
-  "unrealized_pnl": -3611.0,
-  "unrealized_pnl_pct": -3.1,
+  "market_value": 113110.0,
+  "unrealized_pnl": -3528.0,
+  "unrealized_pnl_pct": -3.02,
   "total_dividends": 942.0,
-  "total_return": -2669.0,
-  "total_return_pct": -2.29,
+  "total_return": -2586.0,
+  "total_return_pct": -2.22,
   "holdings_count": 93,
   "holdings": [
     {
@@ -25,9 +25,9 @@
       "buy_date": "2026-08-21",
       "buy_price": 190,
       "shares": 2,
-      "current_price": 189.0,
-      "unrealized_pnl": -2.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -4.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "2323",
@@ -35,9 +35,9 @@
       "buy_date": "2026-08-21",
       "buy_price": 323,
       "shares": 1,
-      "current_price": 339.0,
-      "unrealized_pnl": 16.0,
-      "unrealized_pnl_pct": 4.95
+      "current_price": 343.0,
+      "unrealized_pnl": 20.0,
+      "unrealized_pnl_pct": 6.19
     },
     {
       "ticker": "3010",
@@ -45,9 +45,9 @@
       "buy_date": "2026-08-24",
       "buy_price": 190,
       "shares": 2,
-      "current_price": 189.0,
-      "unrealized_pnl": -2.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -4.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "2323",
@@ -55,9 +55,9 @@
       "buy_date": "2026-08-24",
       "buy_price": 323,
       "shares": 1,
-      "current_price": 339.0,
-      "unrealized_pnl": 16.0,
-      "unrealized_pnl_pct": 4.95
+      "current_price": 343.0,
+      "unrealized_pnl": 20.0,
+      "unrealized_pnl_pct": 6.19
     },
     {
       "ticker": "3010",
@@ -65,9 +65,9 @@
       "buy_date": "2026-08-25",
       "buy_price": 190,
       "shares": 2,
-      "current_price": 189.0,
-      "unrealized_pnl": -2.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -4.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "2323",
@@ -75,9 +75,9 @@
       "buy_date": "2026-08-25",
       "buy_price": 323,
       "shares": 1,
-      "current_price": 339.0,
-      "unrealized_pnl": 16.0,
-      "unrealized_pnl_pct": 4.95
+      "current_price": 343.0,
+      "unrealized_pnl": 20.0,
+      "unrealized_pnl_pct": 6.19
     },
     {
       "ticker": "269A",
@@ -85,9 +85,9 @@
       "buy_date": "2026-08-25",
       "buy_price": 2685,
       "shares": 1,
-      "current_price": 2972.0,
-      "unrealized_pnl": 287.0,
-      "unrealized_pnl_pct": 10.69
+      "current_price": 2966.0,
+      "unrealized_pnl": 281.0,
+      "unrealized_pnl_pct": 10.47
     },
     {
       "ticker": "3010",
@@ -95,9 +95,9 @@
       "buy_date": "2026-08-26",
       "buy_price": 190,
       "shares": 2,
-      "current_price": 189.0,
-      "unrealized_pnl": -2.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -4.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "2323",
@@ -105,9 +105,9 @@
       "buy_date": "2026-08-26",
       "buy_price": 323,
       "shares": 1,
-      "current_price": 339.0,
-      "unrealized_pnl": 16.0,
-      "unrealized_pnl_pct": 4.95
+      "current_price": 343.0,
+      "unrealized_pnl": 20.0,
+      "unrealized_pnl_pct": 6.19
     },
     {
       "ticker": "3010",
@@ -115,9 +115,9 @@
       "buy_date": "2026-08-29",
       "buy_price": 190,
       "shares": 2,
-      "current_price": 189.0,
-      "unrealized_pnl": -2.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -4.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "2323",
@@ -125,9 +125,9 @@
       "buy_date": "2026-08-29",
       "buy_price": 323,
       "shares": 1,
-      "current_price": 339.0,
-      "unrealized_pnl": 16.0,
-      "unrealized_pnl_pct": 4.95
+      "current_price": 343.0,
+      "unrealized_pnl": 20.0,
+      "unrealized_pnl_pct": 6.19
     },
     {
       "ticker": "269A",
@@ -135,9 +135,9 @@
       "buy_date": "2026-08-29",
       "buy_price": 2685,
       "shares": 1,
-      "current_price": 2972.0,
-      "unrealized_pnl": 287.0,
-      "unrealized_pnl_pct": 10.69
+      "current_price": 2966.0,
+      "unrealized_pnl": 281.0,
+      "unrealized_pnl_pct": 10.47
     },
     {
       "ticker": "3010",
@@ -145,9 +145,9 @@
       "buy_date": "2026-08-31",
       "buy_price": 190,
       "shares": 2,
-      "current_price": 189.0,
-      "unrealized_pnl": -2.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -4.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "2435",
@@ -155,9 +155,9 @@
       "buy_date": "2026-08-31",
       "buy_price": 211,
       "shares": 2,
-      "current_price": 203.0,
-      "unrealized_pnl": -16.0,
-      "unrealized_pnl_pct": -3.79
+      "current_price": 202.0,
+      "unrealized_pnl": -18.0,
+      "unrealized_pnl_pct": -4.27
     },
     {
       "ticker": "2323",
@@ -165,9 +165,9 @@
       "buy_date": "2026-08-31",
       "buy_price": 319,
       "shares": 1,
-      "current_price": 339.0,
-      "unrealized_pnl": 20.0,
-      "unrealized_pnl_pct": 6.27
+      "current_price": 343.0,
+      "unrealized_pnl": 24.0,
+      "unrealized_pnl_pct": 7.52
     },
     {
       "ticker": "3010",
@@ -175,9 +175,9 @@
       "buy_date": "2026-09-01",
       "buy_price": 190,
       "shares": 2,
-      "current_price": 189.0,
-      "unrealized_pnl": -2.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -4.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "2435",
@@ -185,9 +185,9 @@
       "buy_date": "2026-09-01",
       "buy_price": 211,
       "shares": 2,
-      "current_price": 203.0,
-      "unrealized_pnl": -16.0,
-      "unrealized_pnl_pct": -3.79
+      "current_price": 202.0,
+      "unrealized_pnl": -18.0,
+      "unrealized_pnl_pct": -4.27
     },
     {
       "ticker": "2323",
@@ -195,9 +195,9 @@
       "buy_date": "2026-09-01",
       "buy_price": 319,
       "shares": 1,
-      "current_price": 339.0,
-      "unrealized_pnl": 20.0,
-      "unrealized_pnl_pct": 6.27
+      "current_price": 343.0,
+      "unrealized_pnl": 24.0,
+      "unrealized_pnl_pct": 7.52
     },
     {
       "ticker": "269A",
@@ -205,9 +205,9 @@
       "buy_date": "2026-09-01",
       "buy_price": 2685,
       "shares": 1,
-      "current_price": 2972.0,
-      "unrealized_pnl": 287.0,
-      "unrealized_pnl_pct": 10.69
+      "current_price": 2966.0,
+      "unrealized_pnl": 281.0,
+      "unrealized_pnl_pct": 10.47
     },
     {
       "ticker": "3010",
@@ -215,9 +215,9 @@
       "buy_date": "2026-09-02",
       "buy_price": 190,
       "shares": 2,
-      "current_price": 189.0,
-      "unrealized_pnl": -2.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -4.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "2323",
@@ -225,9 +225,9 @@
       "buy_date": "2026-09-02",
       "buy_price": 319,
       "shares": 1,
-      "current_price": 339.0,
-      "unrealized_pnl": 20.0,
-      "unrealized_pnl_pct": 6.27
+      "current_price": 343.0,
+      "unrealized_pnl": 24.0,
+      "unrealized_pnl_pct": 7.52
     },
     {
       "ticker": "3010",
@@ -235,9 +235,9 @@
       "buy_date": "2026-09-03",
       "buy_price": 190,
       "shares": 2,
-      "current_price": 189.0,
-      "unrealized_pnl": -2.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -4.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "2435",
@@ -245,9 +245,9 @@
       "buy_date": "2026-09-03",
       "buy_price": 211,
       "shares": 2,
-      "current_price": 203.0,
-      "unrealized_pnl": -16.0,
-      "unrealized_pnl_pct": -3.79
+      "current_price": 202.0,
+      "unrealized_pnl": -18.0,
+      "unrealized_pnl_pct": -4.27
     },
     {
       "ticker": "2323",
@@ -255,9 +255,9 @@
       "buy_date": "2026-09-03",
       "buy_price": 319,
       "shares": 1,
-      "current_price": 339.0,
-      "unrealized_pnl": 20.0,
-      "unrealized_pnl_pct": 6.27
+      "current_price": 343.0,
+      "unrealized_pnl": 24.0,
+      "unrealized_pnl_pct": 7.52
     },
     {
       "ticker": "269A",
@@ -265,9 +265,9 @@
       "buy_date": "2026-09-03",
       "buy_price": 2685,
       "shares": 1,
-      "current_price": 2972.0,
-      "unrealized_pnl": 287.0,
-      "unrealized_pnl_pct": 10.69
+      "current_price": 2966.0,
+      "unrealized_pnl": 281.0,
+      "unrealized_pnl_pct": 10.47
     },
     {
       "ticker": "160A",
@@ -275,9 +275,9 @@
       "buy_date": "2026-09-04",
       "buy_price": 1991,
       "shares": 1,
-      "current_price": 1942.0,
-      "unrealized_pnl": -49.0,
-      "unrealized_pnl_pct": -2.46
+      "current_price": 1964.0,
+      "unrealized_pnl": -27.0,
+      "unrealized_pnl_pct": -1.36
     },
     {
       "ticker": "1814",
@@ -285,9 +285,9 @@
       "buy_date": "2026-09-04",
       "buy_price": 3710,
       "shares": 1,
-      "current_price": 3355.0,
-      "unrealized_pnl": -355.0,
-      "unrealized_pnl_pct": -9.57
+      "current_price": 3370.0,
+      "unrealized_pnl": -340.0,
+      "unrealized_pnl_pct": -9.16
     },
     {
       "ticker": "3010",
@@ -295,9 +295,9 @@
       "buy_date": "2026-09-04",
       "buy_price": 190,
       "shares": 4,
-      "current_price": 189.0,
-      "unrealized_pnl": -4.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -8.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "3640",
@@ -305,9 +305,9 @@
       "buy_date": "2026-09-04",
       "buy_price": 2778,
       "shares": 1,
-      "current_price": 2692.0,
-      "unrealized_pnl": -86.0,
-      "unrealized_pnl_pct": -3.1
+      "current_price": 2679.0,
+      "unrealized_pnl": -99.0,
+      "unrealized_pnl_pct": -3.56
     },
     {
       "ticker": "166A",
@@ -315,9 +315,9 @@
       "buy_date": "2026-09-04",
       "buy_price": 1210,
       "shares": 1,
-      "current_price": 970.0,
-      "unrealized_pnl": -240.0,
-      "unrealized_pnl_pct": -19.83
+      "current_price": 971.0,
+      "unrealized_pnl": -239.0,
+      "unrealized_pnl_pct": -19.75
     },
     {
       "ticker": "168A",
@@ -325,9 +325,9 @@
       "buy_date": "2026-09-04",
       "buy_price": 1078,
       "shares": 1,
-      "current_price": 1064.0,
-      "unrealized_pnl": -14.0,
-      "unrealized_pnl_pct": -1.3
+      "current_price": 1051.0,
+      "unrealized_pnl": -27.0,
+      "unrealized_pnl_pct": -2.5
     },
     {
       "ticker": "2323",
@@ -335,9 +335,9 @@
       "buy_date": "2026-09-04",
       "buy_price": 319,
       "shares": 2,
-      "current_price": 339.0,
-      "unrealized_pnl": 40.0,
-      "unrealized_pnl_pct": 6.27
+      "current_price": 343.0,
+      "unrealized_pnl": 48.0,
+      "unrealized_pnl_pct": 7.52
     },
     {
       "ticker": "160A",
@@ -345,9 +345,9 @@
       "buy_date": "2026-09-07",
       "buy_price": 1991,
       "shares": 1,
-      "current_price": 1942.0,
-      "unrealized_pnl": -49.0,
-      "unrealized_pnl_pct": -2.46
+      "current_price": 1964.0,
+      "unrealized_pnl": -27.0,
+      "unrealized_pnl_pct": -1.36
     },
     {
       "ticker": "1814",
@@ -355,9 +355,9 @@
       "buy_date": "2026-09-07",
       "buy_price": 3710,
       "shares": 1,
-      "current_price": 3355.0,
-      "unrealized_pnl": -355.0,
-      "unrealized_pnl_pct": -9.57
+      "current_price": 3370.0,
+      "unrealized_pnl": -340.0,
+      "unrealized_pnl_pct": -9.16
     },
     {
       "ticker": "3010",
@@ -365,9 +365,9 @@
       "buy_date": "2026-09-07",
       "buy_price": 190,
       "shares": 4,
-      "current_price": 189.0,
-      "unrealized_pnl": -4.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -8.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "3640",
@@ -375,9 +375,9 @@
       "buy_date": "2026-09-07",
       "buy_price": 2778,
       "shares": 1,
-      "current_price": 2692.0,
-      "unrealized_pnl": -86.0,
-      "unrealized_pnl_pct": -3.1
+      "current_price": 2679.0,
+      "unrealized_pnl": -99.0,
+      "unrealized_pnl_pct": -3.56
     },
     {
       "ticker": "166A",
@@ -385,9 +385,9 @@
       "buy_date": "2026-09-07",
       "buy_price": 1210,
       "shares": 1,
-      "current_price": 970.0,
-      "unrealized_pnl": -240.0,
-      "unrealized_pnl_pct": -19.83
+      "current_price": 971.0,
+      "unrealized_pnl": -239.0,
+      "unrealized_pnl_pct": -19.75
     },
     {
       "ticker": "168A",
@@ -395,9 +395,9 @@
       "buy_date": "2026-09-07",
       "buy_price": 1078,
       "shares": 1,
-      "current_price": 1064.0,
-      "unrealized_pnl": -14.0,
-      "unrealized_pnl_pct": -1.3
+      "current_price": 1051.0,
+      "unrealized_pnl": -27.0,
+      "unrealized_pnl_pct": -2.5
     },
     {
       "ticker": "2323",
@@ -405,9 +405,9 @@
       "buy_date": "2026-09-07",
       "buy_price": 319,
       "shares": 2,
-      "current_price": 339.0,
-      "unrealized_pnl": 40.0,
-      "unrealized_pnl_pct": 6.27
+      "current_price": 343.0,
+      "unrealized_pnl": 48.0,
+      "unrealized_pnl_pct": 7.52
     },
     {
       "ticker": "160A",
@@ -415,9 +415,9 @@
       "buy_date": "2026-09-08",
       "buy_price": 1991,
       "shares": 1,
-      "current_price": 1942.0,
-      "unrealized_pnl": -49.0,
-      "unrealized_pnl_pct": -2.46
+      "current_price": 1964.0,
+      "unrealized_pnl": -27.0,
+      "unrealized_pnl_pct": -1.36
     },
     {
       "ticker": "1814",
@@ -425,9 +425,9 @@
       "buy_date": "2026-09-08",
       "buy_price": 3710,
       "shares": 1,
-      "current_price": 3355.0,
-      "unrealized_pnl": -355.0,
-      "unrealized_pnl_pct": -9.57
+      "current_price": 3370.0,
+      "unrealized_pnl": -340.0,
+      "unrealized_pnl_pct": -9.16
     },
     {
       "ticker": "3010",
@@ -435,9 +435,9 @@
       "buy_date": "2026-09-08",
       "buy_price": 190,
       "shares": 4,
-      "current_price": 189.0,
-      "unrealized_pnl": -4.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -8.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "3640",
@@ -445,9 +445,9 @@
       "buy_date": "2026-09-08",
       "buy_price": 2778,
       "shares": 1,
-      "current_price": 2692.0,
-      "unrealized_pnl": -86.0,
-      "unrealized_pnl_pct": -3.1
+      "current_price": 2679.0,
+      "unrealized_pnl": -99.0,
+      "unrealized_pnl_pct": -3.56
     },
     {
       "ticker": "168A",
@@ -455,9 +455,9 @@
       "buy_date": "2026-09-08",
       "buy_price": 1078,
       "shares": 1,
-      "current_price": 1064.0,
-      "unrealized_pnl": -14.0,
-      "unrealized_pnl_pct": -1.3
+      "current_price": 1051.0,
+      "unrealized_pnl": -27.0,
+      "unrealized_pnl_pct": -2.5
     },
     {
       "ticker": "2323",
@@ -465,9 +465,9 @@
       "buy_date": "2026-09-08",
       "buy_price": 319,
       "shares": 2,
-      "current_price": 339.0,
-      "unrealized_pnl": 40.0,
-      "unrealized_pnl_pct": 6.27
+      "current_price": 343.0,
+      "unrealized_pnl": 48.0,
+      "unrealized_pnl_pct": 7.52
     },
     {
       "ticker": "247A",
@@ -475,9 +475,9 @@
       "buy_date": "2026-09-08",
       "buy_price": 1080,
       "shares": 1,
-      "current_price": 927.0,
-      "unrealized_pnl": -153.0,
-      "unrealized_pnl_pct": -14.17
+      "current_price": 952.0,
+      "unrealized_pnl": -128.0,
+      "unrealized_pnl_pct": -11.85
     },
     {
       "ticker": "160A",
@@ -485,9 +485,9 @@
       "buy_date": "2026-09-09",
       "buy_price": 1991,
       "shares": 1,
-      "current_price": 1942.0,
-      "unrealized_pnl": -49.0,
-      "unrealized_pnl_pct": -2.46
+      "current_price": 1964.0,
+      "unrealized_pnl": -27.0,
+      "unrealized_pnl_pct": -1.36
     },
     {
       "ticker": "3010",
@@ -495,9 +495,9 @@
       "buy_date": "2026-09-09",
       "buy_price": 190,
       "shares": 4,
-      "current_price": 189.0,
-      "unrealized_pnl": -4.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -8.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "1814",
@@ -505,9 +505,9 @@
       "buy_date": "2026-09-09",
       "buy_price": 3710,
       "shares": 1,
-      "current_price": 3355.0,
-      "unrealized_pnl": -355.0,
-      "unrealized_pnl_pct": -9.57
+      "current_price": 3370.0,
+      "unrealized_pnl": -340.0,
+      "unrealized_pnl_pct": -9.16
     },
     {
       "ticker": "3640",
@@ -515,9 +515,9 @@
       "buy_date": "2026-09-09",
       "buy_price": 2778,
       "shares": 1,
-      "current_price": 2692.0,
-      "unrealized_pnl": -86.0,
-      "unrealized_pnl_pct": -3.1
+      "current_price": 2679.0,
+      "unrealized_pnl": -99.0,
+      "unrealized_pnl_pct": -3.56
     },
     {
       "ticker": "168A",
@@ -525,9 +525,9 @@
       "buy_date": "2026-09-09",
       "buy_price": 1078,
       "shares": 1,
-      "current_price": 1064.0,
-      "unrealized_pnl": -14.0,
-      "unrealized_pnl_pct": -1.3
+      "current_price": 1051.0,
+      "unrealized_pnl": -27.0,
+      "unrealized_pnl_pct": -2.5
     },
     {
       "ticker": "2323",
@@ -535,9 +535,9 @@
       "buy_date": "2026-09-09",
       "buy_price": 319,
       "shares": 2,
-      "current_price": 339.0,
-      "unrealized_pnl": 40.0,
-      "unrealized_pnl_pct": 6.27
+      "current_price": 343.0,
+      "unrealized_pnl": 48.0,
+      "unrealized_pnl_pct": 7.52
     },
     {
       "ticker": "247A",
@@ -545,9 +545,9 @@
       "buy_date": "2026-09-09",
       "buy_price": 1080,
       "shares": 1,
-      "current_price": 927.0,
-      "unrealized_pnl": -153.0,
-      "unrealized_pnl_pct": -14.17
+      "current_price": 952.0,
+      "unrealized_pnl": -128.0,
+      "unrealized_pnl_pct": -11.85
     },
     {
       "ticker": "160A",
@@ -555,9 +555,9 @@
       "buy_date": "2026-09-10",
       "buy_price": 1991,
       "shares": 1,
-      "current_price": 1942.0,
-      "unrealized_pnl": -49.0,
-      "unrealized_pnl_pct": -2.46
+      "current_price": 1964.0,
+      "unrealized_pnl": -27.0,
+      "unrealized_pnl_pct": -1.36
     },
     {
       "ticker": "3010",
@@ -565,9 +565,9 @@
       "buy_date": "2026-09-10",
       "buy_price": 190,
       "shares": 4,
-      "current_price": 189.0,
-      "unrealized_pnl": -4.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -8.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "1814",
@@ -575,9 +575,9 @@
       "buy_date": "2026-09-10",
       "buy_price": 3710,
       "shares": 1,
-      "current_price": 3355.0,
-      "unrealized_pnl": -355.0,
-      "unrealized_pnl_pct": -9.57
+      "current_price": 3370.0,
+      "unrealized_pnl": -340.0,
+      "unrealized_pnl_pct": -9.16
     },
     {
       "ticker": "3640",
@@ -585,9 +585,9 @@
       "buy_date": "2026-09-10",
       "buy_price": 2778,
       "shares": 1,
-      "current_price": 2692.0,
-      "unrealized_pnl": -86.0,
-      "unrealized_pnl_pct": -3.1
+      "current_price": 2679.0,
+      "unrealized_pnl": -99.0,
+      "unrealized_pnl_pct": -3.56
     },
     {
       "ticker": "168A",
@@ -595,9 +595,9 @@
       "buy_date": "2026-09-10",
       "buy_price": 1078,
       "shares": 1,
-      "current_price": 1064.0,
-      "unrealized_pnl": -14.0,
-      "unrealized_pnl_pct": -1.3
+      "current_price": 1051.0,
+      "unrealized_pnl": -27.0,
+      "unrealized_pnl_pct": -2.5
     },
     {
       "ticker": "2323",
@@ -605,9 +605,9 @@
       "buy_date": "2026-09-10",
       "buy_price": 319,
       "shares": 2,
-      "current_price": 339.0,
-      "unrealized_pnl": 40.0,
-      "unrealized_pnl_pct": 6.27
+      "current_price": 343.0,
+      "unrealized_pnl": 48.0,
+      "unrealized_pnl_pct": 7.52
     },
     {
       "ticker": "247A",
@@ -615,9 +615,9 @@
       "buy_date": "2026-09-10",
       "buy_price": 1080,
       "shares": 1,
-      "current_price": 927.0,
-      "unrealized_pnl": -153.0,
-      "unrealized_pnl_pct": -14.17
+      "current_price": 952.0,
+      "unrealized_pnl": -128.0,
+      "unrealized_pnl_pct": -11.85
     },
     {
       "ticker": "160A",
@@ -625,9 +625,9 @@
       "buy_date": "2026-09-11",
       "buy_price": 1991,
       "shares": 1,
-      "current_price": 1942.0,
-      "unrealized_pnl": -49.0,
-      "unrealized_pnl_pct": -2.46
+      "current_price": 1964.0,
+      "unrealized_pnl": -27.0,
+      "unrealized_pnl_pct": -1.36
     },
     {
       "ticker": "3010",
@@ -635,9 +635,9 @@
       "buy_date": "2026-09-11",
       "buy_price": 190,
       "shares": 4,
-      "current_price": 189.0,
-      "unrealized_pnl": -4.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -8.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "1814",
@@ -645,9 +645,9 @@
       "buy_date": "2026-09-11",
       "buy_price": 3710,
       "shares": 1,
-      "current_price": 3355.0,
-      "unrealized_pnl": -355.0,
-      "unrealized_pnl_pct": -9.57
+      "current_price": 3370.0,
+      "unrealized_pnl": -340.0,
+      "unrealized_pnl_pct": -9.16
     },
     {
       "ticker": "3640",
@@ -655,9 +655,9 @@
       "buy_date": "2026-09-11",
       "buy_price": 2778,
       "shares": 1,
-      "current_price": 2692.0,
-      "unrealized_pnl": -86.0,
-      "unrealized_pnl_pct": -3.1
+      "current_price": 2679.0,
+      "unrealized_pnl": -99.0,
+      "unrealized_pnl_pct": -3.56
     },
     {
       "ticker": "168A",
@@ -665,9 +665,9 @@
       "buy_date": "2026-09-11",
       "buy_price": 1078,
       "shares": 1,
-      "current_price": 1064.0,
-      "unrealized_pnl": -14.0,
-      "unrealized_pnl_pct": -1.3
+      "current_price": 1051.0,
+      "unrealized_pnl": -27.0,
+      "unrealized_pnl_pct": -2.5
     },
     {
       "ticker": "2323",
@@ -675,9 +675,9 @@
       "buy_date": "2026-09-11",
       "buy_price": 319,
       "shares": 2,
-      "current_price": 339.0,
-      "unrealized_pnl": 40.0,
-      "unrealized_pnl_pct": 6.27
+      "current_price": 343.0,
+      "unrealized_pnl": 48.0,
+      "unrealized_pnl_pct": 7.52
     },
     {
       "ticker": "247A",
@@ -685,9 +685,9 @@
       "buy_date": "2026-09-11",
       "buy_price": 1080,
       "shares": 1,
-      "current_price": 927.0,
-      "unrealized_pnl": -153.0,
-      "unrealized_pnl_pct": -14.17
+      "current_price": 952.0,
+      "unrealized_pnl": -128.0,
+      "unrealized_pnl_pct": -11.85
     },
     {
       "ticker": "168A",
@@ -695,9 +695,9 @@
       "buy_date": "2026-09-14",
       "buy_price": 1078,
       "shares": 1,
-      "current_price": 1064.0,
-      "unrealized_pnl": -14.0,
-      "unrealized_pnl_pct": -1.3
+      "current_price": 1051.0,
+      "unrealized_pnl": -27.0,
+      "unrealized_pnl_pct": -2.5
     },
     {
       "ticker": "2323",
@@ -705,9 +705,9 @@
       "buy_date": "2026-09-14",
       "buy_price": 319,
       "shares": 3,
-      "current_price": 339.0,
-      "unrealized_pnl": 60.0,
-      "unrealized_pnl_pct": 6.27
+      "current_price": 343.0,
+      "unrealized_pnl": 72.0,
+      "unrealized_pnl_pct": 7.52
     },
     {
       "ticker": "3010",
@@ -715,9 +715,9 @@
       "buy_date": "2026-09-15",
       "buy_price": 190,
       "shares": 9,
-      "current_price": 189.0,
-      "unrealized_pnl": -9.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -18.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "168A",
@@ -725,9 +725,9 @@
       "buy_date": "2026-09-15",
       "buy_price": 1078,
       "shares": 1,
-      "current_price": 1064.0,
-      "unrealized_pnl": -14.0,
-      "unrealized_pnl_pct": -1.3
+      "current_price": 1051.0,
+      "unrealized_pnl": -27.0,
+      "unrealized_pnl_pct": -2.5
     },
     {
       "ticker": "2323",
@@ -735,9 +735,9 @@
       "buy_date": "2026-09-15",
       "buy_price": 319,
       "shares": 3,
-      "current_price": 339.0,
-      "unrealized_pnl": 60.0,
-      "unrealized_pnl_pct": 6.27
+      "current_price": 343.0,
+      "unrealized_pnl": 72.0,
+      "unrealized_pnl_pct": 7.52
     },
     {
       "ticker": "3010",
@@ -745,9 +745,9 @@
       "buy_date": "2026-09-16",
       "buy_price": 190,
       "shares": 9,
-      "current_price": 189.0,
-      "unrealized_pnl": -9.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -18.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "166A",
@@ -755,9 +755,9 @@
       "buy_date": "2026-09-16",
       "buy_price": 1210,
       "shares": 1,
-      "current_price": 970.0,
-      "unrealized_pnl": -240.0,
-      "unrealized_pnl_pct": -19.83
+      "current_price": 971.0,
+      "unrealized_pnl": -239.0,
+      "unrealized_pnl_pct": -19.75
     },
     {
       "ticker": "168A",
@@ -765,9 +765,9 @@
       "buy_date": "2026-09-16",
       "buy_price": 1078,
       "shares": 1,
-      "current_price": 1064.0,
-      "unrealized_pnl": -14.0,
-      "unrealized_pnl_pct": -1.3
+      "current_price": 1051.0,
+      "unrealized_pnl": -27.0,
+      "unrealized_pnl_pct": -2.5
     },
     {
       "ticker": "3010",
@@ -775,9 +775,9 @@
       "buy_date": "2026-09-17",
       "buy_price": 190,
       "shares": 9,
-      "current_price": 189.0,
-      "unrealized_pnl": -9.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -18.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "168A",
@@ -785,9 +785,9 @@
       "buy_date": "2026-09-17",
       "buy_price": 1078,
       "shares": 1,
-      "current_price": 1064.0,
-      "unrealized_pnl": -14.0,
-      "unrealized_pnl_pct": -1.3
+      "current_price": 1051.0,
+      "unrealized_pnl": -27.0,
+      "unrealized_pnl_pct": -2.5
     },
     {
       "ticker": "2323",
@@ -795,9 +795,9 @@
       "buy_date": "2026-09-17",
       "buy_price": 319,
       "shares": 3,
-      "current_price": 339.0,
-      "unrealized_pnl": 60.0,
-      "unrealized_pnl_pct": 6.27
+      "current_price": 343.0,
+      "unrealized_pnl": 72.0,
+      "unrealized_pnl_pct": 7.52
     },
     {
       "ticker": "3010",
@@ -805,9 +805,9 @@
       "buy_date": "2026-09-18",
       "buy_price": 190,
       "shares": 2,
-      "current_price": 189.0,
-      "unrealized_pnl": -2.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -4.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "3010",
@@ -815,9 +815,9 @@
       "buy_date": "2026-09-21",
       "buy_price": 190,
       "shares": 9,
-      "current_price": 189.0,
-      "unrealized_pnl": -9.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -18.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "166A",
@@ -825,9 +825,9 @@
       "buy_date": "2026-09-21",
       "buy_price": 1210,
       "shares": 1,
-      "current_price": 970.0,
-      "unrealized_pnl": -240.0,
-      "unrealized_pnl_pct": -19.83
+      "current_price": 971.0,
+      "unrealized_pnl": -239.0,
+      "unrealized_pnl_pct": -19.75
     },
     {
       "ticker": "168A",
@@ -835,9 +835,9 @@
       "buy_date": "2026-09-21",
       "buy_price": 1078,
       "shares": 1,
-      "current_price": 1064.0,
-      "unrealized_pnl": -14.0,
-      "unrealized_pnl_pct": -1.3
+      "current_price": 1051.0,
+      "unrealized_pnl": -27.0,
+      "unrealized_pnl_pct": -2.5
     },
     {
       "ticker": "3010",
@@ -845,9 +845,9 @@
       "buy_date": "2026-09-22",
       "buy_price": 190,
       "shares": 3,
-      "current_price": 189.0,
-      "unrealized_pnl": -3.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -6.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "3010",
@@ -855,9 +855,9 @@
       "buy_date": "2026-09-23",
       "buy_price": 190,
       "shares": 2,
-      "current_price": 189.0,
-      "unrealized_pnl": -2.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -4.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "166A",
@@ -865,9 +865,9 @@
       "buy_date": "2026-09-23",
       "buy_price": 1210,
       "shares": 1,
-      "current_price": 970.0,
-      "unrealized_pnl": -240.0,
-      "unrealized_pnl_pct": -19.83
+      "current_price": 971.0,
+      "unrealized_pnl": -239.0,
+      "unrealized_pnl_pct": -19.75
     },
     {
       "ticker": "3010",
@@ -875,9 +875,9 @@
       "buy_date": "2026-09-28",
       "buy_price": 190.0,
       "shares": 9,
-      "current_price": 189.0,
-      "unrealized_pnl": -9.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -18.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "166A",
@@ -885,9 +885,9 @@
       "buy_date": "2026-09-28",
       "buy_price": 1210.0,
       "shares": 1,
-      "current_price": 970.0,
-      "unrealized_pnl": -240.0,
-      "unrealized_pnl_pct": -19.83
+      "current_price": 971.0,
+      "unrealized_pnl": -239.0,
+      "unrealized_pnl_pct": -19.75
     },
     {
       "ticker": "168A",
@@ -895,9 +895,9 @@
       "buy_date": "2026-09-28",
       "buy_price": 1078.0,
       "shares": 1,
-      "current_price": 1064.0,
-      "unrealized_pnl": -14.0,
-      "unrealized_pnl_pct": -1.3
+      "current_price": 1051.0,
+      "unrealized_pnl": -27.0,
+      "unrealized_pnl_pct": -2.5
     },
     {
       "ticker": "3010",
@@ -905,9 +905,9 @@
       "buy_date": "2026-09-29",
       "buy_price": 190.0,
       "shares": 3,
-      "current_price": 189.0,
-      "unrealized_pnl": -3.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -6.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "3010",
@@ -915,9 +915,9 @@
       "buy_date": "2026-09-30",
       "buy_price": 190.0,
       "shares": 2,
-      "current_price": 189.0,
-      "unrealized_pnl": -2.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -4.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "3010",
@@ -925,9 +925,9 @@
       "buy_date": "2026-10-01",
       "buy_price": 190.0,
       "shares": 1,
-      "current_price": 189.0,
-      "unrealized_pnl": -1.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -2.0,
+      "unrealized_pnl_pct": -1.05
     },
     {
       "ticker": "3010",
@@ -935,9 +935,9 @@
       "buy_date": "2026-10-02",
       "buy_price": 190.0,
       "shares": 1,
-      "current_price": 189.0,
-      "unrealized_pnl": -1.0,
-      "unrealized_pnl_pct": -0.53
+      "current_price": 188.0,
+      "unrealized_pnl": -2.0,
+      "unrealized_pnl_pct": -1.05
     }
   ]
 }
