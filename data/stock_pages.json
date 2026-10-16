@@ -5,14 +5,14 @@
     "path": "stocks/3010.html"
   },
   {
-    "ticker": "160A",
-    "name": "アズパートナーズ",
-    "path": "stocks/160A.html"
-  },
-  {
     "ticker": "1814",
     "name": "大末建設",
     "path": "stocks/1814.html"
+  },
+  {
+    "ticker": "160A",
+    "name": "アズパートナーズ",
+    "path": "stocks/160A.html"
   },
   {
     "ticker": "3640",
@@ -45,11 +45,6 @@
     "path": "stocks/2288.html"
   },
   {
-    "ticker": "6505",
-    "name": "東洋電機製造",
-    "path": "stocks/6505.html"
-  },
-  {
     "ticker": "2304",
     "name": "ＣＳＳホールディングス",
     "path": "stocks/2304.html"
@@ -58,6 +53,11 @@
     "ticker": "5110",
     "name": "住友ゴム工業",
     "path": "stocks/5110.html"
+  },
+  {
+    "ticker": "6505",
+    "name": "東洋電機製造",
+    "path": "stocks/6505.html"
   },
   {
     "ticker": "1847",
