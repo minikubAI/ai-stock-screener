@@ -45,14 +45,14 @@
     "path": "stocks/2288.html"
   },
   {
-    "ticker": "5110",
-    "name": "住友ゴム工業",
-    "path": "stocks/5110.html"
-  },
-  {
     "ticker": "2304",
     "name": "ＣＳＳホールディングス",
     "path": "stocks/2304.html"
+  },
+  {
+    "ticker": "5110",
+    "name": "住友ゴム工業",
+    "path": "stocks/5110.html"
   },
   {
     "ticker": "6505",
