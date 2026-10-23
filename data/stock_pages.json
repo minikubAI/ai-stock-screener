@@ -60,14 +60,14 @@
     "path": "stocks/6505.html"
   },
   {
-    "ticker": "211A",
-    "name": "カドス・コーポレーション",
-    "path": "stocks/211A.html"
-  },
-  {
     "ticker": "1847",
     "name": "イチケン",
     "path": "stocks/1847.html"
+  },
+  {
+    "ticker": "211A",
+    "name": "カドス・コーポレーション",
+    "path": "stocks/211A.html"
   },
   {
     "ticker": "1768",
