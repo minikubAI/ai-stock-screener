@@ -1,31 +1,31 @@
 {
-  "date": "2026-11-02",
+  "date": "2026-11-04",
   "signal": "NORMAL",
   "budget_ratio": 1.0,
   "orders": [
     {
       "ticker": "3010",
       "name": "ポラリス・ホールディ",
-      "shares": 9,
+      "shares": 4,
       "price": 190,
-      "cost": 1710,
+      "cost": 760,
       "category": "core"
-    },
-    {
-      "ticker": "168A",
-      "name": "イタミアート",
-      "shares": 1,
-      "price": 1078,
-      "cost": 1078,
-      "category": "satellite_a"
     },
     {
       "ticker": "2323",
       "name": "ｆｏｎｆｕｎ",
-      "shares": 3,
+      "shares": 1,
       "price": 319,
-      "cost": 957,
+      "cost": 319,
       "category": "satellite_a"
+    },
+    {
+      "ticker": "247A",
+      "name": "Ａｉロボティクス",
+      "shares": 1,
+      "price": 1080,
+      "cost": 1080,
+      "category": "satellite_b"
     }
   ]
 }
