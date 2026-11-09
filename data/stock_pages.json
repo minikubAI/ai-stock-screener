@@ -80,11 +80,6 @@
     "path": "stocks/1768.html"
   },
   {
-    "ticker": "2924",
-    "name": "イフジ産業",
-    "path": "stocks/2924.html"
-  },
-  {
     "ticker": "1964",
     "name": "中外炉工業",
     "path": "stocks/1964.html"
@@ -93,6 +88,11 @@
     "ticker": "1379",
     "name": "ホクト",
     "path": "stocks/1379.html"
+  },
+  {
+    "ticker": "2924",
+    "name": "イフジ産業",
+    "path": "stocks/2924.html"
   },
   {
     "ticker": "1434",
@@ -120,6 +120,16 @@
     "path": "stocks/277A.html"
   },
   {
+    "ticker": "2983",
+    "name": "アールプランナー",
+    "path": "stocks/2983.html"
+  },
+  {
+    "ticker": "3494",
+    "name": "マリオン",
+    "path": "stocks/3494.html"
+  },
+  {
     "ticker": "7162",
     "name": "アストマックス",
     "path": "stocks/7162.html"
@@ -128,16 +138,6 @@
     "ticker": "8136",
     "name": "サンリオ",
     "path": "stocks/8136.html"
-  },
-  {
-    "ticker": "3494",
-    "name": "マリオン",
-    "path": "stocks/3494.html"
-  },
-  {
-    "ticker": "2983",
-    "name": "アールプランナー",
-    "path": "stocks/2983.html"
   },
   {
     "ticker": "168A",
