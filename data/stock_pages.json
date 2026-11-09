@@ -60,14 +60,14 @@
     "path": "stocks/6505.html"
   },
   {
-    "ticker": "211A",
-    "name": "カドス・コーポレーション",
-    "path": "stocks/211A.html"
-  },
-  {
     "ticker": "1847",
     "name": "イチケン",
     "path": "stocks/1847.html"
+  },
+  {
+    "ticker": "211A",
+    "name": "カドス・コーポレーション",
+    "path": "stocks/211A.html"
   },
   {
     "ticker": "2982",
@@ -100,11 +100,6 @@
     "path": "stocks/1434.html"
   },
   {
-    "ticker": "168A",
-    "name": "イタミアート",
-    "path": "stocks/168A.html"
-  },
-  {
     "ticker": "2323",
     "name": "ｆｏｎｆｕｎ",
     "path": "stocks/2323.html"
@@ -125,16 +120,6 @@
     "path": "stocks/277A.html"
   },
   {
-    "ticker": "2983",
-    "name": "アールプランナー",
-    "path": "stocks/2983.html"
-  },
-  {
-    "ticker": "3494",
-    "name": "マリオン",
-    "path": "stocks/3494.html"
-  },
-  {
     "ticker": "7162",
     "name": "アストマックス",
     "path": "stocks/7162.html"
@@ -143,6 +128,21 @@
     "ticker": "8136",
     "name": "サンリオ",
     "path": "stocks/8136.html"
+  },
+  {
+    "ticker": "3494",
+    "name": "マリオン",
+    "path": "stocks/3494.html"
+  },
+  {
+    "ticker": "2983",
+    "name": "アールプランナー",
+    "path": "stocks/2983.html"
+  },
+  {
+    "ticker": "168A",
+    "name": "イタミアート",
+    "path": "stocks/168A.html"
   },
   {
     "ticker": "166A",
