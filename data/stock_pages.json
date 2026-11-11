@@ -100,6 +100,11 @@
     "path": "stocks/1434.html"
   },
   {
+    "ticker": "168A",
+    "name": "イタミアート",
+    "path": "stocks/168A.html"
+  },
+  {
     "ticker": "2323",
     "name": "ｆｏｎｆｕｎ",
     "path": "stocks/2323.html"
@@ -138,11 +143,6 @@
     "ticker": "8136",
     "name": "サンリオ",
     "path": "stocks/8136.html"
-  },
-  {
-    "ticker": "168A",
-    "name": "イタミアート",
-    "path": "stocks/168A.html"
   },
   {
     "ticker": "166A",
