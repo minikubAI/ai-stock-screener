@@ -70,19 +70,14 @@
     "path": "stocks/211A.html"
   },
   {
-    "ticker": "1768",
-    "name": "ソネック",
-    "path": "stocks/1768.html"
-  },
-  {
     "ticker": "2982",
     "name": "ＡＤワークスグループ",
     "path": "stocks/2982.html"
   },
   {
-    "ticker": "1964",
-    "name": "中外炉工業",
-    "path": "stocks/1964.html"
+    "ticker": "1768",
+    "name": "ソネック",
+    "path": "stocks/1768.html"
   },
   {
     "ticker": "2924",
@@ -93,6 +88,11 @@
     "ticker": "1379",
     "name": "ホクト",
     "path": "stocks/1379.html"
+  },
+  {
+    "ticker": "1964",
+    "name": "中外炉工業",
+    "path": "stocks/1964.html"
   },
   {
     "ticker": "1434",
