@@ -120,9 +120,9 @@
     "path": "stocks/277A.html"
   },
   {
-    "ticker": "2983",
-    "name": "アールプランナー",
-    "path": "stocks/2983.html"
+    "ticker": "7162",
+    "name": "アストマックス",
+    "path": "stocks/7162.html"
   },
   {
     "ticker": "3494",
@@ -130,14 +130,14 @@
     "path": "stocks/3494.html"
   },
   {
-    "ticker": "7162",
-    "name": "アストマックス",
-    "path": "stocks/7162.html"
-  },
-  {
     "ticker": "8136",
     "name": "サンリオ",
     "path": "stocks/8136.html"
+  },
+  {
+    "ticker": "2983",
+    "name": "アールプランナー",
+    "path": "stocks/2983.html"
   },
   {
     "ticker": "168A",
