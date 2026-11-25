@@ -60,14 +60,14 @@
     "path": "stocks/2304.html"
   },
   {
-    "ticker": "6505",
-    "name": "東洋電機製造",
-    "path": "stocks/6505.html"
-  },
-  {
     "ticker": "211A",
     "name": "カドス・コーポレーション",
     "path": "stocks/211A.html"
+  },
+  {
+    "ticker": "6505",
+    "name": "東洋電機製造",
+    "path": "stocks/6505.html"
   },
   {
     "ticker": "2982",
