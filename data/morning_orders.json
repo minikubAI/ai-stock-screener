@@ -1,23 +1,6 @@
 {
-  "date": "2026-11-26",
+  "date": "2026-11-27",
   "signal": "NORMAL",
   "budget_ratio": 1.0,
-  "orders": [
-    {
-      "ticker": "3010",
-      "name": "ポラリス・ホールディ",
-      "shares": 2,
-      "price": 190,
-      "cost": 380,
-      "category": "core"
-    },
-    {
-      "ticker": "247A",
-      "name": "Ａｉロボティクス",
-      "shares": 1,
-      "price": 1080,
-      "cost": 1080,
-      "category": "satellite_b"
-    }
-  ]
+  "orders": []
 }
