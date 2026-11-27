@@ -45,9 +45,9 @@
     "path": "stocks/2288.html"
   },
   {
-    "ticker": "2304",
-    "name": "ＣＳＳホールディングス",
-    "path": "stocks/2304.html"
+    "ticker": "5110",
+    "name": "住友ゴム工業",
+    "path": "stocks/5110.html"
   },
   {
     "ticker": "1847",
@@ -55,19 +55,19 @@
     "path": "stocks/1847.html"
   },
   {
-    "ticker": "211A",
-    "name": "カドス・コーポレーション",
-    "path": "stocks/211A.html"
-  },
-  {
-    "ticker": "5110",
-    "name": "住友ゴム工業",
-    "path": "stocks/5110.html"
+    "ticker": "2304",
+    "name": "ＣＳＳホールディングス",
+    "path": "stocks/2304.html"
   },
   {
     "ticker": "6505",
     "name": "東洋電機製造",
     "path": "stocks/6505.html"
+  },
+  {
+    "ticker": "211A",
+    "name": "カドス・コーポレーション",
+    "path": "stocks/211A.html"
   },
   {
     "ticker": "2982",
@@ -80,6 +80,11 @@
     "path": "stocks/1768.html"
   },
   {
+    "ticker": "2924",
+    "name": "イフジ産業",
+    "path": "stocks/2924.html"
+  },
+  {
     "ticker": "1379",
     "name": "ホクト",
     "path": "stocks/1379.html"
@@ -90,14 +95,14 @@
     "path": "stocks/1964.html"
   },
   {
-    "ticker": "2924",
-    "name": "イフジ産業",
-    "path": "stocks/2924.html"
-  },
-  {
     "ticker": "1434",
     "name": "ＪＥＳＣＯホールディングス",
     "path": "stocks/1434.html"
+  },
+  {
+    "ticker": "168A",
+    "name": "イタミアート",
+    "path": "stocks/168A.html"
   },
   {
     "ticker": "2323",
@@ -120,14 +125,9 @@
     "path": "stocks/277A.html"
   },
   {
-    "ticker": "8136",
-    "name": "サンリオ",
-    "path": "stocks/8136.html"
-  },
-  {
-    "ticker": "7162",
-    "name": "アストマックス",
-    "path": "stocks/7162.html"
+    "ticker": "2983",
+    "name": "アールプランナー",
+    "path": "stocks/2983.html"
   },
   {
     "ticker": "3494",
@@ -135,14 +135,14 @@
     "path": "stocks/3494.html"
   },
   {
-    "ticker": "2983",
-    "name": "アールプランナー",
-    "path": "stocks/2983.html"
+    "ticker": "7162",
+    "name": "アストマックス",
+    "path": "stocks/7162.html"
   },
   {
-    "ticker": "168A",
-    "name": "イタミアート",
-    "path": "stocks/168A.html"
+    "ticker": "8136",
+    "name": "サンリオ",
+    "path": "stocks/8136.html"
   },
   {
     "ticker": "166A",
